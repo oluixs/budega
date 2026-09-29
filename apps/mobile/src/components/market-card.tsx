@@ -26,7 +26,12 @@ export function MarketCard({ market }: { market: MarketWithDistance }) {
             </Text>
           </View>
           <View className="flex-row items-center justify-between pt-1">
-            <Text className="font-medium text-brand-600">{formatDistance(market.distance_km)}</Text>
+            {/* Sem localização não há distância: omitir em vez de "indisponível". */}
+            {market.distance_km !== null ? (
+              <Text className="font-medium text-brand-600">{formatDistance(market.distance_km)}</Text>
+            ) : (
+              <View />
+            )}
             {market.is_verified && (
               <View className="flex-row items-center gap-1">
                 <BadgeCheck size={14} color="#1F7A4D" />

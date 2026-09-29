@@ -95,20 +95,20 @@ export function OfferFormDialog({ markets, categories, initialValues, trigger }:
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Mercado</FormLabel>
-                    <FormControl>
-                      <Select value={field.value} onValueChange={field.onChange} items={marketLabels}>
+                    <Select value={field.value} onValueChange={field.onChange} items={marketLabels}>
+                      <FormControl>
                         <SelectTrigger className="w-full">
                           <SelectValue placeholder="Selecione" />
                         </SelectTrigger>
-                        <SelectContent>
-                          {markets.map((market) => (
-                            <SelectItem key={market.id} value={market.id}>
-                              {market.name}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </FormControl>
+                      </FormControl>
+                      <SelectContent>
+                        {markets.map((market) => (
+                          <SelectItem key={market.id} value={market.id}>
+                            {market.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -119,20 +119,20 @@ export function OfferFormDialog({ markets, categories, initialValues, trigger }:
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Categoria</FormLabel>
-                    <FormControl>
-                      <Select value={field.value} onValueChange={field.onChange} items={categoryLabels}>
+                    <Select value={field.value} onValueChange={field.onChange} items={categoryLabels}>
+                      <FormControl>
                         <SelectTrigger className="w-full">
                           <SelectValue placeholder="Selecione" />
                         </SelectTrigger>
-                        <SelectContent>
-                          {categories.map((category) => (
-                            <SelectItem key={category.id} value={category.id}>
-                              {category.name}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </FormControl>
+                      </FormControl>
+                      <SelectContent>
+                        {categories.map((category) => (
+                          <SelectItem key={category.id} value={category.id}>
+                            {category.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                     <FormMessage />
                   </FormItem>
                 )}

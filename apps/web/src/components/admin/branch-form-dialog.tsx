@@ -157,20 +157,20 @@ export function BranchFormDialog({ markets, branch }: BranchFormDialogProps) {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Mercado</FormLabel>
-                  <FormControl>
-                    <Select value={field.value} onValueChange={field.onChange} items={marketLabels}>
+                  <Select value={field.value} onValueChange={field.onChange} items={marketLabels}>
+                    <FormControl>
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Selecione" />
                       </SelectTrigger>
-                      <SelectContent>
-                        {markets.map((market) => (
-                          <SelectItem key={market.id} value={market.id}>
-                            {market.name}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </FormControl>
+                    </FormControl>
+                    <SelectContent>
+                      {markets.map((market) => (
+                        <SelectItem key={market.id} value={market.id}>
+                          {market.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
                 </FormItem>
               )}

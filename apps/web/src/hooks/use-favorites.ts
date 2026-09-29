@@ -67,9 +67,15 @@ function subscribe(callback: () => void) {
  * seguindo a recomendação do React para sincronizar com sistemas externos sem disparar
  * um setState síncrono dentro de um efeito.
  */
+const noopSubscribe = () => () => {};
+
 export function useFavorites() {
   const favorites = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-  const hydrated = typeof window !== "undefined";
+  // `typeof window !== "undefined"` aqui causava erro de hidratação (React #418): no
+  // servidor era false (skeleton) e já no 1º render do cliente virava true (lista). Com
+  // useSyncExternalStore o React usa o valor do servidor durante a hidratação e só
+  // depois troca para true (ver .audit/errors/2026-09-29/).
+  const hydrated = useSyncExternalStore(noopSubscribe, () => true, () => false);
 
   const toggle = useCallback((target: { market_id?: string | null; offer_id?: string | null }) => {
     writeStorage(toggleLocalFavorite(getSnapshot(), target));

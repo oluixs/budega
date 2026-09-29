@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { mock, weeklyHours } from "@budega/shared";
 import {
+  assignMarketOwner,
   createBranch,
   createMarket,
   createOffer,
@@ -9,6 +10,7 @@ import {
   setFlyerStatus,
   setMarketFlag,
   setOfferFlag,
+  setUserRole,
   updateMarket,
 } from "./admin-actions";
 
@@ -44,6 +46,16 @@ describe("admin-actions rejeitam argumentos forjados", () => {
     expect((await setFlyerStatus("fly-1", "deleted")).success).toBe(false);
     // @ts-expect-error — simulando uma chamada forjada
     expect((await resolveReport("rep-1", "pending")).success).toBe(false);
+  });
+
+  it("setUserRole recusa role inexistente", async () => {
+    // @ts-expect-error — simulando uma chamada forjada
+    expect(await setUserRole("usr-1", "superadmin")).toEqual({ success: false, message: "Ação inválida." });
+  });
+
+  it("assignMarketOwner recusa dono que não é string", async () => {
+    // @ts-expect-error — simulando uma chamada forjada
+    expect((await assignMarketOwner("mkt-1", 42)).success).toBe(false);
   });
 });
 

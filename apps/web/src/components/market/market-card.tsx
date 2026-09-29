@@ -30,9 +30,13 @@ export function MarketCard({ market }: MarketCardProps) {
           </p>
 
           <div className="mt-auto flex items-center justify-between pt-2">
-            <span className="text-body font-medium text-brand-600">
-              {formatDistance(market.distance_km)}
-            </span>
+            {/* Sem localização do usuário não há distância: melhor omitir do que
+                mostrar "indisponível" em verde em todo card. */}
+            {market.distance_km !== null ? (
+              <span className="text-body font-medium text-brand-600">{formatDistance(market.distance_km)}</span>
+            ) : (
+              <span />
+            )}
             {market.is_verified && (
               <span className="flex items-center gap-1 text-caption font-medium text-neutral-500">
                 <BadgeCheck className="h-4 w-4 text-brand-500" aria-hidden="true" />

@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { PriceTag } from "@/components/shared/price-tag";
 import { FavoriteButton } from "@/components/shared/favorite-button";
 import { ShareButton } from "@/components/shared/share-button";
+import { ReportDialog } from "@/components/shared/report-dialog";
 
 interface OfferPageProps {
   params: Promise<{ id: string }>;
@@ -83,6 +84,7 @@ export default async function OfferPage({ params }: OfferPageProps) {
                 <Navigation className="h-4 w-4" /> Rota até o mercado
               </Button>
             )}
+            <ReportDialog offerId={offer.id} marketId={offer.market_id} defaultReason="preco_incorreto" />
           </div>
 
           <p className="text-caption text-neutral-500">

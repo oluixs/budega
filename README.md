@@ -65,6 +65,7 @@ pnpm dev:mobile     # só o mobile (abre o Metro bundler / QR code do Expo)
 | `pnpm lint` | Roda o lint de todos os pacotes (web, mobile, shared, supabase) |
 | `pnpm typecheck` | Roda `tsc --noEmit` em todos os pacotes |
 | `pnpm test` | Roda os testes automatizados (Vitest) de `shared`, `web` e `supabase` (migrations + RLS num Postgres em memória, sem credenciais) |
+| `pnpm --filter @budega/web test:e2e` | Builda a web e roda os testes end-to-end no Chromium (desktop + celular, modo mock); screenshots em `apps/web/test-results/screens/`. Na 1ª vez: `pnpm --filter @budega/web exec playwright install chromium` |
 | `pnpm audit:preflight -- <termo>` | Busca mudanças/erros relacionados a um termo antes de alterar algo |
 | `pnpm audit:change` / `pnpm audit:error` | Cria um novo registro de mudança/erro em `.audit/` |
 | `pnpm audit:validate` | Valida se todos os registros de `.audit/` têm os campos obrigatórios |
@@ -85,8 +86,9 @@ pnpm dev:mobile     # só o mobile (abre o Metro bundler / QR code do Expo)
    ```
 
    O script só aplica os arquivos que ainda não rodaram. **Se você já tinha aplicado a
-   `0001`, rode de novo** para aplicar a `0002_security_hardening.sql` — ela fecha
-   falhas graves de permissão da 0001 (ver `.audit/errors/2026-09-29/`).
+   `0001`, rode de novo** para aplicar a `0002_security_hardening.sql` (fecha falhas
+   graves de permissão da 0001 — ver `.audit/errors/2026-09-29/`) e a
+   `0003_admin_user_management.sql` (tela de usuários).
 
    Depois, em **Authentication > URL Configuration**, adicione
    `http://localhost:3000/auth/callback` (e o endereço de produção + `/auth/callback`)
@@ -111,10 +113,10 @@ pnpm dev:mobile     # só o mobile (abre o Metro bundler / QR code do Expo)
    where id = (select id from auth.users where email = 'seu-email@exemplo.com');
    ```
 
-   Para liberar o painel a quem cuida de um mercado: `role = 'market_manager'` no
-   perfil da pessoa e `owner_id` do mercado apontando para ela
-   (`update markets set owner_id = '<uuid>' where slug = '<slug>';`). Um responsável
-   também pode cadastrar mercados novos pelo painel — ele vira o dono automaticamente.
+   Isso só é necessário para o **primeiro** admin. Depois, em `/admin/usuarios`, o admin
+   muda a permissão de qualquer pessoa para "Responsável por mercado" e atribui os
+   mercados dela. Um responsável também pode cadastrar mercados novos pelo painel — ele
+   vira o dono automaticamente.
 
 ### Acesso ao painel `/admin`
 
@@ -205,12 +207,10 @@ conhecidos. Depois de qualquer mudança, registre-a com `pnpm audit:change`.
 
 ## Limitações conhecidas e próximos passos
 
-- **Nenhuma verificação visual real** foi feita nesta sessão — nem no navegador (Chrome
-  DevTools MCP não estava disponível), nem no celular (sem Android SDK/emulador no
-  ambiente). A validação foi feita via build de produção, testes automatizados, lint,
-  `expo-doctor`, `expo export` (bundle completo sem erros) e requisições HTTP diretas
-  contra o servidor `next dev`. Antes de considerar o MVP pronto para usuários reais,
-  abra a web num navegador de verdade e o app no Expo Go/emulador.
+- **Web**: verificada num navegador real (Chromium via Playwright, desktop e celular,
+  em modo mock) — 44 testes e2e e screenshots revisadas. **App mobile**: ainda sem
+  verificação visual em aparelho/emulador (ambiente sem Android SDK); validado por
+  `tsc`, lint e `expo export` (bundle completo). Abra no Expo Go antes de publicar.
 - **Mapa interativo** (Google Maps/`react-native-maps`) não foi implementado — tanto a
   web quanto o mobile mostram uma lista com distância, endereço e botão de rota externa
   como fallback, mesmo com uma chave de mapa configurada. Fica como próximo passo.
@@ -218,14 +218,14 @@ conhecidos. Depois de qualquer mudança, registre-a com `pnpm audit:change`.
   ambiente). A lógica de sessão/proxy/permissões tem testes com o cliente simulado e as
   migrations rodam num Postgres real em memória (PGlite), mas o primeiro uso com um
   projeto de verdade deve ser acompanhado.
-- **Promover usuários e atribuir mercados** a responsáveis é pelo SQL Editor (ver
-  "Configurando o Supabase real"); não há tela de usuários no painel.
+- **Primeiro admin** é promovido pelo SQL Editor (por segurança não há auto-promoção);
+  os demais usuários são gerenciados em `/admin/usuarios`.
 - **Upload de arquivos**: encartes e imagens de oferta são informados por URL; não há
   upload para o Supabase Storage ainda.
 - **Métricas do dashboard** (visualizações, cliques em rota/telefone/WhatsApp): a tabela
   `analytics_events` existe, mas os apps ainda não registram eventos.
-- Testes automatizados: `packages/shared`, `packages/supabase` (migrations + RLS) e
-  `apps/web` — ainda não há testes automatizados no `apps/mobile`.
+- Testes automatizados: `packages/shared`, `packages/supabase` (migrations + RLS),
+  `apps/web` (unitários + e2e) — ainda não há testes automatizados no `apps/mobile`.
 - Web e mobile usam versões de Tailwind diferentes (v4 vs. v3/NativeWind) — os tokens de
   cor são mantidos sincronizados manualmente entre `DESIGN.md`,
   `apps/web/src/app/globals.css` e `apps/mobile/tailwind.config.js`.

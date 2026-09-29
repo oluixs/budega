@@ -147,6 +147,54 @@ export async function updateMarket(marketId: string, values: MarketFormValues): 
   return { success: true, message: "Mercado atualizado." };
 }
 
+const USER_ROLES = ["user", "market_manager", "admin"] as const;
+
+/** Promove/rebaixa um usuário. Só admin; ninguém muda a própria role (evita se trancar fora). */
+export async function setUserRole(userId: string, role: (typeof USER_ROLES)[number]): Promise<ActionResult> {
+  if (typeof userId !== "string" || !userId || !isOneOf(USER_ROLES, role)) return INVALID;
+  if (isMock) return mockResult("Permissão atualizada.");
+
+  const auth = await authorize({ adminOnly: true });
+  if (!auth.ok) return auth.result;
+  if (auth.user.id === userId) {
+    return { success: false, message: "Você não pode alterar a sua própria permissão." };
+  }
+
+  const { data, error } = await auth.supabase.from("profiles").update({ role }).eq("id", userId).select("id");
+  if (error) return failure(error);
+  if (!data?.length) return NOT_FOUND;
+  revalidatePath("/admin/usuarios");
+  return { success: true, message: "Permissão atualizada." };
+}
+
+/**
+ * Define o responsável por um mercado (`ownerId` nulo = sem responsável). A pessoa
+ * precisa ser responsável por mercado ou admin — promova antes em /admin/usuarios.
+ */
+export async function assignMarketOwner(marketId: string, ownerId: string | null): Promise<ActionResult> {
+  if (typeof marketId !== "string" || !marketId) return INVALID;
+  if (ownerId !== null && (typeof ownerId !== "string" || !ownerId)) return INVALID;
+  if (isMock) return mockResult("Responsável atualizado.");
+
+  const auth = await authorize({ adminOnly: true });
+  if (!auth.ok) return auth.result;
+
+  if (ownerId) {
+    const { data: profile } = await auth.supabase.from("profiles").select("role").eq("id", ownerId).maybeSingle<{ role: string }>();
+    if (!profile) return NOT_FOUND;
+    if (profile.role === "user") {
+      return { success: false, message: "Promova a pessoa a responsável por mercado antes de atribuir." };
+    }
+  }
+
+  const { data, error } = await auth.supabase.from("markets").update({ owner_id: ownerId }).eq("id", marketId).select("id");
+  if (error) return failure(error);
+  if (!data?.length) return NOT_FOUND;
+  revalidatePath("/admin/usuarios");
+  revalidatePath("/admin/mercados");
+  return { success: true, message: "Responsável atualizado." };
+}
+
 export async function createBranch(values: BranchFormValues): Promise<ActionResult> {
   const parsed = branchFormSchema.safeParse(values);
   if (!parsed.success) return { success: false, message: "Dados da filial inválidos." };

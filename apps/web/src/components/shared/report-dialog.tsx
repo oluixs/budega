@@ -88,20 +88,20 @@ export function ReportDialog({ marketId, offerId, flyerId, defaultReason }: Repo
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Motivo</FormLabel>
-                  <FormControl>
-                    <Select value={field.value} onValueChange={field.onChange} items={REASON_LABELS}>
+                  <Select value={field.value} onValueChange={field.onChange} items={REASON_LABELS}>
+                    <FormControl>
                       <SelectTrigger className="w-full">
                         <SelectValue />
                       </SelectTrigger>
-                      <SelectContent>
-                        {Object.entries(REASON_LABELS).map(([value, label]) => (
-                          <SelectItem key={value} value={value}>
-                            {label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </FormControl>
+                    </FormControl>
+                    <SelectContent>
+                      {Object.entries(REASON_LABELS).map(([value, label]) => (
+                        <SelectItem key={value} value={value}>
+                          {label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
                 </FormItem>
               )}

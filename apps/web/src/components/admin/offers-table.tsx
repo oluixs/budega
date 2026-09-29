@@ -109,7 +109,11 @@ export function OffersTable({ offers, markets, categories }: OffersTableProps) {
                           valid_until: offer.valid_until.slice(0, 10),
                           is_featured: offer.is_featured,
                         }}
-                        trigger={<Copy className="h-4 w-4" />}
+                        trigger={
+                          <>
+                            <Copy className="h-4 w-4" aria-hidden="true" /> Duplicar
+                          </>
+                        }
                       />
                     </div>
                   </TableCell>

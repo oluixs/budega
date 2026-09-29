@@ -125,6 +125,38 @@ describe("profiles", () => {
   });
 });
 
+describe("admin_list_users (0003)", () => {
+  it("admin lista usuários com e-mail e role", async () => {
+    const { rows } = await as("authenticated", ADMIN_ID, () =>
+      db.query<{ email: string; role: string }>("select email, role from admin_list_users()"),
+    );
+    expect(rows.map((row) => row.email)).toEqual(
+      expect.arrayContaining(["user@example.com", "other@example.com", "admin@example.com"]),
+    );
+  });
+
+  it("usuário comum e anônimo NÃO listam usuários (e-mails ficam protegidos)", async () => {
+    await rejects(as("authenticated", USER_ID, () => db.query("select * from admin_list_users()")));
+    await rejects(as("anon", null, () => db.query("select * from admin_list_users()")));
+  });
+
+  it("admin atribui mercado a um responsável; o próprio responsável não consegue", async () => {
+    const seed = buildSeedRows();
+    const marketId = seed.markets[1]!.id;
+    // Sem ser dono, o RLS nem enxerga a linha para UPDATE: 0 linhas alteradas.
+    const attempt = await as("authenticated", OTHER_USER_ID, () =>
+      db.query("update markets set owner_id = $1 where id = $2", [OTHER_USER_ID, marketId]),
+    );
+    expect(attempt.affectedRows ?? 0).toBe(0);
+
+    await as("authenticated", ADMIN_ID, () =>
+      db.query("update markets set owner_id = $1 where id = $2", [OTHER_USER_ID, marketId]),
+    );
+    const { rows } = await db.query<{ owner_id: string }>("select owner_id from markets where id = $1", [marketId]);
+    expect(rows[0]!.owner_id).toBe(OTHER_USER_ID);
+  });
+});
+
 describe("markets", () => {
   const newMarket = (overrides: Record<string, unknown> = {}) => ({
     name: "Mercado Teste",

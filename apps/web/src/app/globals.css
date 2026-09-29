@@ -111,6 +111,24 @@
   --font-sans: var(--font-sans);
   --font-display: var(--font-sora);
 
+  /* Escala tipográfica do DESIGN.md. Sem estas variáveis, as classes text-display,
+     text-h1 ... text-caption (usadas em ~130 lugares) não geravam CSS nenhum e todo
+     texto saía no mesmo tamanho (ver .audit/errors/2026-09-29/). */
+  --text-display: clamp(2.25rem, 1.75rem + 2vw, 2.75rem); /* 36–44px */
+  --text-display--line-height: 1.1;
+  --text-h1: clamp(1.75rem, 1.5rem + 1vw, 2rem); /* 28–32px */
+  --text-h1--line-height: 1.2;
+  --text-h2: clamp(1.375rem, 1.25rem + 0.5vw, 1.5rem); /* 22–24px */
+  --text-h2--line-height: 1.3;
+  --text-h3: 1.125rem; /* 18px */
+  --text-h3--line-height: 1.4;
+  --text-body-lg: 1rem; /* 16px */
+  --text-body-lg--line-height: 1.6;
+  --text-body: 0.875rem; /* 14px */
+  --text-body--line-height: 1.5;
+  --text-caption: 0.75rem; /* 12px */
+  --text-caption--line-height: 1.4;
+
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: var(--radius);
   --radius-lg: calc(var(--radius) * 1.2);

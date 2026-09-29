@@ -5,6 +5,7 @@ import { FileText, MapPin, Navigation, Phone, Store } from "lucide-react";
 import {
   buildExternalRouteUrl,
   buildWhatsAppUrl,
+  formatDateBR,
   formatRelativeUpdate,
 } from "@budega/shared";
 import {
@@ -17,6 +18,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { FavoriteButton } from "@/components/shared/favorite-button";
+import { ReportDialog } from "@/components/shared/report-dialog";
 import { CategoryPills } from "@/components/shared/category-pills";
 import { EmptyState } from "@/components/shared/empty-state";
 import { MarketHours } from "@/components/market/market-hours";
@@ -96,6 +98,7 @@ export default async function MarketPage({ params, searchParams }: MarketPagePro
               WhatsApp
             </Button>
           )}
+          <ReportDialog marketId={market.id} defaultReason="mercado_incorreto" />
         </div>
       </div>
 
@@ -131,7 +134,7 @@ export default async function MarketPage({ params, searchParams }: MarketPagePro
                 <div>
                   <p className="font-medium text-neutral-900">{flyer.title}</p>
                   <p className="text-caption text-neutral-500">
-                    Válido até {formatRelativeUpdate(flyer.valid_until)}
+                    Válido até {formatDateBR(flyer.valid_until)}
                   </p>
                 </div>
               </Link>

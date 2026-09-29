@@ -8,6 +8,15 @@ export interface Profile {
   updated_at: string;
 }
 
+/** Linha de `admin_list_users()` (migration 0003): perfil + e-mail, só para admin. */
+export interface AdminUser {
+  id: string;
+  name: string;
+  email: string;
+  role: UserRole;
+  created_at: string;
+}
+
 export interface OpeningHours {
   /** 0 = domingo ... 6 = sábado */
   day: number;
@@ -18,6 +27,8 @@ export interface OpeningHours {
 
 export interface Market {
   id: string;
+  /** Responsável pelo mercado (profiles.id); nulo = só admin gerencia. */
+  owner_id?: string | null;
   name: string;
   slug: string;
   description: string | null;

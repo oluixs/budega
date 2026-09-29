@@ -88,16 +88,19 @@ function FormLabel({ className, ...props }: React.ComponentProps<typeof Label>) 
   );
 }
 
-function FormControl({ ...props }: React.ComponentProps<"div">) {
+/**
+ * Repassa `id` e `aria-*` para o **próprio** campo filho (como o Slot do shadcn
+ * clássico). Antes envolvia o campo num <div id>, e o <label for> apontava para a div:
+ * nenhum campo tinha nome acessível (ver .audit/errors/2026-09-29/).
+ * Para Select, envolva o <SelectTrigger> — o <Select> do Base UI não é um elemento DOM.
+ */
+function FormControl({ children }: { children: React.ReactElement<Record<string, unknown>> }) {
   const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
-  return (
-    <div
-      id={formItemId}
-      aria-describedby={!error ? formDescriptionId : `${formDescriptionId} ${formMessageId}`}
-      aria-invalid={!!error}
-      {...props}
-    />
-  );
+  return React.cloneElement(children, {
+    id: formItemId,
+    "aria-describedby": !error ? formDescriptionId : `${formDescriptionId} ${formMessageId}`,
+    "aria-invalid": !!error,
+  });
 }
 
 function FormDescription({ className, ...props }: React.ComponentProps<"p">) {

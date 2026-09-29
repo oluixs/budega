@@ -11,11 +11,18 @@ export function formatPercentOff(regularPrice: number, promotionalPrice: number)
   return Math.round(Math.max(0, off));
 }
 
+/**
+ * Fuso fixo: sem ele, a data dependia do fuso de quem renderiza — um servidor em UTC
+ * mostrava "10/10" onde o navegador mostrava "09/10" (texto errado + erro de hidratação).
+ */
+export const APP_TIME_ZONE = "America/Sao_Paulo";
+
 export function formatDateBR(isoDate: string): string {
   return new Intl.DateTimeFormat("pt-BR", {
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
+    timeZone: APP_TIME_ZONE,
   }).format(new Date(isoDate));
 }
 

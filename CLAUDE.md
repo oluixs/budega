@@ -47,6 +47,10 @@ ordem** antes de fazer qualquer alteração:
 - Banco: toda mudança de RLS vem numa migration **nova** e com teste em
   `packages/supabase/tests/migrations.test.ts` (roda em PGlite, sem credenciais).
   Colunas de privilégio/moderação precisam de trigger — policy de linha não protege coluna.
+- Web: antes de dar uma mudança de UI por pronta, rode `pnpm --filter @budega/web test:e2e`
+  (navegador real, falha em erro de console/hidratação) e olhe as screenshots em
+  `apps/web/test-results/screens/`. Novos tokens de tipografia vão no `@theme` do
+  `globals.css` **e** no `createCn` de `lib/utils.ts`. Datas: sempre `formatDateBR`.
 - No Windows/Git Bash, não gere arquivos com `\` (caminhos, regex) por heredoc — o shell
   come as barras; use as ferramentas de edição de arquivo.
 - Sem credenciais Supabase, os apps rodam 100% em modo mock (dados de

@@ -29,7 +29,8 @@ export function MapFallback({ markets }: MapFallbackProps) {
             <div>
               <p className="font-medium text-neutral-900">{market.name}</p>
               <p className="text-body text-neutral-500">
-                {market.address}, {market.neighborhood} · {formatDistance(market.distance_km)}
+                {market.address}, {market.neighborhood}
+                {market.distance_km !== null && ` · ${formatDistance(market.distance_km)}`}
               </p>
             </div>
             <Button

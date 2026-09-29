@@ -8,6 +8,11 @@ import { CategoryPills } from "@/components/shared/category-pills";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
 
+// A home é gerada estaticamente; sem revalidação, uma oferta que vence depois do deploy
+// continuaria aparecendo aqui. Regera no máximo a cada 5 minutos (e na hora, quando o
+// admin altera algo — revalidatePath em admin-actions.ts).
+export const revalidate = 300;
+
 const VALUE_PROPS = [
   {
     icon: Wallet,
@@ -88,7 +93,7 @@ export default async function HomePage() {
             description="Assim que mercados forem cadastrados, eles aparecem aqui."
           />
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {marketsWithDistance.map((market) => (
               <MarketCard key={market.id} market={market} />
             ))}

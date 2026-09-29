@@ -2,6 +2,7 @@ import "server-only";
 import {
   isExpiringSoon,
   mock,
+  type AdminUser,
   type Branch,
   type Flyer,
   type Market,
@@ -60,6 +61,16 @@ export async function getAllOffersAdmin(): Promise<Offer[]> {
   const { data, error } = await query;
   if (error) throw new Error(error.message);
   return data as Offer[];
+}
+
+/** Só admin (a função do banco também recusa outros papéis — migration 0003). */
+export async function getAllUsersAdmin(): Promise<AdminUser[]> {
+  const access = await requireAdminAccess();
+  if (access.status === "mock") return mock.mockUsers;
+  if (!access.isAdmin) return [];
+  const { data, error } = await access.supabase.rpc("admin_list_users");
+  if (error) throw new Error(error.message);
+  return data as AdminUser[];
 }
 
 /** Denúncias são moderadas só por admin (RLS: reports_select_own_or_admin). */

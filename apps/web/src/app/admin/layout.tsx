@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AlertTriangle, FileText, Flag, LayoutDashboard, MapPin, Store, Tag } from "lucide-react";
+import { AlertTriangle, FileText, Flag, LayoutDashboard, MapPin, Store, Tag, Users } from "lucide-react";
 import { requireAdminAccess } from "@/lib/auth";
 import { SignOutButton } from "@/components/auth/sign-out-button";
 
@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { href: "/admin/encartes", label: "Encartes", icon: FileText, adminOnly: false },
   { href: "/admin/ofertas", label: "Ofertas", icon: Tag, adminOnly: false },
   { href: "/admin/denuncias", label: "Denúncias", icon: Flag, adminOnly: true },
+  { href: "/admin/usuarios", label: "Usuários", icon: Users, adminOnly: true },
 ];
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {

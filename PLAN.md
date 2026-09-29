@@ -78,7 +78,8 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
       role no servidor (`lib/auth.ts`), `/acesso-negado`, `/auth/callback`, "Sair".
 - [x] Painel `/admin` (dashboard, mercados, filiais, encartes, ofertas, denúncias).
 - [x] Mercados: cadastrar e editar (2026-09-29), com horário por dia da semana.
-- [ ] Tela de usuários para promover responsáveis e atribuir mercados (hoje via SQL).
+- [x] Tela de usuários (`/admin/usuarios`): permissões e atribuição de mercados
+      (migration 0003). Só o primeiro admin é promovido via SQL.
 - [ ] Upload de encarte/imagem para o Supabase Storage (hoje por URL).
 - [ ] Registrar `analytics_events` (visualizações, cliques) e mostrar no dashboard.
 - [x] Integração React Hook Form + Zod nos formulários administrativos (TanStack Query
@@ -101,20 +102,24 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 - [x] Corrigido: RLS permitia virar admin, forjar mercados/denúncias (migration 0002).
 - [x] Corrigido: admin não funcionaria com Supabase real (sessão só no localStorage).
 - [x] Corrigido: "Suspender mercado" não tinha efeito público.
+- [x] Corrigido (achados no navegador): hidratação em favoritos, labels de formulário
+      desconectados, escala tipográfica inexistente, data sem fuso / validade "agora
+      mesmo", "Denunciar" ausente em mercado/oferta, home estática com ofertas vencidas.
 
 ## Fase 5 — Qualidade
 
-- [x] Testes automatizados: 46 em `packages/shared`, 16 em `packages/supabase`
-      (migrations + RLS em PGlite) e 40 em `apps/web` (inclui proxy, permissões e
-      argumentos forjados nas Server Actions).
+- [x] Testes automatizados: 48 em `packages/shared`, 19 em `packages/supabase`
+      (migrations + RLS em PGlite) e 47 em `apps/web` (inclui proxy, permissões e
+      argumentos forjados nas Server Actions), além dos 44 e2e.
 - [x] Lint, typecheck, build — `pnpm lint`/`pnpm typecheck`/`pnpm build` passam limpos
       nos 4 pacotes do monorepo via turbo.
 - [x] Validação do servidor web via `Invoke-WebRequest` contra `next dev` (sem Chrome
       DevTools MCP, indisponível nesta sessão — ver decisão registrada). Sem inspeção
       visual num navegador real.
-- [ ] Revisão responsiva visual real (desktop/mobile) — não foi possível sem Chrome
-      DevTools MCP/navegador; validado apenas estruturalmente (classes Tailwind
-      responsivas revisadas manualmente no código).
+- [x] Revisão visual real da web (desktop e celular) com Playwright/Chromium:
+      44 testes e2e (`pnpm --filter @budega/web test:e2e`), falham em erro de console
+      ou rolagem horizontal; 6 bugs encontrados e corrigidos (2026-09-29).
+- [ ] Verificação visual do app mobile em Expo Go/emulador.
 - [x] Resumo final de sessão apresentado ao usuário ao final da implementação.
 
 ## Não avançar com a etapa anterior quebrada

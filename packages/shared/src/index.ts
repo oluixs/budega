@@ -5,6 +5,7 @@
 export type {
   UserRole,
   Profile,
+  AdminUser,
   OpeningHours,
   Market,
   Branch,
