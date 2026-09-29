@@ -36,10 +36,11 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 - [x] Inicializar `git init` e configurar monorepo pnpm + Turborepo.
 - [x] Criar `PLAN.md` e `DESIGN.md`.
 - [x] Criar estrutura `.audit/` e scripts de auditoria.
-- [ ] Criar `packages/shared` (tipos, Zod, regras de negócio: distância, validade de
-      oferta/encarte).
+- [x] Criar `packages/shared` (tipos, Zod, regras de negócio: distância, validade de
+      oferta/encarte). 29 testes Vitest passando, typecheck limpo.
 - [ ] Criar `packages/supabase` (migrations, seed mock, cliente).
-- [ ] Popular dados mock (8 mercados, 10 filiais, 30 ofertas, 8 encartes).
+- [x] Popular dados mock (8 mercados, 10 filiais, 30 ofertas, 8 encartes) — em
+      `packages/shared/src/mock/`.
 
 ## Fase 2 — Web pública
 
