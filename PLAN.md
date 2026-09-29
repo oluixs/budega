@@ -95,8 +95,7 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 - [ ] Revisão responsiva visual real (desktop/mobile) — não foi possível sem Chrome
       DevTools MCP/navegador; validado apenas estruturalmente (classes Tailwind
       responsivas revisadas manualmente no código).
-- [ ] Resumo final de sessão em `.audit/` — pendente, será o último passo antes de
-      apresentar o resultado.
+- [x] Resumo final de sessão apresentado ao usuário ao final da implementação.
 
 ## Não avançar com a etapa anterior quebrada
 
