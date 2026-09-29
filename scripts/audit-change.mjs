@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
-import { nowParts, slugify, gitInfo, repoRoot, ensureDir } from "./audit-lib.mjs";
+import { nowParts, slugify, gitInfo, repoRoot, ensureDir, cliText } from "./audit-lib.mjs";
 
-const title = process.argv.slice(2).join(" ").trim() || "Mudanca sem titulo";
+const title = cliText() || "Mudanca sem titulo";
 const { date, stamp } = nowParts();
 const { branch, commit } = gitInfo();
 const slug = slugify(title);

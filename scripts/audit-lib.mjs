@@ -71,3 +71,13 @@ export function listMarkdownFiles(rootDir) {
   }
   return results;
 }
+
+// `pnpm <script> -- <args>` repassa o "--" literal para o node; sem este filtro ele
+// entrava na palavra-chave/título (ver .audit/errors/2026-09-29/).
+export function cliText() {
+  return process.argv
+    .slice(2)
+    .filter((arg) => arg !== "--")
+    .join(" ")
+    .trim();
+}

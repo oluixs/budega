@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
-import { nowParts, slugify, repoRoot, ensureDir } from "./audit-lib.mjs";
+import { nowParts, slugify, repoRoot, ensureDir, cliText } from "./audit-lib.mjs";
 
-const title = process.argv.slice(2).join(" ").trim() || "Erro sem titulo";
+const title = cliText() || "Erro sem titulo";
 const { date, stamp, time } = nowParts();
 const slug = slugify(title);
 

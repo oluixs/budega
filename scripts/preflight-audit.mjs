@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
-import { repoRoot, listMarkdownFiles } from "./audit-lib.mjs";
+import { repoRoot, listMarkdownFiles, cliText } from "./audit-lib.mjs";
 
-const keyword = process.argv.slice(2).join(" ").trim().toLowerCase();
+const keyword = cliText().toLowerCase();
 const root = repoRoot();
 
 const changeFiles = listMarkdownFiles(path.join(root, ".audit", "changes"));
