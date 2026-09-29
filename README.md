@@ -146,6 +146,13 @@ pnpm --filter @budega/web start   # ou aponte a plataforma de deploy para apps/w
 Configure as mesmas variáveis de `.env.example` (prefixo `NEXT_PUBLIC_`) no painel da
 plataforma de deploy escolhida.
 
+## Briefing original do produto
+
+O texto completo do pedido original (que orientou toda a arquitetura, páginas, modelo
+de dados e regras de negócio deste projeto) está preservado em
+[`PROMPT_ORIGINAL.md`](./PROMPT_ORIGINAL.md) — útil para conferir um requisito
+específico ou retomar o projeto em outra máquina/sessão sem perder contexto.
+
 ## Design e identidade visual
 
 A direção visual completa (paleta, tipografia, espaçamento, estados, regras de
