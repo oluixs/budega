@@ -38,7 +38,9 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 - [x] Criar estrutura `.audit/` e scripts de auditoria.
 - [x] Criar `packages/shared` (tipos, Zod, regras de negócio: distância, validade de
       oferta/encarte). 29 testes Vitest passando, typecheck limpo.
-- [ ] Criar `packages/supabase` (migrations, seed mock, cliente).
+- [x] Criar `packages/supabase` (migrations, seed mock, cliente). Migration SQL escrita
+      e revisada, mas **ainda não executada contra um Postgres real** (sem credenciais
+      no ambiente) — ver pendência em `.audit/changes/`.
 - [x] Popular dados mock (8 mercados, 10 filiais, 30 ofertas, 8 encartes) — em
       `packages/shared/src/mock/`.
 
