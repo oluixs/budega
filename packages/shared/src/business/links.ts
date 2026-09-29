@@ -10,6 +10,11 @@ export function buildOfferShareUrl(offerId: string): string {
   return `${WEB_BASE_URL}/ofertas/${offerId}`;
 }
 
+/** Página do site (ex.: "/privacidade") — o app linka as páginas legais, como as lojas exigem. */
+export function buildWebUrl(path: string): string {
+  return `${WEB_BASE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
 export function buildFlyerShareUrl(flyerId: string): string {
   return `${WEB_BASE_URL}/encartes/${flyerId}`;
 }
@@ -22,10 +27,13 @@ export function buildOfferDeepLink(offerId: string): string {
   return `${DEEP_LINK_SCHEME}ofertas/${offerId}`;
 }
 
-export function buildExternalRouteUrl(latitude: number, longitude: number, label?: string): string {
-  const destination = `${latitude},${longitude}`;
-  const params = new URLSearchParams({ api: "1", destination });
-  if (label) params.set("destination_place_id", label);
+/**
+ * Rota no Google Maps até as coordenadas. `destination_place_id` NÃO recebe nome: ele
+ * espera um Place ID do Google (código), e um nome ali fazia o Maps ignorar/errar o
+ * destino. As coordenadas bastam.
+ */
+export function buildExternalRouteUrl(latitude: number, longitude: number): string {
+  const params = new URLSearchParams({ api: "1", destination: `${latitude},${longitude}` });
   return `https://www.google.com/maps/dir/?${params.toString()}`;
 }
 

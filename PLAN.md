@@ -115,7 +115,9 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
       mercado; distância até a loja mais próxima; busca pelos bairros das lojas.
 - [x] Política de Privacidade e Termos revisados (LGPD, Marco Civil, CDC, direitos
       autorais) — falta o responsável preencher `apps/web/src/lib/legal.ts`.
-- [ ] App mobile com dados reais e mapa.
+- [x] App mobile com dados reais, mapa (Leaflet em WebView), capas dos encartes, lojas,
+      links para as páginas legais e texto do pedido de localização em português.
+      Verificado pela versão web do app (Chromium, tamanho de celular).
 - [ ] Outras redes da região.
 - [ ] Ofertas individuais lidas dos encartes (precisa de chave de API de visão).
 - [ ] Emulador Android: SDK instalado; falta ativar o hipervisor (precisa de admin).

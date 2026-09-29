@@ -86,6 +86,13 @@ describe("redes com várias lojas", () => {
     expect(result!.nearest_branch?.id).toBe("perto");
   });
 
+  it("em empate com o endereço principal, informa a loja", () => {
+    // Endereço principal do mercado = a própria loja nº 1 (caso do Cometa).
+    const main = buildMarket({ id: "rede", latitude: pinheiros.latitude, longitude: pinheiros.longitude });
+    const [result] = withDistance([main], pinheiros, branches);
+    expect(result!.nearest_branch?.id).toBe("perto");
+  });
+
   it("busca por bairro encontra a rede pelas lojas dela", () => {
     expect(matchesMarketQuery(chain, branches, "pinheiros")).toBe(true);
     expect(matchesMarketQuery(chain, branches, "Moema")).toBe(false);

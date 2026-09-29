@@ -11,7 +11,7 @@ export function OfferCard({ offer, marketName }: { offer: Offer; marketName?: st
       <Link href={`/ofertas/${offer.id}`} asChild>
         <Pressable>
           <View className="h-24 items-center justify-center bg-neutral-100">
-            <Tag color="#8A8375" size={28} />
+            <Tag color="#706A5F" size={28} />
           </View>
           <View className="gap-2 p-4">
             <View className="flex-row items-start justify-between gap-2">

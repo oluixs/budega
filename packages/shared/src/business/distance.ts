@@ -63,7 +63,12 @@ export function withDistance(
     for (const branch of branches) {
       if (branch.market_id !== market.id) continue;
       const distance = calculateDistanceKm(origin, branch);
-      if (distance !== null && (best.distance === null || distance < best.distance)) best = { distance, branch };
+      if (distance === null) continue;
+      // Empate com o endereço principal (que costuma ser uma das lojas): a loja vence,
+      // para o card dizer qual unidade é a mais próxima.
+      const closer = best.distance === null || distance < best.distance;
+      const tieWithMain = best.branch === null && distance === best.distance;
+      if (closer || tieWithMain) best = { distance, branch };
     }
     return { ...market, distance_km: best.distance, nearest_branch: best.branch };
   });

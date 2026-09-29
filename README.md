@@ -173,6 +173,29 @@ Escaneie o QR code exibido no terminal com o app **Expo Go** (Android) ou pela c
 iPhone. O app pedirá permissão de localização ao tocar em "Usar minha localização" — se
 negada, a busca continua funcionando por texto (bairro/cidade).
 
+- **Dados**: o app mostra os mercados e encartes reais da região a partir do retrato
+  embutido (`pnpm importar`). Com a web publicada, defina `EXPO_PUBLIC_API_URL`
+  (ex.: `https://seu-dominio`) para o app buscar os dados sempre atualizados em
+  `/api/regional`.
+- **Mapa**: Leaflet + OpenStreetMap dentro de uma WebView (funciona no Expo Go, sem chave).
+- **Pré-visualizar no navegador** (sem celular/emulador): `cd apps/mobile && npx expo start --web`.
+  O mapa usa um iframe nesse modo.
+
+### Emulador Android neste computador
+
+O Android SDK, o JDK 17 e um celular virtual (`Budega_Pixel`, Android 15) já estão
+instalados em `%LOCALAPPDATA%\Android\Sdk`. Falta **uma ação de administrador** para o
+emulador rodar com aceleração (sem ela ele não inicia):
+
+1. Abra "Ativar ou desativar recursos do Windows", marque **Plataforma do Hipervisor do
+   Windows** e reinicie o computador; **ou**
+2. Instale o driver do emulador: `sdkmanager "extras;google;Android_Emulator_Hypervisor_Driver"`
+   e execute como administrador o `silent_install.bat` da pasta
+   `%LOCALAPPDATA%\Android\Sdk\extras\google\Android_Emulator_Hypervisor_Driver`.
+
+Depois: `%LOCALAPPDATA%\Android\Sdk\emulator\emulator.exe -avd Budega_Pixel` e, com o
+emulador aberto, `pnpm dev:mobile` e a tecla `a` (abre no Android).
+
 ## Gerando builds Android e iPhone com EAS
 
 O projeto já tem `apps/mobile/eas.json` com os perfis `development`, `preview` e

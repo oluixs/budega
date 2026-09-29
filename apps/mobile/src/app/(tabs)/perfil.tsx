@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Alert, Pressable, ScrollView, Text, TextInput, View } from "react-native";
-import { authSchema } from "@budega/shared";
+import { Alert, Linking, Pressable, ScrollView, Text, TextInput, View } from "react-native";
+import { authSchema, buildWebUrl } from "@budega/shared";
 import { isMock, supabase } from "@/lib/supabase";
 
 export default function PerfilScreen() {
@@ -66,10 +66,22 @@ export default function PerfilScreen() {
       </View>
 
       <View className="gap-1 border-t border-neutral-200 pt-4">
-        <Text className="text-neutral-500">Budega v1.0.0</Text>
-        <Text className="text-neutral-500">
-          Consulte a Política de Privacidade e os Termos de Uso na versão web do Budega.
+        {/* Google Play e App Store exigem acesso à política de privacidade dentro do app. */}
+        <Text
+          accessibilityRole="link"
+          onPress={() => Linking.openURL(buildWebUrl("/privacidade"))}
+          className="py-2 font-medium text-brand-600 underline"
+        >
+          Política de Privacidade
         </Text>
+        <Text
+          accessibilityRole="link"
+          onPress={() => Linking.openURL(buildWebUrl("/termos"))}
+          className="py-2 font-medium text-brand-600 underline"
+        >
+          Termos de Uso
+        </Text>
+        <Text className="mt-2 text-neutral-500">Budega v1.0.0</Text>
       </View>
     </ScrollView>
   );

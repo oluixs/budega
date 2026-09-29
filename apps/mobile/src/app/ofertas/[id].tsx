@@ -42,7 +42,7 @@ export default function OfferDetailScreen() {
   return (
     <ScrollView className="flex-1 bg-neutral-50" contentContainerClassName="pb-10">
       <View className="h-48 items-center justify-center bg-neutral-100">
-        <Tag size={48} color="#8A8375" />
+        <Tag size={48} color="#706A5F" />
       </View>
       <View className="gap-4 p-4">
         <View className="flex-row items-start justify-between gap-2">
@@ -91,7 +91,7 @@ export default function OfferDetailScreen() {
           </Pressable>
           {market && (
             <Pressable
-              onPress={() => Linking.openURL(buildExternalRouteUrl(market.latitude, market.longitude, market.name))}
+              onPress={() => Linking.openURL(buildExternalRouteUrl(market.latitude, market.longitude))}
               className="flex-row items-center gap-2 rounded-full bg-brand-500 px-4 py-2"
             >
               <Navigation size={16} color="#fff" />

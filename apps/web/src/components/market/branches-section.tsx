@@ -21,7 +21,7 @@ export function BranchesSection({ market, branches }: { market: Market; branches
           )}
           <p className="mt-2 flex flex-wrap gap-4 text-body font-medium">
             <a
-              href={buildExternalRouteUrl(branch.latitude, branch.longitude, branch.name)}
+              href={buildExternalRouteUrl(branch.latitude, branch.longitude)}
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-1 text-brand-600 hover:underline"
@@ -51,7 +51,7 @@ export function BranchesSection({ market, branches }: { market: Market; branches
           longitude: branch.longitude,
           title: branch.name,
           subtitle: [branch.address, branch.neighborhood].filter(Boolean).join(" — "),
-          routeUrl: buildExternalRouteUrl(branch.latitude, branch.longitude, branch.name),
+          routeUrl: buildExternalRouteUrl(branch.latitude, branch.longitude),
         }))}
         fallbackCenter={market}
         label={`Mapa das lojas de ${market.name}`}

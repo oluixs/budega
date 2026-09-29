@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ActivityIndicator, Image, Pressable, ScrollView, Share, Text, View } from "react-native";
+import { ActivityIndicator, Image, Linking, Pressable, ScrollView, Share, Text, View } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { ChevronLeft, ChevronRight, FileText, ZoomIn, ZoomOut } from "lucide-react-native";
 import { buildFlyerShareUrl, formatDateBR, type Flyer } from "@budega/shared";
@@ -40,6 +40,7 @@ export default function FlyerDetailScreen() {
     );
   }
 
+  const image = flyer.file_type === "image" ? flyer.file_url : flyer.cover_url;
   const currentIndex = siblings.findIndex((item) => item.id === flyer.id);
   const previous = currentIndex > 0 ? siblings[currentIndex - 1] : null;
   const next = currentIndex >= 0 && currentIndex < siblings.length - 1 ? siblings[currentIndex + 1] : null;
@@ -64,21 +65,54 @@ export default function FlyerDetailScreen() {
           <ReportModal flyerId={flyer.id} defaultReason="encarte_ilegivel" />
         </View>
 
-        <Pressable
-          onPress={() => setZoomed((value) => !value)}
-          className="flex-row items-center gap-2 self-end rounded-full border border-neutral-300 px-3 py-2"
-        >
-          {zoomed ? <ZoomOut size={16} color="#124A2F" /> : <ZoomIn size={16} color="#124A2F" />}
-          <Text className="font-medium text-neutral-900">{zoomed ? "Diminuir" : "Ampliar"}</Text>
-        </Pressable>
+        {flyer.description && <Text className="text-sm text-neutral-500">{flyer.description}</Text>}
 
-        <ScrollView horizontal={zoomed} className="max-h-[70vh] rounded-xl border border-neutral-300 bg-neutral-100">
-          <Image
-            source={{ uri: flyer.file_url }}
-            style={{ width: zoomed ? 600 : 360, height: zoomed ? 840 : 504 }}
-            resizeMode="contain"
-          />
-        </ScrollView>
+        <View className="flex-row flex-wrap items-center justify-between gap-2">
+          {/* PDF: mostramos a capa e abrimos o arquivo original (o app não renderiza PDF). */}
+          {flyer.file_type === "pdf" ? (
+            <Pressable
+              onPress={() => Linking.openURL(flyer.file_url)}
+              accessibilityRole="link"
+              className="min-h-11 flex-row items-center gap-2 rounded-full bg-brand-500 px-4"
+            >
+              <FileText size={16} color="#FFFFFF" />
+              <Text className="font-medium text-white">Ver encarte completo (PDF)</Text>
+            </Pressable>
+          ) : (
+            <View />
+          )}
+          {image && (
+            <Pressable
+              onPress={() => setZoomed((value) => !value)}
+              accessibilityRole="button"
+              className="min-h-11 flex-row items-center gap-2 rounded-full border border-neutral-300 px-3"
+            >
+              {zoomed ? <ZoomOut size={16} color="#124A2F" /> : <ZoomIn size={16} color="#124A2F" />}
+              <Text className="font-medium text-neutral-900">{zoomed ? "Diminuir" : "Ampliar"}</Text>
+            </Pressable>
+          )}
+        </View>
+
+        {image && (
+          <ScrollView horizontal={zoomed} className="max-h-[70vh] rounded-xl border border-neutral-300 bg-neutral-100">
+            <Image
+              source={{ uri: image }}
+              accessibilityLabel={flyer.file_type === "pdf" ? `Primeira página do encarte ${flyer.title}` : `Encarte ${flyer.title}`}
+              style={{ width: zoomed ? 600 : 360, height: zoomed ? 858 : 514 }}
+              resizeMode="contain"
+            />
+          </ScrollView>
+        )}
+
+        {flyer.source_url && (
+          <Text className="text-xs text-neutral-500">
+            Encarte publicado pelo mercado no{" "}
+            <Text accessibilityRole="link" onPress={() => Linking.openURL(flyer.source_url!)} className="font-medium text-brand-600 underline">
+              site oficial
+            </Text>
+            . O Budega apenas reúne os encartes; preços e condições são de responsabilidade do mercado.
+          </Text>
+        )}
 
         {(previous || next) && (
           <View className="flex-row items-center justify-between pt-2">

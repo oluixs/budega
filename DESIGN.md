@@ -37,7 +37,7 @@ Base neutra quente (não cinza puro de dashboard) + verde como cor de marca
 | `--color-neutral-50`   | `#FAF8F5` | fundo de página (branco quente)                |
 | `--color-neutral-100`  | `#F0ECE6` | fundo alternado, bordas suaves                 |
 | `--color-neutral-300`  | `#D8D2C7` | bordas padrão                                  |
-| `--color-neutral-500`  | `#8A8375` | texto secundário                               |
+| `--color-neutral-500`  | `#706A5F` | texto secundário (5,4:1 no branco — AA; era `#8A8375`, 3,8:1, reprovado em 29/09/2026) |
 | `--color-neutral-700`  | `#4A463D` | texto padrão                                   |
 | `--color-neutral-900`  | `#211F1A` | títulos, texto de alto contraste               |
 
@@ -109,6 +109,9 @@ Espaço entre seções da home/explorar: `48px` (mobile) / `64px` (desktop).
 ## Acessibilidade
 
 - Contraste mínimo AA (4.5:1 para texto normal, 3:1 para texto grande/ícones).
+  Atenção: `--color-warning` (#B8871E, 3,2:1 no branco) **não** serve para texto comum —
+  use-o só em ícones/bordas/fundos com texto em `neutral-700`/`neutral-900`. Calcule o
+  contraste de qualquer cor nova antes de usá-la em texto.
 - Todo ícone interativo isolado precisa de `aria-label` (web) / `accessibilityLabel` (RN).
 - Foco visível sempre (nunca `outline: none` sem substituto).
 - Preço promocional nunca comunicado só por cor — sempre com o texto "Oferta"/"-XX%".

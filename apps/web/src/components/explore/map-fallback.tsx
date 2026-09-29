@@ -34,7 +34,7 @@ export function MapFallback({ markets }: MapFallbackProps) {
               size="sm"
               render={
                 <a
-                  href={buildExternalRouteUrl(market.latitude, market.longitude, market.name)}
+                  href={buildExternalRouteUrl(market.latitude, market.longitude)}
                   target="_blank"
                   rel="noreferrer"
                 />

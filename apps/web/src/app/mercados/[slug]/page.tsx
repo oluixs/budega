@@ -99,7 +99,7 @@ export default async function MarketPage({ params, searchParams }: MarketPagePro
           <Button
             variant="outline"
             render={
-              <a href={buildExternalRouteUrl(market.latitude, market.longitude, market.name)} target="_blank" rel="noreferrer" />
+              <a href={buildExternalRouteUrl(market.latitude, market.longitude)} target="_blank" rel="noreferrer" />
             }
           >
             <Navigation className="h-4 w-4" /> Rota

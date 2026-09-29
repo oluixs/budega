@@ -99,7 +99,7 @@ export default async function ExplorarPage({ searchParams }: ExplorarPageProps) 
       title: place === market ? market.name : place.name,
       subtitle: [place.address, place.neighborhood].filter(Boolean).join(" — "),
       href: `/mercados/${market.slug}`,
-      routeUrl: buildExternalRouteUrl(place.latitude, place.longitude, place.name),
+      routeUrl: buildExternalRouteUrl(place.latitude, place.longitude),
     }));
   });
 

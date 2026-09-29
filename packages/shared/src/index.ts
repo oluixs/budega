@@ -103,6 +103,7 @@ export {
   buildMarketShareUrl,
   buildOfferShareUrl,
   buildFlyerShareUrl,
+  buildWebUrl,
   buildMarketDeepLink,
   buildOfferDeepLink,
   buildExternalRouteUrl,

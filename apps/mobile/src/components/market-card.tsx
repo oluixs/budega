@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from "react-native";
+import { Image, Pressable, Text, View } from "react-native";
 import { Link } from "expo-router";
 import { BadgeCheck, MapPin, Store } from "lucide-react-native";
 import { formatDistance, type MarketWithDistance } from "@budega/shared";
@@ -8,7 +8,11 @@ export function MarketCard({ market }: { market: MarketWithDistance }) {
     <Link href={`/mercados/${market.slug}`} asChild>
       <Pressable className="mb-3 overflow-hidden rounded-xl border border-neutral-300 bg-white">
         <View className="h-24 items-center justify-center bg-brand-50">
-          <Store color="#175C3A" size={32} />
+          {market.logo_url ? (
+            <Image source={{ uri: market.logo_url }} accessibilityLabel={`Logo ${market.name}`} className="h-16 w-32" resizeMode="contain" />
+          ) : (
+            <Store color="#175C3A" size={32} />
+          )}
         </View>
         <View className="gap-2 p-4">
           <View className="flex-row items-start justify-between gap-2">
@@ -20,9 +24,11 @@ export function MarketCard({ market }: { market: MarketWithDistance }) {
             )}
           </View>
           <View className="flex-row items-center gap-1">
-            <MapPin size={14} color="#8A8375" />
+            <MapPin size={14} color="#706A5F" />
             <Text className="text-neutral-500">
-              {market.neighborhood}, {market.city}
+              {market.nearest_branch
+                ? `Mais perto: ${market.nearest_branch.name}`
+                : [market.neighborhood, market.city].filter(Boolean).join(", ")}
             </Text>
           </View>
           <View className="flex-row items-center justify-between pt-1">

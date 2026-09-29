@@ -28,7 +28,14 @@
     "plugins": [
       "expo-router",
       "expo-status-bar",
-      "expo-location"
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "O Budega usa sua localização, só enquanto você usa o app, para mostrar os mercados e as lojas mais próximos de você.",
+          "isIosBackgroundLocationEnabled": false,
+          "isAndroidBackgroundLocationEnabled": false
+        }
+      ]
     ]
   }
 }

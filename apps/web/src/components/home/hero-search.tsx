@@ -61,7 +61,7 @@ export function HeroSearch() {
         </Button>
       </div>
       {geolocation.errorMessage && (
-        <p className="w-full text-caption text-warning sm:basis-full" role="alert">
+        <p className="w-full text-body font-medium text-neutral-900 sm:basis-full" role="alert">
           {geolocation.errorMessage}
         </p>
       )}

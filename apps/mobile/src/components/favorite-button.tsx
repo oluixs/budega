@@ -21,7 +21,7 @@ export function FavoriteButton({ marketId, offerId, size = 20 }: FavoriteButtonP
       accessibilityLabel={active ? "Remover dos favoritos" : "Adicionar aos favoritos"}
       className="h-10 w-10 items-center justify-center rounded-full bg-white/90"
     >
-      <Heart size={size} color={active ? "#E2612E" : "#8A8375"} fill={active ? "#E2612E" : "transparent"} />
+      <Heart size={size} color={active ? "#E2612E" : "#706A5F"} fill={active ? "#E2612E" : "transparent"} />
     </Pressable>
   );
 }
