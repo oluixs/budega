@@ -1,0 +1,31 @@
+{
+  "name": "budega",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Budega - encontre mercados perto de voce e as melhores ofertas.",
+  "packageManager": "pnpm@10.15.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:web": "turbo run dev --filter=@budega/web",
+    "dev:mobile": "turbo run dev --filter=@budega/mobile",
+    "build": "turbo run build",
+    "build:web": "turbo run build --filter=@budega/web",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "audit:preflight": "node scripts/preflight-audit.mjs",
+    "audit:change": "node scripts/audit-change.mjs",
+    "audit:error": "node scripts/audit-error.mjs",
+    "audit:validate": "node scripts/validate-audit.mjs",
+    "supabase:migrate": "node scripts/supabase-migrate.mjs",
+    "supabase:seed": "node scripts/supabase-seed.mjs"
+  },
+  "devDependencies": {
+    "shadcn": "^4.21.0",
+    "turbo": "^2.3.0",
+    "typescript": "^5.7.0"
+  }
+}
