@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Store } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "@/components/layout/mobile-nav";
+import { HeaderAccount } from "@/components/layout/header-account";
 
 const NAV_LINKS = [
   { href: "/explorar", label: "Explorar" },
@@ -32,9 +33,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <Button variant="ghost" render={<Link href="/entrar" />}>
-            Entrar
-          </Button>
+          <HeaderAccount />
           <Button render={<Link href="/explorar" />}>Encontrar mercados</Button>
         </div>
 

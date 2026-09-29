@@ -80,6 +80,10 @@ export {
   weeklyHours,
 } from "./business/hours";
 
+export { isMarketPublic, filterPublicMarkets, filterByPublicMarkets } from "./business/visibility";
+
+export { slugify } from "./business/slug";
+
 export {
   addLocalFavorite,
   removeLocalFavorite,

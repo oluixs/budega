@@ -70,19 +70,22 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 
 ## Fase 4 — Backend e administração
 
-- [x] Migrations Supabase + RLS (escritas e revisadas; ainda não executadas contra um
-      Postgres real — sem credenciais no ambiente).
-- [x] Autenticação (roles: user, market_manager, admin) — schema e RLS prontos;
-      `/entrar`/`/cadastro` funcionam com Supabase Auth real quando configurado. Falta
-      middleware de redirect para `/admin` sem sessão (ver pendência no registro de
-      mudança do admin).
-- [x] Painel `/admin` (dashboard, mercados, encartes, ofertas, denúncias).
+- [x] Migrations Supabase + RLS. 0001 executada pela primeira vez num Postgres (PGlite)
+      em 2026-09-29: tinha escalonamento de privilégio → corrigido na
+      `0002_security_hardening.sql`, com 16 testes de RLS.
+- [x] Autenticação (roles: user, market_manager, admin) com sessão em cookie
+      (`@supabase/ssr`), `src/proxy.ts` redirecionando `/admin` sem sessão, checagem de
+      role no servidor (`lib/auth.ts`), `/acesso-negado`, `/auth/callback`, "Sair".
+- [x] Painel `/admin` (dashboard, mercados, filiais, encartes, ofertas, denúncias).
+- [x] Mercados: cadastrar e editar (2026-09-29), com horário por dia da semana.
+- [ ] Tela de usuários para promover responsáveis e atribuir mercados (hoje via SQL).
+- [ ] Upload de encarte/imagem para o Supabase Storage (hoje por URL).
+- [ ] Registrar `analytics_events` (visualizações, cliques) e mostrar no dashboard.
 - [x] Integração React Hook Form + Zod nos formulários administrativos (TanStack Query
       não foi necessário nesta fase — Server Actions + `revalidatePath` cobriram as
       mutações do admin; pode ser adotado depois para listagens com paginação real).
 - [x] Gerenciar filiais (branches) no admin — `/admin/filiais` com listagem, busca,
-      filtro por mercado, cadastro e exclusão (2026-09-29). Falta: editar filial e
-      horário diferente por dia da semana.
+      filtro por mercado, cadastro, edição e exclusão, horário por dia (2026-09-29).
 
 ## Retomada em 2026-09-29 (máquina nova)
 
@@ -95,13 +98,15 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 - [x] Corrigido: formulários de oferta/encarte do admin e "Denunciar" nunca enviavam em
       modo mock (schemas exigiam UUID).
 - [x] Corrigido: selects da web mostravam o ID cru no gatilho em vez do nome.
+- [x] Corrigido: RLS permitia virar admin, forjar mercados/denúncias (migration 0002).
+- [x] Corrigido: admin não funcionaria com Supabase real (sessão só no localStorage).
+- [x] Corrigido: "Suspender mercado" não tinha efeito público.
 
 ## Fase 5 — Qualidade
 
-- [x] Testes automatizados: 42 em `packages/shared` (distância, ordenação, validade,
-      favoritos, horários, formulários com IDs mock reais) + 26 em `apps/web` (favoritos,
-      geolocalização/fallback, estado vazio, filtros do admin, filiais, criação de
-      oferta/filial em modo mock).
+- [x] Testes automatizados: 46 em `packages/shared`, 16 em `packages/supabase`
+      (migrations + RLS em PGlite) e 40 em `apps/web` (inclui proxy, permissões e
+      argumentos forjados nas Server Actions).
 - [x] Lint, typecheck, build — `pnpm lint`/`pnpm typecheck`/`pnpm build` passam limpos
       nos 4 pacotes do monorepo via turbo.
 - [x] Validação do servidor web via `Invoke-WebRequest` contra `next dev` (sem Chrome

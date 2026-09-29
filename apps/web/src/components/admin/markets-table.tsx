@@ -13,10 +13,17 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { MarketRowActions } from "@/components/admin/market-row-actions";
+import { MarketFormDialog } from "@/components/admin/market-form-dialog";
 import { EmptyState } from "@/components/shared/empty-state";
 import { SearchX } from "lucide-react";
 
-export function MarketsTable({ markets }: { markets: Market[] }) {
+interface MarketsTableProps {
+  markets: Market[];
+  /** Verificar/destacar/suspender — só admin. */
+  canModerate?: boolean;
+}
+
+export function MarketsTable({ markets, canModerate = false }: MarketsTableProps) {
   const [query, setQuery] = useState("");
 
   const filtered = useMemo(() => {
@@ -29,12 +36,16 @@ export function MarketsTable({ markets }: { markets: Market[] }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <Input
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-        placeholder="Buscar por nome, bairro ou cidade"
-        className="max-w-sm"
-      />
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <Input
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Buscar por nome, bairro ou cidade"
+          aria-label="Buscar mercado"
+          className="max-w-sm"
+        />
+        <MarketFormDialog />
+      </div>
 
       {filtered.length === 0 ? (
         <EmptyState icon={SearchX} title="Nenhum mercado encontrado" />
@@ -64,7 +75,10 @@ export function MarketsTable({ markets }: { markets: Market[] }) {
                     )}
                   </TableCell>
                   <TableCell>
-                    <MarketRowActions market={market} />
+                    <div className="flex flex-wrap gap-2">
+                      <MarketFormDialog market={market} />
+                      {canModerate && <MarketRowActions market={market} />}
+                    </div>
                   </TableCell>
                 </TableRow>
               ))}

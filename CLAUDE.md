@@ -39,6 +39,16 @@ ordem** antes de fazer qualquer alteração:
 - Schemas de formulário em `packages/shared` validam IDs só como string não vazia
   (`recordIdSchema`), nunca `.uuid()` — os IDs mock não são UUIDs. Testes de schema devem
   usar os IDs de `mock`, não UUIDs sintéticos.
+- Web + Supabase: sessão em **cookie** via `@supabase/ssr` (nunca só `localStorage`).
+  No servidor, use `createServerSupabase()` (com sessão) para o admin e `publicSupabase`
+  para páginas públicas. Toda Server Action do admin chama `authorize()` e valida
+  argumentos com allowlist; toda página/função de dados do admin chama
+  `requireAdminAccess()` (layout e página renderizam em paralelo).
+- Banco: toda mudança de RLS vem numa migration **nova** e com teste em
+  `packages/supabase/tests/migrations.test.ts` (roda em PGlite, sem credenciais).
+  Colunas de privilégio/moderação precisam de trigger — policy de linha não protege coluna.
+- No Windows/Git Bash, não gere arquivos com `\` (caminhos, regex) por heredoc — o shell
+  come as barras; use as ferramentas de edição de arquivo.
 - Sem credenciais Supabase, os apps rodam 100% em modo mock (dados de
   `packages/shared/src/mock`) — isso é o padrão e deve continuar funcionando.
 - Não faça `git push`, crie releases nem altere configuração remota sem autorização

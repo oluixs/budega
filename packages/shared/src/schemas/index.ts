@@ -20,30 +20,50 @@ function coordinateSchema(label: "latitude" | "longitude", limit: number) {
     .max(limit, message);
 }
 
-export const openingHoursSchema = z.object({
-  day: z.number().min(0).max(6),
-  opens_at: z.string().nullable(),
-  closes_at: z.string().nullable(),
-  closed: z.boolean(),
-});
+const TIME_PATTERN = /^([01]\d|2[0-3]):[0-5]\d$/;
 
+export const openingHoursSchema = z
+  .object({
+    day: z.number().min(0).max(6),
+    opens_at: z.string().regex(TIME_PATTERN, "Horário inválido").nullable(),
+    closes_at: z.string().regex(TIME_PATTERN, "Horário inválido").nullable(),
+    closed: z.boolean(),
+  })
+  .refine((entry) => entry.closed || (entry.opens_at && entry.closes_at), {
+    message: "Informe abertura e fechamento (ou marque como fechado)",
+  })
+  .refine((entry) => entry.closed || !entry.opens_at || !entry.closes_at || entry.opens_at < entry.closes_at, {
+    message: "O fechamento deve ser depois da abertura",
+  });
+
+/**
+ * Texto opcional de formulário. O input deve mandar `null` quando vazio (não `""`), senão
+ * `.url()`/`.min()` reprovam o campo em branco — ver o erro do OfferFormDialog em
+ * .audit/errors/2026-09-28/.
+ */
+function optionalText(schema: z.ZodString) {
+  return schema.nullable().optional();
+}
+
+/**
+ * Dados editáveis de um mercado. As flags de moderação (is_verified, is_featured,
+ * is_suspended) ficam de fora de propósito: são só do admin e mudam pelas ações da
+ * tabela de mercados (e o banco rejeita se outro papel tentar — migration 0002).
+ */
 export const marketFormSchema = z.object({
   name: z.string().min(2, "Informe o nome do mercado").max(120),
-  description: z.string().max(500).optional().nullable(),
-  logo_url: z.string().url("URL inválida").optional().nullable(),
-  phone: z.string().min(8, "Telefone inválido").optional().nullable(),
-  whatsapp: z.string().min(8, "WhatsApp inválido").optional().nullable(),
+  description: optionalText(z.string().max(500, "Máximo de 500 caracteres")),
+  logo_url: optionalText(z.string().url("URL inválida")),
+  phone: optionalText(z.string().min(8, "Telefone inválido")),
+  whatsapp: optionalText(z.string().min(8, "WhatsApp inválido")),
   address: z.string().min(4, "Informe o endereço"),
   neighborhood: z.string().min(2, "Informe o bairro"),
   city: z.string().min(2, "Informe a cidade"),
   state: z.string().length(2, "UF deve ter 2 letras"),
   postal_code: z.string().min(8, "CEP inválido"),
-  latitude: z.number().min(-90).max(90),
-  longitude: z.number().min(-180).max(180),
+  latitude: coordinateSchema("latitude", 90),
+  longitude: coordinateSchema("longitude", 180),
   opening_hours: z.array(openingHoursSchema).default([]),
-  is_verified: z.boolean().default(false),
-  is_featured: z.boolean().default(false),
-  is_suspended: z.boolean().default(false),
 });
 export type MarketFormValues = z.infer<typeof marketFormSchema>;
 
@@ -57,7 +77,7 @@ export const branchFormSchema = z.object({
   postal_code: z.string().min(8, "CEP inválido"),
   latitude: coordinateSchema("latitude", 90),
   longitude: coordinateSchema("longitude", 180),
-  phone: z.string().optional().nullable(),
+  phone: optionalText(z.string().min(8, "Telefone inválido")),
   opening_hours: z.array(openingHoursSchema).default([]),
 });
 export type BranchFormValues = z.infer<typeof branchFormSchema>;

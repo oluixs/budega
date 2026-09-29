@@ -1,6 +1,75 @@
 import { describe, expect, it } from "vitest";
 import { mock, weeklyHours } from "@budega/shared";
-import { createBranch, createOffer, deleteBranch, setMarketFlag } from "./admin-actions";
+import {
+  createBranch,
+  createMarket,
+  createOffer,
+  deleteBranch,
+  resolveReport,
+  setFlyerStatus,
+  setMarketFlag,
+  setOfferFlag,
+  updateMarket,
+} from "./admin-actions";
+
+const validMarket = {
+  name: "Mercadinho São João",
+  description: null,
+  logo_url: null,
+  phone: null,
+  whatsapp: null,
+  address: "Rua Teste, 10",
+  neighborhood: "Centro",
+  city: "São Paulo",
+  state: "SP",
+  postal_code: "01000-000",
+  latitude: -23.55,
+  longitude: -46.63,
+  opening_hours: weeklyHours("08:00", "20:00", [0]),
+};
+
+// Server Actions são endpoints públicos: argumentos forjados não podem virar nome de
+// coluna no UPDATE (ex.: setMarketFlag(id, "owner_id", ...)).
+describe("admin-actions rejeitam argumentos forjados", () => {
+  it("setMarketFlag recusa coluna fora da allowlist", async () => {
+    // @ts-expect-error — simulando uma chamada forjada
+    const result = await setMarketFlag("mkt-1", "owner_id", true);
+    expect(result).toEqual({ success: false, message: "Ação inválida." });
+  });
+
+  it("setOfferFlag, setFlyerStatus e resolveReport recusam valores fora da allowlist", async () => {
+    // @ts-expect-error — simulando uma chamada forjada
+    expect((await setOfferFlag("off-1", "promotional_price", true)).success).toBe(false);
+    // @ts-expect-error — simulando uma chamada forjada
+    expect((await setFlyerStatus("fly-1", "deleted")).success).toBe(false);
+    // @ts-expect-error — simulando uma chamada forjada
+    expect((await resolveReport("rep-1", "pending")).success).toBe(false);
+  });
+});
+
+describe("createMarket / updateMarket em modo mock", () => {
+  it("cadastra mercado válido e avisa que é demonstração", async () => {
+    const result = await createMarket(validMarket);
+    expect(result.success).toBe(true);
+    expect(result.message).toMatch(/modo demonstração/i);
+  });
+
+  it("recusa horário com fechamento antes da abertura", async () => {
+    const opening_hours = weeklyHours("08:00", "20:00").map((entry) =>
+      entry.day === 1 ? { ...entry, opens_at: "20:00", closes_at: "08:00" } : entry,
+    );
+    expect((await createMarket({ ...validMarket, opening_hours })).success).toBe(false);
+  });
+
+  it("recusa nome sem letras nem números (slug vazio)", async () => {
+    expect((await createMarket({ ...validMarket, name: "!!!" })).success).toBe(false);
+  });
+
+  it("atualiza mercado existente", async () => {
+    const result = await updateMarket(mock.mockMarkets[0]!.id, validMarket);
+    expect(result.success).toBe(true);
+  });
+});
 
 /**
  * Sem credenciais Supabase no ambiente de teste, isMock é sempre true — então estas

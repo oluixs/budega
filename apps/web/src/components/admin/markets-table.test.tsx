@@ -52,6 +52,17 @@ describe("MarketsTable (admin — filtros e busca)", () => {
     expect(screen.queryByText("Empório Vila Madalena")).not.toBeInTheDocument();
   });
 
+  it("responsável por mercado edita, mas não vê verificar/destacar/suspender", () => {
+    render(<MarketsTable markets={markets} />);
+    expect(screen.getByRole("button", { name: "Editar Bom Preço Pinheiros" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /suspender/i })).not.toBeInTheDocument();
+  });
+
+  it("admin vê as ações de moderação", () => {
+    render(<MarketsTable markets={markets} canModerate />);
+    expect(screen.getAllByRole("button", { name: /suspender/i })).toHaveLength(markets.length);
+  });
+
   it("mostra estado vazio quando a busca não encontra nada", async () => {
     const user = userEvent.setup();
     render(<MarketsTable markets={markets} />);

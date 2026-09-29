@@ -21,13 +21,16 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { isMock, supabase } from "@/lib/supabase";
+import { getBrowserSupabase, isMock } from "@/lib/supabase";
+import { safeNextPath } from "@/lib/utils";
 
 interface AuthFormProps {
   mode: "sign-in" | "sign-up";
+  /** Para onde voltar depois do login (ex.: /admin, vindo do proxy). */
+  next?: string;
 }
 
-export function AuthForm({ mode }: AuthFormProps) {
+export function AuthForm({ mode, next }: AuthFormProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const schema = mode === "sign-up" ? signUpSchema : authSchema;
@@ -46,23 +49,30 @@ export function AuthForm({ mode }: AuthFormProps) {
       return;
     }
 
+    const supabase = getBrowserSupabase()!;
+    const destination = safeNextPath(next);
     setLoading(true);
     try {
       if (mode === "sign-up") {
         const { name, email, password } = values as SignUpValues;
-        const { error } = await supabase!.auth.signUp({
+        const { error } = await supabase.auth.signUp({
           email,
           password,
-          options: { data: { name } },
+          options: {
+            data: { name },
+            // O link do e-mail de confirmação volta para cá e /auth/callback cria a sessão.
+            emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(destination)}`,
+          },
         });
         if (error) throw error;
         toast.success("Conta criada! Verifique seu e-mail para confirmar.");
       } else {
         const { email, password } = values as AuthValues;
-        const { error } = await supabase!.auth.signInWithPassword({ email, password });
+        const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
         toast.success("Login realizado com sucesso.");
-        router.push("/");
+        router.push(destination);
+        router.refresh();
       }
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "Não foi possível concluir.");

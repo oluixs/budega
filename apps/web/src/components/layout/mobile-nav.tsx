@@ -11,6 +11,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { HeaderAccount } from "@/components/layout/header-account";
 
 interface MobileNavProps {
   links: { href: string; label: string }[];
@@ -44,9 +45,7 @@ export function MobileNav({ links }: MobileNavProps) {
               </Link>
             ))}
             <div className="mt-4 flex flex-col gap-2">
-              <Button variant="outline" onClick={() => setOpen(false)} render={<Link href="/entrar" />}>
-                Entrar
-              </Button>
+              <HeaderAccount stacked onNavigate={() => setOpen(false)} />
               <Button onClick={() => setOpen(false)} render={<Link href="/explorar" />}>
                 Encontrar mercados
               </Button>

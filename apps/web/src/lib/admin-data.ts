@@ -8,46 +8,69 @@ import {
   type Offer,
   type Report,
 } from "@budega/shared";
-import { isMock, supabase } from "@/lib/supabase";
+import { requireAdminAccess } from "@/lib/auth";
 
 /**
  * Camada de dados do painel admin. Em modo mock, lê os arrays estáticos de
  * packages/shared/src/mock diretamente (sem filtrar por vigência — o admin precisa ver
- * tudo, inclusive pausado/vencido/arquivado). Com Supabase configurado, consulta o
- * banco real sem aplicar os filtros de "ativo" usados na experiência pública.
+ * tudo, inclusive pausado/vencido/arquivado/suspenso). Com Supabase configurado,
+ * consulta o banco **com a sessão do usuário** (cookie), então o RLS devolve o que ele
+ * pode gerenciar; para gerentes de mercado, filtramos ainda pelos mercados dele, já que
+ * o RLS também libera a leitura do conteúdo público dos outros mercados.
+ *
+ * Cada função chama requireAdminAccess(): página e layout do /admin renderizam em
+ * paralelo, então a checagem não pode ficar só no layout.
  */
 
 export async function getAllMarketsAdmin(): Promise<Market[]> {
-  if (isMock) return mock.mockMarkets;
-  const { data, error } = await supabase!.from("markets").select("*").order("name");
+  const access = await requireAdminAccess();
+  if (access.status === "mock") return mock.mockMarkets;
+  let query = access.supabase.from("markets").select("*").order("name");
+  if (access.marketIds) query = query.in("id", access.marketIds);
+  const { data, error } = await query;
   if (error) throw new Error(error.message);
   return data as Market[];
 }
 
 export async function getAllBranchesAdmin(): Promise<Branch[]> {
-  if (isMock) return mock.mockBranches;
-  const { data, error } = await supabase!.from("branches").select("*").order("name");
+  const access = await requireAdminAccess();
+  if (access.status === "mock") return mock.mockBranches;
+  let query = access.supabase.from("branches").select("*").order("name");
+  if (access.marketIds) query = query.in("market_id", access.marketIds);
+  const { data, error } = await query;
   if (error) throw new Error(error.message);
   return data as Branch[];
 }
 
 export async function getAllFlyersAdmin(): Promise<Flyer[]> {
-  if (isMock) return mock.mockFlyers;
-  const { data, error } = await supabase!.from("flyers").select("*").order("created_at", { ascending: false });
+  const access = await requireAdminAccess();
+  if (access.status === "mock") return mock.mockFlyers;
+  let query = access.supabase.from("flyers").select("*").order("created_at", { ascending: false });
+  if (access.marketIds) query = query.in("market_id", access.marketIds);
+  const { data, error } = await query;
   if (error) throw new Error(error.message);
   return data as Flyer[];
 }
 
 export async function getAllOffersAdmin(): Promise<Offer[]> {
-  if (isMock) return mock.mockOffers;
-  const { data, error } = await supabase!.from("offers").select("*").order("created_at", { ascending: false });
+  const access = await requireAdminAccess();
+  if (access.status === "mock") return mock.mockOffers;
+  let query = access.supabase.from("offers").select("*").order("created_at", { ascending: false });
+  if (access.marketIds) query = query.in("market_id", access.marketIds);
+  const { data, error } = await query;
   if (error) throw new Error(error.message);
   return data as Offer[];
 }
 
+/** Denúncias são moderadas só por admin (RLS: reports_select_own_or_admin). */
 export async function getAllReportsAdmin(): Promise<Report[]> {
-  if (isMock) return mock.mockReports;
-  const { data, error } = await supabase!.from("reports").select("*").order("created_at", { ascending: false });
+  const access = await requireAdminAccess();
+  if (access.status === "mock") return mock.mockReports;
+  if (!access.isAdmin) return [];
+  const { data, error } = await access.supabase
+    .from("reports")
+    .select("*")
+    .order("created_at", { ascending: false });
   if (error) throw new Error(error.message);
   return data as Report[];
 }

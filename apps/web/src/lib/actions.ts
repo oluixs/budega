@@ -1,7 +1,8 @@
 "use server";
 
 import { reportFormSchema, type ReportFormValues } from "@budega/shared";
-import { isMock, supabase } from "@/lib/supabase";
+import { isMock } from "@/lib/supabase";
+import { createServerSupabase } from "@/lib/supabase-server";
 
 export interface ActionResult {
   success: boolean;
@@ -23,7 +24,12 @@ export async function submitReport(values: ReportFormValues): Promise<ActionResu
     };
   }
 
-  const { error } = await supabase!.from("reports").insert({
+  // Denunciar não exige login (RLS reports_insert_anyone). Com sessão, a denúncia fica
+  // no nome do usuário; sem sessão, vai anônima — nunca aceitamos user_id do cliente.
+  const supabase = (await createServerSupabase())!;
+  const { data: claimsData } = await supabase.auth.getClaims();
+  const { error } = await supabase.from("reports").insert({
+    user_id: claimsData?.claims?.sub ?? null,
     market_id: parsed.data.market_id ?? null,
     flyer_id: parsed.data.flyer_id ?? null,
     offer_id: parsed.data.offer_id ?? null,

@@ -106,7 +106,10 @@ export function BranchesTable({ branches, markets }: BranchesTableProps) {
                   </TableCell>
                   <TableCell className="text-neutral-500">{formatOpeningHoursToday(branch.opening_hours)}</TableCell>
                   <TableCell>
-                    <DeleteBranchButton branch={branch} />
+                    <div className="flex flex-wrap gap-2">
+                      <BranchFormDialog markets={markets} branch={branch} />
+                      <DeleteBranchButton branch={branch} />
+                    </div>
                   </TableCell>
                 </TableRow>
               ))}

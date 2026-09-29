@@ -64,7 +64,7 @@ pnpm dev:mobile     # só o mobile (abre o Metro bundler / QR code do Expo)
 | `pnpm build:web` | Idem, filtrado explicitamente para `@budega/web` |
 | `pnpm lint` | Roda o lint de todos os pacotes (web, mobile, shared, supabase) |
 | `pnpm typecheck` | Roda `tsc --noEmit` em todos os pacotes |
-| `pnpm test` | Roda os testes automatizados (Vitest) de `shared` e `web` |
+| `pnpm test` | Roda os testes automatizados (Vitest) de `shared`, `web` e `supabase` (migrations + RLS num Postgres em memória, sem credenciais) |
 | `pnpm audit:preflight -- <termo>` | Busca mudanças/erros relacionados a um termo antes de alterar algo |
 | `pnpm audit:change` / `pnpm audit:error` | Cria um novo registro de mudança/erro em `.audit/` |
 | `pnpm audit:validate` | Valida se todos os registros de `.audit/` têm os campos obrigatórios |
@@ -84,6 +84,14 @@ pnpm dev:mobile     # só o mobile (abre o Metro bundler / QR code do Expo)
    pnpm supabase:migrate
    ```
 
+   O script só aplica os arquivos que ainda não rodaram. **Se você já tinha aplicado a
+   `0001`, rode de novo** para aplicar a `0002_security_hardening.sql` — ela fecha
+   falhas graves de permissão da 0001 (ver `.audit/errors/2026-09-29/`).
+
+   Depois, em **Authentication > URL Configuration**, adicione
+   `http://localhost:3000/auth/callback` (e o endereço de produção + `/auth/callback`)
+   em *Redirect URLs* — é para onde volta o link de confirmação do cadastro.
+
 4. (Opcional) Popule com os mesmos dados de demonstração usados no modo mock:
 
    ```bash
@@ -95,6 +103,26 @@ pnpm dev:mobile     # só o mobile (abre o Metro bundler / QR code do Expo)
 5. Reinicie `pnpm dev` — com `NEXT_PUBLIC_SUPABASE_URL`/`EXPO_PUBLIC_SUPABASE_URL`
    configuradas, os apps passam a consultar o banco real automaticamente (a troca entre
    mock e real é detectada em `apps/*/src/lib/supabase.ts`, sem precisar mudar código).
+6. Crie sua conta em `/cadastro`, confirme o e-mail e promova-a a administradora no
+   **SQL Editor** do Supabase (por segurança, ninguém consegue se promover pelo app):
+
+   ```sql
+   update profiles set role = 'admin'
+   where id = (select id from auth.users where email = 'seu-email@exemplo.com');
+   ```
+
+   Para liberar o painel a quem cuida de um mercado: `role = 'market_manager'` no
+   perfil da pessoa e `owner_id` do mercado apontando para ela
+   (`update markets set owner_id = '<uuid>' where slug = '<slug>';`). Um responsável
+   também pode cadastrar mercados novos pelo painel — ele vira o dono automaticamente.
+
+### Acesso ao painel `/admin`
+
+- Sem Supabase (modo mock): aberto, com aviso de demonstração; nada é gravado.
+- Com Supabase: exige login. Sem sessão → `/entrar`; conta sem role de painel →
+  `/acesso-negado`. **Admin** vê e modera tudo (verificar, destacar, suspender,
+  denúncias). **Responsável por mercado** vê e edita só os próprios mercados, filiais,
+  ofertas e encartes.
 
 Sem `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`/`EXPO_PUBLIC_GOOGLE_MAPS_API_KEY`, a busca de
 mercados continua funcionando normalmente como lista (com distância, endereço e botão de
@@ -186,19 +214,18 @@ conhecidos. Depois de qualquer mudança, registre-a com `pnpm audit:change`.
 - **Mapa interativo** (Google Maps/`react-native-maps`) não foi implementado — tanto a
   web quanto o mobile mostram uma lista com distância, endereço e botão de rota externa
   como fallback, mesmo com uma chave de mapa configurada. Fica como próximo passo.
-- **Filiais** no `/admin/filiais`: dá para listar, buscar, cadastrar e excluir; ainda
-  não dá para editar uma filial existente nem definir horário diferente por dia.
-- **Autenticação/roles no `/admin`**: as políticas de RLS no banco já impedem mutações
-  sem a role correta, mas não há ainda um middleware de redirecionamento na web para
-  usuários sem sessão — hoje o painel só mostra um aviso de "modo demonstração" quando
-  não há Supabase configurado.
-- **`packages/supabase/migrations/0001_init.sql`** nunca rodou contra um Postgres real
-  nesta sessão (sem credenciais no ambiente) — revisado manualmente com cuidado, mas
-  ainda precisa de uma primeira execução real (`pnpm supabase:migrate`) contra um
-  projeto de teste antes de produção.
-- Testes automatizados existem para `packages/shared` (42 testes) e `apps/web` (26
-  testes) — ainda não há testes end-to-end em navegador real (Playwright) nem testes
-  automatizados no `apps/mobile`.
+- **Login real nunca foi exercitado contra um projeto Supabase** (sem credenciais no
+  ambiente). A lógica de sessão/proxy/permissões tem testes com o cliente simulado e as
+  migrations rodam num Postgres real em memória (PGlite), mas o primeiro uso com um
+  projeto de verdade deve ser acompanhado.
+- **Promover usuários e atribuir mercados** a responsáveis é pelo SQL Editor (ver
+  "Configurando o Supabase real"); não há tela de usuários no painel.
+- **Upload de arquivos**: encartes e imagens de oferta são informados por URL; não há
+  upload para o Supabase Storage ainda.
+- **Métricas do dashboard** (visualizações, cliques em rota/telefone/WhatsApp): a tabela
+  `analytics_events` existe, mas os apps ainda não registram eventos.
+- Testes automatizados: `packages/shared`, `packages/supabase` (migrations + RLS) e
+  `apps/web` — ainda não há testes automatizados no `apps/mobile`.
 - Web e mobile usam versões de Tailwind diferentes (v4 vs. v3/NativeWind) — os tokens de
   cor são mantidos sincronizados manualmente entre `DESIGN.md`,
   `apps/web/src/app/globals.css` e `apps/mobile/tailwind.config.js`.
