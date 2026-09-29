@@ -54,6 +54,9 @@ const emptyDefaults: OfferFormValues = {
 
 export function OfferFormDialog({ markets, categories, initialValues, trigger }: OfferFormDialogProps) {
   const [open, setOpen] = useState(false);
+  // Sem `items`, o Select do Base UI mostra o ID cru no gatilho em vez do nome.
+  const marketLabels = Object.fromEntries(markets.map((market) => [market.id, market.name]));
+  const categoryLabels = Object.fromEntries(categories.map((category) => [category.id, category.name]));
   const form = useForm<OfferFormValues>({
     resolver: zodResolver(offerFormSchema),
     defaultValues: { ...emptyDefaults, ...initialValues },
@@ -93,7 +96,7 @@ export function OfferFormDialog({ markets, categories, initialValues, trigger }:
                   <FormItem>
                     <FormLabel>Mercado</FormLabel>
                     <FormControl>
-                      <Select value={field.value} onValueChange={field.onChange}>
+                      <Select value={field.value} onValueChange={field.onChange} items={marketLabels}>
                         <SelectTrigger className="w-full">
                           <SelectValue placeholder="Selecione" />
                         </SelectTrigger>
@@ -117,7 +120,7 @@ export function OfferFormDialog({ markets, categories, initialValues, trigger }:
                   <FormItem>
                     <FormLabel>Categoria</FormLabel>
                     <FormControl>
-                      <Select value={field.value} onValueChange={field.onChange}>
+                      <Select value={field.value} onValueChange={field.onChange} items={categoryLabels}>
                         <SelectTrigger className="w-full">
                           <SelectValue placeholder="Selecione" />
                         </SelectTrigger>

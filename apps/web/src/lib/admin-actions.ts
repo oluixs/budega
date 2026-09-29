@@ -2,8 +2,10 @@
 
 import { revalidatePath } from "next/cache";
 import {
+  branchFormSchema,
   offerFormSchema,
   flyerFormSchema,
+  type BranchFormValues,
   type OfferFormValues,
   type FlyerFormValues,
 } from "@budega/shared";
@@ -34,6 +36,34 @@ export async function setMarketFlag(
   if (error) return { success: false, message: error.message };
   revalidatePath("/admin/mercados");
   return { success: true, message: "Mercado atualizado." };
+}
+
+export async function createBranch(values: BranchFormValues): Promise<ActionResult> {
+  const parsed = branchFormSchema.safeParse(values);
+  if (!parsed.success) return { success: false, message: "Dados da filial inválidos." };
+
+  if (isMock) return mockResult(`Filial "${parsed.data.name}" criada.`);
+
+  const { error } = await supabase!.from("branches").insert({
+    ...parsed.data,
+    state: parsed.data.state.toUpperCase(),
+  });
+  if (error) return { success: false, message: error.message };
+  revalidatePath("/admin/filiais");
+  return { success: true, message: "Filial criada com sucesso." };
+}
+
+/**
+ * Ofertas e encartes vinculados à filial não são apagados: a FK usa
+ * `on delete set null`, então passam a valer para o mercado inteiro.
+ */
+export async function deleteBranch(branchId: string): Promise<ActionResult> {
+  if (isMock) return mockResult("Filial excluída.");
+
+  const { error } = await supabase!.from("branches").delete().eq("id", branchId);
+  if (error) return { success: false, message: error.message };
+  revalidatePath("/admin/filiais");
+  return { success: true, message: "Filial excluída." };
 }
 
 export async function createOffer(values: OfferFormValues): Promise<ActionResult> {

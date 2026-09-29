@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { AlertTriangle, FileText, Flag, LayoutDashboard, Store, Tag } from "lucide-react";
+import { AlertTriangle, FileText, Flag, LayoutDashboard, MapPin, Store, Tag } from "lucide-react";
 import { isMock } from "@/lib/supabase";
 
 const NAV_ITEMS = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/mercados", label: "Mercados", icon: Store },
+  { href: "/admin/filiais", label: "Filiais", icon: MapPin },
   { href: "/admin/encartes", label: "Encartes", icon: FileText },
   { href: "/admin/ofertas", label: "Ofertas", icon: Tag },
   { href: "/admin/denuncias", label: "Denúncias", icon: Flag },

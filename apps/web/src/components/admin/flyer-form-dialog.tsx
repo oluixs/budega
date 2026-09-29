@@ -44,6 +44,8 @@ const defaults: FlyerFormValues = {
 
 export function FlyerFormDialog({ markets }: FlyerFormDialogProps) {
   const [open, setOpen] = useState(false);
+  // Sem `items`, o Select do Base UI mostra o ID cru no gatilho em vez do nome.
+  const marketLabels = Object.fromEntries(markets.map((market) => [market.id, market.name]));
   const form = useForm<FlyerFormValues>({ resolver: zodResolver(flyerFormSchema), defaultValues: defaults });
 
   async function onSubmit(values: FlyerFormValues) {
@@ -75,7 +77,7 @@ export function FlyerFormDialog({ markets }: FlyerFormDialogProps) {
                 <FormItem>
                   <FormLabel>Mercado</FormLabel>
                   <FormControl>
-                    <Select value={field.value} onValueChange={field.onChange}>
+                    <Select value={field.value} onValueChange={field.onChange} items={marketLabels}>
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Selecione" />
                       </SelectTrigger>

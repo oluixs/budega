@@ -1,5 +1,13 @@
 import "server-only";
-import { isExpiringSoon, mock, type Flyer, type Market, type Offer, type Report } from "@budega/shared";
+import {
+  isExpiringSoon,
+  mock,
+  type Branch,
+  type Flyer,
+  type Market,
+  type Offer,
+  type Report,
+} from "@budega/shared";
 import { isMock, supabase } from "@/lib/supabase";
 
 /**
@@ -14,6 +22,13 @@ export async function getAllMarketsAdmin(): Promise<Market[]> {
   const { data, error } = await supabase!.from("markets").select("*").order("name");
   if (error) throw new Error(error.message);
   return data as Market[];
+}
+
+export async function getAllBranchesAdmin(): Promise<Branch[]> {
+  if (isMock) return mock.mockBranches;
+  const { data, error } = await supabase!.from("branches").select("*").order("name");
+  if (error) throw new Error(error.message);
+  return data as Branch[];
 }
 
 export async function getAllFlyersAdmin(): Promise<Flyer[]> {

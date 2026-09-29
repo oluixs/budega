@@ -12,6 +12,14 @@ export function recordIdSchema(message = "Selecione um item") {
 }
 const optionalRecordId = z.string().min(1).nullable().optional();
 
+function coordinateSchema(label: "latitude" | "longitude", limit: number) {
+  const message = `Informe a ${label} (entre -${limit} e ${limit})`;
+  return z
+    .number({ required_error: message, invalid_type_error: message })
+    .min(-limit, message)
+    .max(limit, message);
+}
+
 export const openingHoursSchema = z.object({
   day: z.number().min(0).max(6),
   opens_at: z.string().nullable(),
@@ -47,8 +55,8 @@ export const branchFormSchema = z.object({
   city: z.string().min(2, "Informe a cidade"),
   state: z.string().length(2, "UF deve ter 2 letras"),
   postal_code: z.string().min(8, "CEP inválido"),
-  latitude: z.number().min(-90).max(90),
-  longitude: z.number().min(-180).max(180),
+  latitude: coordinateSchema("latitude", 90),
+  longitude: coordinateSchema("longitude", 180),
   phone: z.string().optional().nullable(),
   opening_hours: z.array(openingHoursSchema).default([]),
 });

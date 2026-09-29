@@ -32,3 +32,19 @@ export function isUpdatedRecently(updatedAt: string, now: Date = new Date(), thr
   const thresholdMs = now.getTime() - thresholdDays * 24 * 60 * 60 * 1000;
   return updatedAtMs >= thresholdMs;
 }
+
+/**
+ * Monta opening_hours para os 7 dias com o mesmo horário, marcando `closedDays`
+ * (0 = domingo ... 6 = sábado) como fechados. Usado no cadastro de filiais do admin.
+ */
+export function weeklyHours(opensAt: string, closesAt: string, closedDays: number[] = []): OpeningHours[] {
+  return Array.from({ length: 7 }, (_, day) => {
+    const closed = closedDays.includes(day);
+    return {
+      day,
+      opens_at: closed ? null : opensAt,
+      closes_at: closed ? null : closesAt,
+      closed,
+    };
+  });
+}

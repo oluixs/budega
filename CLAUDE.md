@@ -18,7 +18,9 @@ ordem** antes de fazer qualquer alteração:
 ## Regras que já foram decididas (não redecidir)
 
 - Monorepo pnpm + Turborepo: `apps/web` (Next.js 16 + shadcn/ui, style `base-nova`
-  sobre `@base-ui/react` — **use a prop `render`, não `asChild`**), `apps/mobile` (Expo
+  sobre `@base-ui/react` — **use a prop `render`, não `asChild`**, e todo `<Select>`
+  precisa de `items={{ [valor]: rótulo }}` senão o gatilho mostra o ID cru — ver
+  `.audit/errors/2026-09-29/`), `apps/mobile` (Expo
   Router SDK 57 + NativeWind), `packages/shared` (tipos/Zod/regras de negócio/mock),
   `packages/supabase` (migrations + RLS + cliente).
 - Todo import relativo dentro de `packages/shared` e `packages/supabase` é **sem**
@@ -34,6 +36,9 @@ ordem** antes de fazer qualquer alteração:
   técnica) precisa de um registro em `.audit/changes/` ou `.audit/errors/` no mesmo
   ciclo da mudança — use `pnpm audit:change`/`pnpm audit:error`. Nunca commitar segredo
   em `.audit/`.
+- Schemas de formulário em `packages/shared` validam IDs só como string não vazia
+  (`recordIdSchema`), nunca `.uuid()` — os IDs mock não são UUIDs. Testes de schema devem
+  usar os IDs de `mock`, não UUIDs sintéticos.
 - Sem credenciais Supabase, os apps rodam 100% em modo mock (dados de
   `packages/shared/src/mock`) — isso é o padrão e deve continuar funcionando.
 - Não faça `git push`, crie releases nem altere configuração remota sem autorização

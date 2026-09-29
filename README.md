@@ -24,6 +24,9 @@ packages/
 ## Pré-requisitos
 
 - Node.js 20+ e [pnpm](https://pnpm.io) (`corepack enable` já resolve a versão certa).
+  No Windows sem permissão de administrador, `corepack enable` falha com `EPERM`; use
+  `corepack enable --install-directory "$env:APPDATA\npm" pnpm` (crie a pasta antes, se
+  não existir).
 - Para rodar no celular: o app [Expo Go](https://expo.dev/go) (Android/iPhone) **ou**
   Android Studio/Xcode para emuladores — nenhum dos dois foi usado nesta sessão de
   desenvolvimento (ambiente sem Android SDK), então a verificação visual em
@@ -183,8 +186,8 @@ conhecidos. Depois de qualquer mudança, registre-a com `pnpm audit:change`.
 - **Mapa interativo** (Google Maps/`react-native-maps`) não foi implementado — tanto a
   web quanto o mobile mostram uma lista com distância, endereço e botão de rota externa
   como fallback, mesmo com uma chave de mapa configurada. Fica como próximo passo.
-- **Gerenciar filiais** não tem UI no painel `/admin` ainda (schema e validação já
-  existem em `packages/shared`).
+- **Filiais** no `/admin/filiais`: dá para listar, buscar, cadastrar e excluir; ainda
+  não dá para editar uma filial existente nem definir horário diferente por dia.
 - **Autenticação/roles no `/admin`**: as políticas de RLS no banco já impedem mutações
   sem a role correta, mas não há ainda um middleware de redirecionamento na web para
   usuários sem sessão — hoje o painel só mostra um aviso de "modo demonstração" quando
@@ -193,7 +196,7 @@ conhecidos. Depois de qualquer mudança, registre-a com `pnpm audit:change`.
   nesta sessão (sem credenciais no ambiente) — revisado manualmente com cuidado, mas
   ainda precisa de uma primeira execução real (`pnpm supabase:migrate`) contra um
   projeto de teste antes de produção.
-- Testes automatizados existem para `packages/shared` (35 testes) e `apps/web` (18
+- Testes automatizados existem para `packages/shared` (42 testes) e `apps/web` (26
   testes) — ainda não há testes end-to-end em navegador real (Playwright) nem testes
   automatizados no `apps/mobile`.
 - Web e mobile usam versões de Tailwind diferentes (v4 vs. v3/NativeWind) — os tokens de

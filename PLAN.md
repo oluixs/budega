@@ -66,7 +66,7 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 - [ ] Verificação visual real em Expo Go/emulador/dispositivo — não foi possível nesta
       sessão (sem Android SDK/emulador no ambiente). Validado via `tsc`, `expo lint`,
       `expo-doctor` (21/21) e `expo export --platform android/ios` (bundle completo).
-- [ ] `eas.json` e instruções de build Android/iPhone com EAS — pendente para o README.
+- [x] `eas.json` e instruções de build Android/iPhone com EAS (ver README).
 
 ## Fase 4 — Backend e administração
 
@@ -80,13 +80,28 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 - [x] Integração React Hook Form + Zod nos formulários administrativos (TanStack Query
       não foi necessário nesta fase — Server Actions + `revalidatePath` cobriram as
       mutações do admin; pode ser adotado depois para listagens com paginação real).
-- [ ] Gerenciar filiais (branches) no admin — schema pronto, falta UI dedicada.
+- [x] Gerenciar filiais (branches) no admin — `/admin/filiais` com listagem, busca,
+      filtro por mercado, cadastro e exclusão (2026-09-29). Falta: editar filial e
+      horário diferente por dia da semana.
+
+## Retomada em 2026-09-29 (máquina nova)
+
+- [x] Clone limpo + `pnpm install`. `corepack enable` sem admin falha (EPERM em
+      `C:\Program Files\nodejs`); resolvido com
+      `corepack enable --install-directory "$APPDATA\npm" pnpm`.
+- [x] Corrigido: `pnpm typecheck` falhava em clone novo (`LayoutProps` gerado em `.next/`).
+- [x] Corrigido: `pnpm audit:preflight -- <termo>` nunca achava nada (o `--` entrava na
+      busca).
+- [x] Corrigido: formulários de oferta/encarte do admin e "Denunciar" nunca enviavam em
+      modo mock (schemas exigiam UUID).
+- [x] Corrigido: selects da web mostravam o ID cru no gatilho em vez do nome.
 
 ## Fase 5 — Qualidade
 
-- [x] Testes automatizados: 35 em `packages/shared` (distância, ordenação, validade,
-      favoritos, horários, formulários) + 18 em `apps/web` (favoritos, geolocalização/
-      fallback, estado vazio, filtros do admin, criação de oferta em modo mock).
+- [x] Testes automatizados: 42 em `packages/shared` (distância, ordenação, validade,
+      favoritos, horários, formulários com IDs mock reais) + 26 em `apps/web` (favoritos,
+      geolocalização/fallback, estado vazio, filtros do admin, filiais, criação de
+      oferta/filial em modo mock).
 - [x] Lint, typecheck, build — `pnpm lint`/`pnpm typecheck`/`pnpm build` passam limpos
       nos 4 pacotes do monorepo via turbo.
 - [x] Validação do servidor web via `Invoke-WebRequest` contra `next dev` (sem Chrome

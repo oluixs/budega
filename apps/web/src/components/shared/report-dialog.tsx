@@ -89,7 +89,7 @@ export function ReportDialog({ marketId, offerId, flyerId, defaultReason }: Repo
                 <FormItem>
                   <FormLabel>Motivo</FormLabel>
                   <FormControl>
-                    <Select value={field.value} onValueChange={field.onChange}>
+                    <Select value={field.value} onValueChange={field.onChange} items={REASON_LABELS}>
                       <SelectTrigger className="w-full">
                         <SelectValue />
                       </SelectTrigger>
