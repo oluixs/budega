@@ -106,6 +106,20 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
       desconectados, escala tipográfica inexistente, data sem fuso / validade "agora
       mesmo", "Denunciar" ausente em mercado/oferta, home estática com ofertas vencidas.
 
+## Fase 6 — Dados reais da região (Fortaleza e RMF)
+
+- [x] `packages/sources` com importador educado (BudegaBot, robots.txt) e adaptador do
+      Cometa Supermercados: 43 lojas e encartes vigentes com validade, PDF e capa.
+- [x] Web usa os dados reais sem Supabase (atualização a cada 1 h + retrato salvo).
+- [x] Mapa interativo (Leaflet + OpenStreetMap, sem chave) no Explorar e na página do
+      mercado; distância até a loja mais próxima; busca pelos bairros das lojas.
+- [x] Política de Privacidade e Termos revisados (LGPD, Marco Civil, CDC, direitos
+      autorais) — falta o responsável preencher `apps/web/src/lib/legal.ts`.
+- [ ] App mobile com dados reais e mapa.
+- [ ] Outras redes da região.
+- [ ] Ofertas individuais lidas dos encartes (precisa de chave de API de visão).
+- [ ] Emulador Android: SDK instalado; falta ativar o hipervisor (precisa de admin).
+
 ## Fase 5 — Qualidade
 
 - [x] Testes automatizados: 48 em `packages/shared`, 19 em `packages/supabase`

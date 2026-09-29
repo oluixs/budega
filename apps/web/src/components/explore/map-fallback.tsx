@@ -1,4 +1,4 @@
-import { MapPinOff } from "lucide-react";
+import { MapPin } from "lucide-react";
 import type { MarketWithDistance } from "@budega/shared";
 import { buildExternalRouteUrl, formatDistance } from "@budega/shared";
 import { Button } from "@/components/ui/button";
@@ -8,21 +8,17 @@ interface MapFallbackProps {
 }
 
 /**
- * Sem NEXT_PUBLIC_GOOGLE_MAPS_API_KEY configurada, mostramos esta lista com distância,
- * endereço e botão de rota externa em vez do mapa interativo (requisito do brief:
- * "mantenha a lista funcionando e exiba um fallback com distância, endereço e botão de
- * rota externa").
+ * Lista textual que acompanha o mapa (distância, endereço e rota externa): a mesma
+ * informação do mapa para quem usa leitor de tela, teclado ou está sem JavaScript
+ * (requisito do brief: "mantenha a lista funcionando").
  */
 export function MapFallback({ markets }: MapFallbackProps) {
   return (
-    <div className="rounded-xl border border-dashed border-neutral-300 bg-neutral-0 p-6">
-      <div className="mb-4 flex items-center gap-2 text-neutral-500">
-        <MapPinOff className="h-5 w-5" aria-hidden="true" />
-        <p className="text-body">
-          O mapa interativo requer uma chave do Google Maps, que não está configurada
-          neste ambiente. Veja a lista de endereços abaixo enquanto isso.
-        </p>
-      </div>
+    <div className="rounded-xl border border-neutral-300 bg-neutral-0 p-6">
+      <h2 className="mb-2 flex items-center gap-2 font-display text-h3 font-semibold text-neutral-900">
+        <MapPin className="h-5 w-5 text-brand-600" aria-hidden="true" />
+        Mercados no mapa
+      </h2>
       <ul className="divide-y divide-neutral-100">
         {markets.map((market) => (
           <li key={market.id} className="flex items-center justify-between gap-4 py-3">

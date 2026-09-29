@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import { FileText, MapPin, Navigation, Phone, Store } from "lucide-react";
-import {
-  buildExternalRouteUrl,
-  buildWhatsAppUrl,
-  formatDateBR,
-  formatRelativeUpdate,
-} from "@budega/shared";
+import { ExternalLink, MapPin, Navigation, Phone, Store } from "lucide-react";
+import { buildExternalRouteUrl, buildWhatsAppUrl, formatRelativeUpdate } from "@budega/shared";
 import {
   getActiveFlyers,
   getActiveOffers,
@@ -23,6 +18,8 @@ import { CategoryPills } from "@/components/shared/category-pills";
 import { EmptyState } from "@/components/shared/empty-state";
 import { MarketHours } from "@/components/market/market-hours";
 import { OfferCard } from "@/components/offer/offer-card";
+import { BranchesSection } from "@/components/market/branches-section";
+import { FlyerCard } from "@/components/flyer/flyer-card";
 
 interface MarketPageProps {
   params: Promise<{ slug: string }>;
@@ -59,8 +56,12 @@ export default async function MarketPage({ params, searchParams }: MarketPagePro
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <div className="mb-6 flex flex-col gap-4 rounded-xl border border-neutral-300 bg-neutral-0 p-6 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex gap-4">
-          <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
-            <Store className="h-9 w-9" aria-hidden="true" />
+          <div className="relative flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-brand-50 text-brand-600">
+            {market.logo_url ? (
+              <Image src={market.logo_url} alt={`Logo ${market.name}`} fill sizes="80px" className="object-contain p-2" />
+            ) : (
+              <Store className="h-9 w-9" aria-hidden="true" />
+            )}
           </div>
           <div>
             <div className="flex flex-wrap items-center gap-2">
@@ -68,12 +69,27 @@ export default async function MarketPage({ params, searchParams }: MarketPagePro
               {market.is_featured && <Badge className="bg-accent-500 text-neutral-0">Destaque</Badge>}
               {market.is_verified && <Badge variant="outline">Verificado</Badge>}
             </div>
+            {market.description && <p className="mt-1 text-body-lg text-neutral-700">{market.description}</p>}
             <p className="mt-1 flex items-center gap-1 text-body text-neutral-500">
-              <MapPin className="h-4 w-4" aria-hidden="true" />
-              {market.address}, {market.neighborhood} — {market.city}/{market.state}
+              <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
+              {branches.length > 1 ? "Endereço principal: " : ""}
+              {[market.address, market.neighborhood].filter(Boolean).join(", ")} — {market.city}/{market.state}
             </p>
             <p className="mt-1 text-caption text-neutral-500">
               Atualizado {formatRelativeUpdate(market.updated_at)}
+              {market.website_url && (
+                <>
+                  {" · "}Informações e encartes do{" "}
+                  <a
+                    href={market.website_url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-0.5 font-medium text-brand-600 hover:underline"
+                  >
+                    site oficial <ExternalLink className="h-3 w-3" aria-hidden="true" />
+                  </a>
+                </>
+              )}
             </p>
           </div>
         </div>
@@ -102,46 +118,30 @@ export default async function MarketPage({ params, searchParams }: MarketPagePro
         </div>
       </div>
 
-      <div className="mb-8 grid gap-4 sm:grid-cols-2">
-        <MarketHours openingHours={market.opening_hours} />
-        {branches.length > 1 && (
-          <div className="rounded-lg border border-neutral-300 bg-neutral-0 p-3">
-            <p className="mb-2 text-body font-medium text-neutral-900">
-              {branches.length} filiais
-            </p>
-            <ul className="space-y-1 text-body text-neutral-500">
-              {branches.map((branch) => (
-                <li key={branch.id}>
-                  {branch.name} — {branch.neighborhood}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
+      {branches.length <= 1 && (
+        <div className="mb-8 grid gap-4 sm:grid-cols-2">
+          <MarketHours openingHours={market.opening_hours} />
+        </div>
+      )}
 
       {flyers.length > 0 && (
         <section className="mb-10">
-          <h2 className="mb-4 font-display text-h2 font-semibold text-neutral-900">Encarte atual</h2>
+          <h2 className="mb-4 font-display text-h2 font-semibold text-neutral-900">
+            {flyers.length === 1 ? "Encarte atual" : `Encartes atuais (${flyers.length})`}
+          </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {flyers.map((flyer) => (
-              <Link
+              <FlyerCard
                 key={flyer.id}
-                href={`/encartes/${flyer.id}`}
-                className="flex items-center gap-3 rounded-xl border border-neutral-300 bg-neutral-0 p-4 transition-colors hover:border-brand-500"
-              >
-                <FileText className="h-8 w-8 shrink-0 text-brand-600" aria-hidden="true" />
-                <div>
-                  <p className="font-medium text-neutral-900">{flyer.title}</p>
-                  <p className="text-caption text-neutral-500">
-                    Válido até {formatDateBR(flyer.valid_until)}
-                  </p>
-                </div>
-              </Link>
+                flyer={flyer}
+                branchName={branches.find((branch) => branch.id === flyer.branch_id)?.name}
+              />
             ))}
           </div>
         </section>
       )}
+
+      {branches.length > 1 && <BranchesSection market={market} branches={branches} />}
 
       <section>
         <h2 className="mb-4 font-display text-h2 font-semibold text-neutral-900">Ofertas</h2>
@@ -152,8 +152,12 @@ export default async function MarketPage({ params, searchParams }: MarketPagePro
         {visibleOffers.length === 0 ? (
           <EmptyState
             icon={Store}
-            title="Nenhuma oferta ativa neste mercado"
-            description="Volte em breve — os preços podem mudar a qualquer momento."
+            title={flyers.length ? "Ofertas deste mercado estão nos encartes" : "Nenhuma oferta ativa neste mercado"}
+            description={
+              flyers.length
+                ? "Abra um dos encartes acima para ver os produtos e preços desta semana."
+                : "Volte em breve — os preços podem mudar a qualquer momento."
+            }
           />
         ) : (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

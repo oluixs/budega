@@ -22,6 +22,8 @@ export type {
   AnalyticsEvent,
   MarketWithDistance,
   Coordinates,
+  DataSource,
+  RegionalData,
 } from "./types/index";
 
 export {
@@ -52,6 +54,7 @@ export {
   calculateDistanceKm,
   formatDistance,
   withDistance,
+  matchesMarketQuery,
   sortMarkets,
   type MarketSortOrder,
 } from "./business/distance";
@@ -84,6 +87,8 @@ export {
 export { isMarketPublic, filterPublicMarkets, filterByPublicMarkets } from "./business/visibility";
 
 export { slugify } from "./business/slug";
+
+export { regionalSnapshot } from "./data/regional";
 
 export {
   addLocalFavorite,

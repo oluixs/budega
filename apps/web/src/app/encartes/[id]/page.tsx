@@ -40,9 +40,10 @@ export default async function FlyerPage({ params }: FlyerPageProps) {
               <Store className="h-4 w-4" /> {market.name}
             </Link>
           )}
-          <p className="mt-1 text-caption text-neutral-500">
+          <p className="mt-1 text-body text-neutral-700">
             Válido de {formatDateBR(flyer.valid_from)} até {formatDateBR(flyer.valid_until)}
           </p>
+          {flyer.description && <p className="mt-1 text-body text-neutral-500">{flyer.description}</p>}
         </div>
         <div className="flex flex-wrap gap-2">
           <ShareButton url={buildFlyerShareUrl(flyer.id)} title={flyer.title} />
@@ -50,7 +51,7 @@ export default async function FlyerPage({ params }: FlyerPageProps) {
         </div>
       </div>
 
-      <FlyerViewer fileUrl={flyer.file_url} title={flyer.title} />
+      <FlyerViewer flyer={flyer} marketName={market?.name} />
 
       {(previous || next) && (
         <div className="mt-4 flex items-center justify-between">

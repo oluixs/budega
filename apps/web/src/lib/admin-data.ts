@@ -10,6 +10,7 @@ import {
   type Report,
 } from "@budega/shared";
 import { requireAdminAccess } from "@/lib/auth";
+import { dataMode, getLocalData } from "@/lib/local-data";
 
 /**
  * Camada de dados do painel admin. Em modo mock, lê os arrays estáticos de
@@ -25,7 +26,7 @@ import { requireAdminAccess } from "@/lib/auth";
 
 export async function getAllMarketsAdmin(): Promise<Market[]> {
   const access = await requireAdminAccess();
-  if (access.status === "mock") return mock.mockMarkets;
+  if (access.status === "mock") return (await getLocalData()).markets;
   let query = access.supabase.from("markets").select("*").order("name");
   if (access.marketIds) query = query.in("id", access.marketIds);
   const { data, error } = await query;
@@ -35,7 +36,7 @@ export async function getAllMarketsAdmin(): Promise<Market[]> {
 
 export async function getAllBranchesAdmin(): Promise<Branch[]> {
   const access = await requireAdminAccess();
-  if (access.status === "mock") return mock.mockBranches;
+  if (access.status === "mock") return (await getLocalData()).branches;
   let query = access.supabase.from("branches").select("*").order("name");
   if (access.marketIds) query = query.in("market_id", access.marketIds);
   const { data, error } = await query;
@@ -45,7 +46,7 @@ export async function getAllBranchesAdmin(): Promise<Branch[]> {
 
 export async function getAllFlyersAdmin(): Promise<Flyer[]> {
   const access = await requireAdminAccess();
-  if (access.status === "mock") return mock.mockFlyers;
+  if (access.status === "mock") return (await getLocalData()).flyers;
   let query = access.supabase.from("flyers").select("*").order("created_at", { ascending: false });
   if (access.marketIds) query = query.in("market_id", access.marketIds);
   const { data, error } = await query;
@@ -55,7 +56,7 @@ export async function getAllFlyersAdmin(): Promise<Flyer[]> {
 
 export async function getAllOffersAdmin(): Promise<Offer[]> {
   const access = await requireAdminAccess();
-  if (access.status === "mock") return mock.mockOffers;
+  if (access.status === "mock") return (await getLocalData()).offers;
   let query = access.supabase.from("offers").select("*").order("created_at", { ascending: false });
   if (access.marketIds) query = query.in("market_id", access.marketIds);
   const { data, error } = await query;
@@ -76,7 +77,8 @@ export async function getAllUsersAdmin(): Promise<AdminUser[]> {
 /** Denúncias são moderadas só por admin (RLS: reports_select_own_or_admin). */
 export async function getAllReportsAdmin(): Promise<Report[]> {
   const access = await requireAdminAccess();
-  if (access.status === "mock") return mock.mockReports;
+  // Denúncias de exemplo só fazem sentido com os mercados fictícios.
+  if (access.status === "mock") return dataMode === "demo" ? mock.mockReports : [];
   if (!access.isAdmin) return [];
   const { data, error } = await access.supabase
     .from("reports")

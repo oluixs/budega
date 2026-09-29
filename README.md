@@ -16,7 +16,8 @@ apps/
   web/       # Next.js 16 (App Router) + Tailwind v4 + shadcn/ui — site público + /admin
   mobile/    # Expo Router (SDK 57) + NativeWind — Android e iPhone
 packages/
-  shared/    # tipos, validações Zod, regras de negócio e dados mock compartilhados
+  shared/    # tipos, validações Zod, regras de negócio, dados mock e retrato regional
+  sources/   # importação de lojas e encartes dos sites oficiais dos mercados
   supabase/  # migrations SQL, políticas RLS, scripts de migrate/seed, cliente
 .audit/      # diário de mudanças, erros e decisões técnicas (leitura obrigatória)
 ```
@@ -40,17 +41,48 @@ packages/
 pnpm install
 ```
 
-## Rodando em modo mock (padrão, sem credenciais)
+## Rodando sem Supabase (padrão)
 
-Sem nenhuma variável de ambiente configurada, tanto a web quanto o mobile usam os dados
-de demonstração de `packages/shared/src/mock` (8 mercados, 10 filiais, 30 ofertas, 8
-encartes, categorias e algumas denúncias de exemplo). É o modo usado por padrão.
+Sem nenhuma variável de ambiente configurada, o Budega mostra **dados reais de Fortaleza
+e Região Metropolitana**, importados dos sites oficiais dos mercados (ver
+[Fontes de dados](#fontes-de-dados-mercados-reais-da-região)). O painel `/admin` fica em
+modo demonstração (nada é gravado).
 
 ```bash
 pnpm dev            # inicia web (localhost:3000) e mobile (Expo) juntos
 pnpm dev:web        # só a web
 pnpm dev:mobile     # só o mobile (abre o Metro bundler / QR code do Expo)
 ```
+
+Para usar os **dados fictícios** de `packages/shared/src/mock` (8 mercados de São Paulo,
+usados nos testes), defina `BUDEGA_DADOS=demo` (web) / `EXPO_PUBLIC_BUDEGA_DADOS=demo`
+(app).
+
+## Fontes de dados (mercados reais da região)
+
+O pacote `packages/sources` lê, nos sites oficiais das redes, as lojas (endereço,
+horário, telefone, coordenadas) e os encartes vigentes (título, validade, lojas onde vale,
+PDF e capa). Hoje: **Cometa Supermercados** (43 lojas).
+
+- **Web**: atualiza sozinha — as respostas dos sites ficam em cache por 1 hora; se um site
+  falhar, usa o último retrato salvo.
+- **App e retrato salvo**: `pnpm importar` grava `packages/shared/src/data/regional.json`.
+  Rode antes de publicar uma versão do app (e faça commit do arquivo).
+- **Boa convivência com os sites**: o importador se identifica como `BudegaBot`, respeita o
+  `robots.txt`, só usa os endpoints públicos que o próprio site usa para os visitantes, e
+  todo encarte mostra a fonte e o link para o original. Encarte sem período de validade
+  reconhecível não é publicado.
+- **Ofertas individuais (produto e preço)**: os encartes do Cometa são imagens; ler os
+  preços com confiança exige um modelo de visão (ver Limitações).
+- **Nova rede**: criar `packages/sources/src/adapters/<rede>.ts` (ver `cometa.ts`), com
+  testes usando respostas reais salvas em `__fixtures__`, e incluir em `ADAPTERS`
+  (`src/import.ts`).
+
+## Mapa
+
+Mapa interativo com Leaflet + OpenStreetMap, **sem chave de API**. Para tráfego alto, a
+política do OpenStreetMap pede outro provedor de tiles: configure
+`NEXT_PUBLIC_MAP_TILE_URL` e `NEXT_PUBLIC_MAP_ATTRIBUTION`.
 
 ## Comandos principais
 
@@ -66,6 +98,7 @@ pnpm dev:mobile     # só o mobile (abre o Metro bundler / QR code do Expo)
 | `pnpm typecheck` | Roda `tsc --noEmit` em todos os pacotes |
 | `pnpm test` | Roda os testes automatizados (Vitest) de `shared`, `web` e `supabase` (migrations + RLS num Postgres em memória, sem credenciais) |
 | `pnpm --filter @budega/web test:e2e` | Builda a web e roda os testes end-to-end no Chromium (desktop + celular, modo mock); screenshots em `apps/web/test-results/screens/`. Na 1ª vez: `pnpm --filter @budega/web exec playwright install chromium` |
+| `pnpm importar` | Importa lojas e encartes dos sites oficiais e atualiza o retrato `packages/shared/src/data/regional.json` |
 | `pnpm audit:preflight -- <termo>` | Busca mudanças/erros relacionados a um termo antes de alterar algo |
 | `pnpm audit:change` / `pnpm audit:error` | Cria um novo registro de mudança/erro em `.audit/` |
 | `pnpm audit:validate` | Valida se todos os registros de `.audit/` têm os campos obrigatórios |
@@ -211,9 +244,11 @@ conhecidos. Depois de qualquer mudança, registre-a com `pnpm audit:change`.
   em modo mock) — 44 testes e2e e screenshots revisadas. **App mobile**: ainda sem
   verificação visual em aparelho/emulador (ambiente sem Android SDK); validado por
   `tsc`, lint e `expo export` (bundle completo). Abra no Expo Go antes de publicar.
-- **Mapa interativo** (Google Maps/`react-native-maps`) não foi implementado — tanto a
-  web quanto o mobile mostram uma lista com distância, endereço e botão de rota externa
-  como fallback, mesmo com uma chave de mapa configurada. Fica como próximo passo.
+- **Ofertas individuais dos encartes**: os encartes do Cometa são imagens (PDF sem
+  texto). O OCR gratuito (Tesseract) foi testado e não lê os preços; a leitura confiável
+  exige um modelo de visão (ex.: API do Claude), que tem custo e precisa de chave. Até
+  lá, o Budega mostra os encartes completos, sem a lista de produtos/preços.
+- **Outras redes da região**: por enquanto só o Cometa tem importador.
 - **Login real nunca foi exercitado contra um projeto Supabase** (sem credenciais no
   ambiente). A lógica de sessão/proxy/permissões tem testes com o cliente simulado e as
   migrations rodam num Postgres real em memória (PGlite), mas o primeiro uso com um
@@ -232,5 +267,10 @@ conhecidos. Depois de qualquer mudança, registre-a com `pnpm audit:change`.
 
 ## Política de Privacidade e Termos de Uso
 
-Disponíveis em `/privacidade` e `/termos` na aplicação web (conteúdo real, não
-placeholder — mas marcado como modelo que precisa de revisão jurídica antes de produção).
+Disponíveis em `/privacidade` e `/termos`, redigidas conforme a LGPD, o Marco Civil da
+Internet, o Código de Defesa do Consumidor e as leis de direitos autorais e de marcas
+(detalhes em `.audit/changes/2026-09-29/`). **Antes de lançar**, preencha a identificação
+do responsável (razão social, CNPJ, endereço, e-mails e encarregado de dados) em
+`apps/web/src/lib/legal.ts` — enquanto estiver vazio, as páginas avisam que o documento
+está em preparação. Recomenda-se ainda revisão por advogado(a), principalmente sobre o uso
+de encartes de terceiros.

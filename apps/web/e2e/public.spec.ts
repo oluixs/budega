@@ -8,7 +8,24 @@ const PAGES = [
   { path: "/entrar", name: "entrar" },
   { path: "/cadastro", name: "cadastro" },
   { path: "/privacidade", name: "privacidade" },
+  { path: "/termos", name: "termos" },
+  { path: "/explorar?view=mapa", name: "explorar-mapa" },
 ];
+
+test("filtros do explorar mostram os nomes das opções e têm rótulo", async ({ page }) => {
+  await page.goto("/explorar");
+  // Regressão: mostravam "any"/"distance" (valor cru do Select) e os rótulos eram soltos.
+  await expect(page.getByLabel("Distância")).toHaveText(/Qualquer distância/);
+  await expect(page.getByLabel("Categoria")).toHaveText(/Todas as categorias/);
+  await expect(page.getByLabel("Ordenar por")).toHaveText(/Mais perto/);
+});
+
+test("mapa interativo mostra os mercados com a lista acessível abaixo", async ({ page }) => {
+  await page.goto("/explorar?view=mapa");
+  await expect(page.locator(".leaflet-container")).toBeVisible();
+  await expect(page.locator(".leaflet-marker-icon").first()).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Mercados no mapa" })).toBeVisible();
+});
 
 for (const { path, name } of PAGES) {
   test(`${path} carrega sem erros e sem rolagem horizontal`, async ({ page }, testInfo) => {

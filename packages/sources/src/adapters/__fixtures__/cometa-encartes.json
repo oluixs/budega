@@ -1,0 +1,179 @@
+{
+ "data": [
+  {
+   "id": 512,
+   "name": "OFERTAS EXCLUSIVAS MONTESE",
+   "description": "Ofertas válidas de 29/09 a 05/10 somente para a loja Montese. ",
+   "createdAt": "2026-09-28T19:38:41.229Z",
+   "updatedAt": "2026-09-29T03:00:00.109Z",
+   "publishedAt": "2026-09-29T03:00:00.000Z",
+   "pdf": {
+    "url": "/uploads/10_de_2026_FINAL_83f81efdf3.pdf",
+    "mime": "application/pdf",
+    "formats": null
+   },
+   "cover": {
+    "url": "/uploads/10_de_2026_FINAL_9026de85f3.jpg",
+    "mime": "image/jpeg",
+    "formats": {
+     "large": {
+      "url": "/uploads/large_10_de_2026_FINAL_9026de85f3.jpg"
+     },
+     "medium": {
+      "url": "/uploads/medium_10_de_2026_FINAL_9026de85f3.jpg"
+     }
+    }
+   }
+  },
+  {
+   "id": 510,
+   "name": "FEIRÃO COMETA",
+   "description": "Ofertas válidas de 27 a 29/09 em todas as lojas, exceto Osório de Paiva e Gomes de Matos",
+   "createdAt": "2026-02-09T20:23:05.708Z",
+   "updatedAt": "2026-09-27T03:00:00.157Z",
+   "publishedAt": "2026-09-27T03:00:00.000Z",
+   "pdf": {
+    "url": "/uploads/Encarte_Feirao_27_a_29_de_setembro_de_2026_1_8e803cef18.pdf",
+    "mime": "application/pdf",
+    "formats": null
+   },
+   "cover": {
+    "url": "/uploads/Encarte_Feirao_27_a_29_de_setembro_de_2026_1_ebc55ca0c9.jpg",
+    "mime": "image/jpeg",
+    "formats": {
+     "large": {
+      "url": "/uploads/large_Encarte_Feirao_27_a_29_de_setembro_de_2026_1_ebc55ca0c9.jpg"
+     },
+     "medium": {
+      "url": "/uploads/medium_Encarte_Feirao_27_a_29_de_setembro_de_2026_1_ebc55ca0c9.jpg"
+     }
+    }
+   }
+  },
+  {
+   "id": 508,
+   "name": "OFERTAS DE INAUGURAÇÃO GUARARAPES",
+   "description": "Ofertas válidas de 25 a 30/09 somente para a loja Guararapes. ",
+   "createdAt": "2026-09-24T21:14:06.984Z",
+   "updatedAt": "2026-09-25T03:00:00.100Z",
+   "publishedAt": "2026-09-25T03:00:00.000Z",
+   "pdf": {
+    "url": "/uploads/Encarte_Inauguracao_Guararapes_25_A_30_DE_SETEMBRO_DE_2026_350d6ecc11.pdf",
+    "mime": "application/pdf",
+    "formats": null
+   },
+   "cover": {
+    "url": "/uploads/Encarte_Inauguracao_Guararapes_25_A_30_DE_SETEMBRO_DE_2026_f56e198303.jpg",
+    "mime": "image/jpeg",
+    "formats": {
+     "large": {
+      "url": "/uploads/large_Encarte_Inauguracao_Guararapes_25_A_30_DE_SETEMBRO_DE_2026_f56e198303.jpg"
+     },
+     "medium": {
+      "url": "/uploads/medium_Encarte_Inauguracao_Guararapes_25_A_30_DE_SETEMBRO_DE_2026_f56e198303.jpg"
+     }
+    }
+   }
+  },
+  {
+   "id": 506,
+   "name": "CLUBE TEM MAIS PRA VOCÊ",
+   "description": "Ofertas válidas de 24 a 30/09 para clientes cadastrados no Clube Tem Mais Pra Você.",
+   "createdAt": "2026-06-03T19:52:24.263Z",
+   "updatedAt": "2026-09-24T12:57:52.099Z",
+   "publishedAt": "2026-09-24T12:57:52.140Z",
+   "pdf": {
+    "url": "/uploads/2026_FINAL_6_5991b0afd9.pdf",
+    "mime": "application/pdf",
+    "formats": null
+   },
+   "cover": {
+    "url": "/uploads/2026_FINAL_2_8a6d0eb8cf.jpg",
+    "mime": "image/jpeg",
+    "formats": {
+     "large": {
+      "url": "/uploads/large_2026_FINAL_2_8a6d0eb8cf.jpg"
+     },
+     "medium": {
+      "url": "/uploads/medium_2026_FINAL_2_8a6d0eb8cf.jpg"
+     }
+    }
+   }
+  },
+  {
+   "id": 504,
+   "name": "ALIMENTO QUE FAZ BEM ",
+   "description": "Ofertas válidas de 24 a 30/09 em todas as lojas, exceto Osório de Paiva e Gomes de Matos. ",
+   "createdAt": "2026-09-23T20:53:52.709Z",
+   "updatedAt": "2026-09-24T03:00:00.102Z",
+   "publishedAt": "2026-09-24T03:00:00.000Z",
+   "pdf": {
+    "url": "/uploads/ENCARTE_ALIMENTO_QUE_FAZ_BEM_DE_24_A_30_DE_SETEMBRO_DE_20262_a2b6d1f325.pdf",
+    "mime": "application/pdf",
+    "formats": null
+   },
+   "cover": {
+    "url": "/uploads/ENCARTE_ALIMENTO_QUE_FAZ_BEM_DE_24_A_30_DE_SETEMBRO_DE_2026_14093eb418.jpg",
+    "mime": "image/jpeg",
+    "formats": {
+     "large": {
+      "url": "/uploads/large_ENCARTE_ALIMENTO_QUE_FAZ_BEM_DE_24_A_30_DE_SETEMBRO_DE_2026_14093eb418.jpg"
+     },
+     "medium": {
+      "url": "/uploads/medium_ENCARTE_ALIMENTO_QUE_FAZ_BEM_DE_24_A_30_DE_SETEMBRO_DE_2026_14093eb418.jpg"
+     }
+    }
+   }
+  },
+  {
+   "id": 501,
+   "name": "FESTIVAL DE MASSAS M DIAS E JSB",
+   "description": "Ofertas válidas de 22 a 30/09 em todas as lojas, exceto Virgílio Távora, Osório de Paiva, Antônio Sales, Padre Antônio Tomás e Gomes de Matos. ",
+   "createdAt": "2026-09-21T20:53:28.058Z",
+   "updatedAt": "2026-09-22T03:00:00.088Z",
+   "publishedAt": "2026-09-22T03:00:00.000Z",
+   "pdf": {
+    "url": "/uploads/COOPERADO_FESTIVAL_DE_MASSA_M_DIAS_E_JSB_22_a_30_09_2026_web_811b09952e.pdf",
+    "mime": "application/pdf",
+    "formats": null
+   },
+   "cover": {
+    "url": "/uploads/COOPERADO_FESTIVAL_DE_MASSA_M_DIAS_E_JSB_22_a_30_09_2026_jpg_6a9fb2b41b.jpeg",
+    "mime": "image/jpeg",
+    "formats": {
+     "large": {
+      "url": "/uploads/large_COOPERADO_FESTIVAL_DE_MASSA_M_DIAS_E_JSB_22_a_30_09_2026_jpg_6a9fb2b41b.jpeg"
+     },
+     "medium": {
+      "url": "/uploads/medium_COOPERADO_FESTIVAL_DE_MASSA_M_DIAS_E_JSB_22_a_30_09_2026_jpg_6a9fb2b41b.jpeg"
+     }
+    }
+   }
+  },
+  {
+   "id": 485,
+   "name": "COMETA PRESENTES",
+   "description": "Ofertas válidas de 16 a 30/09 somente na loja Cometa Presentes - Rua Franceses, 350 - Presidente Kennedy.",
+   "createdAt": "2026-04-14T19:43:56.111Z",
+   "updatedAt": "2026-09-16T03:00:00.094Z",
+   "publishedAt": "2026-09-16T03:00:00.000Z",
+   "pdf": {
+    "url": "/uploads/ENCARTE_COMETA_PRESENTES_16_A_30_DE_SETEMBRO_DE_2026_2c616dd80b.pdf",
+    "mime": "application/pdf",
+    "formats": null
+   },
+   "cover": {
+    "url": "/uploads/ENCARTE_COMETA_PRESENTES_16_A_30_DE_SETEMBRO_DE_2026_bfb69c367d.jpg",
+    "mime": "image/jpeg",
+    "formats": {
+     "large": {
+      "url": "/uploads/large_ENCARTE_COMETA_PRESENTES_16_A_30_DE_SETEMBRO_DE_2026_bfb69c367d.jpg"
+     },
+     "medium": {
+      "url": "/uploads/medium_ENCARTE_COMETA_PRESENTES_16_A_30_DE_SETEMBRO_DE_2026_bfb69c367d.jpg"
+     }
+    }
+   }
+  }
+ ]
+}

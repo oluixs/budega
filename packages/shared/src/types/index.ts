@@ -48,6 +48,8 @@ export interface Market {
   is_suspended: boolean;
   created_at: string;
   updated_at: string;
+  /** Site oficial do mercado (também a fonte dos dados importados). */
+  website_url?: string | null;
 }
 
 export interface Branch {
@@ -92,6 +94,12 @@ export interface Flyer {
   status: FlyerStatus;
   created_at: string;
   updated_at: string;
+  /** Texto do mercado sobre o encarte (ex.: "somente para a loja Montese"). */
+  description?: string | null;
+  /** Imagem de capa (1ª página) para listas e prévias. */
+  cover_url?: string | null;
+  /** Página oficial de onde o encarte foi importado (crédito + link para a fonte). */
+  source_url?: string | null;
 }
 
 export interface Offer {
@@ -112,6 +120,13 @@ export interface Offer {
   is_featured: boolean;
   created_at: string;
   updated_at: string;
+  /** Encarte de onde a oferta foi lida, quando importada. */
+  flyer_id?: string | null;
+  /**
+   * "manual" = cadastrada no painel; "encarte" = lida automaticamente da imagem do
+   * encarte (a interface avisa para conferir o preço no encarte original).
+   */
+  origin?: "manual" | "encarte";
 }
 
 export interface Favorite {
@@ -167,9 +182,33 @@ export interface AnalyticsEvent {
   created_at: string;
 }
 
+/** De onde vieram os dados de um mercado importado, para crédito e auditoria. */
+export interface DataSource {
+  market_id: string;
+  name: string;
+  website_url: string;
+  /** Quando a fonte foi consultada com sucesso pela última vez (ISO). */
+  fetched_at: string;
+  /** Mensagem do último erro, se a última tentativa falhou (os dados anteriores são mantidos). */
+  error?: string | null;
+}
+
+/** Retrato dos dados regionais importados dos sites dos mercados (packages/sources). */
+export interface RegionalData {
+  region: { name: string; center: Coordinates };
+  generated_at: string;
+  sources: DataSource[];
+  markets: Market[];
+  branches: Branch[];
+  flyers: Flyer[];
+  offers: Offer[];
+}
+
 /** Um mercado enriquecido com distância calculada a partir da posição do usuário. */
 export interface MarketWithDistance extends Market {
   distance_km: number | null;
+  /** Loja mais próxima, quando o mercado tem filiais e a posição do usuário é conhecida. */
+  nearest_branch?: Branch | null;
 }
 
 export interface Coordinates {

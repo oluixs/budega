@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { BadgeCheck, MapPin, Store } from "lucide-react";
 import type { MarketWithDistance } from "@budega/shared";
@@ -13,8 +14,18 @@ export function MarketCard({ market }: MarketCardProps) {
   return (
     <Link href={`/mercados/${market.slug}`} className="group block h-full">
       <Card className="h-full gap-0 py-0 shadow-[var(--shadow-card)] ring-neutral-300 transition-transform group-hover:-translate-y-0.5">
-        <div className="flex h-28 items-center justify-center bg-brand-50 text-brand-600">
-          <Store className="h-10 w-10" aria-hidden="true" />
+        <div className="relative flex h-28 items-center justify-center bg-brand-50 text-brand-600">
+          {market.logo_url ? (
+            <Image
+              src={market.logo_url}
+              alt={`Logo ${market.name}`}
+              fill
+              sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+              className="object-contain p-4"
+            />
+          ) : (
+            <Store className="h-10 w-10" aria-hidden="true" />
+          )}
         </div>
         <div className="flex flex-1 flex-col gap-2 p-4">
           <div className="flex items-start justify-between gap-2">
@@ -26,7 +37,9 @@ export function MarketCard({ market }: MarketCardProps) {
 
           <p className="flex items-center gap-1 text-body text-neutral-500">
             <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
-            {market.neighborhood}, {market.city}
+            {market.nearest_branch
+              ? `Mais perto: ${market.nearest_branch.name}`
+              : [market.neighborhood, market.city].filter(Boolean).join(", ")}
           </p>
 
           <div className="mt-auto flex items-center justify-between pt-2">

@@ -1,4 +1,4 @@
-import type { Coordinates, Market, MarketWithDistance } from "../types/index";
+import type { Branch, Coordinates, Market, MarketWithDistance } from "../types/index";
 
 const EARTH_RADIUS_KM = 6371;
 
@@ -43,19 +43,51 @@ export function formatDistance(distanceKm: number | null): string {
   return `${distanceKm.toFixed(1).replace(".", ",")} km`;
 }
 
+/**
+ * Acrescenta a distância de cada mercado até `origin`. Para redes com várias lojas,
+ * vale a loja mais próxima (e ela vem em `nearest_branch`): o Cometa, com 43 lojas, está
+ * a 500 m de quem mora perto de qualquer uma delas, não só do endereço da matriz.
+ */
 export function withDistance(
   markets: Market[],
   origin: Coordinates | null,
+  branches: Branch[] = [],
 ): MarketWithDistance[] {
-  return markets.map((market) => ({
-    ...market,
-    distance_km: origin
-      ? calculateDistanceKm(origin, {
-          latitude: market.latitude,
-          longitude: market.longitude,
-        })
-      : null,
-  }));
+  return markets.map((market) => {
+    if (!origin) return { ...market, distance_km: null, nearest_branch: null };
+
+    let best: { distance: number | null; branch: Branch | null } = {
+      distance: calculateDistanceKm(origin, market),
+      branch: null,
+    };
+    for (const branch of branches) {
+      if (branch.market_id !== market.id) continue;
+      const distance = calculateDistanceKm(origin, branch);
+      if (distance !== null && (best.distance === null || distance < best.distance)) best = { distance, branch };
+    }
+    return { ...market, distance_km: best.distance, nearest_branch: best.branch };
+  });
+}
+
+/**
+ * Busca por texto (nome, bairro, cidade, endereço) no mercado **e nas lojas dele**:
+ * "Aldeota" encontra o Cometa porque ele tem lojas no bairro.
+ */
+export function matchesMarketQuery(market: Market, branches: Branch[], query: string): boolean {
+  const normalized = normalizeSearch(query);
+  if (!normalized) return true;
+  const haystack = [market, ...branches.filter((branch) => branch.market_id === market.id)]
+    .flatMap((place) => [place.name, place.neighborhood, place.city, place.address])
+    .join(" ");
+  return normalizeSearch(haystack).includes(normalized);
+}
+
+function normalizeSearch(text: string): string {
+  return text
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .trim();
 }
 
 export type MarketSortOrder = "distance" | "relevance";

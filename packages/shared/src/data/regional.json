@@ -1,0 +1,2749 @@
+{
+  "region": {
+    "name": "Fortaleza e Região Metropolitana",
+    "center": {
+      "latitude": -3.7319,
+      "longitude": -38.5267
+    }
+  },
+  "generated_at": "2026-09-29T15:51:55.514Z",
+  "sources": [
+    {
+      "market_id": "cometa",
+      "name": "Cometa Supermercados",
+      "website_url": "https://cometasupermercados.com.br",
+      "fetched_at": "2026-09-29T15:51:55.514Z",
+      "error": null
+    }
+  ],
+  "markets": [
+    {
+      "id": "cometa",
+      "name": "Cometa Supermercados",
+      "slug": "cometa-supermercados",
+      "description": "Rede de supermercados de Fortaleza e Região Metropolitana, com 43 lojas.",
+      "logo_url": "https://cometasupermercados.com.br/logo.png",
+      "phone": "8532317740",
+      "whatsapp": null,
+      "address": "Rua Ildefonso Albano, 2260",
+      "neighborhood": "Aldeota",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.740611194601686,
+      "longitude": -38.51615591974627,
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "is_verified": false,
+      "is_featured": false,
+      "is_suspended": false,
+      "created_at": "2025-12-11T12:56:27.575Z",
+      "updated_at": "2026-09-29T03:00:00.109Z",
+      "owner_id": null,
+      "website_url": "https://cometasupermercados.com.br"
+    }
+  ],
+  "branches": [
+    {
+      "id": "cometa-loja-1",
+      "market_id": "cometa",
+      "name": "Cometa Ildefonso Albano",
+      "address": "Rua Ildefonso Albano, 2260",
+      "neighborhood": "Aldeota",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.740611194601686,
+      "longitude": -38.51615591974627,
+      "phone": "8532317740",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-11T13:30:06.439Z",
+      "updated_at": "2026-01-05T20:45:20.226Z"
+    },
+    {
+      "id": "cometa-loja-2",
+      "market_id": "cometa",
+      "name": "Cometa Serrinha",
+      "address": "Av. Dr. Silas Munguba, 2965",
+      "neighborhood": "Serrinha",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7874893543678234,
+      "longitude": -38.54711372782014,
+      "phone": "8532326631",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-11T12:56:27.575Z",
+      "updated_at": "2026-01-05T21:29:06.061Z"
+    },
+    {
+      "id": "cometa-loja-3",
+      "market_id": "cometa",
+      "name": "Cometa Oliveira Paiva",
+      "address": "Av. Oliveira Paiva, 1881",
+      "neighborhood": "Cidade dos Funcionários",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.795464206022193,
+      "longitude": -38.49015559091,
+      "phone": "8532711912",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-11T20:43:21.337Z",
+      "updated_at": "2026-06-22T18:55:31.323Z"
+    },
+    {
+      "id": "cometa-loja-4",
+      "market_id": "cometa",
+      "name": "Cometa Henrique Jorge",
+      "address": "Av. Senador Fernandes Távora, 1526",
+      "neighborhood": "Henrique Jorge",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7594698467984045,
+      "longitude": -38.58612880440261,
+      "phone": "8532907404",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-11T20:45:27.984Z",
+      "updated_at": "2026-02-07T14:57:06.745Z"
+    },
+    {
+      "id": "cometa-loja-5",
+      "market_id": "cometa",
+      "name": "Cometa José Walter",
+      "address": "Av. N 1042, 2ª Etapa",
+      "neighborhood": "José Walter",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.830479369609895,
+      "longitude": -38.560374547575734,
+      "phone": "8534738425",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-11T20:50:06.852Z",
+      "updated_at": "2026-06-22T18:56:02.883Z"
+    },
+    {
+      "id": "cometa-loja-6",
+      "market_id": "cometa",
+      "name": "Cometa Pinto Madeira",
+      "address": "Rua Pinto Madeira, 1340",
+      "neighborhood": "Aldeota",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7336735174177664,
+      "longitude": -38.513612017894765,
+      "phone": "8532213135",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-11T20:51:18.209Z",
+      "updated_at": "2026-01-15T17:47:22.188Z"
+    },
+    {
+      "id": "cometa-loja-8",
+      "market_id": "cometa",
+      "name": "Cometa Vila Velha",
+      "address": "Rua Pedro Sampaio, 778",
+      "neighborhood": "Barra do Ceará",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7228959375788264,
+      "longitude": -38.596295562941556,
+      "phone": "8532842153",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-29T11:56:44.702Z",
+      "updated_at": "2026-01-05T17:51:34.893Z"
+    },
+    {
+      "id": "cometa-loja-9",
+      "market_id": "cometa",
+      "name": "Cometa Maracanaú",
+      "address": "Rua Cap. Valdemar de Lima, 140",
+      "neighborhood": "",
+      "city": "Maracanaú",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.881840036995155,
+      "longitude": -38.625488403628445,
+      "phone": "8533716116",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-29T11:58:17.039Z",
+      "updated_at": "2026-01-20T11:26:29.933Z"
+    },
+    {
+      "id": "cometa-loja-10",
+      "market_id": "cometa",
+      "name": "Cometa Júlio Lima",
+      "address": "Rua Dr. Júlio Lima, 676",
+      "neighborhood": "Cidade dos Funcionários",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7957879689988583,
+      "longitude": -38.49879764041203,
+      "phone": "8534524244",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-29T11:59:41.805Z",
+      "updated_at": "2025-12-30T11:41:45.726Z"
+    },
+    {
+      "id": "cometa-loja-11",
+      "market_id": "cometa",
+      "name": "Cometa Virgílio Távora",
+      "address": "Av. Virgílio Távora, 867",
+      "neighborhood": "Meireles",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7329803269052464,
+      "longitude": -38.49219708465644,
+      "phone": "8532621710",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-29T20:49:31.472Z",
+      "updated_at": "2026-02-02T12:27:47.231Z"
+    },
+    {
+      "id": "cometa-loja-12",
+      "market_id": "cometa",
+      "name": "Cometa Castelo Branco",
+      "address": "Av. Presidente Castelo Branco, 5211",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.704844840638469,
+      "longitude": -38.577973823309584,
+      "phone": "8532822446",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-29T20:54:15.467Z",
+      "updated_at": "2026-01-15T18:25:08.322Z"
+    },
+    {
+      "id": "cometa-loja-13",
+      "market_id": "cometa",
+      "name": "Cometa J da Penha",
+      "address": "Rua J da Penha, 700",
+      "neighborhood": "Centro",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.737136774557194,
+      "longitude": -38.52011293346102,
+      "phone": "8532319751",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-02-07T14:54:00.060Z",
+      "updated_at": "2026-02-07T14:54:01.516Z"
+    },
+    {
+      "id": "cometa-loja-14",
+      "market_id": "cometa",
+      "name": "Cometa 13 de Maio",
+      "address": "Av. 13 de Maio, 1060",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7493088947707625,
+      "longitude": -38.528462831192705,
+      "phone": "8532722737",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-29T21:03:04.029Z",
+      "updated_at": "2026-02-07T14:02:23.539Z"
+    },
+    {
+      "id": "cometa-loja-15",
+      "market_id": "cometa",
+      "name": "Cometa Osório de Paiva",
+      "address": "Av. Osório de Paiva, 6554",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8107408356406984,
+      "longitude": -38.60921864471224,
+      "phone": "8534981019",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "07:00",
+          "closes_at": "18:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-30T11:29:20.384Z",
+      "updated_at": "2026-06-22T18:59:42.529Z"
+    },
+    {
+      "id": "cometa-loja-16",
+      "market_id": "cometa",
+      "name": "Cometa Frei Cirilo",
+      "address": "Av. Frei Cirilo, 4027",
+      "neighborhood": "Messejana",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8191953780032772,
+      "longitude": -38.49626837419966,
+      "phone": "8532741300",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:45",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:45",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:45",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:45",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:45",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:45",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:45",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-30T16:33:01.499Z",
+      "updated_at": "2026-06-22T19:01:20.973Z"
+    },
+    {
+      "id": "cometa-loja-17",
+      "market_id": "cometa",
+      "name": "Cometa Joaquim Felício",
+      "address": "Rua Joaquim Felício, 809",
+      "neighborhood": "Messejana",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.830278020016817,
+      "longitude": -38.48746136949394,
+      "phone": "8532741118",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-30T17:02:21.996Z",
+      "updated_at": "2026-02-07T19:01:19.453Z"
+    },
+    {
+      "id": "cometa-loja-18",
+      "market_id": "cometa",
+      "name": "Cometa Waldir Diogo",
+      "address": "Rua Waldir Diogo, 1138, Solares Shopping",
+      "neighborhood": "Parque São José",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.800953820345694,
+      "longitude": -38.5869204305164,
+      "phone": "8534846173",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:45",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:45",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:45",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:45",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:45",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:45",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:45",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-30T17:31:37.590Z",
+      "updated_at": "2026-02-07T19:10:30.123Z"
+    },
+    {
+      "id": "cometa-loja-19",
+      "market_id": "cometa",
+      "name": "Cometa João Carlos",
+      "address": "Av. Governador João Carlos, 858",
+      "neighborhood": "Serrinha",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7827001137961584,
+      "longitude": -38.55370138074529,
+      "phone": "8532922223",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-30T17:57:33.842Z",
+      "updated_at": "2026-06-22T19:01:45.064Z"
+    },
+    {
+      "id": "cometa-loja-20",
+      "market_id": "cometa",
+      "name": "Cometa José Leon",
+      "address": "Av. José Leon, 1120",
+      "neighborhood": "Cidade dos funcionários",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.787866901157006,
+      "longitude": -38.50204426960769,
+      "phone": "8532759180",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-30T18:03:19.473Z",
+      "updated_at": "2026-02-07T20:08:02.335Z"
+    },
+    {
+      "id": "cometa-loja-21",
+      "market_id": "cometa",
+      "name": "Cometa Coronel Matos Dourado",
+      "address": "Av. Cel. Matos Dourado, 1280",
+      "neighborhood": "Dom Lustosa",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7501555950041734,
+      "longitude": -38.58476265203323,
+      "phone": "8532352708",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-30T18:08:57.590Z",
+      "updated_at": "2026-01-15T17:53:07.818Z"
+    },
+    {
+      "id": "cometa-loja-22",
+      "market_id": "cometa",
+      "name": "Cometa Antônio Sales",
+      "address": "Av. Antônio Sales, 1800",
+      "neighborhood": "Dionísio Torres",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7440279242276175,
+      "longitude": -38.50799306940755,
+      "phone": "8532467679",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-30T20:08:06.703Z",
+      "updated_at": "2026-02-07T19:51:47.488Z"
+    },
+    {
+      "id": "cometa-loja-23",
+      "market_id": "cometa",
+      "name": "Cometa Siqueira",
+      "address": "Av. Osório de Paiva, 2951",
+      "neighborhood": "Siqueira",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7887768362797822,
+      "longitude": -38.58597523560521,
+      "phone": "8534844221",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-30T20:12:04.754Z",
+      "updated_at": "2026-01-20T11:31:39.445Z"
+    },
+    {
+      "id": "cometa-loja-24",
+      "market_id": "cometa",
+      "name": "Cometa Engenheiro Santana Jr.",
+      "address": "Av. Eng. Santana Jr., 699",
+      "neighborhood": "Cocó",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7354261042158123,
+      "longitude": -38.48162364872201,
+      "phone": "8532651442",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-30T20:23:07.667Z",
+      "updated_at": "2026-01-05T18:27:36.186Z"
+    },
+    {
+      "id": "cometa-loja-25",
+      "market_id": "cometa",
+      "name": "Cometa São Paulo",
+      "address": "Rua São Paulo, 1648",
+      "neighborhood": "Centro",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.721723277737018,
+      "longitude": -38.54025211638824,
+      "phone": "8535121725",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-30T20:26:16.276Z",
+      "updated_at": "2026-01-05T18:25:34.209Z"
+    },
+    {
+      "id": "cometa-loja-26",
+      "market_id": "cometa",
+      "name": "Cometa Padre Antônio Tomás",
+      "address": "Av. Padre Antônio Tomás, 871",
+      "neighborhood": "Aldeota",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.741201876863608,
+      "longitude": -38.49586696635185,
+      "phone": "8532240233",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T11:59:00.662Z",
+      "updated_at": "2026-01-05T21:17:47.683Z"
+    },
+    {
+      "id": "cometa-loja-27",
+      "market_id": "cometa",
+      "name": "Cometa Tibúrcio Cavalcante",
+      "address": "R. Tibúrcio Cavalcante, 1885",
+      "neighborhood": "Meireles",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.741161228647551,
+      "longitude": -38.50415320417898,
+      "phone": "8532446016",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T12:21:30.656Z",
+      "updated_at": "2026-01-05T20:08:31.740Z"
+    },
+    {
+      "id": "cometa-loja-28",
+      "market_id": "cometa",
+      "name": "Cometa Jovita Feitosa",
+      "address": "Av. Jovita Feitosa, 2580",
+      "neighborhood": "Parquelândia",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7404359190056637,
+      "longitude": -38.560272978051856,
+      "phone": "8535121728",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T12:24:43.768Z",
+      "updated_at": "2026-01-05T18:32:03.685Z"
+    },
+    {
+      "id": "cometa-loja-29",
+      "market_id": "cometa",
+      "name": "Cometa Bairro de Fátima",
+      "address": "Av. Deputado Oswaldo Studart, 200",
+      "neighborhood": "Fátima",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.753079680777967,
+      "longitude": -38.52781876502557,
+      "phone": "8535121729",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T12:30:12.585Z",
+      "updated_at": "2026-01-05T17:52:23.167Z"
+    },
+    {
+      "id": "cometa-loja-30",
+      "market_id": "cometa",
+      "name": "Cometa Beni de Carvalho",
+      "address": "Av. Sen. Virgílio Távora, 2201",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7455867041096154,
+      "longitude": -38.495725944243716,
+      "phone": "8535121730",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T14:14:06.298Z",
+      "updated_at": "2026-01-05T18:26:04.630Z"
+    },
+    {
+      "id": "cometa-loja-32",
+      "market_id": "cometa",
+      "name": "Cometa Maraponga",
+      "address": "Av. Godofredo Maciel, 1945",
+      "neighborhood": "Maraponga",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.791789421830905,
+      "longitude": -38.56714252846805,
+      "phone": "8535121832",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T14:21:32.199Z",
+      "updated_at": "2026-06-22T19:03:09.245Z"
+    },
+    {
+      "id": "cometa-loja-33",
+      "market_id": "cometa",
+      "name": "Cometa Kennedy",
+      "address": "Rua Franceses, 350",
+      "neighborhood": "Presidente Kennedy",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7299159831429924,
+      "longitude": -38.56902863237751,
+      "phone": "8535121733",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T14:28:55.256Z",
+      "updated_at": "2026-02-07T12:58:33.907Z"
+    },
+    {
+      "id": "cometa-loja-34",
+      "market_id": "cometa",
+      "name": "Cometa Edilson Brasil Soares",
+      "address": "Av. Edilson Brasil Soares, 1167",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7888840456118213,
+      "longitude": -38.47597904570567,
+      "phone": "8535121734",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T14:44:07.820Z",
+      "updated_at": "2026-01-05T18:26:36.111Z"
+    },
+    {
+      "id": "cometa-loja-35",
+      "market_id": "cometa",
+      "name": "Cometa Francisco Sá",
+      "address": "Av. Francisco Sá, 2670",
+      "neighborhood": "Jacrecanga",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7199579151803923,
+      "longitude": -38.549044348919814,
+      "phone": "8535121735",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T14:51:54.579Z",
+      "updated_at": "2026-06-22T19:03:40.079Z"
+    },
+    {
+      "id": "cometa-loja-36",
+      "market_id": "cometa",
+      "name": "Cometa Eusébio",
+      "address": "Av. Eusébio de Queiroz, 2880",
+      "neighborhood": "",
+      "city": "Eusébio",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8796016680237955,
+      "longitude": -38.46275288764511,
+      "phone": "8535121736",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T15:01:43.915Z",
+      "updated_at": "2026-01-05T18:27:57.765Z"
+    },
+    {
+      "id": "cometa-loja-37",
+      "market_id": "cometa",
+      "name": "Cometa Passaré",
+      "address": "Av. Silas Munguba, 4301",
+      "neighborhood": "Passaré",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.791157967077943,
+      "longitude": -38.53739932236645,
+      "phone": "8535121737",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T16:16:20.678Z",
+      "updated_at": "2026-01-05T19:47:14.484Z"
+    },
+    {
+      "id": "cometa-loja-38",
+      "market_id": "cometa",
+      "name": "Cometa Washington Soares",
+      "address": "Av. Washington Soares, 7263",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8192126282853396,
+      "longitude": -38.48165655778899,
+      "phone": "8535121738",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T17:25:12.950Z",
+      "updated_at": "2026-03-16T19:41:03.511Z"
+    },
+    {
+      "id": "cometa-loja-39",
+      "market_id": "cometa",
+      "name": "Cometa Plaza Maraponga",
+      "address": "Av. Godofredo Maciel, 4035",
+      "neighborhood": "Plaza Maraponga",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.810663421254601,
+      "longitude": -38.574012435912486,
+      "phone": "8535121739",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T17:33:32.969Z",
+      "updated_at": "2026-01-05T18:52:01.216Z"
+    },
+    {
+      "id": "cometa-loja-40",
+      "market_id": "cometa",
+      "name": "Cometa João Pessoa",
+      "address": "Rua Des. Praxedes, 163",
+      "neighborhood": "Damas",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7570108537441094,
+      "longitude": -38.55308435116678,
+      "phone": "8535121740",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T17:39:10.884Z",
+      "updated_at": "2026-02-07T17:29:06.774Z"
+    },
+    {
+      "id": "cometa-loja-42",
+      "market_id": "cometa",
+      "name": "Cometa João XXIII",
+      "address": "Rua Aluísio Azevedo, 86",
+      "neighborhood": "João XXIII",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7728660718441924,
+      "longitude": -38.57378066885158,
+      "phone": "8535121742",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T17:44:44.097Z",
+      "updated_at": "2026-01-05T18:38:45.161Z"
+    },
+    {
+      "id": "cometa-loja-43",
+      "market_id": "cometa",
+      "name": "Cometa Barão do Rio Branco",
+      "address": "R. Barão do Rio Branco, 2841",
+      "neighborhood": "Fátima",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7428568974341934,
+      "longitude": -38.53338447876673,
+      "phone": "8535121743",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T18:05:28.087Z",
+      "updated_at": "2026-02-07T17:34:04.671Z"
+    },
+    {
+      "id": "cometa-loja-45",
+      "market_id": "cometa",
+      "name": "Cometa Pátio Oliveira Paiva",
+      "address": "Av. Oliveira Paiva, 1350",
+      "neighborhood": "Cidade dos Funcionários",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7961562045116977,
+      "longitude": -38.49383143684413,
+      "phone": "8535121745",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T18:36:19.468Z",
+      "updated_at": "2026-01-05T18:53:23.594Z"
+    },
+    {
+      "id": "cometa-loja-46",
+      "market_id": "cometa",
+      "name": "Cometa Avenida I",
+      "address": "Av. I, 699",
+      "neighborhood": "José Walter",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.830124579325425,
+      "longitude": -38.55213834066614,
+      "phone": "8535121746",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-04-23T16:44:06.090Z",
+      "updated_at": "2026-04-24T19:44:56.329Z"
+    },
+    {
+      "id": "cometa-loja-47",
+      "market_id": "cometa",
+      "name": "Cometa Gomes de Matos",
+      "address": "Av. Professor Gomes de Matos, 1270",
+      "neighborhood": "Montese",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7633439299639684,
+      "longitude": -38.54772753600357,
+      "phone": "8535121747",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2025-12-31T18:38:42.651Z",
+      "updated_at": "2026-02-07T17:15:34.963Z"
+    }
+  ],
+  "flyers": [
+    {
+      "id": "cometa-encarte-512",
+      "market_id": "cometa",
+      "branch_id": "cometa-loja-47",
+      "title": "Ofertas Exclusivas Montese",
+      "description": "Ofertas válidas de 29/09 a 05/10 somente para a loja Montese.",
+      "file_url": "https://adminx.cometasupermercados.com.br/uploads/10_de_2026_FINAL_83f81efdf3.pdf",
+      "file_type": "pdf",
+      "cover_url": "https://adminx.cometasupermercados.com.br/uploads/large_10_de_2026_FINAL_9026de85f3.jpg",
+      "source_url": "https://cometasupermercados.com.br/encartes",
+      "valid_from": "2026-09-29T03:00:00.000Z",
+      "valid_until": "2026-10-06T02:59:59.000Z",
+      "is_active": true,
+      "status": "active",
+      "created_at": "2026-09-28T19:38:41.229Z",
+      "updated_at": "2026-09-29T03:00:00.109Z"
+    },
+    {
+      "id": "cometa-encarte-510",
+      "market_id": "cometa",
+      "branch_id": null,
+      "title": "Feirão Cometa",
+      "description": "Ofertas válidas de 27 a 29/09 em todas as lojas, exceto Osório de Paiva e Gomes de Matos",
+      "file_url": "https://adminx.cometasupermercados.com.br/uploads/Encarte_Feirao_27_a_29_de_setembro_de_2026_1_8e803cef18.pdf",
+      "file_type": "pdf",
+      "cover_url": "https://adminx.cometasupermercados.com.br/uploads/large_Encarte_Feirao_27_a_29_de_setembro_de_2026_1_ebc55ca0c9.jpg",
+      "source_url": "https://cometasupermercados.com.br/encartes",
+      "valid_from": "2026-09-27T03:00:00.000Z",
+      "valid_until": "2026-09-30T02:59:59.000Z",
+      "is_active": true,
+      "status": "active",
+      "created_at": "2026-02-09T20:23:05.708Z",
+      "updated_at": "2026-09-27T03:00:00.157Z"
+    },
+    {
+      "id": "cometa-encarte-508",
+      "market_id": "cometa",
+      "branch_id": null,
+      "title": "Ofertas de Inauguração Guararapes",
+      "description": "Ofertas válidas de 25 a 30/09 somente para a loja Guararapes.",
+      "file_url": "https://adminx.cometasupermercados.com.br/uploads/Encarte_Inauguracao_Guararapes_25_A_30_DE_SETEMBRO_DE_2026_350d6ecc11.pdf",
+      "file_type": "pdf",
+      "cover_url": "https://adminx.cometasupermercados.com.br/uploads/large_Encarte_Inauguracao_Guararapes_25_A_30_DE_SETEMBRO_DE_2026_f56e198303.jpg",
+      "source_url": "https://cometasupermercados.com.br/encartes",
+      "valid_from": "2026-09-25T03:00:00.000Z",
+      "valid_until": "2026-10-01T02:59:59.000Z",
+      "is_active": true,
+      "status": "active",
+      "created_at": "2026-09-24T21:14:06.984Z",
+      "updated_at": "2026-09-25T03:00:00.100Z"
+    },
+    {
+      "id": "cometa-encarte-506",
+      "market_id": "cometa",
+      "branch_id": null,
+      "title": "Clube Tem Mais pra Você",
+      "description": "Ofertas válidas de 24 a 30/09 para clientes cadastrados no Clube Tem Mais Pra Você.",
+      "file_url": "https://adminx.cometasupermercados.com.br/uploads/2026_FINAL_6_5991b0afd9.pdf",
+      "file_type": "pdf",
+      "cover_url": "https://adminx.cometasupermercados.com.br/uploads/large_2026_FINAL_2_8a6d0eb8cf.jpg",
+      "source_url": "https://cometasupermercados.com.br/encartes",
+      "valid_from": "2026-09-24T03:00:00.000Z",
+      "valid_until": "2026-10-01T02:59:59.000Z",
+      "is_active": true,
+      "status": "active",
+      "created_at": "2026-06-03T19:52:24.263Z",
+      "updated_at": "2026-09-24T12:57:52.099Z"
+    },
+    {
+      "id": "cometa-encarte-504",
+      "market_id": "cometa",
+      "branch_id": null,
+      "title": "Alimento Que Faz Bem",
+      "description": "Ofertas válidas de 24 a 30/09 em todas as lojas, exceto Osório de Paiva e Gomes de Matos.",
+      "file_url": "https://adminx.cometasupermercados.com.br/uploads/ENCARTE_ALIMENTO_QUE_FAZ_BEM_DE_24_A_30_DE_SETEMBRO_DE_20262_a2b6d1f325.pdf",
+      "file_type": "pdf",
+      "cover_url": "https://adminx.cometasupermercados.com.br/uploads/large_ENCARTE_ALIMENTO_QUE_FAZ_BEM_DE_24_A_30_DE_SETEMBRO_DE_2026_14093eb418.jpg",
+      "source_url": "https://cometasupermercados.com.br/encartes",
+      "valid_from": "2026-09-24T03:00:00.000Z",
+      "valid_until": "2026-10-01T02:59:59.000Z",
+      "is_active": true,
+      "status": "active",
+      "created_at": "2026-09-23T20:53:52.709Z",
+      "updated_at": "2026-09-24T03:00:00.102Z"
+    },
+    {
+      "id": "cometa-encarte-501",
+      "market_id": "cometa",
+      "branch_id": null,
+      "title": "Festival de Massas M Dias e JSB",
+      "description": "Ofertas válidas de 22 a 30/09 em todas as lojas, exceto Virgílio Távora, Osório de Paiva, Antônio Sales, Padre Antônio Tomás e Gomes de Matos.",
+      "file_url": "https://adminx.cometasupermercados.com.br/uploads/COOPERADO_FESTIVAL_DE_MASSA_M_DIAS_E_JSB_22_a_30_09_2026_web_811b09952e.pdf",
+      "file_type": "pdf",
+      "cover_url": "https://adminx.cometasupermercados.com.br/uploads/large_COOPERADO_FESTIVAL_DE_MASSA_M_DIAS_E_JSB_22_a_30_09_2026_jpg_6a9fb2b41b.jpeg",
+      "source_url": "https://cometasupermercados.com.br/encartes",
+      "valid_from": "2026-09-22T03:00:00.000Z",
+      "valid_until": "2026-10-01T02:59:59.000Z",
+      "is_active": true,
+      "status": "active",
+      "created_at": "2026-09-21T20:53:28.058Z",
+      "updated_at": "2026-09-22T03:00:00.088Z"
+    },
+    {
+      "id": "cometa-encarte-485",
+      "market_id": "cometa",
+      "branch_id": "cometa-loja-33",
+      "title": "Cometa Presentes",
+      "description": "Ofertas válidas de 16 a 30/09 somente na loja Cometa Presentes - Rua Franceses, 350 - Presidente Kennedy.",
+      "file_url": "https://adminx.cometasupermercados.com.br/uploads/ENCARTE_COMETA_PRESENTES_16_A_30_DE_SETEMBRO_DE_2026_2c616dd80b.pdf",
+      "file_type": "pdf",
+      "cover_url": "https://adminx.cometasupermercados.com.br/uploads/large_ENCARTE_COMETA_PRESENTES_16_A_30_DE_SETEMBRO_DE_2026_bfb69c367d.jpg",
+      "source_url": "https://cometasupermercados.com.br/encartes",
+      "valid_from": "2026-09-16T03:00:00.000Z",
+      "valid_until": "2026-10-01T02:59:59.000Z",
+      "is_active": true,
+      "status": "active",
+      "created_at": "2026-04-14T19:43:56.111Z",
+      "updated_at": "2026-09-16T03:00:00.094Z"
+    }
+  ],
+  "offers": []
+}

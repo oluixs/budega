@@ -29,6 +29,10 @@ const SORT_OPTIONS = [
   { value: "relevance", label: "Relevância" },
 ];
 
+// Sem `items`, o Select do Base UI mostra o valor cru ("any", "distance") no gatilho.
+const labelsOf = (options: { value: string; label: string }[]) =>
+  Object.fromEntries(options.map((option) => [option.value, option.label]));
+
 export function FiltersBar({ categories }: FiltersBarProps) {
   const router = useRouter();
   const pathname = usePathname();
@@ -47,12 +51,13 @@ export function FiltersBar({ categories }: FiltersBarProps) {
   return (
     <div className="flex flex-wrap items-center gap-3 rounded-xl border border-neutral-300 bg-neutral-0 p-4">
       <div className="flex flex-col gap-1">
-        <Label className="text-caption text-neutral-500">Distância</Label>
+        <Label htmlFor="filtro-distancia" className="text-caption text-neutral-500">Distância</Label>
         <Select
           value={searchParams.get("distancia") ?? "any"}
           onValueChange={(value) => updateParam("distancia", value)}
+          items={labelsOf(DISTANCE_OPTIONS)}
         >
-          <SelectTrigger className="w-40">
+          <SelectTrigger id="filtro-distancia" className="w-40">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -66,12 +71,13 @@ export function FiltersBar({ categories }: FiltersBarProps) {
       </div>
 
       <div className="flex flex-col gap-1">
-        <Label className="text-caption text-neutral-500">Categoria</Label>
+        <Label htmlFor="filtro-categoria" className="text-caption text-neutral-500">Categoria</Label>
         <Select
           value={searchParams.get("categoria") ?? "any"}
           onValueChange={(value) => updateParam("categoria", value)}
+          items={{ any: "Todas as categorias", ...Object.fromEntries(categories.map((c) => [c.slug, c.name])) }}
         >
-          <SelectTrigger className="w-44">
+          <SelectTrigger id="filtro-categoria" className="w-44">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -86,12 +92,13 @@ export function FiltersBar({ categories }: FiltersBarProps) {
       </div>
 
       <div className="flex flex-col gap-1">
-        <Label className="text-caption text-neutral-500">Ordenar por</Label>
+        <Label htmlFor="filtro-ordenar" className="text-caption text-neutral-500">Ordenar por</Label>
         <Select
           value={searchParams.get("ordenar") ?? "distance"}
           onValueChange={(value) => updateParam("ordenar", value)}
+          items={labelsOf(SORT_OPTIONS)}
         >
-          <SelectTrigger className="w-40">
+          <SelectTrigger id="filtro-ordenar" className="w-40">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>

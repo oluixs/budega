@@ -51,6 +51,13 @@ ordem** antes de fazer qualquer alteração:
   (navegador real, falha em erro de console/hidratação) e olhe as screenshots em
   `apps/web/test-results/screens/`. Novos tokens de tipografia vão no `@theme` do
   `globals.css` **e** no `createCn` de `lib/utils.ts`. Datas: sempre `formatDateBR`.
+- Dados reais: `packages/sources` importa dos sites oficiais dos mercados. Regras: só
+  endpoints/páginas públicos que o próprio site usa para visitantes (nunca APIs que exigem
+  login, como a do CMS do Cometa, que responde 403); respeitar `robots.txt`; sempre
+  `source_url` para crédito; encarte sem validade não é publicado. Todo adaptador tem
+  testes com respostas reais em `__fixtures__`. Testes e2e usam `BUDEGA_DADOS=demo`.
+- Nunca invente dados de identificação legal (CNPJ, razão social, contatos): ficam em
+  `apps/web/src/lib/legal.ts` e são preenchidos pelo responsável.
 - No Windows/Git Bash, não gere arquivos com `\` (caminhos, regex) por heredoc — o shell
   come as barras; use as ferramentas de edição de arquivo.
 - Sem credenciais Supabase, os apps rodam 100% em modo mock (dados de

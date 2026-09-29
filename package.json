@@ -21,7 +21,8 @@
     "audit:error": "node scripts/audit-error.mjs",
     "audit:validate": "node scripts/validate-audit.mjs",
     "supabase:migrate": "pnpm --filter @budega/supabase migrate",
-    "supabase:seed": "pnpm --filter @budega/supabase seed"
+    "supabase:seed": "pnpm --filter @budega/supabase seed",
+    "importar": "pnpm --filter @budega/sources importar"
   },
   "devDependencies": {
     "shadcn": "^4.21.0",
@@ -29,7 +30,11 @@
     "typescript": "^5.7.0"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["esbuild", "sharp", "unrs-resolver"],
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "unrs-resolver"
+    ],
     "overrides": {
       "@types/react": "19.2.4"
     }

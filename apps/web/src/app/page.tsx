@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, Sparkles, Store, Wallet } from "lucide-react";
-import { getActiveOffers, getCategories, getFeaturedMarkets, getMarkets } from "@/lib/data";
+import { getActiveFlyers, getActiveOffers, getCategories, getFeaturedMarkets, getMarkets } from "@/lib/data";
+import { FlyerCard } from "@/components/flyer/flyer-card";
 import { HeroSearch } from "@/components/home/hero-search";
 import { MarketCard } from "@/components/market/market-card";
 import { OfferCard } from "@/components/offer/offer-card";
@@ -32,15 +33,21 @@ const VALUE_PROPS = [
 ];
 
 export default async function HomePage() {
-  const [featuredMarkets, featuredOffers, categories, allMarkets] = await Promise.all([
-    getFeaturedMarkets(6),
-    getActiveOffers({ featuredOnly: true }),
+  const [marketsToShow, activeOffers, categories, allMarkets, flyers] = await Promise.all([
+    getFeaturedMarkets(8),
+    getActiveOffers(),
     getCategories(),
     getMarkets(),
+    getActiveFlyers(),
   ]);
 
-  const marketsToShow = featuredMarkets.length > 0 ? featuredMarkets : allMarkets.slice(0, 6);
+  const hasFeaturedMarkets = marketsToShow.some((market) => market.is_featured);
   const marketsWithDistance = marketsToShow.map((market) => ({ ...market, distance_km: null }));
+  const featuredOffers = activeOffers.filter((offer) => offer.is_featured);
+  const offersToShow = (featuredOffers.length ? featuredOffers : activeOffers).slice(0, 8);
+  const marketNameById = new Map(allMarkets.map((market) => [market.id, market.name]));
+  // Encartes que vencem antes primeiro: são os que o cliente precisa ver logo.
+  const weeklyFlyers = [...flyers].sort((a, b) => a.valid_until.localeCompare(b.valid_until)).slice(0, 8);
 
   return (
     <div>
@@ -80,7 +87,9 @@ export default async function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <div className="mb-6 flex items-center justify-between">
-          <h2 className="font-display text-h2 font-semibold text-neutral-900">Mercados em destaque</h2>
+          <h2 className="font-display text-h2 font-semibold text-neutral-900">
+            {hasFeaturedMarkets ? "Mercados em destaque" : "Mercados da região"}
+          </h2>
           <Button variant="ghost" render={<Link href="/explorar" />}>
             Ver todos <ArrowRight className="h-4 w-4" />
           </Button>
@@ -102,27 +111,42 @@ export default async function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-        <div className="mb-6 flex items-center justify-between">
-          <h2 className="font-display text-h2 font-semibold text-neutral-900">Ofertas em destaque</h2>
-          <Button variant="ghost" render={<Link href="/explorar" />}>
-            Ver todas <ArrowRight className="h-4 w-4" />
-          </Button>
+        <div className="mb-6">
+          <h2 className="font-display text-h2 font-semibold text-neutral-900">Encartes da semana</h2>
+          <p className="text-body text-neutral-500">Direto dos sites oficiais dos mercados, atualizados várias vezes ao dia.</p>
         </div>
-
-        {featuredOffers.length === 0 ? (
+        {weeklyFlyers.length === 0 ? (
           <EmptyState
             icon={Sparkles}
-            title="Nenhuma oferta em destaque agora"
-            description="Volte em breve — os mercados atualizam suas promoções com frequência."
+            title="Nenhum encarte vigente agora"
+            description="Os mercados publicam novos encartes toda semana — volte em breve."
           />
         ) : (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredOffers.slice(0, 8).map((offer) => (
-              <OfferCard key={offer.id} offer={offer} />
+            {weeklyFlyers.map((flyer) => (
+              <FlyerCard key={flyer.id} flyer={flyer} marketName={marketNameById.get(flyer.market_id)} />
             ))}
           </div>
         )}
       </section>
+
+      {offersToShow.length > 0 && (
+        <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+          <div className="mb-6 flex items-center justify-between">
+            <h2 className="font-display text-h2 font-semibold text-neutral-900">
+              {featuredOffers.length ? "Ofertas em destaque" : "Ofertas da semana"}
+            </h2>
+            <Button variant="ghost" render={<Link href="/explorar" />}>
+              Ver todas <ArrowRight className="h-4 w-4" />
+            </Button>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {offersToShow.map((offer) => (
+              <OfferCard key={offer.id} offer={offer} />
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="border-t border-neutral-300/60 bg-brand-700">
         <div className="mx-auto flex max-w-6xl flex-col items-start gap-4 px-4 py-14 sm:px-6">

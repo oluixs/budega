@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { calculateDistanceKm, sortMarkets, withDistance } from "./distance";
-import type { Market } from "../types/index";
+import { calculateDistanceKm, matchesMarketQuery, sortMarkets, withDistance } from "./distance";
+import type { Branch, Market } from "../types/index";
 
 const pinheiros = { latitude: -23.561, longitude: -46.6822 };
 const moema = { latitude: -23.6003, longitude: -46.665 };
@@ -71,5 +71,24 @@ describe("sortMarkets", () => {
     const withDist = withDistance([near, featuredFar], pinheiros);
     const sorted = sortMarkets(withDist, "relevance");
     expect(sorted[0]!.id).toBe("featured-far");
+  });
+});
+
+describe("redes com várias lojas", () => {
+  const chain = buildMarket({ id: "rede", latitude: -23.9, longitude: -46.9 }); // matriz longe
+  const branch = (id: string, latitude: number, longitude: number, neighborhood = "Centro") =>
+    ({ id, market_id: "rede", name: `Loja ${id}`, neighborhood, city: "São Paulo", address: "Rua X, 1", latitude, longitude }) as Branch;
+  const branches = [branch("longe", -23.95, -46.95), branch("perto", pinheiros.latitude, pinheiros.longitude, "Pinheiros")];
+
+  it("usa a distância até a loja mais próxima", () => {
+    const [result] = withDistance([chain], pinheiros, branches);
+    expect(result!.distance_km).toBeLessThan(0.01);
+    expect(result!.nearest_branch?.id).toBe("perto");
+  });
+
+  it("busca por bairro encontra a rede pelas lojas dela", () => {
+    expect(matchesMarketQuery(chain, branches, "pinheiros")).toBe(true);
+    expect(matchesMarketQuery(chain, branches, "Moema")).toBe(false);
+    expect(matchesMarketQuery({ ...chain, name: "Empório São João" }, [], "sao joao")).toBe(true);
   });
 });
