@@ -1,2 +1,2 @@
-export * from "./client.js";
+export * from "./client";
 export type { SupabaseClient } from "@supabase/supabase-js";

@@ -1,4 +1,4 @@
-import type { Coordinates, Market, MarketWithDistance } from "../types/index.js";
+import type { Coordinates, Market, MarketWithDistance } from "../types/index";
 
 const EARTH_RADIUS_KM = 6371;
 

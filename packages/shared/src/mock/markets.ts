@@ -1,4 +1,4 @@
-import type { Market, OpeningHours } from "../types/index.js";
+import type { Market, OpeningHours } from "../types/index";
 
 function standardHours(opensAt = "07:00", closesAt = "22:00", closedOnSunday = false): OpeningHours[] {
   return Array.from({ length: 7 }, (_, day) => ({

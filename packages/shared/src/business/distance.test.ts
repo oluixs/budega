@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { calculateDistanceKm, sortMarkets, withDistance } from "./distance.js";
-import type { Market } from "../types/index.js";
+import { calculateDistanceKm, sortMarkets, withDistance } from "./distance";
+import type { Market } from "../types/index";
 
 const pinheiros = { latitude: -23.561, longitude: -46.6822 };
 const moema = { latitude: -23.6003, longitude: -46.665 };

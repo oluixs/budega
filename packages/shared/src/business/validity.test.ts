@@ -6,7 +6,7 @@ import {
   isExpiringSoon,
   isFlyerActive,
   isOfferActive,
-} from "./validity.js";
+} from "./validity";
 
 const now = new Date("2026-06-15T12:00:00.000Z");
 

@@ -1,4 +1,4 @@
-import type { Flyer, Offer } from "../types/index.js";
+import type { Flyer, Offer } from "../types/index";
 
 /**
  * Regra de negócio: oferta vencida não aparece na experiência pública, mesmo que

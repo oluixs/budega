@@ -1,4 +1,4 @@
-import type { Category } from "../types/index.js";
+import type { Category } from "../types/index";
 
 export const mockCategories: Category[] = [
   { id: "cat-alimentos", name: "Alimentos", slug: "alimentos", icon: "package", sort_order: 1, created_at: "2026-01-01T00:00:00.000Z" },

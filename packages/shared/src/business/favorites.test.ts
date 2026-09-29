@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { addLocalFavorite, isFavorited, mergeFavorites, removeLocalFavorite, toggleLocalFavorite } from "./favorites.js";
+import { addLocalFavorite, isFavorited, mergeFavorites, removeLocalFavorite, toggleLocalFavorite } from "./favorites";
 
 describe("favoritos locais (anônimos)", () => {
   it("adiciona um favorito sem exigir cadastro", () => {

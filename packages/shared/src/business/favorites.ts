@@ -1,4 +1,4 @@
-import type { Favorite } from "../types/index.js";
+import type { Favorite } from "../types/index";
 
 export interface LocalFavorite {
   market_id: string | null;

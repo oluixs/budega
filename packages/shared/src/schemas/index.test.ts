@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { offerFormSchema, flyerFormSchema, validateUpload, ALLOWED_IMAGE_TYPES } from "./index.js";
+import { offerFormSchema, flyerFormSchema, validateUpload, ALLOWED_IMAGE_TYPES } from "./index";
 
 const validOffer = {
   market_id: "11111111-1111-4111-8111-111111111111",

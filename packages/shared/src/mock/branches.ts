@@ -1,4 +1,4 @@
-import type { Branch, OpeningHours } from "../types/index.js";
+import type { Branch, OpeningHours } from "../types/index";
 
 function standardHours(opensAt = "07:00", closesAt = "22:00"): OpeningHours[] {
   return Array.from({ length: 7 }, (_, day) => ({ day, opens_at: opensAt, closes_at: closesAt, closed: false }));

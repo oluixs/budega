@@ -46,8 +46,8 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 
 ## Fase 2 — Web pública
 
-- [ ] Configurar Next.js (App Router) + TypeScript + Tailwind + shadcn/ui em `apps/web`.
-- [ ] Página inicial `/`.
+- [x] Configurar Next.js (App Router) + TypeScript + Tailwind + shadcn/ui em `apps/web`.
+- [x] Página inicial `/`.
 - [ ] `/explorar` (busca, filtros, lista/mapa).
 - [ ] `/mercados/[slug]`.
 - [ ] `/ofertas/[id]`.

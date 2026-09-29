@@ -1,5 +1,5 @@
-import type { Offer } from "../types/index.js";
-import { daysFromNow } from "./dates.js";
+import type { Offer } from "../types/index";
+import { daysFromNow } from "./dates";
 
 const createdAt = daysFromNow(-30);
 

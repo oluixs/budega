@@ -1,5 +1,5 @@
-import type { Flyer, FlyerStatus } from "../types/index.js";
-import { daysFromNow } from "./dates.js";
+import type { Flyer, FlyerStatus } from "../types/index";
+import { daysFromNow } from "./dates";
 
 const createdAt = daysFromNow(-20);
 
