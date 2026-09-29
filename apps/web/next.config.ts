@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
       // Logos e capas de encarte importados dos sites oficiais (packages/sources).
       { protocol: "https", hostname: "cometasupermercados.com.br" },
       { protocol: "https", hostname: "adminx.cometasupermercados.com.br" },
+      { protocol: "https", hostname: "frangolandia.com" },
     ],
   },
 };

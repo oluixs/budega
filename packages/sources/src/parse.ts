@@ -45,13 +45,18 @@ function isValidDay(month: number, day: number): boolean {
  * Retorna o início às 00:00 e o fim às 23:59:59 no horário de Brasília, ou `null`.
  */
 export function parseValidity(text: string, referenceIso: string): { valid_from: string; valid_until: string } | null {
-  const source = normalize(text);
+  // "28.09" / "04.10.2026" (Frangolândia) → mesma forma de "28/09" / "04/10/2026".
+  const source = normalize(text).replace(/(\d{1,2})\.(\d{1,2})(?:\.(\d{2,4}))?/g, (_, d, m, y) =>
+    y ? `${d}/${m}/${y}` : `${d}/${m}`,
+  );
+  // "de" antes do período é opcional ("26 a 29/09 de 2026"); ano pode vir no fim.
   const match = source.match(
-    /de (\d{1,2})(?:\/(\d{1,2})(?:\/(\d{2,4}))?)? (?:a|ate) (\d{1,2})(?:\/(\d{1,2})(?:\/(\d{2,4}))?| de ([a-z]+))/,
+    /(?:^|[^\d/])(\d{1,2})(?:\/(\d{1,2})(?:\/(\d{2,4}))?)? (?:a|ate) (\d{1,2})(?:\/(\d{1,2})(?:\/(\d{2,4}))?| de ([a-z]+))(?: de (\d{4}))?/,
   );
   if (!match) return null;
 
-  const [, d1, m1, y1, d2, m2, y2, monthName] = match;
+  const [, d1, m1, y1, d2, m2, y2Inline, monthName, yearAtEnd] = match;
+  const y2 = y2Inline ?? yearAtEnd;
   const endMonth = m2 ? Number(m2) : monthName ? MONTHS[monthName] : undefined;
   if (!endMonth) return null;
   const startMonth = m1 ? Number(m1) : endMonth;
@@ -64,9 +69,9 @@ export function parseValidity(text: string, referenceIso: string): { valid_from:
   const fullYear = (value: string | undefined) =>
     value ? (value.length === 2 ? 2000 + Number(value) : Number(value)) : undefined;
 
-  let startYear = fullYear(y1) ?? refYear;
+  let startYear = fullYear(y1) ?? (y2 ? fullYear(y2)! - (endMonth < startMonth ? 1 : 0) : refYear);
   // Publicado em janeiro para um período que começou em dezembro.
-  if (!y1 && startMonth - (reference.getUTCMonth() + 1) > 6) startYear -= 1;
+  if (!y1 && !y2 && startMonth - (reference.getUTCMonth() + 1) > 6) startYear -= 1;
   let endYear = fullYear(y2) ?? startYear;
   if (!y2 && endMonth < startMonth) endYear += 1;
 
@@ -76,25 +81,30 @@ export function parseValidity(text: string, referenceIso: string): { valid_from:
   return { valid_from, valid_until };
 }
 
-const WEEKDAYS: Record<string, number> = {
-  domingo: 0, segunda: 1, terca: 2, quarta: 3, quinta: 4, sexta: 5, sabado: 6,
+// Prefixos de 3 letras: cobrem "segunda"/"seg", "sábado"/"sab", "domingos" etc.
+const DAY_PREFIXES = ["dom", "seg", "ter", "qua", "qui", "sex", "sab"];
+const dayOf = (word: string): number | null => {
+  const index = DAY_PREFIXES.indexOf(word.slice(0, 3));
+  return index < 0 ? null : index;
 };
 
 function daysFor(spec: string): number[] | null {
-  const text = spec.replace(/-feira/g, "").replace(/s\b/g, "");
-  if (/diariamente|todo(?: o)? dia/.test(text)) return [0, 1, 2, 3, 4, 5, 6];
-  const range = text.match(/(domingo|segunda|terca|quarta|quinta|sexta|sabado) a (domingo|segunda|terca|quarta|quinta|sexta|sabado)/);
+  const text = spec.replace(/-feira/g, "").trim();
+  if (/diariamente|todos os dias|todo(?: o)? dia/.test(text)) return [0, 1, 2, 3, 4, 5, 6];
+  const range = text.match(/([a-z]+) (?:a|ate) ([a-z]+)/);
   if (range) {
-    const start = WEEKDAYS[range[1]!]!;
-    const end = WEEKDAYS[range[2]!]!;
-    const days: number[] = [];
-    for (let day = start; ; day = (day + 1) % 7) {
-      days.push(day);
-      if (day === end) break;
+    const start = dayOf(range[1]!);
+    const end = dayOf(range[2]!);
+    if (start !== null && end !== null) {
+      const days: number[] = [];
+      for (let day = start; ; day = (day + 1) % 7) {
+        days.push(day);
+        if (day === end) break;
+      }
+      return days;
     }
-    return days;
   }
-  const single = Object.entries(WEEKDAYS).filter(([name]) => text.includes(name)).map(([, day]) => day);
+  const single = [...new Set(text.split(/[^a-z]+/).map(dayOf).filter((day): day is number => day !== null))];
   return single.length ? single : null;
 }
 
@@ -106,22 +116,32 @@ function toTime(hours: string, minutes: string | undefined, isClosing: boolean):
 }
 
 /**
- * Lê horários como "Diariamente das 06h às 00h" ou
- * "Segunda a sábado das 6h às 00h • Domingo das 6h às 23h". Dias não citados ficam
- * fechados. Texto que não der para entender → `[]` (horário desconhecido).
+ * Lê horários como "Diariamente das 06h às 00h",
+ * "Segunda a sábado das 6h às 00h • Domingo das 6h às 23h" (Cometa) ou
+ * "Seg à Sab: 06:00 às 00:00 Domingos e Feriados: Fechado" (Frangolândia). Dias não
+ * citados ficam fechados. Texto que não der para entender → `[]` (horário desconhecido).
  */
 export function parseOpeningHours(text: string): OpeningHours[] {
-  const segments = normalize(text).split(/[•;|\n]/).map((part) => part.trim()).filter(Boolean);
+  const source = normalize(text);
   const byDay = new Map<number, OpeningHours>();
+  const pattern =
+    /([a-z][a-z ,-]*?)\s*(?::|\bdas\b)\s*(?:(fechad[oa])|(\d{1,2})(?:h|:)(\d{2})?h?\s+(?:as|a)\s+(\d{1,2})(?:h|:)(\d{2})?h?)/g;
 
-  for (const segment of segments) {
-    const match = segment.match(/^(.*?)\s*das (\d{1,2})h(\d{2})? (?:as|a) (\d{1,2})h(\d{2})?/);
-    if (!match) continue;
+  for (const match of source.matchAll(pattern)) {
     const days = daysFor(match[1]!);
     if (!days) continue;
-    const opens_at = toTime(match[2]!, match[3], false);
-    const closes_at = toTime(match[4]!, match[5], true);
-    for (const day of days) byDay.set(day, { day, opens_at, closes_at, closed: false });
+    for (const day of days) {
+      if (match[2]) {
+        byDay.set(day, { day, opens_at: null, closes_at: null, closed: true });
+      } else {
+        byDay.set(day, {
+          day,
+          opens_at: toTime(match[3]!, match[4], false),
+          closes_at: toTime(match[5]!, match[6], true),
+          closed: false,
+        });
+      }
+    }
   }
 
   if (byDay.size === 0) return [];

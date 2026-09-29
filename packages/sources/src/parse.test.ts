@@ -41,6 +41,18 @@ describe("parseValidity", () => {
     expect(parseValidity("de 28/12 a 03/01", "2027-01-02T12:00:00Z")?.valid_from).toBe("2026-12-28T03:00:00.000Z");
   });
 
+  it("formatos com ponto da Frangolândia", () => {
+    expect(parseValidity("De 28.09 a 04.10.2026", "2026-09-27T17:00:48Z")).toEqual({
+      valid_from: "2026-09-28T03:00:00.000Z",
+      valid_until: "2026-10-05T02:59:59.000Z",
+    });
+    expect(parseValidity("26 a 29.09 de 2026", "2026-09-26T15:00:22Z")).toEqual({
+      valid_from: "2026-09-26T03:00:00.000Z",
+      valid_until: "2026-09-30T02:59:59.000Z",
+    });
+    expect(parseValidity("De 28.12 a 03.01.2027", "2026-12-27T12:00:00Z")?.valid_from).toBe("2026-12-28T03:00:00.000Z");
+  });
+
   it("texto sem período → null", () => {
     expect(parseValidity("Ofertas imperdíveis!", published)).toBeNull();
     expect(parseValidity("de 31/02 a 05/03", published)).toBeNull(); // 31 de fevereiro não existe
@@ -65,6 +77,17 @@ describe("parseOpeningHours", () => {
     expect(parseOpeningHours("Diariamente das 6h45 às 22h")[3]).toEqual({
       day: 3, opens_at: "06:45", closes_at: "22:00", closed: false,
     });
+  });
+
+  it("formato da Frangolândia (dias abreviados, HH:MM, fechado)", () => {
+    const hours = parseOpeningHours("Seg à Sab: 06:00 às 00:00 Domingos e Feriados: 06:00 às 22:00");
+    expect(hours[1]).toEqual({ day: 1, opens_at: "06:00", closes_at: "23:59", closed: false });
+    expect(hours[6]!.closes_at).toBe("23:59");
+    expect(hours[0]).toEqual({ day: 0, opens_at: "06:00", closes_at: "22:00", closed: false });
+
+    const office = parseOpeningHours("SEG À SAB: 08:00 ÀS 17:00 DOMINGOS E FERIADOS: FECHADO");
+    expect(office[0]).toEqual({ day: 0, opens_at: null, closes_at: null, closed: true });
+    expect(office[3]!.opens_at).toBe("08:00");
   });
 
   it("dias não citados ficam fechados; texto ilegível → []", () => {

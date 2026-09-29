@@ -3,7 +3,7 @@ import { ActivityIndicator, Image, Linking, Pressable, ScrollView, Share, Text, 
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { FileText, Navigation, Phone, Store } from "lucide-react-native";
 import {
-  buildExternalRouteUrl,
+  buildPlaceRouteUrl,
   buildMarketShareUrl,
   buildWhatsAppUrl,
   formatDateBR,
@@ -98,7 +98,7 @@ export default function MarketDetailScreen() {
 
         <View className="mt-2 flex-row flex-wrap gap-2">
           <Pressable
-            onPress={() => Linking.openURL(buildExternalRouteUrl(market.latitude, market.longitude))}
+            onPress={() => Linking.openURL(buildPlaceRouteUrl(market))}
             className="flex-row items-center gap-2 rounded-full border border-neutral-300 px-4 py-2"
           >
             <Navigation size={16} color="#124A2F" />
@@ -182,7 +182,7 @@ export default function MarketDetailScreen() {
               longitude: branch.longitude,
               title: branch.name,
               subtitle: [branch.address, branch.neighborhood].filter(Boolean).join(" — "),
-              routeUrl: buildExternalRouteUrl(branch.latitude, branch.longitude),
+              routeUrl: buildPlaceRouteUrl(branch),
             }))}
           />
           {(showAllBranches ? branches : branches.slice(0, 5)).map((branch) => (
@@ -197,7 +197,7 @@ export default function MarketDetailScreen() {
               <View className="mt-1 flex-row gap-4">
                 <Text
                   accessibilityRole="link"
-                  onPress={() => Linking.openURL(buildExternalRouteUrl(branch.latitude, branch.longitude))}
+                  onPress={() => Linking.openURL(buildPlaceRouteUrl(branch))}
                   className="py-2 font-medium text-brand-600"
                 >
                   Como chegar

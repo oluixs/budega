@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { ActivityIndicator, Linking, Pressable, ScrollView, Share, Text, View } from "react-native";
-import { Link, useLocalSearchParams } from "expo-router";
+import { Link, router, useLocalSearchParams } from "expo-router";
 import { Navigation, Store, Tag } from "lucide-react-native";
-import { buildExternalRouteUrl, buildOfferShareUrl, formatDateBR, type Market, type Offer } from "@budega/shared";
+import { buildPlaceRouteUrl, buildOfferShareUrl, formatDateBR, type Market, type Offer } from "@budega/shared";
 import { getMarketById, getOfferById } from "@/lib/data";
 import { PriceTag } from "@/components/price-tag";
 import { FavoriteButton } from "@/components/favorite-button";
@@ -91,7 +91,7 @@ export default function OfferDetailScreen() {
           </Pressable>
           {market && (
             <Pressable
-              onPress={() => Linking.openURL(buildExternalRouteUrl(market.latitude, market.longitude))}
+              onPress={() => Linking.openURL(buildPlaceRouteUrl(market))}
               className="flex-row items-center gap-2 rounded-full bg-brand-500 px-4 py-2"
             >
               <Navigation size={16} color="#fff" />
@@ -100,6 +100,19 @@ export default function OfferDetailScreen() {
           )}
         </View>
 
+        {offer.origin === "encarte" && offer.flyer_id && (
+          <Text className="rounded-lg border border-neutral-300 bg-neutral-100 p-3 text-sm text-neutral-700">
+            Esta oferta foi lida automaticamente do encarte do mercado e pode conter erros de leitura. O{" "}
+            <Text
+              accessibilityRole="link"
+              onPress={() => router.push(`/encartes/${offer.flyer_id}`)}
+              className="font-medium text-brand-600 underline"
+            >
+              encarte original
+            </Text>{" "}
+            sempre prevalece.
+          </Text>
+        )}
         <Text className="text-xs text-neutral-500">
           Preço e disponibilidade devem ser confirmados no estabelecimento.
         </Text>

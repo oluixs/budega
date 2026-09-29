@@ -1,5 +1,4 @@
 import type { Branch, Flyer, Market } from "@budega/shared";
-import type { HttpClient } from "../http";
 import {
   findRestrictedBranch,
   normalizePhone,
@@ -9,7 +8,7 @@ import {
   parseValidity,
 } from "../parse";
 import { titleCase } from "../text";
-import type { SourceAdapter, SourceResult } from "../types";
+import type { SourceAdapter, SourceContext, SourceResult } from "../types";
 
 /**
  * Cometa Supermercados (Fortaleza e Região Metropolitana).
@@ -159,7 +158,7 @@ export const cometaAdapter: SourceAdapter = {
   id: MARKET_ID,
   name: "Cometa Supermercados",
   websiteUrl: SITE,
-  async fetch(http: HttpClient, now: Date): Promise<SourceResult> {
+  async fetch({ http, now }: SourceContext): Promise<SourceResult> {
     const warnings: string[] = [];
     const [stores, flyers] = await Promise.all([
       http.getJson<StrapiList<CometaStore>>(`${SITE}/api/onde-estamos`),

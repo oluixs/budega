@@ -37,6 +37,31 @@ export function buildExternalRouteUrl(latitude: number, longitude: number): stri
   return `https://www.google.com/maps/dir/?${params.toString()}`;
 }
 
+interface RoutablePlace {
+  latitude: number;
+  longitude: number;
+  address?: string;
+  neighborhood?: string;
+  city?: string;
+  state?: string;
+  coordinates_approximate?: boolean;
+}
+
+/**
+ * Rota até uma loja/mercado. Coordenadas oficiais → rota pelo ponto exato. Coordenadas
+ * aproximadas (geocodificadas) → rota pelo endereço em texto, que o Google Maps localiza
+ * com mais precisão que o nosso ponto.
+ */
+export function buildPlaceRouteUrl(place: RoutablePlace): string {
+  if (!place.coordinates_approximate || !place.address) {
+    return buildExternalRouteUrl(place.latitude, place.longitude);
+  }
+  const destination = [place.address, place.neighborhood, place.city && `${place.city}${place.state ? ` - ${place.state}` : ""}`]
+    .filter(Boolean)
+    .join(", ");
+  return `https://www.google.com/maps/dir/?${new URLSearchParams({ api: "1", destination }).toString()}`;
+}
+
 export function buildWhatsAppUrl(phone: string, message?: string): string {
   const digits = phone.replace(/\D/g, "");
   const params = message ? `?text=${encodeURIComponent(message)}` : "";

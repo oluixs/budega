@@ -62,7 +62,20 @@ usados nos testes), defina `BUDEGA_DADOS=demo` (web) / `EXPO_PUBLIC_BUDEGA_DADOS
 
 O pacote `packages/sources` lê, nos sites oficiais das redes, as lojas (endereço,
 horário, telefone, coordenadas) e os encartes vigentes (título, validade, lojas onde vale,
-PDF e capa). Hoje: **Cometa Supermercados** (43 lojas).
+PDF e capa). Hoje: **Cometa Supermercados** (43 lojas) e **Frangolândia Supermercados**
+(21 lojas).
+
+- **Lojas sem coordenadas no site** (Frangolândia): o endereço é geocodificado pelo
+  Nominatim/OpenStreetMap só durante `pnpm importar`, com cache versionado
+  (`packages/sources/src/data/geocode-cache.json`) — cada endereço é consultado uma única vez,
+  respeitando a política de uso (1 por segundo). Nessas lojas, "Como chegar" usa o endereço
+  em texto, que o Google Maps localiza melhor.
+- **Ofertas (produto e preço)**: `pnpm importar --ofertas` lê os encartes novos com a API
+  do Claude (modelo de visão) e guarda o resultado em
+  `packages/sources/src/data/offers-cache.json` — cada encarte é lido uma vez e o site nunca
+  chama a API. Precisa de credencial da Anthropic (`ANTHROPIC_API_KEY` ou `ant auth login`);
+  custo estimado ~US$ 0,07–0,11 por página de encarte. Preços ilegíveis são pulados e toda
+  oferta lida assim avisa "lida do encarte — confira no original".
 
 - **Web**: atualiza sozinha — as respostas dos sites ficam em cache por 1 hora; se um site
   falhar, usa o último retrato salvo.
@@ -267,11 +280,12 @@ conhecidos. Depois de qualquer mudança, registre-a com `pnpm audit:change`.
   em modo mock) — 44 testes e2e e screenshots revisadas. **App mobile**: ainda sem
   verificação visual em aparelho/emulador (ambiente sem Android SDK); validado por
   `tsc`, lint e `expo export` (bundle completo). Abra no Expo Go antes de publicar.
-- **Ofertas individuais dos encartes**: os encartes do Cometa são imagens (PDF sem
-  texto). O OCR gratuito (Tesseract) foi testado e não lê os preços; a leitura confiável
-  exige um modelo de visão (ex.: API do Claude), que tem custo e precisa de chave. Até
-  lá, o Budega mostra os encartes completos, sem a lista de produtos/preços.
-- **Outras redes da região**: por enquanto só o Cometa tem importador.
+- **Ofertas individuais dos encartes**: os encartes são imagens (PDF sem texto) e o OCR
+  gratuito (Tesseract) não lê os preços. A leitura com a API do Claude está pronta
+  (`pnpm importar --ofertas`), mas **nunca foi executada** — falta credencial da Anthropic.
+  Até lá, o Budega mostra os encartes completos, sem a lista de produtos/preços.
+- **Redes da região**: Cometa e Frangolândia. Outras redes precisam de um adaptador cada
+  (ver "Fontes de dados").
 - **Login real nunca foi exercitado contra um projeto Supabase** (sem credenciais no
   ambiente). A lógica de sessão/proxy/permissões tem testes com o cliente simulado e as
   migrations rodam num Postgres real em memória (PGlite), mas o primeiro uso com um

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildExternalRouteUrl, buildWebUrl, buildWhatsAppUrl } from "./links";
+import { buildExternalRouteUrl, buildPlaceRouteUrl, buildWebUrl, buildWhatsAppUrl } from "./links";
 
 describe("links externos", () => {
   // Regressão: o nome da loja ia em destination_place_id, que só aceita Place ID do Google.
@@ -8,6 +8,14 @@ describe("links externos", () => {
     expect(url.origin + url.pathname).toBe("https://www.google.com/maps/dir/");
     expect(url.searchParams.get("destination")).toBe("-3.7406,-38.5161");
     expect(url.searchParams.has("destination_place_id")).toBe(false);
+  });
+
+  it("coordenadas aproximadas → rota pelo endereço em texto", () => {
+    const place = { latitude: -3.73, longitude: -38.5, address: "Av. Santos Dumont, 2680", neighborhood: "Aldeota", city: "Fortaleza", state: "CE" };
+    expect(new URL(buildPlaceRouteUrl(place)).searchParams.get("destination")).toBe("-3.73,-38.5");
+    expect(new URL(buildPlaceRouteUrl({ ...place, coordinates_approximate: true })).searchParams.get("destination")).toBe(
+      "Av. Santos Dumont, 2680, Aldeota, Fortaleza - CE",
+    );
   });
 
   it("WhatsApp só com dígitos", () => {

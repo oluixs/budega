@@ -118,8 +118,11 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 - [x] App mobile com dados reais, mapa (Leaflet em WebView), capas dos encartes, lojas,
       links para as páginas legais e texto do pedido de localização em português.
       Verificado pela versão web do app (Chromium, tamanho de celular).
-- [ ] Outras redes da região.
-- [ ] Ofertas individuais lidas dos encartes (precisa de chave de API de visão).
+- [x] Segunda rede: Frangolândia (21 lojas geocodificadas via Nominatim com cache).
+- [ ] Mais redes da região (um adaptador por site).
+- [x] Leitura de ofertas dos encartes com a API do Claude (`pnpm importar --ofertas`,
+      cache por encarte, validação de preços) — pronta e testada com cliente simulado.
+- [ ] Rodar a leitura de ofertas pela primeira vez (precisa de credencial da Anthropic).
 - [ ] Emulador Android: SDK instalado; falta ativar o hipervisor (precisa de admin).
 
 ## Fase 5 — Qualidade

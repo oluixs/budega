@@ -15,7 +15,10 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@budega/shared": "workspace:*"
+    "@anthropic-ai/sdk": "^0.129.0",
+    "@budega/shared": "workspace:*",
+    "node-html-parser": "^9.0.4",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/node": "^20",

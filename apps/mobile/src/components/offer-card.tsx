@@ -24,8 +24,10 @@ export function OfferCard({ offer, marketName }: { offer: Offer; marketName?: st
             </View>
             {marketName && <Text className="text-neutral-500">{marketName}</Text>}
             <PriceTag promotionalPrice={offer.promotional_price} regularPrice={offer.regular_price} unit={offer.unit} />
+            {offer.description && <Text className="text-neutral-500">{offer.description}</Text>}
             <Text className="text-xs text-neutral-500">
-              Válida até {formatDateBR(offer.valid_until)} · Confirme o preço na loja
+              Válida até {formatDateBR(offer.valid_until)} ·{" "}
+              {offer.origin === "encarte" ? "Lida do encarte — confira no original" : "Confirme o preço na loja"}
             </Text>
           </View>
         </Pressable>

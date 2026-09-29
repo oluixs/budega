@@ -1,0 +1,93 @@
+{
+  "av. antonio sales, 3700, coco, fortaleza, ce, brasil": {
+    "latitude": -3.7494955,
+    "longitude": -38.4906328
+  },
+  "av. bernardo manuel, 8314, itaperi, fortaleza, ce, brasil": {
+    "latitude": -3.791796,
+    "longitude": -38.5496896
+  },
+  "av. coronel miguel dias, 1389, luciano cavalcante, fortaleza, ce, brasil": {
+    "latitude": -3.770522,
+    "longitude": -38.4874006
+  },
+  "av. eusebio de queiroz, 1890, tamatanduba, eusebio, ce, brasil": {
+    "latitude": -3.870966,
+    "longitude": -38.4664582
+  },
+  "av. euzebio de queiroz, 1890, tamatanduba, eusebio, ce, brasil": null,
+  "av. francisco sa, 4474, alvaro weyne, fortaleza, ce, brasil": {
+    "latitude": -3.7145452,
+    "longitude": -38.5644218
+  },
+  "av. godofredo maciel, 2540, maraponga, fortaleza, ce, brasil": {
+    "latitude": -3.7972903,
+    "longitude": -38.5711508
+  },
+  "av. padre tomas feliu amengual, 191, centro, trairi, ce, brasil": null,
+  "av. padre tomas feliu amengual, 191, trairi, ce, brasil": null,
+  "av. santos dumont, 2680, aldeota, fortaleza, ce, brasil": {
+    "latitude": -3.7357215,
+    "longitude": -38.5010767
+  },
+  "av. santos dumont, 5916, papicu, fortaleza, ce, brasil": {
+    "latitude": -3.7442321,
+    "longitude": -38.4733828
+  },
+  "av. valparaiso, 1301, jangurussu, fortaleza, ce, brasil": {
+    "latitude": -3.8465081,
+    "longitude": -38.5180492
+  },
+  "avenida rui barbosa, 2727, joaquim tavora, fortaleza, ce, brasil": {
+    "latitude": -3.7465168,
+    "longitude": -38.512412
+  },
+  "avenida rui barbosa, 2727, joaquin tavora, fortaleza, ce, brasil": null,
+  "avenida washington soares, 4040, parque manibura, fortaleza, ce, brasil": {
+    "latitude": -3.7929854,
+    "longitude": -38.4807054
+  },
+  "rodovia estruturante - ce 085, caucaia, ce, brasil": {
+    "latitude": -3.6552392,
+    "longitude": -38.7830229
+  },
+  "rodovia estruturante - ce 085, curicaca, caucaia, ce, brasil": null,
+  "rua 15 de novembro, 340, montese, fortaleza, ce, brasil": {
+    "latitude": -3.7700855,
+    "longitude": -38.5527016
+  },
+  "rua capitao valdemar de lima, 71, centro, maracanau, ce, brasil": {
+    "latitude": -3.8805,
+    "longitude": -38.6249252
+  },
+  "rua coronel bia, 89, beberibe, ce, brasil": {
+    "latitude": -4.1831244,
+    "longitude": -38.1274068
+  },
+  "rua coronel bia, 89, centro, beberibe, ce, brasil": null,
+  "rua costa barros, 1270, aldeota, fortaleza, ce, brasil": {
+    "latitude": -3.7303343,
+    "longitude": -38.5125903
+  },
+  "rua dragao do mar, 698, aracati, ce, brasil": {
+    "latitude": -4.5647123,
+    "longitude": -37.7605147
+  },
+  "rua dragao do mar, 698, centro, aracati, ce, brasil": null,
+  "rua frei mansueto, 909, varjota, fortaleza, ce, brasil": {
+    "latitude": -3.732179,
+    "longitude": -38.4884635
+  },
+  "rua manuel castelo branco, 352, messejana, fortaleza, ce, brasil": {
+    "latitude": -3.8322163,
+    "longitude": -38.4924026
+  },
+  "rua padre anchieta, 581, monte castelo, fortaleza, ce, brasil": {
+    "latitude": -3.7252053,
+    "longitude": -38.5508555
+  },
+  "rua padre guerra, 852, parque araxa, fortaleza, ce, brasil": {
+    "latitude": -3.737418,
+    "longitude": -38.5518011
+  }
+}

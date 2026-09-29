@@ -69,6 +69,7 @@ export function isPathAllowed(rules: RobotsRules, path: string): boolean {
 
 export interface HttpClient {
   getJson<T>(url: string): Promise<T>;
+  getText(url: string): Promise<string>;
   getBuffer(url: string): Promise<ArrayBuffer>;
 }
 
@@ -116,6 +117,9 @@ export function createHttpClient({ fetch = globalThis.fetch, timeoutMs = 20_000,
   return {
     async getJson<T>(url: string) {
       return (await (await request(url, "application/json")).json()) as T;
+    },
+    async getText(url: string) {
+      return (await request(url, "text/html,*/*")).text();
     },
     async getBuffer(url: string) {
       return (await request(url, "*/*")).arrayBuffer();

@@ -1,6 +1,6 @@
 import { MapPin } from "lucide-react";
 import type { MarketWithDistance } from "@budega/shared";
-import { buildExternalRouteUrl, formatDistance } from "@budega/shared";
+import { buildPlaceRouteUrl, formatDistance } from "@budega/shared";
 import { Button } from "@/components/ui/button";
 
 interface MapFallbackProps {
@@ -34,7 +34,7 @@ export function MapFallback({ markets }: MapFallbackProps) {
               size="sm"
               render={
                 <a
-                  href={buildExternalRouteUrl(market.latitude, market.longitude)}
+                  href={buildPlaceRouteUrl(market)}
                   target="_blank"
                   rel="noreferrer"
                 />

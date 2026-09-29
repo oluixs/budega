@@ -30,6 +30,7 @@ export function OfferCard({ offer, marketName }: OfferCardProps) {
           </div>
 
           {marketName && <p className="text-body text-neutral-500">{marketName}</p>}
+          {offer.description && <p className="text-body text-neutral-500">{offer.description}</p>}
 
           <PriceTag
             promotionalPrice={offer.promotional_price}
@@ -39,7 +40,8 @@ export function OfferCard({ offer, marketName }: OfferCardProps) {
           />
 
           <p className="mt-auto pt-2 text-caption text-neutral-500">
-            Válida até {formatDateBR(offer.valid_until)} · Confirme o preço na loja
+            Válida até {formatDateBR(offer.valid_until)} ·{" "}
+            {offer.origin === "encarte" ? "Lida do encarte — confira no original" : "Confirme o preço na loja"}
           </p>
         </div>
       </Link>

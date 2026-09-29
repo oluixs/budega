@@ -1,10 +1,15 @@
 import type { Offer, RegionalData } from "@budega/shared";
 import { cometaAdapter } from "./adapters/cometa";
+import { frangolandiaAdapter } from "./adapters/frangolandia";
+import geocodeCache from "./data/geocode-cache.json";
+import defaultOffersCache from "./data/offers-cache.json";
+import { cachedOffers, type OffersCache } from "./offers/cache";
+import { cacheOnlyGeocoder, type Geocoder } from "./geocode";
 import type { HttpClient } from "./http";
 import type { SourceAdapter } from "./types";
 
 /** Fontes ativas. Para adicionar uma rede: criar o adaptador em ./adapters e incluir aqui. */
-export const ADAPTERS: SourceAdapter[] = [cometaAdapter];
+export const ADAPTERS: SourceAdapter[] = [cometaAdapter, frangolandiaAdapter];
 
 export const REGION = {
   name: "Fortaleza e Região Metropolitana",
@@ -19,6 +24,10 @@ export interface ImportOptions {
   previous?: RegionalData | null;
   /** Ofertas lidas dos encartes (ver offers/), por id de encarte. */
   offersByFlyer?: Map<string, Offer[]>;
+  /** Leituras já feitas (padrão: data/offers-cache.json — o site nunca chama a API). */
+  offersCache?: OffersCache;
+  /** Padrão: só o cache versionado (o site nunca geocodifica ao vivo). */
+  geocode?: Geocoder;
   log?: (message: string) => void;
 }
 
@@ -28,6 +37,8 @@ export async function importRegional({
   adapters = ADAPTERS,
   previous = null,
   offersByFlyer,
+  offersCache = defaultOffersCache as OffersCache,
+  geocode = cacheOnlyGeocoder(geocodeCache),
   log = () => {},
 }: ImportOptions): Promise<RegionalData> {
   const data: RegionalData = {
@@ -40,7 +51,7 @@ export async function importRegional({
     offers: [],
   };
 
-  const results = await Promise.allSettled(adapters.map((adapter) => adapter.fetch(http, now)));
+  const results = await Promise.allSettled(adapters.map((adapter) => adapter.fetch({ http, now, geocode })));
 
   results.forEach((result, index) => {
     const adapter = adapters[index]!;
@@ -72,10 +83,15 @@ export async function importRegional({
     }
   });
 
-  // Ofertas acompanham os encartes que continuam no ar: leitura nova do encarte substitui
-  // a anterior; sem leitura nova, mantém a anterior; encarte que saiu do ar leva as suas.
+  // Ofertas acompanham os encartes que continuam no ar. Ordem: leitura nova passada pelo
+  // chamador → leitura em cache do MESMO arquivo → leitura do retrato anterior. Encarte
+  // que saiu do ar leva as suas.
   data.offers = data.flyers.flatMap(
-    (flyer) => offersByFlyer?.get(flyer.id) ?? previous?.offers.filter((offer) => offer.flyer_id === flyer.id) ?? [],
+    (flyer) =>
+      offersByFlyer?.get(flyer.id) ??
+      cachedOffers(offersCache, flyer) ??
+      previous?.offers.filter((offer) => offer.flyer_id === flyer.id) ??
+      [],
   );
 
   return data;

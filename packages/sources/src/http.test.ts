@@ -44,5 +44,7 @@ describe("titleCase", () => {
     expect(titleCase("OFERTAS DE INAUGURAÇÃO GUARARAPES")).toBe("Ofertas de Inauguração Guararapes");
     expect(titleCase("CLUBE TEM MAIS PRA VOCÊ")).toBe("Clube Tem Mais pra Você");
     expect(titleCase("FESTIVAL DE MASSAS M DIAS E JSB")).toBe("Festival de Massas M Dias e JSB");
+    expect(titleCase("Caucaia (pátio sol poente)")).toBe("Caucaia (Pátio Sol Poente)");
+    expect(titleCase("RODOVIA ESTRUTURANTE - CE 085")).toBe("Rodovia Estruturante - CE 085");
   });
 });

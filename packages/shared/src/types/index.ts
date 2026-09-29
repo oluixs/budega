@@ -50,6 +50,8 @@ export interface Market {
   updated_at: string;
   /** Site oficial do mercado (também a fonte dos dados importados). */
   website_url?: string | null;
+  /** Ver Branch.coordinates_approximate. */
+  coordinates_approximate?: boolean;
 }
 
 export interface Branch {
@@ -67,6 +69,11 @@ export interface Branch {
   opening_hours: OpeningHours[];
   created_at: string;
   updated_at: string;
+  /**
+   * true quando as coordenadas vieram de geocodificação do endereço (podem estar a
+   * algumas centenas de metros): a rota usa o endereço em texto, não o ponto.
+   */
+  coordinates_approximate?: boolean;
 }
 
 export interface Category {

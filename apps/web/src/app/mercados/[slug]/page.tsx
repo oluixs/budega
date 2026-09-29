@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ExternalLink, MapPin, Navigation, Phone, Store } from "lucide-react";
-import { buildExternalRouteUrl, buildWhatsAppUrl, formatRelativeUpdate } from "@budega/shared";
+import { buildPlaceRouteUrl, buildWhatsAppUrl, formatRelativeUpdate } from "@budega/shared";
 import {
   getActiveFlyers,
   getActiveOffers,
@@ -99,7 +99,7 @@ export default async function MarketPage({ params, searchParams }: MarketPagePro
           <Button
             variant="outline"
             render={
-              <a href={buildExternalRouteUrl(market.latitude, market.longitude)} target="_blank" rel="noreferrer" />
+              <a href={buildPlaceRouteUrl(market)} target="_blank" rel="noreferrer" />
             }
           >
             <Navigation className="h-4 w-4" /> Rota

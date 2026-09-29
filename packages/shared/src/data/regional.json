@@ -6,13 +6,20 @@
       "longitude": -38.5267
     }
   },
-  "generated_at": "2026-09-29T15:51:55.514Z",
+  "generated_at": "2026-09-29T17:28:12.360Z",
   "sources": [
     {
       "market_id": "cometa",
       "name": "Cometa Supermercados",
       "website_url": "https://cometasupermercados.com.br",
-      "fetched_at": "2026-09-29T15:51:55.514Z",
+      "fetched_at": "2026-09-29T17:28:12.360Z",
+      "error": null
+    },
+    {
+      "market_id": "frangolandia",
+      "name": "Frangolândia Supermercados",
+      "website_url": "https://frangolandia.com",
+      "fetched_at": "2026-09-29T17:28:12.360Z",
       "error": null
     }
   ],
@@ -83,6 +90,74 @@
       "updated_at": "2026-09-29T03:00:00.109Z",
       "owner_id": null,
       "website_url": "https://cometasupermercados.com.br"
+    },
+    {
+      "id": "frangolandia",
+      "name": "Frangolândia Supermercados",
+      "slug": "frangolandia-supermercados",
+      "description": "Rede de supermercados do Ceará, com 21 lojas.",
+      "logo_url": "https://frangolandia.com/wp-content/uploads/2022/03/Logo-Site-.png",
+      "phone": "8531228515",
+      "whatsapp": null,
+      "address": "Av. Santos Dumont, 2680",
+      "neighborhood": "Aldeota",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7357215,
+      "longitude": -38.5010767,
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "is_verified": false,
+      "is_featured": false,
+      "is_suspended": false,
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "owner_id": null,
+      "website_url": "https://frangolandia.com",
+      "coordinates_approximate": true
     }
   ],
   "branches": [
@@ -2622,6 +2697,1223 @@
       ],
       "created_at": "2025-12-31T18:38:42.651Z",
       "updated_at": "2026-02-07T17:15:34.963Z"
+    },
+    {
+      "id": "frangolandia-aldeota",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Aldeota",
+      "address": "Av. Santos Dumont, 2680",
+      "neighborhood": "Aldeota",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7357215,
+      "longitude": -38.5010767,
+      "phone": "8531228515",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-alvaro-weyne",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Álvaro Weyne",
+      "address": "Av. Francisco Sá, 4474",
+      "neighborhood": "Álvaro Weyne",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7145452,
+      "longitude": -38.5644218,
+      "phone": "8532819866",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-aracati",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Aracati",
+      "address": "Rua Dragão do Mar, 698",
+      "neighborhood": "Centro",
+      "city": "Aracati",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -4.5647123,
+      "longitude": -37.7605147,
+      "phone": "8834214142",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-beberibe",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Beberibe",
+      "address": "Rua Coronel Bia, 89",
+      "neighborhood": "Centro",
+      "city": "Beberibe",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -4.1831244,
+      "longitude": -38.1274068,
+      "phone": null,
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-caucaia-patio-sol-poente",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Caucaia (Pátio Sol Poente)",
+      "address": "Rodovia Estruturante - CE 085",
+      "neighborhood": "Curicaca",
+      "city": "Caucaia",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.6552392,
+      "longitude": -38.7830229,
+      "phone": "8540091021",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-coco",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Cocó",
+      "address": "Av. Antônio Sales, 3700",
+      "neighborhood": "Cocó",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7494955,
+      "longitude": -38.4906328,
+      "phone": "8532581010",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-costa-barros",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Costa Barros",
+      "address": "Rua Costa Barros, 1270",
+      "neighborhood": "Aldeota",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7303343,
+      "longitude": -38.5125903,
+      "phone": null,
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-eusebio-shopping-eusebio",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Eusébio (Shopping Eusébio)",
+      "address": "Av. Eusébio de Queiroz, 1890",
+      "neighborhood": "Tamatanduba",
+      "city": "Eusébio",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.870966,
+      "longitude": -38.4664582,
+      "phone": "8532603822",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-guararapes",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Guararapes",
+      "address": "Av. Coronel Miguel Dias, 1389",
+      "neighborhood": "Luciano Cavalcante",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.770522,
+      "longitude": -38.4874006,
+      "phone": "85981725640",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-itaperi",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Itaperi",
+      "address": "Av. Bernardo Manuel, 8314",
+      "neighborhood": "Itaperi",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.791796,
+      "longitude": -38.5496896,
+      "phone": "8530475058",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-maracanau",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Maracanaú",
+      "address": "Rua Capitão Valdemar de Lima, 71",
+      "neighborhood": "Centro",
+      "city": "Maracanaú",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8805,
+      "longitude": -38.6249252,
+      "phone": "8533717180",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-maraponga",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Maraponga",
+      "address": "Av. Godofredo Maciel, 2540",
+      "neighborhood": "Maraponga",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7972903,
+      "longitude": -38.5711508,
+      "phone": "85991277471",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-messejana",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Messejana",
+      "address": "Rua Manuel Castelo Branco, 352",
+      "neighborhood": "Messejana",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8322163,
+      "longitude": -38.4924026,
+      "phone": "8530230499",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-montese-buena-vista-montese",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Montese (Buena Vista Montese)",
+      "address": "Rua 15 de Novembro, 340",
+      "neighborhood": "Montese",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7700855,
+      "longitude": -38.5527016,
+      "phone": null,
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-monte-castelo",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Monte Castelo",
+      "address": "Rua Padre Anchieta, 581",
+      "neighborhood": "Monte Castelo",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7252053,
+      "longitude": -38.5508555,
+      "phone": "8530553877",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-parque-araxa",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Parque Araxá",
+      "address": "Rua Padre Guerra, 852",
+      "neighborhood": "Parque Araxá",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.737418,
+      "longitude": -38.5518011,
+      "phone": "8532235984",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-rui-barbosa-patio-rui-barbosa",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Rui Barbosa (Pátio Rui Barbosa)",
+      "address": "Avenida Rui Barbosa, 2727",
+      "neighborhood": "Joaquim Távora",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7465168,
+      "longitude": -38.512412,
+      "phone": "85992287134",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-santos-dumont",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Santos Dumont",
+      "address": "Av. Santos Dumont, 5916",
+      "neighborhood": "Papicu",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7442321,
+      "longitude": -38.4733828,
+      "phone": "8530383330",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-valparaiso-patio-palmeiras",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Valparaíso ( Pátio Palmeiras )",
+      "address": "Av. Valparaíso, 1301",
+      "neighborhood": "Jangurussu",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8465081,
+      "longitude": -38.5180492,
+      "phone": "8540091021",
+      "opening_hours": [],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-varjota",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Varjota",
+      "address": "Rua Frei Mansueto, 909",
+      "neighborhood": "Varjota",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.732179,
+      "longitude": -38.4884635,
+      "phone": "85981473109",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "frangolandia-washington-soares-molina-center",
+      "market_id": "frangolandia",
+      "name": "Frangolândia Washington Soares (Molina Center)",
+      "address": "Avenida Washington Soares, 4040",
+      "neighborhood": "Parque Manibura",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7929854,
+      "longitude": -38.4807054,
+      "phone": null,
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "23:59",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z",
+      "coordinates_approximate": true
     }
   ],
   "flyers": [
@@ -2743,6 +4035,57 @@
       "status": "active",
       "created_at": "2026-04-14T19:43:56.111Z",
       "updated_at": "2026-09-16T03:00:00.094Z"
+    },
+    {
+      "id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara",
+      "market_id": "frangolandia",
+      "branch_id": null,
+      "title": "Ofertas BRF",
+      "description": null,
+      "file_url": "https://frangolandia.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-25-at-15.29.10-768x1097.jpeg",
+      "file_type": "image",
+      "cover_url": "https://frangolandia.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-25-at-15.29.10-768x1097.jpeg",
+      "source_url": "https://frangolandia.com/encarte/festival-do-bebe-frangolandia-em-fortaleza-ceara/",
+      "valid_from": "2026-09-28T03:00:00.000Z",
+      "valid_until": "2026-10-08T02:59:59.000Z",
+      "is_active": true,
+      "status": "active",
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z"
+    },
+    {
+      "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2",
+      "market_id": "frangolandia",
+      "branch_id": null,
+      "title": "Mega Ofertaço das Marcas",
+      "description": null,
+      "file_url": "https://frangolandia.com/wp-content/uploads/2026/09/Mega-Ofertaco-das-Marcas.pdf",
+      "file_type": "pdf",
+      "cover_url": "https://frangolandia.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-25-at-15.29.06-768x1097.jpeg",
+      "source_url": "https://frangolandia.com/encarte/mega-ofertaco-das-marcas-2/",
+      "valid_from": "2026-09-28T03:00:00.000Z",
+      "valid_until": "2026-10-05T02:59:59.000Z",
+      "is_active": true,
+      "status": "active",
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z"
+    },
+    {
+      "id": "frangolandia-encarte-ofertas-de-frutas-e-verduras",
+      "market_id": "frangolandia",
+      "branch_id": null,
+      "title": "Ofertas Horti 🍓🍇 | Aqui É + Barato Todo Dia",
+      "description": null,
+      "file_url": "https://frangolandia.com/wp-content/uploads/2026/09/4o-Encarte-Horti-27-A-29.09.pdf",
+      "file_type": "pdf",
+      "cover_url": "https://frangolandia.com/wp-content/uploads/2026/09/PHOTO-2026-09-25-09-43-38-768x1097.jpg",
+      "source_url": "https://frangolandia.com/encarte/ofertas-de-frutas-e-verduras/",
+      "valid_from": "2026-09-26T03:00:00.000Z",
+      "valid_until": "2026-09-30T02:59:59.000Z",
+      "is_active": true,
+      "status": "active",
+      "created_at": "2026-09-29T17:28:12.360Z",
+      "updated_at": "2026-09-29T17:28:12.360Z"
     }
   ],
   "offers": []

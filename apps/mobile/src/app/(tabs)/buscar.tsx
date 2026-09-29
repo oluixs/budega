@@ -3,7 +3,7 @@ import { ActivityIndicator, Pressable, ScrollView, Text, TextInput, View } from 
 import { useLocalSearchParams } from "expo-router";
 import { SearchX } from "lucide-react-native";
 import {
-  buildExternalRouteUrl,
+  buildPlaceRouteUrl,
   isOpenNow,
   matchesMarketQuery,
   regionalSnapshot,
@@ -75,7 +75,7 @@ export default function BuscarScreen() {
           title: place.name,
           subtitle: [place.address, place.neighborhood].filter(Boolean).join(" — "),
           href: `/mercados/${market.slug}`,
-          routeUrl: buildExternalRouteUrl(place.latitude, place.longitude),
+          routeUrl: buildPlaceRouteUrl(place),
         }));
       }),
     [filtered, branches],

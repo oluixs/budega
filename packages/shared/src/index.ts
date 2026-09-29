@@ -104,6 +104,7 @@ export {
   buildOfferShareUrl,
   buildFlyerShareUrl,
   buildWebUrl,
+  buildPlaceRouteUrl,
   buildMarketDeepLink,
   buildOfferDeepLink,
   buildExternalRouteUrl,

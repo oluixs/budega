@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SearchX } from "lucide-react";
 import {
-  buildExternalRouteUrl,
+  buildPlaceRouteUrl,
   isOpenNow,
   isUpdatedRecently,
   matchesMarketQuery,
@@ -99,7 +99,7 @@ export default async function ExplorarPage({ searchParams }: ExplorarPageProps) 
       title: place === market ? market.name : place.name,
       subtitle: [place.address, place.neighborhood].filter(Boolean).join(" — "),
       href: `/mercados/${market.slug}`,
-      routeUrl: buildExternalRouteUrl(place.latitude, place.longitude),
+      routeUrl: buildPlaceRouteUrl(place),
     }));
   });
 

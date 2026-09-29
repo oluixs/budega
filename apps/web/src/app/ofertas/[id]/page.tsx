@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Navigation, Store, Tag } from "lucide-react";
-import { buildExternalRouteUrl, buildOfferShareUrl, formatDateBR } from "@budega/shared";
+import { buildPlaceRouteUrl, buildOfferShareUrl, formatDateBR } from "@budega/shared";
 import { getMarketById, getOfferById } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -79,7 +79,7 @@ export default async function OfferPage({ params }: OfferPageProps) {
             {market && (
               <Button
                 variant="outline"
-                render={<a href={buildExternalRouteUrl(market.latitude, market.longitude)} target="_blank" rel="noreferrer" />}
+                render={<a href={buildPlaceRouteUrl(market)} target="_blank" rel="noreferrer" />}
               >
                 <Navigation className="h-4 w-4" /> Rota até o mercado
               </Button>
@@ -87,6 +87,16 @@ export default async function OfferPage({ params }: OfferPageProps) {
             <ReportDialog offerId={offer.id} marketId={offer.market_id} defaultReason="preco_incorreto" />
           </div>
 
+          {offer.origin === "encarte" && offer.flyer_id && (
+            <p className="rounded-lg border border-neutral-300 bg-neutral-100 p-3 text-body text-neutral-700">
+              Esta oferta foi lida automaticamente do encarte do mercado e pode conter erros de
+              leitura. O{" "}
+              <Link href={`/encartes/${offer.flyer_id}`} className="font-medium text-brand-600 underline">
+                encarte original
+              </Link>{" "}
+              sempre prevalece.
+            </p>
+          )}
           <p className="text-caption text-neutral-500">
             Preço e disponibilidade devem ser confirmados no estabelecimento.
           </p>

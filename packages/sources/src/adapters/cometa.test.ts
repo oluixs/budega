@@ -13,6 +13,9 @@ const http: HttpClient = {
     if (url.endsWith("/api/encartes")) return flyers as T;
     throw new Error(`URL inesperada: ${url}`);
   },
+  async getText() {
+    throw new Error("não usado");
+  },
   async getBuffer() {
     throw new Error("não usado");
   },
@@ -22,7 +25,7 @@ const now = new Date("2026-09-29T15:00:00Z");
 
 describe("cometaAdapter", () => {
   it("monta o mercado com as 43 lojas geolocalizadas", async () => {
-    const result = await cometaAdapter.fetch(http, now);
+    const result = await cometaAdapter.fetch({ http, now, geocode: { lookup: async () => null } });
     expect(result.market).toMatchObject({
       id: "cometa",
       slug: "cometa-supermercados",
@@ -46,7 +49,7 @@ describe("cometaAdapter", () => {
   });
 
   it("importa os 7 encartes com validade, PDF, capa e crédito à fonte", async () => {
-    const result = await cometaAdapter.fetch(http, now);
+    const result = await cometaAdapter.fetch({ http, now, geocode: { lookup: async () => null } });
     expect(result.warnings).toEqual([]);
     expect(result.flyers).toHaveLength(7);
 
@@ -80,7 +83,7 @@ describe("cometaAdapter", () => {
         return http.getJson<T>(url);
       },
     };
-    const result = await cometaAdapter.fetch(broken, now);
+    const result = await cometaAdapter.fetch({ http: broken, now, geocode: { lookup: async () => null } });
     expect(result.flyers).toEqual([]);
     expect(result.warnings[0]).toMatch(/sem período de validade/);
   });
