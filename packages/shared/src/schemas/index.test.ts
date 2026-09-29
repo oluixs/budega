@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { offerFormSchema, flyerFormSchema, validateUpload, ALLOWED_IMAGE_TYPES } from "./index";
+import { offerFormSchema, flyerFormSchema, branchFormSchema, reportFormSchema, validateUpload, ALLOWED_IMAGE_TYPES } from "./index";
+import { mockBranches, mockCategories, mockMarkets, mockOffers } from "../mock/index";
 
 const validOffer = {
   market_id: "11111111-1111-4111-8111-111111111111",
@@ -73,5 +74,67 @@ describe("validateUpload", () => {
   it("rejeita arquivo maior que o limite", () => {
     const result = validateUpload({ type: "image/png", size: 999_999_999 }, ALLOWED_IMAGE_TYPES);
     expect(result.valid).toBe(false);
+  });
+});
+
+// Regressão: os formulários do admin usam os IDs dos dados mock (ex.:
+// "mkt-bompreco-pinheiros"), que não são UUIDs. Com `.uuid()` no schema, criar oferta ou
+// encarte em modo mock era impossível (ver .audit/errors/2026-09-29/).
+describe("schemas aceitam os IDs reais dos dados mock", () => {
+  const market = mockMarkets[0]!;
+  const branch = mockBranches.find((b) => b.market_id === market.id)!;
+
+  it("offerFormSchema", () => {
+    const result = offerFormSchema.safeParse({
+      ...validOffer,
+      market_id: market.id,
+      branch_id: branch.id,
+      category_id: mockCategories[0]!.id,
+    });
+    expect(result.success).toBe(true);
+  });
+
+  it("flyerFormSchema", () => {
+    const result = flyerFormSchema.safeParse({
+      market_id: market.id,
+      branch_id: branch.id,
+      title: "Ofertas da semana",
+      file_url: "https://example.com/encarte.pdf",
+      file_type: "pdf",
+      valid_from: "2026-06-01",
+      valid_until: "2026-06-10",
+    });
+    expect(result.success).toBe(true);
+  });
+
+  it("branchFormSchema", () => {
+    const result = branchFormSchema.safeParse({
+      market_id: branch.market_id,
+      name: branch.name,
+      address: branch.address,
+      neighborhood: branch.neighborhood,
+      city: branch.city,
+      state: branch.state,
+      postal_code: branch.postal_code,
+      latitude: branch.latitude,
+      longitude: branch.longitude,
+      phone: branch.phone,
+      opening_hours: branch.opening_hours,
+    });
+    expect(result.success).toBe(true);
+  });
+
+  it("reportFormSchema", () => {
+    const result = reportFormSchema.safeParse({
+      market_id: market.id,
+      offer_id: mockOffers[0]!.id,
+      reason: "preco_incorreto",
+    });
+    expect(result.success).toBe(true);
+  });
+
+  it("continua exigindo que um mercado seja selecionado", () => {
+    const result = offerFormSchema.safeParse({ ...validOffer, market_id: "" });
+    expect(result.success).toBe(false);
   });
 });

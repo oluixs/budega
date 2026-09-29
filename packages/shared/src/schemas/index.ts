@@ -1,5 +1,17 @@
 import { z } from "zod";
 
+/**
+ * ID de um registro escolhido num select ou vindo da rota. Não usamos `.uuid()`: os dados
+ * mock usam IDs legíveis (ex.: "mkt-bompreco-pinheiros"), o que tornava os formulários do
+ * admin impossíveis de enviar em modo mock (ver .audit/errors/2026-09-29/). O formulário só
+ * precisa garantir que algo foi selecionado — no Supabase real, as colunas `uuid` já
+ * rejeitam valores inválidos.
+ */
+export function recordIdSchema(message = "Selecione um item") {
+  return z.string().min(1, message);
+}
+const optionalRecordId = z.string().min(1).nullable().optional();
+
 export const openingHoursSchema = z.object({
   day: z.number().min(0).max(6),
   opens_at: z.string().nullable(),
@@ -28,7 +40,7 @@ export const marketFormSchema = z.object({
 export type MarketFormValues = z.infer<typeof marketFormSchema>;
 
 export const branchFormSchema = z.object({
-  market_id: z.string().uuid("Selecione um mercado"),
+  market_id: recordIdSchema("Selecione um mercado"),
   name: z.string().min(2, "Informe o nome da filial"),
   address: z.string().min(4, "Informe o endereço"),
   neighborhood: z.string().min(2, "Informe o bairro"),
@@ -44,8 +56,8 @@ export type BranchFormValues = z.infer<typeof branchFormSchema>;
 
 export const flyerFormSchema = z
   .object({
-    market_id: z.string().uuid("Selecione um mercado"),
-    branch_id: z.string().uuid().nullable().optional(),
+    market_id: recordIdSchema("Selecione um mercado"),
+    branch_id: optionalRecordId,
     title: z.string().min(2, "Informe um título"),
     file_url: z.string().url("Envie um arquivo válido"),
     file_type: z.enum(["pdf", "image"]),
@@ -61,9 +73,9 @@ export type FlyerFormValues = z.infer<typeof flyerFormSchema>;
 
 export const offerFormSchema = z
   .object({
-    market_id: z.string().uuid("Selecione um mercado"),
-    branch_id: z.string().uuid().nullable().optional(),
-    category_id: z.string().uuid("Selecione uma categoria"),
+    market_id: recordIdSchema("Selecione um mercado"),
+    branch_id: optionalRecordId,
+    category_id: recordIdSchema("Selecione uma categoria"),
     name: z.string().min(2, "Informe o nome do produto"),
     description: z.string().max(300).optional().nullable(),
     image_url: z.string().url("URL inválida").optional().nullable(),
@@ -90,9 +102,9 @@ export const offerFormSchema = z
 export type OfferFormValues = z.infer<typeof offerFormSchema>;
 
 export const reportFormSchema = z.object({
-  market_id: z.string().uuid().nullable().optional(),
-  flyer_id: z.string().uuid().nullable().optional(),
-  offer_id: z.string().uuid().nullable().optional(),
+  market_id: optionalRecordId,
+  flyer_id: optionalRecordId,
+  offer_id: optionalRecordId,
   reason: z.enum([
     "preco_incorreto",
     "oferta_vencida",
