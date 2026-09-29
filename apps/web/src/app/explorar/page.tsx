@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SearchX } from "lucide-react";
 import {
   isOpenNow,
+  isUpdatedRecently,
   sortMarkets,
   withDistance,
   type MarketSortOrder,
@@ -78,8 +79,7 @@ export default async function ExplorarPage({ searchParams }: ExplorarPageProps) 
   }
 
   if (params.atualizado === "true") {
-    const thirtyDaysAgo = Date.now() - 30 * 24 * 60 * 60 * 1000;
-    results = results.filter((market) => new Date(market.updated_at).getTime() >= thirtyDaysAgo);
+    results = results.filter((market) => isUpdatedRecently(market.updated_at));
   }
 
   const sortOrder: MarketSortOrder = params.ordenar === "relevance" ? "relevance" : "distance";

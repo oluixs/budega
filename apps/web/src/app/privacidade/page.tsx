@@ -10,7 +10,7 @@ export default function PrivacyPage() {
 
       <div className="prose prose-neutral mt-8 max-w-none space-y-6 text-body-lg text-neutral-700">
         <p>
-          Esta Política de Privacidade descreve como o Budega ("nós") coleta, usa e
+          Esta Política de Privacidade descreve como o Budega (&ldquo;nós&rdquo;) coleta, usa e
           protege as informações de quem usa nosso site e aplicativo, em conformidade
           com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).
         </p>

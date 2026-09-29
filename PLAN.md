@@ -84,12 +84,19 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 
 ## Fase 5 — Qualidade
 
-- [ ] Testes automatizados (distância, ordenação, validade, favoritos, formulários, roles).
-- [ ] Lint, typecheck, build.
-- [ ] Validação manual do servidor web (sem Chrome DevTools MCP — documentar como
-      limitação e usar inspeção manual/testes).
-- [ ] Revisão responsiva (desktop/mobile).
-- [ ] Resumo final de sessão em `.audit/`.
+- [x] Testes automatizados: 35 em `packages/shared` (distância, ordenação, validade,
+      favoritos, horários, formulários) + 18 em `apps/web` (favoritos, geolocalização/
+      fallback, estado vazio, filtros do admin, criação de oferta em modo mock).
+- [x] Lint, typecheck, build — `pnpm lint`/`pnpm typecheck`/`pnpm build` passam limpos
+      nos 4 pacotes do monorepo via turbo.
+- [x] Validação do servidor web via `Invoke-WebRequest` contra `next dev` (sem Chrome
+      DevTools MCP, indisponível nesta sessão — ver decisão registrada). Sem inspeção
+      visual num navegador real.
+- [ ] Revisão responsiva visual real (desktop/mobile) — não foi possível sem Chrome
+      DevTools MCP/navegador; validado apenas estruturalmente (classes Tailwind
+      responsivas revisadas manualmente no código).
+- [ ] Resumo final de sessão em `.audit/` — pendente, será o último passo antes de
+      apresentar o resultado.
 
 ## Não avançar com a etapa anterior quebrada
 

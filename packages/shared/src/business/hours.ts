@@ -25,3 +25,10 @@ export function formatOpeningHoursToday(openingHours: OpeningHours[], now: Date 
 export function weekdayLabel(day: number): string {
   return WEEKDAY_LABELS[day] ?? "";
 }
+
+/** Usado no filtro "Atualizado recentemente" de /explorar. */
+export function isUpdatedRecently(updatedAt: string, now: Date = new Date(), thresholdDays = 30): boolean {
+  const updatedAtMs = new Date(updatedAt).getTime();
+  const thresholdMs = now.getTime() - thresholdDays * 24 * 60 * 60 * 1000;
+  return updatedAtMs >= thresholdMs;
+}

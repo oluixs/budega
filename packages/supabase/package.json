@@ -10,7 +10,9 @@
   },
   "scripts": {
     "migrate": "node ./scripts/run-migrations.mjs",
-    "seed": "tsx ./scripts/run-seed.ts"
+    "seed": "tsx ./scripts/run-seed.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src scripts"
   },
   "dependencies": {
     "@budega/shared": "workspace:*",
@@ -18,7 +20,9 @@
     "pg": "^8.13.1"
   },
   "devDependencies": {
+    "eslint": "^10.11.0",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.0",
-    "tsx": "^4.19.2"
+    "typescript-eslint": "^8.71.0"
   }
 }

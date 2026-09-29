@@ -20,8 +20,8 @@
     "audit:change": "node scripts/audit-change.mjs",
     "audit:error": "node scripts/audit-error.mjs",
     "audit:validate": "node scripts/validate-audit.mjs",
-    "supabase:migrate": "node scripts/supabase-migrate.mjs",
-    "supabase:seed": "node scripts/supabase-seed.mjs"
+    "supabase:migrate": "pnpm --filter @budega/supabase migrate",
+    "supabase:seed": "pnpm --filter @budega/supabase seed"
   },
   "devDependencies": {
     "shadcn": "^4.21.0",

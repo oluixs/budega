@@ -40,8 +40,8 @@ export default function TermsPage() {
         <section>
           <h2 className="font-display text-h2 font-semibold text-neutral-900">4. Conteúdo patrocinado</h2>
           <p>
-            Mercados e ofertas em destaque são sinalizados com os selos "Destaque" ou
-            "Patrocinado" quando aplicável, para manter a transparência com quem usa o
+            Mercados e ofertas em destaque são sinalizados com os selos &ldquo;Destaque&rdquo; ou
+            &ldquo;Patrocinado&rdquo; quando aplicável, para manter a transparência com quem usa o
             Budega.
           </p>
         </section>

@@ -42,7 +42,7 @@ const emptyDefaults: OfferFormValues = {
   category_id: "",
   name: "",
   description: "",
-  image_url: "",
+  image_url: null,
   promotional_price: 0,
   regular_price: undefined,
   unit: "un",

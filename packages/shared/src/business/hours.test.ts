@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isOpenNow } from "./hours";
+import { isOpenNow, isUpdatedRecently } from "./hours";
 import type { OpeningHours } from "../types/index";
 
 function hoursFor(day: number, opensAt: string, closesAt: string): OpeningHours[] {
@@ -26,5 +26,17 @@ describe("isOpenNow", () => {
   it("está fechado quando não há entrada para o dia atual", () => {
     const now = new Date("2026-06-15T10:00:00");
     expect(isOpenNow([], now)).toBe(false);
+  });
+});
+
+describe("isUpdatedRecently", () => {
+  const now = new Date("2026-06-30T00:00:00Z");
+
+  it("é true para uma atualização de 5 dias atrás (limiar padrão de 30 dias)", () => {
+    expect(isUpdatedRecently("2026-06-25T00:00:00Z", now)).toBe(true);
+  });
+
+  it("é false para uma atualização de 40 dias atrás", () => {
+    expect(isUpdatedRecently("2026-05-21T00:00:00Z", now)).toBe(false);
   });
 });
