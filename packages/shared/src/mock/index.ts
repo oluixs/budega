@@ -3,6 +3,7 @@ export * from "./markets";
 export * from "./branches";
 export * from "./offers";
 export * from "./flyers";
+export * from "./reports";
 export * from "./dates";
 
 export const MOCK_MODE_LABEL = "Demonstração";

@@ -23,6 +23,7 @@ export const marketFormSchema = z.object({
   opening_hours: z.array(openingHoursSchema).default([]),
   is_verified: z.boolean().default(false),
   is_featured: z.boolean().default(false),
+  is_suspended: z.boolean().default(false),
 });
 export type MarketFormValues = z.infer<typeof marketFormSchema>;
 

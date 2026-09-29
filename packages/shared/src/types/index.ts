@@ -34,6 +34,7 @@ export interface Market {
   opening_hours: OpeningHours[];
   is_verified: boolean;
   is_featured: boolean;
+  is_suspended: boolean;
   created_at: string;
   updated_at: string;
 }

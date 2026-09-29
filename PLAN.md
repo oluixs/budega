@@ -66,10 +66,17 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 
 ## Fase 4 — Backend e administração
 
-- [ ] Migrations Supabase + RLS.
-- [ ] Autenticação (roles: user, market_manager, admin).
-- [ ] Painel `/admin` (dashboard, mercados, encartes, ofertas, denúncias).
-- [ ] Integração TanStack Query + React Hook Form + Zod nos formulários administrativos.
+- [x] Migrations Supabase + RLS (escritas e revisadas; ainda não executadas contra um
+      Postgres real — sem credenciais no ambiente).
+- [x] Autenticação (roles: user, market_manager, admin) — schema e RLS prontos;
+      `/entrar`/`/cadastro` funcionam com Supabase Auth real quando configurado. Falta
+      middleware de redirect para `/admin` sem sessão (ver pendência no registro de
+      mudança do admin).
+- [x] Painel `/admin` (dashboard, mercados, encartes, ofertas, denúncias).
+- [x] Integração React Hook Form + Zod nos formulários administrativos (TanStack Query
+      não foi necessário nesta fase — Server Actions + `revalidatePath` cobriram as
+      mutações do admin; pode ser adotado depois para listagens com paginação real).
+- [ ] Gerenciar filiais (branches) no admin — schema pronto, falta UI dedicada.
 
 ## Fase 5 — Qualidade
 

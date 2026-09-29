@@ -24,6 +24,7 @@ function buildMarket(overrides: Partial<Market>): Market {
     opening_hours: [],
     is_verified: false,
     is_featured: false,
+    is_suspended: false,
     created_at: "2026-01-01T00:00:00.000Z",
     updated_at: "2026-01-01T00:00:00.000Z",
     ...overrides,
