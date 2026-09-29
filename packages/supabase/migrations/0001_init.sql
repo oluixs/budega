@@ -310,9 +310,11 @@ create policy "offers_write_manager" on offers
 create policy "favorites_owner_only" on favorites
   for all using (user_id = auth.uid()) with check (user_id = auth.uid());
 
--- reports: qualquer pessoa autenticada pode denunciar; só admin revisa/atualiza.
-create policy "reports_insert_authenticated" on reports
-  for insert with check (auth.uid() is not null);
+-- reports: qualquer pessoa pode denunciar, mesmo sem cadastro (o app público permite
+-- denunciar preço incorreto/oferta vencida/encarte ilegível sem exigir login); só
+-- admin revisa e atualiza o status.
+create policy "reports_insert_anyone" on reports
+  for insert with check (true);
 create policy "reports_select_own_or_admin" on reports
   for select using (user_id = auth.uid() or is_admin());
 create policy "reports_update_admin_only" on reports

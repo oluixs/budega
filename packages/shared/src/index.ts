@@ -72,6 +72,8 @@ export {
   formatRelativeUpdate,
 } from "./business/format";
 
+export { isOpenNow, formatOpeningHoursToday, weekdayLabel } from "./business/hours";
+
 export {
   addLocalFavorite,
   removeLocalFavorite,

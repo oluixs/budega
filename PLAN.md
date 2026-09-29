@@ -48,12 +48,13 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 
 - [x] Configurar Next.js (App Router) + TypeScript + Tailwind + shadcn/ui em `apps/web`.
 - [x] Página inicial `/`.
-- [ ] `/explorar` (busca, filtros, lista/mapa).
-- [ ] `/mercados/[slug]`.
-- [ ] `/ofertas/[id]`.
-- [ ] `/encartes/[id]`.
-- [ ] `/favoritos`.
-- [ ] `/entrar` e `/cadastro` (opcionais).
+- [x] `/explorar` (busca, filtros, lista/mapa).
+- [x] `/mercados/[slug]`.
+- [x] `/ofertas/[id]`.
+- [x] `/encartes/[id]`.
+- [x] `/favoritos`.
+- [x] `/entrar` e `/cadastro` (opcionais).
+- [x] `/privacidade` e `/termos`.
 
 ## Fase 3 — Android/iOS (Expo)
 
