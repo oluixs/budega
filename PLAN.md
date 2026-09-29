@@ -58,11 +58,15 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 
 ## Fase 3 — Android/iOS (Expo)
 
-- [ ] Scaffold `apps/mobile` com Expo Router + NativeWind.
-- [ ] Navegação inferior (Explorar, Buscar, Favoritos, Perfil).
-- [ ] Telas equivalentes às da web, adaptadas a mobile.
-- [ ] Localização (Expo Location) + fallback sem mapa.
-- [ ] Compartilhamento nativo e abertura de rota externa.
+- [x] Scaffold `apps/mobile` com Expo Router + NativeWind (SDK 57).
+- [x] Navegação inferior (Explorar, Buscar, Favoritos, Perfil).
+- [x] Telas equivalentes às da web, adaptadas a mobile (mercado, oferta, encarte).
+- [x] Localização (Expo Location) + fallback sem mapa (lista com distância).
+- [x] Compartilhamento nativo e abertura de rota externa (Linking + Share).
+- [ ] Verificação visual real em Expo Go/emulador/dispositivo — não foi possível nesta
+      sessão (sem Android SDK/emulador no ambiente). Validado via `tsc`, `expo lint`,
+      `expo-doctor` (21/21) e `expo export --platform android/ios` (bundle completo).
+- [ ] `eas.json` e instruções de build Android/iPhone com EAS — pendente para o README.
 
 ## Fase 4 — Backend e administração
 
