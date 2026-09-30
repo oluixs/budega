@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { AlertTriangle, FileText, Flag, LayoutDashboard, MapPin, Store, Tag, Users } from "lucide-react";
 import { requireAdminAccess } from "@/lib/auth";
+import { isCatalogMode } from "@/lib/env";
 import { SignOutButton } from "@/components/auth/sign-out-button";
 
 const NAV_ITEMS = [
@@ -14,6 +16,8 @@ const NAV_ITEMS = [
 ];
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
+  // Site publicado sem Supabase: não há painel (os dados vêm dos sites dos mercados).
+  if (isCatalogMode) notFound();
   // Sem sessão → /entrar; sem role de painel → /acesso-negado. As páginas e funções de
   // dados repetem a checagem (lib/admin-data.ts), porque renderizam em paralelo.
   const access = await requireAdminAccess();

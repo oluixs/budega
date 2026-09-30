@@ -1,0 +1,769 @@
+{
+  "flyer_id": "frangolandia-encarte-mega-ofertaco-das-marcas-2",
+  "file_url": "https://frangolandia.com/wp-content/uploads/2026/09/Mega-Ofertaco-das-Marcas.pdf",
+  "read_at": "2026-09-29",
+  "reader": "leitura manual do encarte (Claude Code)",
+  "note": "As 12 ofertas Sadia estão na leitura do encarte Ofertas BRF (mesmo conteúdo, validade até 07/10) para não duplicar.",
+  "offers": [
+    {
+      "name": "Bebida láctea Protein 15g de proteína",
+      "brand": "Itambé",
+      "size": "250ml",
+      "promotional_price": 5.59,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "bebidas",
+      "conditions": "sabores"
+    },
+    {
+      "name": "Leite em pó Zero Lactose integral ou desnatado",
+      "brand": "Itambé",
+      "size": "300g",
+      "promotional_price": 14.89,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Leite em pó integral",
+      "brand": "Itambé",
+      "size": "sachê 1kg",
+      "promotional_price": 31.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Leite em pó integral",
+      "brand": "Itambé",
+      "size": "sachê 200g",
+      "promotional_price": 6.59,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Leite em pó Natural Milk",
+      "brand": "Itambé",
+      "size": "sachê 500g",
+      "promotional_price": 18.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Leite em pó integral Vitaminas",
+      "brand": "Itambé",
+      "size": "sachê 750g",
+      "promotional_price": 27.59,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Composto lácteo Profissional",
+      "brand": "Itambé",
+      "size": "sachê 1kg",
+      "promotional_price": 23.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Leite condensado semidesnatado",
+      "brand": "Itambé",
+      "size": "tp 395g",
+      "promotional_price": 5.59,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Creme de leite tradicional ou levíssimo",
+      "brand": "Itambé",
+      "size": "tp 200g",
+      "promotional_price": 2.59,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Bebida láctea chocolate",
+      "brand": "Itambé",
+      "size": "1l",
+      "promotional_price": 6.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "bebidas",
+      "conditions": null
+    },
+    {
+      "name": "Doce de leite de colher",
+      "brand": "Itambé",
+      "size": "350g",
+      "promotional_price": 9.89,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Tempero Edu Guedes",
+      "brand": "Brazil Selects",
+      "size": "100g",
+      "promotional_price": 7.69,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Tempero Ana Maria",
+      "brand": "Brazil Selects",
+      "size": "100g",
+      "promotional_price": 7.29,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Páprica defumada",
+      "brand": "Brazil Selects",
+      "size": "100g",
+      "promotional_price": 5.59,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Páprica doce",
+      "brand": "Brazil Selects",
+      "size": "100g",
+      "promotional_price": 5.59,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Lemon pepper",
+      "brand": "Brazil Selects",
+      "size": "100g",
+      "promotional_price": 7.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Tempero Pega Marido",
+      "brand": "Brazil Selects",
+      "size": "100g",
+      "promotional_price": 9.69,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Cúrcuma",
+      "brand": "Brazil Selects",
+      "size": "100g",
+      "promotional_price": 5.59,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Colorau",
+      "brand": "Brazil Selects",
+      "size": "100g",
+      "promotional_price": 3.29,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Alho frito",
+      "brand": "Brazil Selects",
+      "size": "100g",
+      "promotional_price": 7.29,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Bicarbonato de sódio",
+      "brand": "Brazil Selects",
+      "size": "100g",
+      "promotional_price": 3.69,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Iogurte desnatado Yo Bem",
+      "brand": "Betânia",
+      "size": "800g",
+      "promotional_price": 15.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": "sabores"
+    },
+    {
+      "name": "Bebida láctea Yo Bem",
+      "brand": "Betânia",
+      "size": "250ml",
+      "promotional_price": 6.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "bebidas",
+      "conditions": "sabores, exceto café caramelo"
+    },
+    {
+      "name": "Iogurte integral ou desnatado",
+      "brand": "Betânia",
+      "size": "170g",
+      "promotional_price": 3.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": "sabores"
+    },
+    {
+      "name": "Petit suisse Kids morango",
+      "brand": "Betânia",
+      "size": "320g",
+      "promotional_price": 8.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Iogurte de fruta Kids morango, maçã e banana",
+      "brand": "Betânia",
+      "size": "540g",
+      "promotional_price": 8.49,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Bebida láctea morango",
+      "brand": "Betânia",
+      "size": "680g",
+      "promotional_price": 6.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "bebidas",
+      "conditions": "leve mais, pague menos"
+    },
+    {
+      "name": "Bebida láctea Bat Gut",
+      "brand": "Betânia",
+      "size": "900g",
+      "promotional_price": 6.79,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "bebidas",
+      "conditions": "sabores"
+    },
+    {
+      "name": "Iogurte natural Yo Bem com whey",
+      "brand": "Betânia",
+      "size": "170g",
+      "promotional_price": 7.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": "sabores"
+    },
+    {
+      "name": "Manteiga de primeira qualidade com sal",
+      "brand": "Betânia",
+      "size": "500g",
+      "promotional_price": 21.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Doce de leite pastoso",
+      "brand": "Camponesa",
+      "size": "300g",
+      "promotional_price": 10.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Biscoito wafer Amori chocolate",
+      "brand": "Richester",
+      "size": "100,8g",
+      "promotional_price": 4.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Biscoito cookies gotas de chocolate",
+      "brand": "Piraquê",
+      "size": "80g",
+      "promotional_price": 2.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": "sabores"
+    },
+    {
+      "name": "Biscoito salgado",
+      "brand": "Piraquê",
+      "size": "138g",
+      "promotional_price": 4.49,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": "sabores"
+    },
+    {
+      "name": "Biscoito Animado Zoo cobertura chocolate",
+      "brand": "Richester",
+      "size": "40g",
+      "promotional_price": 2.59,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Biscoito recheado leite maltado",
+      "brand": "Piraquê",
+      "size": "85g",
+      "promotional_price": 2.39,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": "sabores"
+    },
+    {
+      "name": "Biscoito wafer",
+      "brand": "Piraquê",
+      "size": "100g",
+      "promotional_price": 2.49,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": "sabores"
+    },
+    {
+      "name": "Macarrão instantâneo lámen 6 unidades",
+      "brand": "Richester",
+      "size": "445,8g",
+      "promotional_price": 7.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": "sabores"
+    },
+    {
+      "name": "Macarrão sêmola parafuso, penne ou búzio",
+      "brand": "Fortaleza",
+      "size": "400g",
+      "promotional_price": 3.49,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Macarrão grano duro sêmola",
+      "brand": "Adria",
+      "size": "500g",
+      "promotional_price": 9.49,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": "tipos"
+    },
+    {
+      "name": "Salsicha bovina American Grill Churrasco congelada",
+      "brand": "Seara",
+      "size": "330g",
+      "promotional_price": 14.49,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Mini hambúrguer misto Churrasco congelado",
+      "brand": "Seara",
+      "size": "300g",
+      "promotional_price": 10.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Linguiça toscana Churrasco ou suína congelada",
+      "brand": "Seara",
+      "size": "600g",
+      "promotional_price": 12.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Pasta pronta de pão de alho Churrasco",
+      "brand": "Seara",
+      "size": "200g",
+      "promotional_price": 4.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Sanduíche pronto Hot Hit congelado",
+      "brand": "Seara",
+      "size": "145g",
+      "promotional_price": 6.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": "sabores"
+    },
+    {
+      "name": "Empanado de frango Chicken Crispy ou Supreme congelado",
+      "brand": "Seara",
+      "size": "300g",
+      "promotional_price": 9.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Empanado de frango Netflix congelado (Chicken Supreme, pipoquinha de frango ou mini hot dog coreano)",
+      "brand": "Seara",
+      "size": "275g",
+      "promotional_price": 12.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Empanado de frango steak congelado",
+      "brand": "Rezende",
+      "size": "100g",
+      "promotional_price": 0.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Mac & Cheese cheddar ou cheddar com bacon congelado",
+      "brand": "Seara",
+      "size": "300g",
+      "promotional_price": 8.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Mortadela defumada Gourmet",
+      "brand": "Seara",
+      "size": null,
+      "promotional_price": 17.99,
+      "regular_price": null,
+      "unit": "kg",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Lombo para fatiar Levíssimo",
+      "brand": "Seara",
+      "size": null,
+      "promotional_price": 29.99,
+      "regular_price": null,
+      "unit": "kg",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Margarina cremosa com sal",
+      "brand": "Delicata",
+      "size": "500g",
+      "promotional_price": 4.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Difusor elétrico líquido aparelho + refil",
+      "brand": "Bom Ar",
+      "size": "16ml",
+      "promotional_price": 30.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": "tipos"
+    },
+    {
+      "name": "Difusor elétrico líquido refil",
+      "brand": "Bom Ar",
+      "size": "32ml",
+      "promotional_price": 39.89,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": "tipos; 30% off na 2ª unidade"
+    },
+    {
+      "name": "Desodorizador automático Freshmatic aparelho",
+      "brand": "Bom Ar",
+      "size": "250ml",
+      "promotional_price": 69.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": "tipos"
+    },
+    {
+      "name": "Desodorizador automático Freshmatic refil",
+      "brand": "Bom Ar",
+      "size": "250ml",
+      "promotional_price": 34.29,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": "tipos"
+    },
+    {
+      "name": "Desodorizador spray com gatilho",
+      "brand": "Bom Ar",
+      "size": "236ml",
+      "promotional_price": 26.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": "tipos"
+    },
+    {
+      "name": "Click Spray refil kit leve 3 pague 2",
+      "brand": "Bom Ar",
+      "size": "12ml",
+      "promotional_price": 23.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": "tipos"
+    },
+    {
+      "name": "Desodorizador aerossol",
+      "brand": "Bom Ar",
+      "size": "360ml",
+      "promotional_price": 17.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": "tipos"
+    },
+    {
+      "name": "Inseticida aerossol Especialista",
+      "brand": "SBP",
+      "size": "360ml",
+      "promotional_price": 19.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": null
+    },
+    {
+      "name": "Repelente elétrico líquido aparelho + refil",
+      "brand": "SBP",
+      "size": "32,9ml",
+      "promotional_price": 21.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": "tipos"
+    },
+    {
+      "name": "Repelente elétrico líquido refil kit",
+      "brand": "SBP",
+      "size": "3 x 32,9ml",
+      "promotional_price": 36.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": "tipos"
+    },
+    {
+      "name": "Repelente corporal loção Baby",
+      "brand": "SBP",
+      "size": "100ml",
+      "promotional_price": 37.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": null
+    },
+    {
+      "name": "Repelente corporal loção suave",
+      "brand": "Repelex",
+      "size": "200ml",
+      "promotional_price": 19.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": "com 25% de desconto"
+    },
+    {
+      "name": "Mortadela Ouro",
+      "brand": "Perdigão",
+      "size": null,
+      "promotional_price": 23.9,
+      "regular_price": null,
+      "unit": "kg",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Salsicha hot dog",
+      "brand": "Perdigão",
+      "size": "500g",
+      "promotional_price": 10.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Linguiça tipo calabresa",
+      "brand": "Perdigão",
+      "size": "400g",
+      "promotional_price": 12.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Presunto de peru",
+      "brand": "Perdigão",
+      "size": null,
+      "promotional_price": 27.9,
+      "regular_price": null,
+      "unit": "kg",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Margarina com sal ou manteiga",
+      "brand": "Claybom",
+      "size": "500g",
+      "promotional_price": 4.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Steak de frango",
+      "brand": "Perdigão",
+      "size": "100g",
+      "promotional_price": 1.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Hambúrguer Montana tradicional, defumado ou frango",
+      "brand": "Perdigão",
+      "size": "672g",
+      "promotional_price": 19.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Lasanha bolonhesa, calabresa ou frango",
+      "brand": "Perdigão",
+      "size": "600g",
+      "promotional_price": 15.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Meu Menu fettuccine peru ou fettuccine bolonhesa",
+      "brand": "Perdigão",
+      "size": "300g",
+      "promotional_price": 8.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Hambúrguer Montana tradicional",
+      "brand": "Perdigão",
+      "size": "56g",
+      "promotional_price": 1.19,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Mini Chicken tradicional ou queijo",
+      "brand": "Perdigão",
+      "size": "275g",
+      "promotional_price": 10.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Hambúrguer Na Brasa costela ou picanha",
+      "brand": "Perdigão",
+      "size": "150g",
+      "promotional_price": 7.49,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    }
+  ]
+}

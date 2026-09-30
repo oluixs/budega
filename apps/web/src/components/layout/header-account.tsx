@@ -5,6 +5,7 @@ import { LayoutDashboard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SignOutButton } from "@/components/auth/sign-out-button";
 import { useSessionUser } from "@/hooks/use-session-user";
+import { isCatalogMode } from "@/lib/env";
 
 interface HeaderAccountProps {
   /** Layout vertical do menu mobile; chamado ao navegar para fechar o menu. */
@@ -16,6 +17,9 @@ interface HeaderAccountProps {
 export function HeaderAccount({ onNavigate, stacked = false }: HeaderAccountProps) {
   const user = useSessionUser();
   const variant = stacked ? "outline" : "ghost";
+
+  // Site publicado sem Supabase: não há contas nem painel.
+  if (isCatalogMode) return null;
 
   if (!user) {
     return (

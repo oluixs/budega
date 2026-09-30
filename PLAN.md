@@ -122,7 +122,39 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 - [ ] Mais redes da região (um adaptador por site).
 - [x] Leitura de ofertas dos encartes com a API do Claude (`pnpm importar --ofertas`,
       cache por encarte, validação de preços) — pronta e testada com cliente simulado.
-- [ ] Rodar a leitura de ofertas pela primeira vez (precisa de credencial da Anthropic).
+- [x] Leitura **manual** das ofertas (sem API, sem custo): Claude Code transcreveu os
+      encartes de validade mais longa olhando a imagem publicada no site do mercado —
+      `packages/sources/src/data/leituras/*.json`, aplicada em todo `pnpm importar`.
+      143 ofertas (Cometa Montese 55, Frangolândia Mega Ofertaço 76, Frangolândia BRF 12).
+      Precisa ser refeita a cada encarte novo (`pnpm importar` avisa quais faltam ler).
+- [x] Home/app mostram uma vitrine variada de ofertas (`pickHighlightOffers`: alterna
+      entre mercados e prioriza maior desconto) em vez das 8 primeiras do array.
+- [ ] Rodar a leitura de ofertas pela API pela primeira vez (precisa de credencial da
+      Anthropic) — ou automatizar a leitura manual semanal (rotina agendada do Claude),
+      pendente de autorização do usuário.
+- [x] Site publicado sem Supabase é modo **catálogo**: sem contas/painel/denúncia
+      persistida — `/admin`, `/entrar`, `/cadastro` respondem 404 e "Denunciar" abre um
+      aviso pré-preenchido no GitHub do projeto. Ativa com `NODE_ENV=production` e sem
+      `NEXT_PUBLIC_SUPABASE_URL`; `NEXT_PUBLIC_BUDEGA_PAINEL_DEMO=1` religa o painel de
+      demonstração (usado nos testes e2e).
+- [x] Política de Privacidade tem versão "catálogo" (sem tratamento de dados pessoais
+      além dos registros técnicos da hospedagem) exibida automaticamente sem Supabase;
+      Termos de Uso adaptados (sem seção de conta, correção/remoção pelo GitHub).
+- [x] Login no Vercel feito (device flow, conta `oluixs`, plano Hobby gratuito).
+- [ ] **Falta uma ação do usuário para concluir a hospedagem**: o deploy 100% automático
+      pela CLI esbarrou em três limitações do ambiente Windows sem privilégio de admin
+      (não do projeto) — ver `.audit/changes/2026-09-30_08-08-35_...`. Caminho escolhido:
+      importar o repositório pelo painel do Vercel (2 minutos, dá deploy automático a
+      cada push depois):
+      1. Acessar https://vercel.com/new e importar `oluixs/budega` (autorizar o app do
+         Vercel a acessar o GitHub, se pedido).
+      2. Em "Root Directory", escolher `apps/web`. Framework Next.js é detectado
+         automaticamente.
+      3. Não configurar nenhuma variável de ambiente do Supabase — sem elas o site sobe
+         no modo catálogo (dados reais dos mercados, sem contas/painel), como já testado.
+      4. Depois do primeiro deploy, atualizar `WEB_BASE_URL` em
+         `packages/shared/src/business/links.ts` e `EXPO_PUBLIC_API_URL` do app mobile
+         para a URL `*.vercel.app` definitiva.
 - [ ] Emulador Android: SDK instalado; falta ativar o hipervisor (precisa de admin).
 
 ## Fase 5 — Qualidade

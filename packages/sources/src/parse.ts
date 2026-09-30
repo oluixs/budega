@@ -187,18 +187,30 @@ export function normalizePhone(raw: string | null | undefined): string | null {
   return digits.length >= 8 ? digits : null;
 }
 
+const RESTRICTION = /somente (?:para |na |no |em )?(?:a |o )?(?:loja|unidade)s? ([^.]+)/i;
+
 /**
- * Encarte "somente para a loja Montese" → filial daquela loja (por bairro ou nome).
- * Encartes para todas as lojas (inclusive "exceto X") → `null` (vale para o mercado).
+ * Encarte "somente na loja X" → filial X, só se o texto trouxer o **nome exato** da loja
+ * ou o **endereço** (rua e número). Bairro não basta: o encarte "somente para a loja
+ * Montese" do Cometa é de uma loja da Rua Barão de Sobral que não está na lista do site,
+ * e o bairro levava à loja Gomes de Matos (que fica no Montese) — ver .audit/errors.
+ * Encartes para todas as lojas (inclusive "exceto X") ou loja desconhecida → `null`.
  */
 export function findRestrictedBranch(description: string, branches: Branch[]): string | null {
-  const match = normalize(description).match(/somente (?:para |na |no |em )?(?:a |o )?(?:loja|unidade)s? (.+)/);
+  const match = normalize(description).match(RESTRICTION);
   if (!match) return null;
-  const target = match[1]!;
+  const target = match[1]!.trim();
+  const storeName = target.split(/ - |[,;]/)[0]!.replace(/^(?:cometa|loja) /, "").trim();
   const found = branches.find((branch) => {
-    const neighborhood = normalize(branch.neighborhood);
-    const name = normalize(branch.name).replace(/^loja /, "");
-    return (neighborhood && target.includes(neighborhood)) || (name && target.startsWith(name));
+    const name = normalize(branch.name).replace(/^(?:cometa|loja) /, "");
+    const address = normalize(branch.address ?? "");
+    return (name && storeName === name) || (/\d/.test(address) && target.includes(address));
   });
   return found?.id ?? null;
+}
+
+/** "Ofertas válidas ... somente para a loja Montese." → "Somente na loja Montese". */
+export function storeRestriction(description: string | null | undefined): string | null {
+  const match = (description ?? "").match(RESTRICTION);
+  return match ? `Somente na loja ${match[1]!.trim()}` : null;
 }

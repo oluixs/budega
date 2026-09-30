@@ -2,6 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { z } from "zod";
 import type { Category, Flyer, Offer } from "@budega/shared";
 import type { HttpClient } from "../http";
+import { storeRestriction } from "../parse";
 
 /**
  * Lê produtos e preços da imagem/PDF de um encarte com um modelo de visão (API do Claude).
@@ -18,7 +19,7 @@ import type { HttpClient } from "../http";
 
 export const OFFER_EXTRACTION_MODEL = "claude-opus-5-5";
 
-const ExtractedOfferSchema = z.object({
+export const ExtractedOfferSchema = z.object({
   name: z.string().min(2),
   brand: z.string().nullable(),
   size: z.string().nullable(),
@@ -128,6 +129,19 @@ export async function extractOffersFromFlyer({ client, http, flyer, categories }
   const parsed = ExtractionSchema.safeParse(JSON.parse(text.text));
   if (!parsed.success) throw new Error("Resposta fora do formato esperado.");
 
+  const { offers, discarded } = toFlyerOffers(flyer, parsed.data.offers, categories);
+  return {
+    offers,
+    usage: { input_tokens: response.usage.input_tokens, output_tokens: response.usage.output_tokens },
+    discarded,
+  };
+}
+
+/**
+ * Transforma produtos lidos de um encarte (pela API ou à mão, ver ./manual.ts) em ofertas do
+ * encarte, descartando categoria desconhecida e preço implausível.
+ */
+export function toFlyerOffers(flyer: Flyer, items: ExtractedOffer[], categories: Category[]): { offers: Offer[]; discarded: number } {
   const categoryBySlug = new Map(categories.map((category) => [category.slug, category.id]));
   // Sanidade contra vírgula perdida ("2,79" lido como 279). Em mercearia, preço acima de
   // R$ 500 ou inteiro acima de R$ 100 (sem centavos) é quase sempre leitura errada.
@@ -135,9 +149,12 @@ export async function extractOffersFromFlyer({ client, http, flyer, categories }
   const FOOD = ["alimentos", "bebidas", "hortifruti", "carnes", "padaria"];
   const implausible = (slug: string, price: number) =>
     FOOD.includes(slug) ? price > 500 || (price >= 100 && Number.isInteger(price)) : price > 10_000;
+  // Encarte exclusivo de uma loja: a restrição vai nas condições de cada oferta (a oferta
+  // aparece fora do contexto do encarte, e a loja pode não estar na lista do site).
+  const restriction = storeRestriction(flyer.description);
   const offers: Offer[] = [];
   let discarded = 0;
-  parsed.data.offers.forEach((item, index) => {
+  items.forEach((item, index) => {
     const categoryId = categoryBySlug.get(item.category_slug);
     const regular = item.regular_price && item.regular_price > item.promotional_price ? item.regular_price : null;
     if (!categoryId || implausible(item.category_slug, item.promotional_price)) {
@@ -157,7 +174,7 @@ export async function extractOffersFromFlyer({ client, http, flyer, categories }
       promotional_price: Math.round(item.promotional_price * 100) / 100,
       regular_price: regular,
       unit: item.unit,
-      conditions: item.conditions,
+      conditions: [item.conditions, restriction].filter(Boolean).join("; ") || null,
       valid_from: flyer.valid_from,
       valid_until: flyer.valid_until,
       is_active: true,
@@ -167,9 +184,5 @@ export async function extractOffersFromFlyer({ client, http, flyer, categories }
     });
   });
 
-  return {
-    offers,
-    usage: { input_tokens: response.usage.input_tokens, output_tokens: response.usage.output_tokens },
-    discarded,
-  };
+  return { offers, discarded };
 }

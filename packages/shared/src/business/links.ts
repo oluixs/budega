@@ -67,3 +67,15 @@ export function buildWhatsAppUrl(phone: string, message?: string): string {
   const params = message ? `?text=${encodeURIComponent(message)}` : "";
   return `https://wa.me/${digits}${params}`;
 }
+
+/** Repositório público do projeto: código, avisos de erro e pedidos de correção/remoção. */
+export const PROJECT_REPO_URL = "https://github.com/oluixs/budega";
+
+/**
+ * Link para abrir um aviso (issue) já preenchido no GitHub do projeto. É o canal de
+ * contato enquanto o Budega não tem backend nem e-mail de contato: o aviso é público.
+ */
+export function buildIssueUrl({ title, body }: { title: string; body: string }): string {
+  const params = new URLSearchParams({ title, body });
+  return `${PROJECT_REPO_URL}/issues/new?${params.toString()}`;
+}

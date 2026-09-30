@@ -61,7 +61,9 @@ describe("cometaAdapter", () => {
       source_url: "https://cometasupermercados.com.br/encartes",
       valid_from: "2026-09-29T03:00:00.000Z",
       valid_until: "2026-10-06T02:59:59.000Z",
-      branch_id: "cometa-loja-47", // Gomes de Matos, bairro Montese
+      // Loja Montese (Rua Barão de Sobral, 687) não está na lista do site → sem filial; a
+      // restrição aparece na descrição e nas condições das ofertas.
+      branch_id: null,
     });
     expect(montese.cover_url).toMatch(/^https:\/\/adminx\.cometasupermercados\.com\.br\/uploads\/large_/);
 

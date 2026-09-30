@@ -38,6 +38,8 @@ export default defineConfig({
       NEXT_PUBLIC_SUPABASE_URL: "",
       NEXT_PUBLIC_SUPABASE_ANON_KEY: "",
       BUDEGA_DADOS: "demo",
+      // Painel e login de demonstração (em produção sem Supabase o site é só catálogo).
+      NEXT_PUBLIC_BUDEGA_PAINEL_DEMO: "1",
     },
   },
 });

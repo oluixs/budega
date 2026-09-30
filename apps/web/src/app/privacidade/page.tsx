@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CatalogPrivacy } from "@/components/legal/catalog-privacy";
 import { LegalPage, LegalSection } from "@/components/legal/legal-page";
-import { LEGAL, legalValue } from "@/lib/legal";
+import { hasAccounts, LEGAL, legalValue } from "@/lib/legal";
 
 export const metadata: Metadata = { title: "Política de Privacidade" };
 
@@ -9,6 +10,8 @@ const list = "list-disc space-y-2 pl-6";
 const link = "font-medium text-brand-600 hover:underline";
 
 export default function PrivacyPage() {
+  // Sem contas (site publicado sem Supabase), o projeto não trata dados pessoais.
+  if (!hasAccounts) return <CatalogPrivacy />;
   return (
     <LegalPage title="Política de Privacidade" updated={LEGAL.lastUpdated}>
       <p>

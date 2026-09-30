@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { isCatalogMode } from "@/lib/env";
 
 export function SiteFooter() {
   return (
@@ -12,7 +13,8 @@ export function SiteFooter() {
           <Link href="/termos" className="hover:text-brand-600">
             Termos de Uso
           </Link>
-          <Link href="/admin" className="hover:text-brand-600">
+          {/* Sem painel publicado, o mercado pede correção/remoção pelo canal dos Termos. */}
+          <Link href={isCatalogMode ? "/termos#propriedade" : "/admin"} className="hover:text-brand-600">
             Sou um mercado
           </Link>
         </nav>

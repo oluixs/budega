@@ -1,0 +1,558 @@
+{
+  "flyer_id": "cometa-encarte-512",
+  "file_url": "https://adminx.cometasupermercados.com.br/uploads/10_de_2026_FINAL_83f81efdf3.pdf",
+  "read_at": "2026-09-29",
+  "reader": "leitura manual do encarte (Claude Code)",
+  "offers": [
+    {
+      "name": "Arroz branco ou parboilizado",
+      "brand": "Célia",
+      "size": "1kg",
+      "promotional_price": 4.05,
+      "regular_price": 4.39,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Feijão de corda",
+      "brand": "Fibra",
+      "size": "1kg",
+      "promotional_price": 5.49,
+      "regular_price": 6.69,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Macarrão sêmola parafuso",
+      "brand": "Fortaleza",
+      "size": "400g",
+      "promotional_price": 3.49,
+      "regular_price": 4.29,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Açúcar cristal",
+      "brand": "Samuka",
+      "size": "1kg",
+      "promotional_price": 2.79,
+      "regular_price": 3.35,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Óleo de soja",
+      "brand": "Vitaliv",
+      "size": "pet 900ml",
+      "promotional_price": 7.49,
+      "regular_price": 8.69,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Leite em pó integral ou instantâneo",
+      "brand": "Betânia",
+      "size": "sachê 750g",
+      "promotional_price": 23.89,
+      "regular_price": 28.19,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Leite UHT integral ou desnatado",
+      "brand": "Parmalat",
+      "size": "1l",
+      "promotional_price": 5.99,
+      "regular_price": 6.99,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Cereal 3 cereais",
+      "brand": "Neston",
+      "size": "sachê 210g",
+      "promotional_price": 4.99,
+      "regular_price": 7.29,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Leite condensado semidesnatado",
+      "brand": "Moça",
+      "size": "tp 395g",
+      "promotional_price": 6.99,
+      "regular_price": 9.65,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": "exceto zero lactose"
+    },
+    {
+      "name": "Creme de leite",
+      "brand": "Piracanjuba",
+      "size": "tp 200g",
+      "promotional_price": 2.69,
+      "regular_price": 3.59,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": "exceto zero lactose"
+    },
+    {
+      "name": "Bebida láctea UHT chocolate",
+      "brand": "Toddynho",
+      "size": "200ml",
+      "promotional_price": 1.89,
+      "regular_price": 2.89,
+      "unit": "un",
+      "category_slug": "bebidas",
+      "conditions": null
+    },
+    {
+      "name": "Biscoito recheado",
+      "brand": "Amori ou Escureto",
+      "size": "71,2g",
+      "promotional_price": 1.49,
+      "regular_price": 2.09,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Biscoito cream cracker tostadinha",
+      "brand": "Fortaleza",
+      "size": "350g",
+      "promotional_price": 3.89,
+      "regular_price": 5.79,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Sardinha ao óleo ou ao molho de tomate",
+      "brand": "Gomes da Costa",
+      "size": "125g",
+      "promotional_price": 5.49,
+      "regular_price": 6.49,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Pão de hambúrguer",
+      "brand": "Pansc",
+      "size": "400g",
+      "promotional_price": 5.99,
+      "regular_price": 9.29,
+      "unit": "un",
+      "category_slug": "padaria",
+      "conditions": null
+    },
+    {
+      "name": "Margarina",
+      "brand": "Primor",
+      "size": "500g",
+      "promotional_price": 4.99,
+      "regular_price": 6.99,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Manteiga com sal",
+      "brand": "Kreminas",
+      "size": "pote 500g",
+      "promotional_price": 16.99,
+      "regular_price": 21.99,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Presunto de peru",
+      "brand": "Sadia",
+      "size": null,
+      "promotional_price": 25.99,
+      "regular_price": 37.69,
+      "unit": "kg",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Linguiça tipo calabresa cozida defumada",
+      "brand": "Sadia",
+      "size": "400g",
+      "promotional_price": 10.49,
+      "regular_price": 13.65,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Filezinho de frango sassami congelado",
+      "brand": "Jaguá",
+      "size": "700g",
+      "promotional_price": 11.99,
+      "regular_price": 14.99,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Refrigerante de caju",
+      "brand": "São Geraldo",
+      "size": "2l",
+      "promotional_price": 9.59,
+      "regular_price": 10.99,
+      "unit": "un",
+      "category_slug": "bebidas",
+      "conditions": "exceto zero"
+    },
+    {
+      "name": "Cerveja tradicional ou zero",
+      "brand": "Heineken",
+      "size": "long neck 330ml",
+      "promotional_price": 5.99,
+      "regular_price": 7.19,
+      "unit": "un",
+      "category_slug": "bebidas",
+      "conditions": null
+    },
+    {
+      "name": "Whisky",
+      "brand": "Black & White",
+      "size": "1l",
+      "promotional_price": 49.9,
+      "regular_price": 72.99,
+      "unit": "un",
+      "category_slug": "bebidas",
+      "conditions": null
+    },
+    {
+      "name": "Lava-roupas líquido cores radiantes",
+      "brand": "Ariel",
+      "size": "sachê 700ml",
+      "promotional_price": 13.99,
+      "regular_price": 17.25,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": null
+    },
+    {
+      "name": "Amaciante concentrado",
+      "brand": "Downy",
+      "size": "500ml",
+      "promotional_price": 13.99,
+      "regular_price": 17.95,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": null
+    },
+    {
+      "name": "Flocão de milho",
+      "brand": "Vitamilho",
+      "size": "500g",
+      "promotional_price": 1.49,
+      "regular_price": 1.99,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Biscoito Fofitos doce, leite ou coco",
+      "brand": "Fortaleza",
+      "size": "400g",
+      "promotional_price": 3.99,
+      "regular_price": 5.89,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Biscoito coberto leite maltado",
+      "brand": "Piraquê",
+      "size": "80g",
+      "promotional_price": 3.49,
+      "regular_price": 5.25,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Bebida láctea UHT protein 15g de proteína",
+      "brand": "Itambé",
+      "size": "250ml",
+      "promotional_price": 5.99,
+      "regular_price": 6.99,
+      "unit": "un",
+      "category_slug": "bebidas",
+      "conditions": null
+    },
+    {
+      "name": "Milho para pipoca",
+      "brand": "Kimimo pula-pula ou Dona Clara",
+      "size": "400g",
+      "promotional_price": 3.29,
+      "regular_price": 4.39,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Macarrão instantâneo lámen",
+      "brand": "Nosso Sabor",
+      "size": "74g",
+      "promotional_price": 1.49,
+      "regular_price": 1.79,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": "sabores"
+    },
+    {
+      "name": "Catchup",
+      "brand": "Tambaú",
+      "size": "sachê 200g",
+      "promotional_price": 1.99,
+      "regular_price": 2.75,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Molho de tomate tradicional",
+      "brand": "Pomodoro",
+      "size": "sachê 300g",
+      "promotional_price": 1.29,
+      "regular_price": 1.95,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Maionese tradicional",
+      "brand": "Liza",
+      "size": "sachê 196g",
+      "promotional_price": 2.79,
+      "regular_price": 3.39,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Requeijão cremoso",
+      "brand": "Laguna",
+      "size": "180g",
+      "promotional_price": 6.99,
+      "regular_price": 8.29,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Sorvete",
+      "brand": "Gelatt's",
+      "size": "2l",
+      "promotional_price": 18.99,
+      "regular_price": 24.99,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Queijo mussarela fatiado",
+      "brand": "Président",
+      "size": "150g",
+      "promotional_price": 8.49,
+      "regular_price": 10.75,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Mortadela defumada Gourmet",
+      "brand": "Seara",
+      "size": null,
+      "promotional_price": 15.49,
+      "regular_price": 25.99,
+      "unit": "kg",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Linguiça suína",
+      "brand": "Seara",
+      "size": "600g",
+      "promotional_price": 10.49,
+      "regular_price": 18.29,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Steak de frango tradicional",
+      "brand": "Seara",
+      "size": "100g",
+      "promotional_price": 0.99,
+      "regular_price": 1.75,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Lasanha mini",
+      "brand": "Sadia",
+      "size": "350g",
+      "promotional_price": 7.99,
+      "regular_price": 10.99,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Filé mignon suíno congelado",
+      "brand": "Merci",
+      "size": null,
+      "promotional_price": 26.99,
+      "regular_price": 34.99,
+      "unit": "kg",
+      "category_slug": "carnes",
+      "conditions": "exceto temperado"
+    },
+    {
+      "name": "Salsicha hot dog",
+      "brand": "Aurora",
+      "size": "500g",
+      "promotional_price": 5.99,
+      "regular_price": 10.39,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Batata palito congelada",
+      "brand": "Aurora",
+      "size": "2kg",
+      "promotional_price": 18.99,
+      "regular_price": 27.99,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Suco de uva integral",
+      "brand": "OQ",
+      "size": "1,5l",
+      "promotional_price": 18.99,
+      "regular_price": 22.49,
+      "unit": "un",
+      "category_slug": "bebidas",
+      "conditions": null
+    },
+    {
+      "name": "Cerveja duplo malte",
+      "brand": "Brahma",
+      "size": "sleek 350ml",
+      "promotional_price": 3.59,
+      "regular_price": 4.49,
+      "unit": "un",
+      "category_slug": "bebidas",
+      "conditions": null
+    },
+    {
+      "name": "Cachaça ouro conta-gotas",
+      "brand": "Ypióca",
+      "size": "965ml",
+      "promotional_price": 16.99,
+      "regular_price": 20.89,
+      "unit": "un",
+      "category_slug": "bebidas",
+      "conditions": "exceto Mestre"
+    },
+    {
+      "name": "Lava-roupas líquido refil",
+      "brand": "Omo",
+      "size": "900ml",
+      "promotional_price": 14.99,
+      "regular_price": 17.99,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": null
+    },
+    {
+      "name": "Desinfetante",
+      "brand": "Kalipto",
+      "size": "2l",
+      "promotional_price": 5.99,
+      "regular_price": 9.19,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": null
+    },
+    {
+      "name": "Água sanitária",
+      "brand": "Dragão",
+      "size": "5l",
+      "promotional_price": 9.99,
+      "regular_price": 12.99,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": null
+    },
+    {
+      "name": "Detergente líquido",
+      "brand": "Limpol",
+      "size": "500ml",
+      "promotional_price": 1.89,
+      "regular_price": 2.89,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": null
+    },
+    {
+      "name": "Creme dental Total",
+      "brand": "Colgate",
+      "size": "180g",
+      "promotional_price": 12.89,
+      "regular_price": 18.45,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": null
+    },
+    {
+      "name": "Desodorante aerosol",
+      "brand": "Rexona",
+      "size": "250ml",
+      "promotional_price": 17.99,
+      "regular_price": 24.99,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": null
+    },
+    {
+      "name": "Shampoo",
+      "brand": "Pantene",
+      "size": "175ml",
+      "promotional_price": 12.99,
+      "regular_price": 17.85,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": null
+    },
+    {
+      "name": "Papel higiênico folha dupla",
+      "brand": "Mimmo",
+      "size": "6 rolos de 40m",
+      "promotional_price": 10.9,
+      "regular_price": 13.99,
+      "unit": "un",
+      "category_slug": "higiene-e-limpeza",
+      "conditions": null
+    }
+  ]
+}

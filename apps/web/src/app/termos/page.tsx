@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalPage, LegalSection } from "@/components/legal/legal-page";
-import { LEGAL, legalValue } from "@/lib/legal";
+import { hasAccounts, LEGAL, legalValue } from "@/lib/legal";
 
 export const metadata: Metadata = { title: "Termos de Uso" };
 
@@ -13,15 +13,26 @@ export default function TermsPage() {
     <LegalPage title="Termos de Uso" updated={LEGAL.lastUpdated}>
       <p>
         Estes termos regulam o uso do site e do aplicativo Budega. Ao usar o Budega, você
-        concorda com eles. Se tiver dúvidas, fale com a gente pelos contatos abaixo.
+        concorda com eles. Se tiver dúvidas, fale com a gente pelos canais abaixo.
       </p>
 
       <LegalSection id="quem" title="1. Quem somos e o que o Budega faz">
-        <p>
-          O Budega é oferecido por <strong>{legalValue(LEGAL.controllerName)}</strong> (
-          {legalValue(LEGAL.controllerDocument)}), com endereço em{" "}
-          {legalValue(LEGAL.controllerAddress)}.
-        </p>
+        {hasAccounts ? (
+          <p>
+            O Budega é oferecido por <strong>{legalValue(LEGAL.controllerName)}</strong> (
+            {legalValue(LEGAL.controllerDocument)}), com endereço em{" "}
+            {legalValue(LEGAL.controllerAddress)}.
+          </p>
+        ) : (
+          <p>
+            O Budega é um projeto independente e sem fins comerciais, com código aberto e
+            público no{" "}
+            <a href={LEGAL.repoUrl} target="_blank" rel="noreferrer" className={link}>
+              GitHub
+            </a>
+            . Não cobra nada, não exibe publicidade e não coleta dados de quem o usa.
+          </p>
+        )}
         <p>
           O Budega é um serviço gratuito de <strong>informação</strong>: reúne, num só lugar,
           mercados, lojas, encartes e ofertas da sua região. O Budega <strong>não vende
@@ -34,17 +45,18 @@ export default function TermsPage() {
         <ul className={list}>
           <li>
             Encartes, endereços, horários e telefones são obtidos nos <strong>sites oficiais
-            dos próprios mercados</strong> (informações que eles publicam para o público) ou
-            enviados pelos mercados parceiros pelo painel do Budega.
+            dos próprios mercados</strong> (informações que eles publicam para o público)
+            {hasAccounts && " ou enviados pelos mercados parceiros pelo painel do Budega"}.
           </li>
           <li>
             Todo encarte mostra a <strong>fonte</strong> e um link para o original no site do
             mercado.
           </li>
           <li>
-            Quando ofertas individuais (produto e preço) são <strong>lidas automaticamente da
-            imagem do encarte</strong>, isso é sinalizado na oferta. A leitura automática pode
-            conter erros: <strong>o encarte original do mercado sempre prevalece</strong>.
+            Ofertas individuais (produto e preço) são <strong>transcritas do encarte
+            publicado pelo mercado</strong>, e isso é sinalizado na oferta, com link para o
+            encarte. A transcrição pode conter erros: <strong>o encarte original do mercado
+            sempre prevalece</strong>.
           </li>
         </ul>
       </LegalSection>
@@ -72,12 +84,24 @@ export default function TermsPage() {
           consumidor, sempre com indicação da fonte e link para o original, sem alterá-los e
           sem cobrar por isso.
         </p>
-        <p>
-          <strong>É responsável por um mercado?</strong> Você pode pedir a correção ou a remoção
-          de qualquer conteúdo do seu mercado, ou se tornar parceiro e gerenciar as informações
-          diretamente pelo painel, escrevendo para {legalValue(LEGAL.contentEmail)}. Pedidos de
-          remoção são atendidos em até 5 dias úteis.
-        </p>
+        {hasAccounts ? (
+          <p>
+            <strong>É responsável por um mercado?</strong> Você pode pedir a correção ou a
+            remoção de qualquer conteúdo do seu mercado, ou se tornar parceiro e gerenciar as
+            informações diretamente pelo painel, escrevendo para{" "}
+            {legalValue(LEGAL.contentEmail)}. Pedidos de remoção são atendidos em até 5 dias
+            úteis.
+          </p>
+        ) : (
+          <p>
+            <strong>É responsável por um mercado?</strong> Você pode pedir a correção ou a
+            remoção de qualquer conteúdo do seu mercado abrindo um aviso em{" "}
+            <a href={`${LEGAL.repoUrl}/issues/new`} target="_blank" rel="noreferrer" className={link}>
+              github.com/oluixs/budega/issues
+            </a>
+            . Pedidos de remoção são atendidos em até 5 dias úteis.
+          </p>
+        )}
       </LegalSection>
 
       <LegalSection id="destaques" title="5. Destaques e conteúdo patrocinado">
@@ -88,21 +112,25 @@ export default function TermsPage() {
         </p>
       </LegalSection>
 
-      <LegalSection id="conta" title="6. Conta e uso aceitável">
+      <LegalSection id="conta" title={hasAccounts ? "6. Conta e uso aceitável" : "6. Uso aceitável"}>
         <ul className={list}>
           <li>Consultar mercados e ofertas não exige cadastro.</li>
-          <li>
-            Se você criar uma conta, mantenha seus dados de acesso em sigilo. Você pode excluí-la
-            quando quiser pelo contato de privacidade.
-          </li>
+          {hasAccounts && (
+            <li>
+              Se você criar uma conta, mantenha seus dados de acesso em sigilo. Você pode
+              excluí-la quando quiser pelo contato de privacidade.
+            </li>
+          )}
           <li>
             Não é permitido: enviar denúncias falsas ou ofensivas, tentar acessar áreas ou dados
             sem autorização, sobrecarregar o serviço ou copiar em massa o conteúdo do Budega.
           </li>
-          <li>
-            Responsáveis por mercados que usam o painel respondem pela veracidade das
-            informações que publicam.
-          </li>
+          {hasAccounts && (
+            <li>
+              Responsáveis por mercados que usam o painel respondem pela veracidade das
+              informações que publicam.
+            </li>
+          )}
         </ul>
       </LegalSection>
 

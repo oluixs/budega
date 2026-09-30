@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Flag } from "lucide-react";
 import { toast } from "sonner";
-import { reportFormSchema, type ReportFormValues, type ReportReason } from "@budega/shared";
+import { buildIssueUrl, reportFormSchema, type ReportFormValues, type ReportReason } from "@budega/shared";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -27,6 +27,7 @@ import {
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { submitReport } from "@/lib/actions";
+import { isCatalogMode } from "@/lib/env";
 
 const REASON_LABELS: Record<ReportReason, string> = {
   preco_incorreto: "Preço incorreto",
@@ -57,6 +58,22 @@ export function ReportDialog({ marketId, offerId, flyerId, defaultReason }: Repo
   });
 
   async function onSubmit(values: ReportFormValues) {
+    if (isCatalogMode) {
+      // Sem backend não há onde guardar a denúncia: abre um aviso preenchido no GitHub
+      // do projeto (público). Nada é enviado ao Budega.
+      const details = values.description?.trim();
+      window.open(
+        buildIssueUrl({
+          title: `Correção: ${REASON_LABELS[values.reason]}`,
+          body: [`Página: ${window.location.href}`, "", details || "(descreva o que está errado)"].join("\n"),
+        }),
+        "_blank",
+        "noopener",
+      );
+      setOpen(false);
+      form.reset();
+      return;
+    }
     const result = await submitReport(values);
     if (result.success) {
       toast.success(result.message);
@@ -77,6 +94,8 @@ export function ReportDialog({ marketId, offerId, flyerId, defaultReason }: Repo
           <DialogTitle>Denunciar conteúdo</DialogTitle>
           <DialogDescription>
             Nos ajude a manter as informações do Budega confiáveis e atualizadas.
+            {isCatalogMode &&
+              " O aviso é aberto no GitHub do projeto, que é público: não escreva dados pessoais."}
           </DialogDescription>
         </DialogHeader>
 
@@ -123,7 +142,7 @@ export function ReportDialog({ marketId, offerId, flyerId, defaultReason }: Repo
 
             <DialogFooter>
               <Button type="submit" disabled={form.formState.isSubmitting}>
-                {form.formState.isSubmitting ? "Enviando..." : "Enviar denúncia"}
+                {isCatalogMode ? "Continuar no GitHub" : form.formState.isSubmitting ? "Enviando..." : "Enviar denúncia"}
               </Button>
             </DialogFooter>
           </form>

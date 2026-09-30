@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ActivityIndicator, Image, Pressable, ScrollView, Text, View } from "react-native";
 import { useRouter } from "expo-router";
 import { FileText, Locate, Store } from "lucide-react-native";
-import { formatDateBR, type Category, type Flyer, type Market, type Offer } from "@budega/shared";
+import { formatDateBR, pickHighlightOffers, type Category, type Flyer, type Market, type Offer } from "@budega/shared";
 import { getActiveFlyers, getActiveOffers, getCategories, getFeaturedMarkets, getMarkets } from "@/lib/data";
 import { useGeolocation } from "@/hooks/use-geolocation";
 import { MarketCard } from "@/components/market-card";
@@ -28,9 +28,8 @@ export default function ExplorarScreen() {
         getCategories(),
         getActiveFlyers(),
       ]);
-      const featuredOffers = activeOffers.filter((offer) => offer.is_featured);
       setMarkets(featuredMarkets);
-      setOffers(featuredOffers.length ? featuredOffers : activeOffers);
+      setOffers(pickHighlightOffers(activeOffers, 6));
       setCategories(allCategories);
       // Encartes que vencem antes primeiro.
       setFlyers([...activeFlyers].sort((a, b) => a.valid_until.localeCompare(b.valid_until)));

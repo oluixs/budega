@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { AuthForm } from "@/components/auth/auth-form";
+import { isCatalogMode } from "@/lib/env";
 import { safeNextPath } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Entrar" };
@@ -10,6 +12,8 @@ export default async function SignInPage({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
+  // Sem Supabase publicado não há contas.
+  if (isCatalogMode) notFound();
   const { next } = await searchParams;
   const destination = safeNextPath(typeof next === "string" ? next : undefined);
   const isPanel = destination.startsWith("/admin");

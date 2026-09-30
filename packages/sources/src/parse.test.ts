@@ -7,6 +7,7 @@ import {
   parseCoordinates,
   parseOpeningHours,
   parseValidity,
+  storeRestriction,
 } from "./parse";
 
 // Textos reais publicados no site do Cometa Supermercados (set/2026).
@@ -137,21 +138,35 @@ describe("coordenadas e telefone", () => {
 });
 
 describe("findRestrictedBranch", () => {
-  const branch = (id: string, name: string, neighborhood: string) => ({ id, name, neighborhood }) as Branch;
+  const branch = (id: string, name: string, address: string, neighborhood: string) =>
+    ({ id, name, address, neighborhood }) as Branch;
   const branches = [
-    branch("gomes", "Loja Gomes de Matos", "Montese"),
-    branch("kennedy", "Loja Kennedy", "Presidente Kennedy"),
+    branch("gomes", "Cometa Gomes de Matos", "Av. Professor Gomes de Matos, 1270", "Montese"),
+    branch("kennedy", "Cometa Kennedy", "Rua Franceses, 350", "Presidente Kennedy"),
   ];
 
-  it("encarte exclusivo de uma loja → filial", () => {
-    expect(findRestrictedBranch("Ofertas válidas de 29/09 a 05/10 somente para a loja Montese.", branches)).toBe("gomes");
+  it("encarte exclusivo de uma loja → filial pelo endereço ou pelo nome exato", () => {
     expect(
       findRestrictedBranch("somente na loja Cometa Presentes - Rua Franceses, 350 - Presidente Kennedy.", branches),
     ).toBe("kennedy");
+    expect(findRestrictedBranch("Ofertas válidas de 25 a 30/09 somente para a loja Gomes de Matos.", branches)).toBe("gomes");
+  });
+
+  it("bairro não basta: a loja Montese não é a Gomes de Matos (que fica no bairro Montese)", () => {
+    // Texto real; o rodapé do encarte dá o endereço da loja: Rua Barão de Sobral, 687.
+    expect(findRestrictedBranch("Ofertas válidas de 29/09 a 05/10 somente para a loja Montese.", branches)).toBeNull();
   });
 
   it("todas as lojas (inclusive 'exceto') ou loja desconhecida → null", () => {
     expect(findRestrictedBranch("em todas as lojas, exceto Osório de Paiva e Gomes de Matos", branches)).toBeNull();
     expect(findRestrictedBranch("somente para a loja Guararapes.", branches)).toBeNull();
+  });
+});
+
+describe("storeRestriction", () => {
+  it("extrai a loja do encarte exclusivo", () => {
+    expect(storeRestriction("Ofertas válidas de 29/09 a 05/10 somente para a loja Montese.")).toBe("Somente na loja Montese");
+    expect(storeRestriction("Ofertas válidas de 27 a 29/09 em todas as lojas")).toBeNull();
+    expect(storeRestriction(null)).toBeNull();
   });
 });

@@ -5,7 +5,8 @@
  * que a web e o app usam quando não há Supabase configurado.
  *
  * Uso (na raiz do monorepo):
- *   pnpm importar              lojas e encartes (sem custo)
+ *   pnpm importar              lojas e encartes (sem custo) + ofertas das leituras manuais
+ *                              (src/data/leituras/*.json, transcritas olhando o encarte)
  *   pnpm importar --ofertas    também lê produtos e preços dos encartes NOVOS com a API
  *                              do Claude (tem custo; precisa de credencial da Anthropic —
  *                              ANTHROPIC_API_KEY ou `ant auth login`)
@@ -20,11 +21,13 @@ import { createHttpClient } from "../src/http";
 import { importRegional } from "../src/import";
 import { cachedOffers, flyersToExtract, pruneCache, type OffersCache } from "../src/offers/cache";
 import { extractOffersFromFlyer, OFFER_EXTRACTION_MODEL } from "../src/offers/extract";
+import { applyManualReadings, ManualReadingSchema, type ManualReading } from "../src/offers/manual";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const snapshotPath = path.resolve(here, "../../shared/src/data/regional.json");
 const geocodeCachePath = path.resolve(here, "../src/data/geocode-cache.json");
 const offersCachePath = path.resolve(here, "../src/data/offers-cache.json");
+const readingsDir = path.resolve(here, "../src/data/leituras");
 
 const readJson = <T>(file: string, fallback: T): T => {
   try {
@@ -37,6 +40,14 @@ const writeJson = (file: string, value: unknown) => fs.writeFileSync(file, `${JS
 
 // Preço por milhão de tokens do modelo de extração (US$) — só para estimar o gasto no log.
 const PRICE_PER_MTOK = { input: 4, output: 20 };
+
+function loadManualReadings(): ManualReading[] {
+  if (!fs.existsSync(readingsDir)) return [];
+  return fs
+    .readdirSync(readingsDir)
+    .filter((file) => file.endsWith(".json"))
+    .map((file) => ManualReadingSchema.parse(readJson(path.join(readingsDir, file), null)));
+}
 
 async function readOffers(data: RegionalData, cache: OffersCache): Promise<OffersCache> {
   const http = createHttpClient({ timeoutMs: 60_000 });
@@ -96,10 +107,22 @@ async function main() {
     process.exit(1);
   }
 
-  if (process.argv.includes("--ofertas")) {
-    offersCache = await readOffers(data, offersCache);
-    data.offers = data.flyers.flatMap((flyer) => cachedOffers(offersCache, flyer) ?? []);
+  const manual = applyManualReadings(offersCache, loadManualReadings(), data.flyers, mock.mockCategories);
+  if (manual.applied.length || manual.stale.length) console.log("\nLeituras manuais:");
+  for (const { flyer, offers, discarded } of manual.applied) {
+    console.log(`  ${flyer.title}: ${offers} oferta(s)${discarded ? `, ${discarded} descartada(s)` : ""}`);
   }
+  for (const reading of manual.stale) {
+    console.warn(`  ${reading.flyer_id}: encarte saiu do ar ou trocou de arquivo — leitura ignorada (ler o novo)`);
+  }
+  const unread = data.flyers.filter((flyer) => !offersCache[flyer.id] || offersCache[flyer.id]!.file_url !== flyer.file_url);
+  if (unread.length) console.log(`  Encartes sem leitura: ${unread.map((flyer) => flyer.id).join(", ")}`);
+
+  if (process.argv.includes("--ofertas")) offersCache = await readOffers(data, offersCache);
+  const imported = data.offers;
+  data.offers = data.flyers.flatMap(
+    (flyer) => cachedOffers(offersCache, flyer) ?? imported.filter((offer) => offer.flyer_id === flyer.id),
+  );
   writeJson(offersCachePath, pruneCache(offersCache, data.flyers));
 
   writeJson(snapshotPath, data);

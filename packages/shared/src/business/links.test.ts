@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildExternalRouteUrl, buildPlaceRouteUrl, buildWebUrl, buildWhatsAppUrl } from "./links";
+import { buildExternalRouteUrl, buildIssueUrl, buildPlaceRouteUrl, buildWebUrl, buildWhatsAppUrl } from "./links";
 
 describe("links externos", () => {
   // Regressão: o nome da loja ia em destination_place_id, que só aceita Place ID do Google.
@@ -25,5 +25,14 @@ describe("links externos", () => {
   it("páginas do site", () => {
     expect(buildWebUrl("/privacidade")).toMatch(/\/privacidade$/);
     expect(buildWebUrl("termos")).toMatch(/\/termos$/);
+  });
+});
+
+describe("buildIssueUrl", () => {
+  it("abre um aviso preenchido no GitHub do projeto", () => {
+    const url = new URL(buildIssueUrl({ title: "Correção: Preço incorreto", body: "Página: /ofertas/1" }));
+    expect(`${url.origin}${url.pathname}`).toBe("https://github.com/oluixs/budega/issues/new");
+    expect(url.searchParams.get("title")).toBe("Correção: Preço incorreto");
+    expect(url.searchParams.get("body")).toBe("Página: /ofertas/1");
   });
 });

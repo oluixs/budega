@@ -1,0 +1,128 @@
+{
+  "flyer_id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara",
+  "file_url": "https://frangolandia.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-25-at-15.29.10-768x1097.jpeg",
+  "read_at": "2026-09-29",
+  "reader": "leitura manual do encarte (Claude Code)",
+  "offers": [
+    {
+      "name": "Presunto de peru",
+      "brand": "Sadia",
+      "size": null,
+      "promotional_price": 29.9,
+      "regular_price": null,
+      "unit": "kg",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Salsicha hot dog",
+      "brand": "Sadia",
+      "size": "500g",
+      "promotional_price": 10.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Linguiça tipo calabresa",
+      "brand": "Sadia",
+      "size": "400g",
+      "promotional_price": 11.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Mortadela defumada",
+      "brand": "Sadia",
+      "size": null,
+      "promotional_price": 17.9,
+      "regular_price": null,
+      "unit": "kg",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Lasanha bolonhesa, frango, presunto e queijo, calabresa, 4 queijos ou peito de peru",
+      "brand": "Sadia",
+      "size": "600g",
+      "promotional_price": 16.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Steak de frango",
+      "brand": "Sadia",
+      "size": "100g",
+      "promotional_price": 1.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Lasanha bolonhesa ou 4 queijos",
+      "brand": "Sadia",
+      "size": "350g",
+      "promotional_price": 8.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Hambúrguer misto",
+      "brand": "Sadia",
+      "size": "56g",
+      "promotional_price": 1.19,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Pizza mussarela, frango, calabresa, 4 queijos, marguerita ou lombo",
+      "brand": "Sadia",
+      "size": "440/460g",
+      "promotional_price": 19.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Margarina cremosa Deline",
+      "brand": "Sadia",
+      "size": "500g",
+      "promotional_price": 5.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "alimentos",
+      "conditions": null
+    },
+    {
+      "name": "Hambúrguer tradicional, frango ou churrasco",
+      "brand": "Sadia",
+      "size": "672g",
+      "promotional_price": 23.99,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    },
+    {
+      "name": "Nuggets tradicional, crocante ou queijo",
+      "brand": "Sadia",
+      "size": "300g",
+      "promotional_price": 10.49,
+      "regular_price": null,
+      "unit": "un",
+      "category_slug": "carnes",
+      "conditions": null
+    }
+  ]
+}

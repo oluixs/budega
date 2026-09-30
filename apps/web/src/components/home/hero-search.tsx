@@ -25,9 +25,10 @@ export function HeroSearch() {
 
   useEffect(() => {
     if (geolocation.status === "success" && geolocation.coordinates) {
+      // Arredondada a ~100 m: vai na URL (e nos registros da hospedagem) — ver /privacidade.
       const params = new URLSearchParams({
-        lat: String(geolocation.coordinates.latitude),
-        lng: String(geolocation.coordinates.longitude),
+        lat: geolocation.coordinates.latitude.toFixed(3),
+        lng: geolocation.coordinates.longitude.toFixed(3),
       });
       router.push(`/explorar?${params.toString()}`);
     }

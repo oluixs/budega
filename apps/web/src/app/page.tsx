@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, Sparkles, Store, Wallet } from "lucide-react";
+import { pickHighlightOffers } from "@budega/shared";
 import { getActiveFlyers, getActiveOffers, getCategories, getFeaturedMarkets, getMarkets } from "@/lib/data";
 import { FlyerCard } from "@/components/flyer/flyer-card";
 import { HeroSearch } from "@/components/home/hero-search";
@@ -43,8 +44,7 @@ export default async function HomePage() {
 
   const hasFeaturedMarkets = marketsToShow.some((market) => market.is_featured);
   const marketsWithDistance = marketsToShow.map((market) => ({ ...market, distance_km: null }));
-  const featuredOffers = activeOffers.filter((offer) => offer.is_featured);
-  const offersToShow = (featuredOffers.length ? featuredOffers : activeOffers).slice(0, 8);
+  const offersToShow = pickHighlightOffers(activeOffers, 8);
   const marketNameById = new Map(allMarkets.map((market) => [market.id, market.name]));
   // Encartes que vencem antes primeiro: são os que o cliente precisa ver logo.
   const weeklyFlyers = [...flyers].sort((a, b) => a.valid_until.localeCompare(b.valid_until)).slice(0, 8);
@@ -134,7 +134,7 @@ export default async function HomePage() {
         <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
           <div className="mb-6 flex items-center justify-between">
             <h2 className="font-display text-h2 font-semibold text-neutral-900">
-              {featuredOffers.length ? "Ofertas em destaque" : "Ofertas da semana"}
+              {offersToShow.some((offer) => offer.is_featured) ? "Ofertas em destaque" : "Ofertas da semana"}
             </h2>
             <Button variant="ghost" render={<Link href="/explorar" />}>
               Ver todas <ArrowRight className="h-4 w-4" />

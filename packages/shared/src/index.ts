@@ -87,6 +87,7 @@ export {
 export { isMarketPublic, filterPublicMarkets, filterByPublicMarkets } from "./business/visibility";
 
 export { slugify } from "./business/slug";
+export { discountRatio, pickHighlightOffers } from "./business/highlights";
 
 export { regionalSnapshot } from "./data/regional";
 
@@ -109,6 +110,8 @@ export {
   buildOfferDeepLink,
   buildExternalRouteUrl,
   buildWhatsAppUrl,
+  buildIssueUrl,
+  PROJECT_REPO_URL,
 } from "./business/links";
 
 export * as mock from "./mock/index";

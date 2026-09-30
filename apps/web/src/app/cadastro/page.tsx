@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { AuthForm } from "@/components/auth/auth-form";
+import { isCatalogMode } from "@/lib/env";
 
 export const metadata: Metadata = { title: "Cadastro" };
 
 export default function SignUpPage() {
+  // Sem Supabase publicado não há contas.
+  if (isCatalogMode) notFound();
   return (
     <div className="mx-auto flex max-w-md flex-col gap-6 px-4 py-16 sm:px-6">
       <div>
