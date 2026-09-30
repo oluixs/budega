@@ -70,12 +70,18 @@ async function main() {
     })),
   );
 
+  // PostgREST normaliza as colunas de um upsert em lote pelo conjunto de chaves
+  // presentes em TODAS as linhas: se uma rede define `coordinates_approximate` e outra
+  // não, a que não define recebe `null` em vez do default da coluna — por isso os
+  // campos opcionais entram explícitos aqui, nunca omitidos.
   await upsert(
     "markets",
     regionalSnapshot.markets.map((market) => ({
       ...market,
       id: toUuid(market.id),
       owner_id: null,
+      website_url: market.website_url ?? null,
+      coordinates_approximate: market.coordinates_approximate ?? false,
     })),
   );
   await upsert(
@@ -84,6 +90,7 @@ async function main() {
       ...branch,
       id: toUuid(branch.id),
       market_id: toUuid(branch.market_id),
+      coordinates_approximate: branch.coordinates_approximate ?? false,
     })),
   );
   await upsert(
@@ -93,6 +100,9 @@ async function main() {
       id: toUuid(flyer.id),
       market_id: toUuid(flyer.market_id),
       branch_id: flyer.branch_id ? toUuid(flyer.branch_id) : null,
+      description: flyer.description ?? null,
+      cover_url: flyer.cover_url ?? null,
+      source_url: flyer.source_url ?? null,
     })),
   );
   await upsert(
