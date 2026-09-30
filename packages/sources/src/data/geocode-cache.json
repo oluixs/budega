@@ -1,4 +1,6 @@
 {
+  "1361, r. eng. joao alfredo - centro, caucaia. telefone: 08533424461, caucaia, ce, brasil": null,
+  "av. a (cj sitio sao joao), 620, jangurussu, fortaleza, ce, brasil": null,
   "av. antonio sales, 3700, coco, fortaleza, ce, brasil": {
     "latitude": -3.7494955,
     "longitude": -38.4906328
@@ -7,9 +9,39 @@
     "latitude": -3.791796,
     "longitude": -38.5496896
   },
+  "av. caminho do sol, s/n - porto das dunas, aquiraz, aquiraz, ce, brasil": {
+    "latitude": -3.8493374,
+    "longitude": -38.3959499
+  },
+  "av. cel. doca paraiba, 409 - palestina, sao goncalo do amarante, sao goncalo do amarante, ce, brasil": null,
+  "av. central,10 - icarai - caucaia, caucaia, ce, brasil": {
+    "latitude": -3.6843802,
+    "longitude": -38.6540247
+  },
+  "av. contorno sul, 333 - conj. esperanca, fortaleza - ce, fortaleza, ce, brasil": null,
   "av. coronel miguel dias, 1389, luciano cavalcante, fortaleza, ce, brasil": {
     "latitude": -3.770522,
     "longitude": -38.4874006
+  },
+  "av. do passare, 600 - jardim uniao, fortaleza, ce, brasil": {
+    "latitude": -3.8206455,
+    "longitude": -38.5434767
+  },
+  "av. dom almeida lustosa, 1780 - parque albano - caucaia, caucaia, ce, brasil": {
+    "latitude": -3.7526648,
+    "longitude": -38.6157507
+  },
+  "av. dos expedicionarios, 5712 - aeroporto, fortaleza, ce, brasil": {
+    "latitude": -3.769842,
+    "longitude": -38.5428403
+  },
+  "av. edilson brasil soares, 1555 - edson queiroz, fortaleza, ce, brasil": {
+    "latitude": -3.7884184,
+    "longitude": -38.4724354
+  },
+  "av. edson magalhaes, 800 - industrial - maracanau, maracanau, ce, brasil": {
+    "latitude": -3.8395149,
+    "longitude": -38.5895449
   },
   "av. eusebio de queiroz, 1890, tamatanduba, eusebio, ce, brasil": {
     "latitude": -3.870966,
@@ -24,8 +56,35 @@
     "latitude": -3.7972903,
     "longitude": -38.5711508
   },
+  "av. hildebrando de melo, 1849 - quintino cunha, fortaleza, ce, brasil": null,
+  "av. lateral sul, 125, acaracuzinho - maracanau -, maracanau, ce, brasil": {
+    "latitude": -3.8496983,
+    "longitude": -38.6160348
+  },
+  "av. maestro lisboa, 2279 - lagoa redonda, fortaleza, ce, brasil": {
+    "latitude": -3.8074468,
+    "longitude": -38.4593304
+  },
+  "av. padre jose olanda do vale, 1200 - luzardo viana, maracanau, maracanau, ce, brasil": null,
   "av. padre tomas feliu amengual, 191, centro, trairi, ce, brasil": null,
   "av. padre tomas feliu amengual, 191, trairi, ce, brasil": null,
+  "av. pasteur, 1060 - carlito pamplona, fortaleza, ce, brasil": {
+    "latitude": -3.715058,
+    "longitude": -38.5603276
+  },
+  "av. pasteur, 1440 - carlito pamplona, fortaleza, ce, brasil": {
+    "latitude": -3.7183083,
+    "longitude": -38.5614991
+  },
+  "av. presidente castelo branco, 4763 - barra do ceara, fortaleza, ce, brasil": {
+    "latitude": -3.706366,
+    "longitude": -38.5747175
+  },
+  "av. rua ulisses guimaraes, 648 - parque leblon, fortaleza, ce, brasil": null,
+  "av. sabino monte, 4260 - sao joao do tauape, fortaleza, ce, brasil": {
+    "latitude": -3.7595744,
+    "longitude": -38.5115107
+  },
   "av. santos dumont, 2680, aldeota, fortaleza, ce, brasil": {
     "latitude": -3.7357215,
     "longitude": -38.5010767
@@ -34,10 +93,18 @@
     "latitude": -3.7442321,
     "longitude": -38.4733828
   },
+  "av. ulisses guimaraes, 2855 - iparana, fortaleza, ce, brasil": null,
   "av. valparaiso, 1301, jangurussu, fortaleza, ce, brasil": {
     "latitude": -3.8465081,
     "longitude": -38.5180492
   },
+  "av. washington soares, 600 - guararapes, fortaleza, ce, brasil": {
+    "latitude": -3.7585492,
+    "longitude": -38.4861716
+  },
+  "av. xix, 2 - 807 - sen. carlos jereissati, fortaleza, ce, brasil": null,
+  "avenida contorno leste s/n - metropole, fortaleza, ce, brasil": null,
+  "avenida queiroz pessoa, 241 - centro, banabuiu - ce, fortaleza, ce, brasil": null,
   "avenida rui barbosa, 2727, joaquim tavora, fortaleza, ce, brasil": {
     "latitude": -3.7465168,
     "longitude": -38.512412
@@ -47,6 +114,50 @@
     "latitude": -3.7929854,
     "longitude": -38.4807054
   },
+  "r. 15 de novembro, 600 - montese, fortaleza, ce, brasil": {
+    "latitude": -3.7695003,
+    "longitude": -38.554944
+  },
+  "r. 25 de janeiro, 259 - centro, apuiares, fortaleza, ce, brasil": null,
+  "r. andre chaves, 612 - jardim america, fortaleza, ce, brasil": {
+    "latitude": -3.7540922,
+    "longitude": -38.5453761
+  },
+  "r. benjamim brasil, 1099 - mondubim, fortaleza, fortaleza, ce, brasil": {
+    "latitude": -3.8060254,
+    "longitude": -38.5632158
+  },
+  "r. cel. antonio botelho, 92 - centro, maranguape, maranguape, ce, brasil": null,
+  "r. cel. jose nunes, 831 - centro, limoeiro do norte -, fortaleza, ce, brasil": null,
+  "r. cel. pio gadelha, 4190 - centro, tabuleiro do norte - ce, fortaleza, ce, brasil": null,
+  "r. cel. virgilio nogueira, 947 - bom jardim, fortaleza - ce, telefone: r. cel. virgilio nogueira, 947 - bom jardim, fortaleza - ce, fortaleza, ce, brasil": null,
+  "r. das flores, 401 - coqueiral, maracanau, maracanau, ce, brasil": {
+    "latitude": -3.8697677,
+    "longitude": -38.6241949
+  },
+  "r. embauba, 5 - centro, eusebio - ce, eusebio, ce, brasil": null,
+  "r. joao sorongo, 318 - jardim america, fortaleza, ce, brasil": {
+    "latitude": -3.7517302,
+    "longitude": -38.5423928
+  },
+  "r. jose muniz, 4198 - centro, tabuleiro do norte - ce, fortaleza, ce, brasil": null,
+  "r. julio braga, 805 - joao xxiii, fortaleza - ce, fortaleza, ce, brasil": {
+    "latitude": -3.7747863,
+    "longitude": -38.5826051
+  },
+  "r. manoel conrado de sousa, 953 - zumbi, horizonte - ce, horizonte, ce, brasil": null,
+  "r. n. sra. da natividade poente, - umirin, fortaleza, ce, brasil": null,
+  "r. pedro brasil, 777 - loja 01 - centro, aquiraz, aquiraz, ce, brasil": null,
+  "r. santo antonio, 846 - centro, monsenhor tabosa - ce, fortaleza, ce, brasil": null,
+  "r. zacarias florindo, 692 - bom jardim, fortaleza - ce, fortaleza, ce, brasil": {
+    "latitude": -3.7898054,
+    "longitude": -38.6073004
+  },
+  "rodovia ce 453, 4090 - tapera, aquiraz, aquiraz, ce, brasil": {
+    "latitude": -3.963885,
+    "longitude": -38.3594102
+  },
+  "rodovia ce-453, 1750 - pau pombo, aquiraz, aquiraz, ce, brasil": null,
   "rodovia estruturante - ce 085, caucaia, ce, brasil": {
     "latitude": -3.6552392,
     "longitude": -38.7830229
@@ -56,10 +167,31 @@
     "latitude": -3.7700855,
     "longitude": -38.5527016
   },
+  "rua 337, 130 - conj nova metropole - caucaia, caucaia, ce, brasil": null,
+  "rua acapulco, 1360 - parque guadalajara - caucaia, caucaia, ce, brasil": {
+    "latitude": -3.7630007,
+    "longitude": -38.6206134
+  },
+  "rua antonio fiuza, 248 - montese, fortaleza, ce, brasil": {
+    "latitude": -3.7683985,
+    "longitude": -38.5515664
+  },
+  "rua antonio gentil gomes, 1217 - agua fria, fortaleza, ce, brasil": null,
+  "rua barao de aquiraz, 1098 - paupina, aquiraz, ce, brasil": null,
+  "rua barao do crato, 1041 - monte castelo, fortaleza, ce, brasil": {
+    "latitude": -3.7212983,
+    "longitude": -38.5597747
+  },
   "rua capitao valdemar de lima, 71, centro, maracanau, ce, brasil": {
     "latitude": -3.8805,
     "longitude": -38.6249252
   },
+  "rua cel. edinardo weine, 3266 - mangabeira - eusebio, eusebio, ce, brasil": null,
+  "rua conego de castro, 5531 - parque santa rosa, fortaleza, ce, brasil": {
+    "latitude": -3.8165862,
+    "longitude": -38.6001556
+  },
+  "rua cordeiro de miranda, 1311 conjunto metropolitano, fortaleza, ce, brasil": null,
   "rua coronel bia, 89, beberibe, ce, brasil": {
     "latitude": -4.1831244,
     "longitude": -38.1274068
@@ -69,19 +201,60 @@
     "latitude": -3.7303343,
     "longitude": -38.5125903
   },
+  "rua delmiro de farias 1119 - damas, fortaleza, ce, brasil": {
+    "latitude": -3.7492799,
+    "longitude": -38.5488411
+  },
+  "rua des. praxedes, 370 - damas, fortaleza, ce, brasil": null,
+  "rua dom quintino, 323 - pirambu, fortaleza, ce, brasil": {
+    "latitude": -3.71276,
+    "longitude": -38.5483227
+  },
+  "rua doutor jose lourenco, 1290 - aldeota, fortaleza, ce, brasil": {
+    "latitude": -3.7351265,
+    "longitude": -38.5081232
+  },
+  "rua dr. theberge, 538 - alvaro weyne, fortaleza, ce, brasil": {
+    "latitude": -3.7142535,
+    "longitude": -38.564793
+  },
   "rua dragao do mar, 698, aracati, ce, brasil": {
     "latitude": -4.5647123,
     "longitude": -37.7605147
   },
   "rua dragao do mar, 698, centro, aracati, ce, brasil": null,
+  "rua e conjunto barroso ii, 1262 - passare, fortaleza, ce, brasil": null,
+  "rua francisco chagas rabelo, 168 - alto vistoso -solonopole, fortaleza, ce, brasil": null,
   "rua frei mansueto, 909, varjota, fortaleza, ce, brasil": {
     "latitude": -3.732179,
     "longitude": -38.4884635
+  },
+  "rua freire alemao, 356 - serrinha, fortaleza, ce, brasil": {
+    "latitude": -3.786195,
+    "longitude": -38.5444676
+  },
+  "rua galileu, 355 - serrinha, fortaleza, ce, brasil": {
+    "latitude": -3.7766641,
+    "longitude": -38.5518641
+  },
+  "rua general osorio de paiva, 7020 - siqueira, fortaleza, ce, brasil": null,
+  "rua joaquim lopes da costa, 750 - parque santo antonio, itaitinga, itaitinga, ce, brasil": {
+    "latitude": -3.9638943,
+    "longitude": -38.526137
+  },
+  "rua jose franca cabral - boa vista castelao, fortaleza, ce, brasil": {
+    "latitude": -3.8053461,
+    "longitude": -38.5170004
+  },
+  "rua livreiro gualter, 123 - vila uniao, fortaleza, ce, brasil": {
+    "latitude": -3.7699716,
+    "longitude": -38.5332553
   },
   "rua manuel castelo branco, 352, messejana, fortaleza, ce, brasil": {
     "latitude": -3.8322163,
     "longitude": -38.4924026
   },
+  "rua olho d'agua, 109 - timbu - eusebio, eusebio, ce, brasil": null,
   "rua padre anchieta, 581, monte castelo, fortaleza, ce, brasil": {
     "latitude": -3.7252053,
     "longitude": -38.5508555
@@ -89,5 +262,58 @@
   "rua padre guerra, 852, parque araxa, fortaleza, ce, brasil": {
     "latitude": -3.737418,
     "longitude": -38.5518011
+  },
+  "rua paulo batista dos santos, 1112 - pajucara, fortaleza, ce, brasil": null,
+  "rua queiroz ribeiro, 485 - montese, fortaleza, ce, brasil": {
+    "latitude": -3.7629511,
+    "longitude": -38.5457294
+  },
+  "rua rosinha sampaio, 1150 - jardim guanabara, fortaleza, ce, brasil": {
+    "latitude": -3.726504,
+    "longitude": -38.5888335
+  },
+  "rua rubens monte, 380 - jardim cearense, fortaleza, ce, brasil": {
+    "latitude": -3.8025701,
+    "longitude": -38.5664291
+  },
+  "rua santa rita das causas impossiveis, 691 - passare, fortaleza, ce, brasil": {
+    "latitude": -3.8019338,
+    "longitude": -38.5338269
+  },
+  "rua sao miguel, 280 - guajiru - caucaia, caucaia, ce, brasil": {
+    "latitude": -3.7003197,
+    "longitude": -38.6448668
+  },
+  "rua tenente moacir matos, 800 - montese, fortaleza, ce, brasil": {
+    "latitude": -3.7674658,
+    "longitude": -38.552381
+  },
+  "rua tiburcio targino, 535 - centro, aquiraz, aquiraz, ce, brasil": {
+    "latitude": -3.9068042,
+    "longitude": -38.3867372
+  },
+  "rua torreon, 1893 - parque potira - caucaia, caucaia, ce, brasil": {
+    "latitude": -3.7657314,
+    "longitude": -38.6267454
+  },
+  "rua torreon, 245 - parque potira - caucaia, caucaia, ce, brasil": {
+    "latitude": -3.7657314,
+    "longitude": -38.6267454
+  },
+  "rua umarizeiras, 2137, parque presidente vargas, fortaleza, ce, brasil": {
+    "latitude": -3.8191898,
+    "longitude": -38.6011448
+  },
+  "rua vereador pedro paulo, 775 - luciano cavalcante, fortaleza, ce, brasil": {
+    "latitude": -3.7868794,
+    "longitude": -38.4924269
+  },
+  "rua vicente nobre macedo, 387 - messejana, fortaleza, ce, brasil": {
+    "latitude": -3.8255942,
+    "longitude": -38.4842091
+  },
+  "rua vinte e quatro de janeiro, 215 caucaia, caucaia, ce, brasil": {
+    "latitude": -3.7418374,
+    "longitude": -38.6582054
   }
 }

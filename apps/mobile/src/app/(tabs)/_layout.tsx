@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { Compass, Heart, Search, User } from "lucide-react-native";
+import { Compass, Heart, Map, Search, User } from "lucide-react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // O navegador reserva ~28 px para o ícone; a barra precisa de altura para ele + rótulo de 16 px.
@@ -33,6 +33,13 @@ export default function TabsLayout() {
         options={{
           title: "Buscar",
           tabBarIcon: ({ color }) => <Search color={color} size={TAB_ICON_SIZE} />,
+        }}
+      />
+      <Tabs.Screen
+        name="mapa"
+        options={{
+          title: "Mapa",
+          tabBarIcon: ({ color }) => <Map color={color} size={TAB_ICON_SIZE} />,
         }}
       />
       <Tabs.Screen

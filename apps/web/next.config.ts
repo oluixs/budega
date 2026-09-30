@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "cometasupermercados.com.br" },
       { protocol: "https", hostname: "adminx.cometasupermercados.com.br" },
       { protocol: "https", hostname: "frangolandia.com" },
+      { protocol: "https", hostname: "www.superlagoa.com.br" },
     ],
   },
 };

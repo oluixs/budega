@@ -6,6 +6,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
+  // "class" (não "media", o padrão): algum código interno do Expo Router/React Navigation
+  // chama setColorScheme() ao montar, e com darkMode "media" isso derruba a versão web do
+  // app inteira (tela de erro em todas as rotas) — ver .audit/errors/2026-09-30. O app não
+  // usa tema escuro (DESIGN.md só define paleta clara), então isso não muda a aparência.
+  darkMode: "class",
   theme: {
     extend: {
       colors: {

@@ -20,6 +20,13 @@ interface MarketsMapProps {
   userLocation?: Coordinates | null;
   fallbackCenter: Coordinates;
   height?: number;
+  /** Zoom inicial sobre `fallbackCenter` (padrão 12). Só importa quando `fitToPoints` é false. */
+  zoom?: number;
+  /**
+   * Ajusta o zoom para caber todos os pontos (padrão true). Desligue para um mapa geral
+   * que não deve encolher por causa de uma loja distante (ex.: interior do estado).
+   */
+  fitToPoints?: boolean;
 }
 
 // Mesmos tiles/atribuição da web (OpenStreetMap, sem chave). Configurável para tráfego alto.
@@ -39,6 +46,8 @@ function buildHtml(props: MarketsMapProps): string {
     points: props.points,
     user: props.userLocation ?? null,
     center: props.fallbackCenter,
+    zoom: props.zoom ?? 12,
+    fitToPoints: props.fitToPoints ?? true,
     tileUrl: TILE_URL,
     attribution: ATTRIBUTION,
   });
@@ -61,7 +70,7 @@ function buildHtml(props: MarketsMapProps): string {
     if (window.ReactNativeWebView) window.ReactNativeWebView.postMessage(text);
     else window.parent.postMessage(text, "*");
   }
-  var map = L.map("map").setView([data.center.latitude, data.center.longitude], 12);
+  var map = L.map("map").setView([data.center.latitude, data.center.longitude], data.zoom);
   L.tileLayer(data.tileUrl, { attribution: data.attribution, maxZoom: 19 }).addTo(map);
   var storeIcon = L.divIcon({ className: "", iconSize: [22, 22], iconAnchor: [11, 11], popupAnchor: [0, -12],
     html: '<span style="display:block;width:22px;height:22px;border-radius:9999px;background:#1F7A4D;border:3px solid #fff;box-shadow:0 1px 4px rgba(33,31,26,.45)"></span>' });
@@ -83,8 +92,10 @@ function buildHtml(props: MarketsMapProps): string {
       html: '<span style="display:block;width:18px;height:18px;border-radius:9999px;background:#2563A3;border:3px solid #fff;box-shadow:0 0 0 6px rgba(37,99,163,.25)"></span>' }) }).addTo(map);
     bounds.push([data.user.latitude, data.user.longitude]);
   }
-  if (bounds.length === 1) map.setView(bounds[0], 15);
-  else if (bounds.length > 1) map.fitBounds(bounds, { padding: [24, 24], maxZoom: 15 });
+  if (data.fitToPoints) {
+    if (bounds.length === 1) map.setView(bounds[0], 15);
+    else if (bounds.length > 1) map.fitBounds(bounds, { padding: [24, 24], maxZoom: 15 });
+  }
 </script></body></html>`;
 }
 
@@ -92,10 +103,10 @@ function buildHtml(props: MarketsMapProps): string {
  * Mapa interativo (Leaflet + OpenStreetMap numa WebView — funciona no Expo Go, sem chave de
  * API). A lista de mercados continua na tela, como alternativa acessível.
  */
-export function MarketsMap({ height = 360, points, userLocation, fallbackCenter }: MarketsMapProps) {
+export function MarketsMap({ height = 360, points, userLocation, fallbackCenter, zoom, fitToPoints }: MarketsMapProps) {
   const html = useMemo(
-    () => buildHtml({ points, userLocation, fallbackCenter }),
-    [points, userLocation, fallbackCenter],
+    () => buildHtml({ points, userLocation, fallbackCenter, zoom, fitToPoints }),
+    [points, userLocation, fallbackCenter, zoom, fitToPoints],
   );
 
   return (

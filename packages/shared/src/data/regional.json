@@ -6,27 +6,34 @@
       "longitude": -38.5267
     }
   },
-  "generated_at": "2026-09-30T11:21:11.535Z",
+  "generated_at": "2026-09-30T12:23:12.097Z",
   "sources": [
     {
       "market_id": "cometa",
       "name": "Cometa Supermercados",
       "website_url": "https://cometasupermercados.com.br",
-      "fetched_at": "2026-09-30T11:21:11.535Z",
+      "fetched_at": "2026-09-30T12:23:12.097Z",
       "error": null
     },
     {
       "market_id": "frangolandia",
       "name": "Frangolândia Supermercados",
       "website_url": "https://frangolandia.com",
-      "fetched_at": "2026-09-30T11:21:11.535Z",
+      "fetched_at": "2026-09-30T12:23:12.097Z",
       "error": null
     },
     {
       "market_id": "superlagoa",
       "name": "Super Lagoa",
       "website_url": "https://www.superlagoa.com.br",
-      "fetched_at": "2026-09-30T11:21:11.535Z",
+      "fetched_at": "2026-09-30T12:23:12.097Z",
+      "error": null
+    },
+    {
+      "market_id": "uniforca",
+      "name": "Rede Uniforça",
+      "website_url": "https://www.redeuniforca.com.br",
+      "fetched_at": "2026-09-30T12:23:12.097Z",
       "error": null
     }
   ],
@@ -160,8 +167,8 @@
       "is_verified": false,
       "is_featured": false,
       "is_suspended": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "owner_id": null,
       "website_url": "https://frangolandia.com",
       "coordinates_approximate": true
@@ -228,10 +235,35 @@
       "is_verified": false,
       "is_featured": false,
       "is_suspended": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "owner_id": null,
       "website_url": "https://www.superlagoa.com.br"
+    },
+    {
+      "id": "uniforca",
+      "name": "Rede Uniforça",
+      "slug": "rede-uniforca",
+      "description": "Cooperativa de 48 supermercados independentes da Grande Fortaleza (22 marcas).",
+      "logo_url": null,
+      "phone": null,
+      "whatsapp": null,
+      "address": "Rua Dr. Theberge, 538 - Álvaro Weyne",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7142535,
+      "longitude": -38.564793,
+      "opening_hours": [],
+      "is_verified": false,
+      "is_featured": false,
+      "is_suspended": false,
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "owner_id": null,
+      "website_url": "https://www.redeuniforca.com.br",
+      "coordinates_approximate": true
     }
   ],
   "branches": [
@@ -2828,8 +2860,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -2888,8 +2920,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -2948,8 +2980,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3008,8 +3040,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3068,8 +3100,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3128,8 +3160,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3188,8 +3220,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3248,8 +3280,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3308,8 +3340,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3368,8 +3400,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3428,8 +3460,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3488,8 +3520,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3548,8 +3580,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3608,8 +3640,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3668,8 +3700,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3728,8 +3760,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3788,8 +3820,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3848,8 +3880,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3865,8 +3897,8 @@
       "longitude": -38.5180492,
       "phone": "8540091021",
       "opening_hours": [],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3925,8 +3957,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -3985,8 +4017,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z",
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
       "coordinates_approximate": true
     },
     {
@@ -4045,8 +4077,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "superlagoa-2",
@@ -4104,8 +4136,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "superlagoa-3",
@@ -4163,8 +4195,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "superlagoa-4",
@@ -4222,8 +4254,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "superlagoa-5",
@@ -4281,8 +4313,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "superlagoa-7",
@@ -4340,8 +4372,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "superlagoa-9",
@@ -4399,8 +4431,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "superlagoa-10",
@@ -4458,8 +4490,824 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
+    },
+    {
+      "id": "uniforca-baratao-supermercado-loja-alvaro-weyne",
+      "market_id": "uniforca",
+      "name": "Baratão Supermercado",
+      "address": "Rua Dr. Theberge, 538 - Álvaro Weyne",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7142535,
+      "longitude": -38.564793,
+      "phone": "85999290389",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-baratao-supermercado-loja-pq-sao-jose",
+      "market_id": "uniforca",
+      "name": "Baratão Supermercado",
+      "address": "Rua Umarizeiras, 2137, Parque Presidente Vargas",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8191898,
+      "longitude": -38.6011448,
+      "phone": "8532326328",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-cantinho-das-frutas-supermercado-loja-cristo-redentor",
+      "market_id": "uniforca",
+      "name": "Cantinho das Frutas Supermercado",
+      "address": "Rua Dom Quintino, 323 - Pirambu",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.71276,
+      "longitude": -38.5483227,
+      "phone": "8532438570",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-carnauba-supermercado-loja-edson-queiroz",
+      "market_id": "uniforca",
+      "name": "Carnaúba Supermercado",
+      "address": "Av. Edilson Brasil Soares, 1555 - Edson Queiroz",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7884184,
+      "longitude": -38.4724354,
+      "phone": "8532713737",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-carnauba-supermercado-loja-lagoa-redonda",
+      "market_id": "uniforca",
+      "name": "Carnaúba Supermercado",
+      "address": "Av. Maestro Lisboa, 2279 - Lagoa Redonda",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8074468,
+      "longitude": -38.4593304,
+      "phone": "8534762351",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-carnauba-supermercado-loja-parque-santo-antonio-itaitinga",
+      "market_id": "uniforca",
+      "name": "Carnaúba Supermercado",
+      "address": "Rua Joaquim Lopes da Costa, 750 - Parque Santo Antônio, Itaitinga",
+      "neighborhood": "",
+      "city": "Itaitinga",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.9638943,
+      "longitude": -38.526137,
+      "phone": "8533771974",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-carnauba-supermercado-loja-messejana",
+      "market_id": "uniforca",
+      "name": "Carnaúba Supermercado",
+      "address": "Rua Vicente Nobre Macêdo, 387 - Messejana",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8255942,
+      "longitude": -38.4842091,
+      "phone": "8532293096",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-carnauba-supermercado-loja-aldeota",
+      "market_id": "uniforca",
+      "name": "Carnaúba Supermercado",
+      "address": "Rua Doutor José Lourenço, 1290 - Aldeota",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7351265,
+      "longitude": -38.5081232,
+      "phone": "8532244100",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-carnauba-supermercado-loja-luciano-cavalcante",
+      "market_id": "uniforca",
+      "name": "Carnaúba Supermercado",
+      "address": "Rua Vereador Pedro Paulo, 775 - Luciano Cavalcante",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7868794,
+      "longitude": -38.4924269,
+      "phone": "8532476884",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-carnauba-supermercado-loja-porto-das-dunas",
+      "market_id": "uniforca",
+      "name": "Carnaúba Supermercado",
+      "address": "Av. Caminho do Sol, S/n - Porto das Dunas, Aquiraz",
+      "neighborhood": "",
+      "city": "Aquiraz",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8493374,
+      "longitude": -38.3959499,
+      "phone": "8532476884",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-d-mais-supermercado-loja-15-de-novembro-montese",
+      "market_id": "uniforca",
+      "name": "D Mais Supermercado",
+      "address": "R. 15 de Novembro, 600 - Montese",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7695003,
+      "longitude": -38.554944,
+      "phone": "8532138453",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-d-mais-supermercado-loja-antonio-fiuza-montese",
+      "market_id": "uniforca",
+      "name": "D Mais Supermercado",
+      "address": "Rua Antônio Fiúza, 248 - Montese",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7683985,
+      "longitude": -38.5515664,
+      "phone": "8532453287",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-daterra-loja-bom-jardim",
+      "market_id": "uniforca",
+      "name": "Daterra",
+      "address": "R. Zacarias Florindo, 692 - Bom Jardim, Fortaleza - Ce",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7898054,
+      "longitude": -38.6073004,
+      "phone": "85992909735",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-exito-supermercado-loja-parque-potira-caucaia",
+      "market_id": "uniforca",
+      "name": "Êxito Supermercado",
+      "address": "Rua Torreon, 245 - Parque Potira - Caucaia",
+      "neighborhood": "",
+      "city": "Caucaia",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7657314,
+      "longitude": -38.6267454,
+      "phone": "8533660000",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-exito-supermercado-loja-parque-albano-caucaia",
+      "market_id": "uniforca",
+      "name": "Êxito Supermercado",
+      "address": "Av. Dom Almeida Lustosa, 1780 - Parque Albano - Caucaia",
+      "neighborhood": "",
+      "city": "Caucaia",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7526648,
+      "longitude": -38.6157507,
+      "phone": "8530997733",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-exito-supermercado-loja-parque-guadalajara-caucaia",
+      "market_id": "uniforca",
+      "name": "Êxito Supermercado",
+      "address": "Rua Acapulco, 1360 - Parque Guadalajara - Caucaia",
+      "neighborhood": "",
+      "city": "Caucaia",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7630007,
+      "longitude": -38.6206134,
+      "phone": "8530112029",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-exito-supermercado-loja-parque-potira-caucaia",
+      "market_id": "uniforca",
+      "name": "Êxito Supermercado",
+      "address": "Rua Torreon, 1893 - Parque Potira - Caucaia",
+      "neighborhood": "",
+      "city": "Caucaia",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7657314,
+      "longitude": -38.6267454,
+      "phone": "8530997740",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-exito-supermercado-loja-monte-castelo-fortaleza",
+      "market_id": "uniforca",
+      "name": "Êxito Supermercado",
+      "address": "Rua Barão do Crato, 1041 - Monte Castelo",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7212983,
+      "longitude": -38.5597747,
+      "phone": "8530997744",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-exito-supermercado-loja-guararapes-fortaleza",
+      "market_id": "uniforca",
+      "name": "Êxito Supermercado",
+      "address": "Av. Washington Soares, 600 - Guararapes",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7585492,
+      "longitude": -38.4861716,
+      "phone": "85991161501",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-exito-supermercado-loja-guajiru-caucaia",
+      "market_id": "uniforca",
+      "name": "Êxito Supermercado",
+      "address": "Rua São Miguel, 280 - Guajiru - Caucaia",
+      "neighborhood": "",
+      "city": "Caucaia",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7003197,
+      "longitude": -38.6448668,
+      "phone": "85991161501",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-hipermarket-supermercado-loja-vila-uniao",
+      "market_id": "uniforca",
+      "name": "Hipermarket Supermercado",
+      "address": "Rua Livreiro Gualter, 123 - Vila União",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7699716,
+      "longitude": -38.5332553,
+      "phone": "8530556521",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-hipermarket-supermercado-loja-jardim-cearense",
+      "market_id": "uniforca",
+      "name": "Hipermarket Supermercado",
+      "address": "Rua Rubéns Monte, 380 - Jardim Cearense",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8025701,
+      "longitude": -38.5664291,
+      "phone": "8530456521",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-hipermarket-supermercado-loja-serrinha",
+      "market_id": "uniforca",
+      "name": "Hipermarket Supermercado",
+      "address": "Rua Freire Alemão, 356 - Serrinha",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.786195,
+      "longitude": -38.5444676,
+      "phone": "8530446521",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-hipermarket-supermercado-loja-mondubim",
+      "market_id": "uniforca",
+      "name": "Hipermarket Supermercado",
+      "address": "R. Benjamim Brasil, 1099 - Mondubim, Fortaleza",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8060254,
+      "longitude": -38.5632158,
+      "phone": "8520103521",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-melhor-opcao-supermercado-loja-carlito-pamplona",
+      "market_id": "uniforca",
+      "name": "Melhor Opção Supermercado",
+      "address": "Av. Pasteur, 1440 - Carlito Pamplona",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7183083,
+      "longitude": -38.5614991,
+      "phone": "8530662700",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-mini-mercado-vasconcelos-loja-jardim-guanabara",
+      "market_id": "uniforca",
+      "name": "Mini Mercado Vasconcelos",
+      "address": "Rua Rosinha Sampaio, 1150 - Jardim Guanabara",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.726504,
+      "longitude": -38.5888335,
+      "phone": "8521805994",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-nidobox-supermercado-loja-aeroporto",
+      "market_id": "uniforca",
+      "name": "Nidobox Supermercado",
+      "address": "Av. dos Expedicionários, 5712 - Aeroporto",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.769842,
+      "longitude": -38.5428403,
+      "phone": "8530520606",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-nidobox-supermercado-loja-castelao",
+      "market_id": "uniforca",
+      "name": "Nidobox Supermercado",
+      "address": "Rua José Franca Cabral - Boa Vista Castelão",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8053461,
+      "longitude": -38.5170004,
+      "phone": "8532955549",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-nidobox-supermercado-loja-montese-matriz",
+      "market_id": "uniforca",
+      "name": "Nidobox Supermercado",
+      "address": "Rua Tenente Moacir Matos, 800 - Montese",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7674658,
+      "longitude": -38.552381,
+      "phone": "8534020606",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-nidobox-supermercado-loja-passare",
+      "market_id": "uniforca",
+      "name": "Nidobox Supermercado",
+      "address": "Rua Santa Rita das Causas Impossíveis, 691 - Passaré",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8019338,
+      "longitude": -38.5338269,
+      "phone": "8532994004",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-nidobox-supermercado-loja-queiroz-ribeiro-montese",
+      "market_id": "uniforca",
+      "name": "Nidobox Supermercado",
+      "address": "Rua Queiroz Ribeiro, 485 - Montese",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7629511,
+      "longitude": -38.5457294,
+      "phone": "8533058550",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-nossa-casa-supermercado-loja-jardim-uniao",
+      "market_id": "uniforca",
+      "name": "Nossa Casa Supermercado",
+      "address": "Av. do Passaré, 600 - Jardim União",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8206455,
+      "longitude": -38.5434767,
+      "phone": "8532953417",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-n-s-fatima-supermercado-loja-industrial-maracanau",
+      "market_id": "uniforca",
+      "name": "N.s. Fatima Supermercado",
+      "address": "Av. Edson Magalhães, 800 - Industrial - Maracanaú",
+      "neighborhood": "",
+      "city": "Maracanaú",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8395149,
+      "longitude": -38.5895449,
+      "phone": "8534635800",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-para-ty-supermercado-loja-caucaia",
+      "market_id": "uniforca",
+      "name": "Para Ty Supermercado",
+      "address": "Av. Central,10 - Icaraí - Caucaia",
+      "neighborhood": "",
+      "city": "Caucaia",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.6843802,
+      "longitude": -38.6540247,
+      "phone": "85991354997",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-raimundinho-supermercado-loja-aquiraz",
+      "market_id": "uniforca",
+      "name": "Raimundinho Supermercado",
+      "address": "Rua Tiburcio Targino, 535 - Centro, Aquiraz",
+      "neighborhood": "",
+      "city": "Aquiraz",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.9068042,
+      "longitude": -38.3867372,
+      "phone": "8533611158",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-raimundinho-supermercado-loja-tapera",
+      "market_id": "uniforca",
+      "name": "Raimundinho Supermercado",
+      "address": "Rodovia CE 453, 4090 - Tapera, Aquiraz",
+      "neighborhood": "",
+      "city": "Aquiraz",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.963885,
+      "longitude": -38.3594102,
+      "phone": "85991476577",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-r-center-supermercado-loja-parque-santa-rosa",
+      "market_id": "uniforca",
+      "name": "R Center Supermercado",
+      "address": "Rua Cônego de Castro, 5531 - Parque Santa Rosa",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8165862,
+      "longitude": -38.6001556,
+      "phone": "8532962647",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-super-cordeiro-supermercado-loja-serrinha",
+      "market_id": "uniforca",
+      "name": "Super Cordeiro Supermercado",
+      "address": "Rua Galileu, 355 - Serrinha",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7766641,
+      "longitude": -38.5518641,
+      "phone": "8534842304",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-super-cordeiro-supermercado-loja-acaracuzinho",
+      "market_id": "uniforca",
+      "name": "Super Cordeiro Supermercado",
+      "address": "Av. Lateral Sul, 125, Acaracuzinho - Maracanaú -",
+      "neighborhood": "",
+      "city": "Maracanaú",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8496983,
+      "longitude": -38.6160348,
+      "phone": "85981273102",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-super-cordeiro-supermercado-loja-sao-joao-do-tatuape",
+      "market_id": "uniforca",
+      "name": "Super Cordeiro Supermercado",
+      "address": "Av. Sabino Monte, 4260 - São João do Tauape",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7595744,
+      "longitude": -38.5115107,
+      "phone": "8532728788",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-super-cordeiro-supermercado-loja-piratininga",
+      "market_id": "uniforca",
+      "name": "Super Cordeiro Supermercado",
+      "address": "R. das Flores, 401 - Coqueiral, Maracanaú",
+      "neighborhood": "",
+      "city": "Maracanaú",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.8697677,
+      "longitude": -38.6241949,
+      "phone": "8532728788",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-super-dabarra-supermercado-loja-barra-do-ceara",
+      "market_id": "uniforca",
+      "name": "Super Dabarra Supermercado",
+      "address": "Av. Presidente Castelo Branco, 4763 - Barra do Ceará",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.706366,
+      "longitude": -38.5747175,
+      "phone": "8532824008",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-super-mania-mercadinho-loja-carlito-pamplona",
+      "market_id": "uniforca",
+      "name": "Super Mania Mercadinho",
+      "address": "Av. Pasteur, 1060 - Carlito Pamplona",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.715058,
+      "longitude": -38.5603276,
+      "phone": "8532365288",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-super-uchoa-supermercado-loja-matriz-jardim-america",
+      "market_id": "uniforca",
+      "name": "Super Uchôa Supermercado",
+      "address": "R. André Chaves, 612 - Jardim América",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7540922,
+      "longitude": -38.5453761,
+      "phone": "8534943499",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-super-uchoa-supermercado-loja-jardim-america",
+      "market_id": "uniforca",
+      "name": "Super Uchôa Supermercado",
+      "address": "R. João Sorongo, 318 - Jardim América",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7517302,
+      "longitude": -38.5423928,
+      "phone": "8534944084",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-super-uchoa-supermercados-loja-damas",
+      "market_id": "uniforca",
+      "name": "Super Uchôa Supermercados",
+      "address": "Rua Delmiro de Farias 1119 - Damas",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7492799,
+      "longitude": -38.5488411,
+      "phone": "8534944084",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-variedades-supermercados-loja-caucaia",
+      "market_id": "uniforca",
+      "name": "Variedades Supermercados",
+      "address": "Rua Vinte e Quatro de Janeiro, 215 Caucaia",
+      "neighborhood": "",
+      "city": "Caucaia",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7418374,
+      "longitude": -38.6582054,
+      "phone": "85981388902",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
+    },
+    {
+      "id": "uniforca-supermercado-pinheiro-carneiro-loja-joao-xxiii",
+      "market_id": "uniforca",
+      "name": "Supermercado Pinheiro & Carneiro",
+      "address": "R. Júlio Braga, 805 - João Xxiii, Fortaleza - Ce",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "",
+      "latitude": -3.7747863,
+      "longitude": -38.5826051,
+      "phone": "85989315030",
+      "opening_hours": [],
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z",
+      "coordinates_approximate": true
     }
   ],
   "flyers": [
@@ -4579,8 +5427,8 @@
       "valid_until": "2026-10-02T02:59:59.000Z",
       "is_active": true,
       "status": "active",
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara",
@@ -4596,8 +5444,8 @@
       "valid_until": "2026-10-08T02:59:59.000Z",
       "is_active": true,
       "status": "active",
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2",
@@ -4613,8 +5461,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "status": "active",
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     }
   ],
   "offers": [
@@ -5791,8 +6639,8 @@
       "valid_until": "2026-10-08T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara-oferta-2",
@@ -5812,8 +6660,8 @@
       "valid_until": "2026-10-08T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara-oferta-3",
@@ -5833,8 +6681,8 @@
       "valid_until": "2026-10-08T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara-oferta-4",
@@ -5854,8 +6702,8 @@
       "valid_until": "2026-10-08T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara-oferta-5",
@@ -5875,8 +6723,8 @@
       "valid_until": "2026-10-08T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara-oferta-6",
@@ -5896,8 +6744,8 @@
       "valid_until": "2026-10-08T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara-oferta-7",
@@ -5917,8 +6765,8 @@
       "valid_until": "2026-10-08T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara-oferta-8",
@@ -5938,8 +6786,8 @@
       "valid_until": "2026-10-08T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara-oferta-9",
@@ -5959,8 +6807,8 @@
       "valid_until": "2026-10-08T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara-oferta-10",
@@ -5980,8 +6828,8 @@
       "valid_until": "2026-10-08T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara-oferta-11",
@@ -6001,8 +6849,8 @@
       "valid_until": "2026-10-08T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara-oferta-12",
@@ -6022,8 +6870,8 @@
       "valid_until": "2026-10-08T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-1",
@@ -6043,8 +6891,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-2",
@@ -6064,8 +6912,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-3",
@@ -6085,8 +6933,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-4",
@@ -6106,8 +6954,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-5",
@@ -6127,8 +6975,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-6",
@@ -6148,8 +6996,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-7",
@@ -6169,8 +7017,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-8",
@@ -6190,8 +7038,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-9",
@@ -6211,8 +7059,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-10",
@@ -6232,8 +7080,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-11",
@@ -6253,8 +7101,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-12",
@@ -6274,8 +7122,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-13",
@@ -6295,8 +7143,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-14",
@@ -6316,8 +7164,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-15",
@@ -6337,8 +7185,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-16",
@@ -6358,8 +7206,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-17",
@@ -6379,8 +7227,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-18",
@@ -6400,8 +7248,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-19",
@@ -6421,8 +7269,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-20",
@@ -6442,8 +7290,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-21",
@@ -6463,8 +7311,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-22",
@@ -6484,8 +7332,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-23",
@@ -6505,8 +7353,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-24",
@@ -6526,8 +7374,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-25",
@@ -6547,8 +7395,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-26",
@@ -6568,8 +7416,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-27",
@@ -6589,8 +7437,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-28",
@@ -6610,8 +7458,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-29",
@@ -6631,8 +7479,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-30",
@@ -6652,8 +7500,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-31",
@@ -6673,8 +7521,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-32",
@@ -6694,8 +7542,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-33",
@@ -6715,8 +7563,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-34",
@@ -6736,8 +7584,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-35",
@@ -6757,8 +7605,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-36",
@@ -6778,8 +7626,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-37",
@@ -6799,8 +7647,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-38",
@@ -6820,8 +7668,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-39",
@@ -6841,8 +7689,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-40",
@@ -6862,8 +7710,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-41",
@@ -6883,8 +7731,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-42",
@@ -6904,8 +7752,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-43",
@@ -6925,8 +7773,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-44",
@@ -6946,8 +7794,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-45",
@@ -6967,8 +7815,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-46",
@@ -6988,8 +7836,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-47",
@@ -7009,8 +7857,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-48",
@@ -7030,8 +7878,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-49",
@@ -7051,8 +7899,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-50",
@@ -7072,8 +7920,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-51",
@@ -7093,8 +7941,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-52",
@@ -7114,8 +7962,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-53",
@@ -7135,8 +7983,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-54",
@@ -7156,8 +8004,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-55",
@@ -7177,8 +8025,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-56",
@@ -7198,8 +8046,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-57",
@@ -7219,8 +8067,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-58",
@@ -7240,8 +8088,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-59",
@@ -7261,8 +8109,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-60",
@@ -7282,8 +8130,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-61",
@@ -7303,8 +8151,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-62",
@@ -7324,8 +8172,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-63",
@@ -7345,8 +8193,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-64",
@@ -7366,8 +8214,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-65",
@@ -7387,8 +8235,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-66",
@@ -7408,8 +8256,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-67",
@@ -7429,8 +8277,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-68",
@@ -7450,8 +8298,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-69",
@@ -7471,8 +8319,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-70",
@@ -7492,8 +8340,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-71",
@@ -7513,8 +8361,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-72",
@@ -7534,8 +8382,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-73",
@@ -7555,8 +8403,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-74",
@@ -7576,8 +8424,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-75",
@@ -7597,8 +8445,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2-oferta-76",
@@ -7618,8 +8466,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "is_featured": false,
-      "created_at": "2026-09-30T11:21:11.535Z",
-      "updated_at": "2026-09-30T11:21:11.535Z"
+      "created_at": "2026-09-30T12:23:12.097Z",
+      "updated_at": "2026-09-30T12:23:12.097Z"
     }
   ]
 }

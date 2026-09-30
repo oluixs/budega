@@ -270,6 +270,45 @@ describe("metadados de importação (0004)", () => {
   });
 });
 
+describe("metadados de origem das ofertas (0005)", () => {
+  it("offers aceita flyer_id e origin, com o default 'manual'", async () => {
+    const seed = buildSeedRows();
+    const marketId = seed.markets[0]!.id;
+    const { rows: flyerRows } = await db.query<{ id: string }>(
+      "insert into flyers (market_id, title, file_url, file_type, valid_from, valid_until) values ($1, 'Encarte teste', 'https://exemplo.com.br/encarte.pdf', 'pdf', now(), now() + interval '1 day') returning id",
+      [marketId],
+    );
+    const flyerId = flyerRows[0]!.id;
+    const { rows } = await db.query<{ origin: string; flyer_id: string }>(
+      `insert into offers (market_id, category_id, flyer_id, origin, name, promotional_price, unit, valid_from, valid_until)
+       values ($1, $2, $3, 'encarte', 'Oferta do encarte', 4.05, 'un', now(), now() + interval '1 day')
+       returning origin, flyer_id`,
+      [marketId, seed.categories[0]!.id, flyerId],
+    );
+    expect(rows[0]).toEqual({ origin: "encarte", flyer_id: flyerId });
+
+    // Sem informar origin: usa o default 'manual' (oferta cadastrada direto pelo mercado).
+    const { rows: defaultRows } = await db.query<{ origin: string; flyer_id: string | null }>(
+      `insert into offers (market_id, category_id, name, promotional_price, unit, valid_from, valid_until)
+       values ($1, $2, 'Oferta manual', 9.9, 'un', now(), now() + interval '1 day')
+       returning origin, flyer_id`,
+      [marketId, seed.categories[0]!.id],
+    );
+    expect(defaultRows[0]).toEqual({ origin: "manual", flyer_id: null });
+  });
+
+  it("origin só aceita 'manual' ou 'encarte'", async () => {
+    const seed = buildSeedRows();
+    await rejects(
+      db.query(
+        `insert into offers (market_id, category_id, origin, name, promotional_price, unit, valid_from, valid_until)
+         values ($1, $2, 'roubada', 'Oferta inválida', 1, 'un', now(), now() + interval '1 day')`,
+        [seed.markets[0]!.id, seed.categories[0]!.id],
+      ),
+    );
+  });
+});
+
 describe("offers", () => {
   it("anônimo NÃO cria oferta", async () => {
     const seed = buildSeedRows();

@@ -6,6 +6,7 @@ import { HeaderAccount } from "@/components/layout/header-account";
 
 const NAV_LINKS = [
   { href: "/explorar", label: "Explorar" },
+  { href: "/mapa", label: "Mapa" },
   { href: "/favoritos", label: "Favoritos" },
 ];
 

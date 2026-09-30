@@ -62,17 +62,24 @@ function PointPopup({ point }: { point: MapPoint }) {
   );
 }
 
-export default function MarketsMapInner({ points, userLocation, fallbackCenter, label }: MarketsMapProps) {
+export default function MarketsMapInner({
+  points,
+  userLocation,
+  fallbackCenter,
+  zoom = 12,
+  fitToPoints = true,
+  label,
+}: MarketsMapProps) {
   return (
     <MapContainer
       center={[fallbackCenter.latitude, fallbackCenter.longitude]}
-      zoom={12}
+      zoom={zoom}
       scrollWheelZoom={false}
       className="h-full w-full"
       aria-label={label}
     >
       <TileLayer url={TILE_URL} attribution={ATTRIBUTION} />
-      <FitBounds points={points} userLocation={userLocation} />
+      {fitToPoints && <FitBounds points={points} userLocation={userLocation} />}
       {points.map((point) => (
         <Marker
           key={point.id}

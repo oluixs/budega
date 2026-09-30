@@ -21,6 +21,14 @@ export interface MarketsMapProps {
   userLocation?: { latitude: number; longitude: number } | null;
   /** Centro usado quando não há pontos. */
   fallbackCenter: { latitude: number; longitude: number };
+  /** Zoom inicial sobre `fallbackCenter` (padrão 12). Só importa quando `fitToPoints` é false. */
+  zoom?: number;
+  /**
+   * Ajusta o zoom para caber todos os pontos (padrão true). Desligue para um mapa geral
+   * centrado numa região (ex.: Fortaleza) que não deve encolher por causa de uma loja
+   * distante (ex.: interior do estado) — ver /mapa.
+   */
+  fitToPoints?: boolean;
   className?: string;
   label: string;
 }

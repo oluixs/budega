@@ -132,11 +132,16 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 - [x] Segunda rede: Frangolândia (21 lojas geocodificadas via Nominatim com cache).
 - [x] Terceira rede: Super Lagoa (8 lojas, coordenadas exatas do próprio site — sem
       encartes, pois a Revista de Ofertas do site está parada desde 08/2023).
-- [ ] Mais redes da região (candidatas já avaliadas e descartadas: São Luiz —
+- [x] Quarta rede: **Rede Uniforça** (48 lojas de ~20 marcas independentes da Grande
+      Fortaleza — Baratão, Carnaúba, Nidobox, Super Cordeiro etc. — cooperativa de
+      compras, cada loja com sua marca própria; sem encartes, a rede não indica a quais
+      lojas cada encarte geral vale). Candidatas avaliadas e descartadas: São Luiz —
       robots.txt bloqueia bots fora de Googlebot/Bingbot; Centerbox e Pinheiro —
       certificado TLS inválido; Diniz — só tem app, sem site com encartes; Moranguinho —
-      não atua em Fortaleza, só no interior. Buscar outras redes como Carrefour/Assaí se
-      tiverem site público com robots.txt permissivo e TLS válido).
+      não atua em Fortaleza, só no interior; Carrefour — site VTEX com conteúdo por JS,
+      desproporcional; Super do Povo — `superdopovo.com.br` bloqueia com 403 mesmo com
+      navegador real (bloqueio de infraestrutura, não dá para respeitar como o robots.txt).
+- [ ] Mais redes da região (buscar Assaí ou outras redes com site público simples).
 - [x] Leitura de ofertas dos encartes com a API do Claude (`pnpm importar --ofertas`,
       cache por encarte, validação de preços) — pronta e testada com cliente simulado.
 - [x] Leitura **manual** das ofertas (sem API, sem custo): Claude Code transcreveu os
@@ -221,6 +226,37 @@ a suíte inteira de novo para confirmar que nada regrediu:
       ou rolagem horizontal; 6 bugs encontrados e corrigidos (2026-09-29).
 - [ ] Verificação visual do app mobile em Expo Go/emulador.
 - [x] Resumo final de sessão apresentado ao usuário ao final da implementação.
+
+## Retomada em 2026-09-30 (Supabase real, bugs, mobile, mapa geral, quarta rede)
+
+Pedido do usuário: "Revise os bugs/erros no sistema, resolva a versão mobile para
+Android/iOS. Adicione mais supermercados, priorizando Fortaleza, deve haver um mapa
+geral estilo Waze, pode usar o supabase já que já está vinculado."
+
+- [x] **Supabase real conectado nesta sessão**: o usuário passou as credenciais no chat
+      (nunca commitadas — só em `.env`/`.env.local` gitignorados dos 3 pacotes). A
+      sincronização real revelou que a tabela `offers` não tinha `flyer_id`/`origin` →
+      migration 0005 escrita; **falta o usuário aplicá-la** (SQL Editor do Supabase — o
+      texto exato foi passado no chat) e então rodar de novo
+      `pnpm --filter @budega/supabase sync:regional` para enviar as 143 ofertas.
+- [x] Dois bugs sérios encontrados navegando com o Supabase real pela primeira vez
+      (nenhuma sessão anterior tinha feito isso) — ambos corrigidos e com teste/registro
+      de prevenção: `next.config.ts` sem o host de imagem da Super Lagoa (erro 500 na
+      home/explorar) e `tailwind.config.js` do mobile sem `darkMode: "class"` (a versão
+      web do app inteira quebrava, em toda rota) — ver `.audit/errors/2026-09-30`.
+- [x] Correção extra achada nos screenshots reais: aviso do Base UI em todo `<Button
+      render={<Link .../>}>` (11 lugares) — `nativeButton` agora tem padrão inteligente
+      no componente `Button`, sem precisar passar a prop manualmente em cada uso.
+- [x] **Mapa geral "estilo Waze"**: nova página `/mapa` (web) e aba "Mapa" (mobile, 5ª
+      aba) com todas as lojas cadastradas (168, 4 redes), sem filtro — fixo em Fortaleza
+      (zoom 12), não encolhe por causa de lojas do interior.
+- [x] Quarta rede: Rede Uniforça (ver Fase 6 acima).
+- [x] Mobile: verificado com a versão web (`expo start --web`), já que o emulador
+      Android continua bloqueado sem o Hipervisor do Windows (mesma pendência de sempre,
+      precisa de admin). `expo-doctor` 21/21, `tsc`/`expo lint` limpos.
+- [ ] iOS: não há como testar nesta máquina (Windows, sem macOS/Xcode) — só validado por
+      `expo export --platform ios` (bundle completo, sem erro) e pelo fato do app não usar
+      nenhuma API específica de plataforma fora do já testado na web.
 
 ## Não avançar com a etapa anterior quebrada
 

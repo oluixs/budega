@@ -43,11 +43,20 @@ function Button({
   className,
   variant = "default",
   size = "default",
+  nativeButton,
+  render,
   ...props
 }: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
+  // `nativeButton` (padrão true) assume que o Base UI renderiza o próprio <button>; toda
+  // vez que passamos `render` (ex.: <Link>, <a> — nunca um <button> de verdade neste
+  // projeto), ele avisa em todo carregamento pedindo nativeButton={false} explícito (ver
+  // .audit/errors/2026-09-30). Como aqui `render` só é usado para navegação, o padrão já
+  // vira false nesse caso — só é preciso passar nativeButton explícito para o contrário.
   return (
     <ButtonPrimitive
       data-slot="button"
+      nativeButton={nativeButton ?? !render}
+      render={render}
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     />
