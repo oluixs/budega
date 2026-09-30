@@ -11,6 +11,7 @@
   "scripts": {
     "migrate": "node ./scripts/run-migrations.mjs",
     "seed": "tsx ./scripts/run-seed.ts",
+    "sync:regional": "tsx ./scripts/sync-regional.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src scripts tests",
     "test": "vitest run"

@@ -80,6 +80,13 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 - [x] Mercados: cadastrar e editar (2026-09-29), com horário por dia da semana.
 - [x] Tela de usuários (`/admin/usuarios`): permissões e atribuição de mercados
       (migration 0003). Só o primeiro admin é promovido via SQL.
+- [x] Primeiro projeto Supabase real conectado (2026-09-30): `.env.local`/`.env`
+      configurados, migrations 0001–0004 aplicadas (nova 0004: colunas que os
+      adaptadores de `packages/sources` já usavam mas o schema não tinha —
+      `website_url`/`coordinates_approximate`/`cover_url`/`source_url`). Script novo
+      `pnpm --filter @budega/supabase sync:regional` pronto para popular o banco com os
+      dados reais das 3 redes — falta só a `SUPABASE_SERVICE_ROLE_KEY` do usuário para
+      rodar pela 1ª vez.
 - [ ] Upload de encarte/imagem para o Supabase Storage (hoje por URL).
 - [x] Registrar `analytics_events` (visualizações, cliques, compartilhamento, favoritar)
       e mostrar no dashboard (2026-09-29, retomada em máquina nova) — ver

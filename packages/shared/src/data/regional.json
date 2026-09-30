@@ -6,20 +6,27 @@
       "longitude": -38.5267
     }
   },
-  "generated_at": "2026-09-29T17:28:12.360Z",
+  "generated_at": "2026-09-30T04:40:44.123Z",
   "sources": [
     {
       "market_id": "cometa",
       "name": "Cometa Supermercados",
       "website_url": "https://cometasupermercados.com.br",
-      "fetched_at": "2026-09-29T17:28:12.360Z",
+      "fetched_at": "2026-09-30T04:40:44.123Z",
       "error": null
     },
     {
       "market_id": "frangolandia",
       "name": "Frangolândia Supermercados",
       "website_url": "https://frangolandia.com",
-      "fetched_at": "2026-09-29T17:28:12.360Z",
+      "fetched_at": "2026-09-30T04:40:44.123Z",
+      "error": null
+    },
+    {
+      "market_id": "superlagoa",
+      "name": "Super Lagoa",
+      "website_url": "https://www.superlagoa.com.br",
+      "fetched_at": "2026-09-30T04:40:44.123Z",
       "error": null
     }
   ],
@@ -153,11 +160,78 @@
       "is_verified": false,
       "is_featured": false,
       "is_suspended": false,
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "owner_id": null,
       "website_url": "https://frangolandia.com",
       "coordinates_approximate": true
+    },
+    {
+      "id": "superlagoa",
+      "name": "Super Lagoa",
+      "slug": "super-lagoa",
+      "description": "Rede de supermercados cearense, com 8 lojas em Fortaleza, Juazeiro do Norte, Sobral.",
+      "logo_url": "https://www.superlagoa.com.br/img/logo-lagoa.png",
+      "phone": "8530173069",
+      "whatsapp": "5585834772300",
+      "address": "Av. Gomes Brasil 201",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "60720-150",
+      "latitude": -3.774064,
+      "longitude": -38.567685,
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "07:00",
+          "closes_at": "21:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "is_verified": false,
+      "is_featured": false,
+      "is_suspended": false,
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
+      "owner_id": null,
+      "website_url": "https://www.superlagoa.com.br"
     }
   ],
   "branches": [
@@ -2754,8 +2828,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -2814,8 +2888,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -2874,8 +2948,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -2934,8 +3008,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -2994,8 +3068,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3054,8 +3128,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3114,8 +3188,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3174,8 +3248,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3234,8 +3308,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3294,8 +3368,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3354,8 +3428,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3414,8 +3488,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3474,8 +3548,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3534,8 +3608,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3594,8 +3668,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3654,8 +3728,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3714,8 +3788,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3774,8 +3848,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3791,8 +3865,8 @@
       "longitude": -38.5180492,
       "phone": "8540091021",
       "opening_hours": [],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3851,8 +3925,8 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
     },
     {
@@ -3911,9 +3985,481 @@
           "closed": false
         }
       ],
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z",
       "coordinates_approximate": true
+    },
+    {
+      "id": "superlagoa-1",
+      "market_id": "superlagoa",
+      "name": "Super Lagoa Parangaba",
+      "address": "Av. Gomes Brasil 201",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "60720-150",
+      "latitude": -3.774064,
+      "longitude": -38.567685,
+      "phone": "8530173069",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "07:00",
+          "closes_at": "21:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z"
+    },
+    {
+      "id": "superlagoa-2",
+      "market_id": "superlagoa",
+      "name": "Super Lagoa Centro",
+      "address": "Rua Sólon Pinheiro, 136",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "60050-040",
+      "latitude": -3.7316073,
+      "longitude": -38.526692,
+      "phone": "8530324556",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "07:00",
+          "closes_at": "18:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "07:00",
+          "closes_at": "21:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "07:00",
+          "closes_at": "21:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "07:00",
+          "closes_at": "21:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "07:00",
+          "closes_at": "21:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "07:00",
+          "closes_at": "21:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "07:00",
+          "closes_at": "21:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z"
+    },
+    {
+      "id": "superlagoa-3",
+      "market_id": "superlagoa",
+      "name": "Super Lagoa Juazeiro do Norte",
+      "address": "R. Conceição, 498",
+      "neighborhood": "",
+      "city": "Juazeiro do Norte",
+      "state": "CE",
+      "postal_code": "63010-220",
+      "latitude": -7.203307700000001,
+      "longitude": -39.315461,
+      "phone": "8835124242",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "07:00",
+          "closes_at": "20:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z"
+    },
+    {
+      "id": "superlagoa-4",
+      "market_id": "superlagoa",
+      "name": "Super Lagoa Barra do Ceará",
+      "address": "Av. Mozart Pinheiro de Lucena 1711",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "60347-440",
+      "latitude": -3.7176455,
+      "longitude": -38.595401,
+      "phone": "8532829432",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "21:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z"
+    },
+    {
+      "id": "superlagoa-5",
+      "market_id": "superlagoa",
+      "name": "Super Lagoa Sobral",
+      "address": "Av. Dr. José Arimathéa Monte e Silva, 395",
+      "neighborhood": "",
+      "city": "Sobral",
+      "state": "CE",
+      "postal_code": "62030-270",
+      "latitude": -3.679924,
+      "longitude": -40.356536,
+      "phone": "8836952222",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "07:00",
+          "closes_at": "23:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "07:00",
+          "closes_at": "23:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "07:00",
+          "closes_at": "23:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "07:00",
+          "closes_at": "23:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "07:00",
+          "closes_at": "23:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "07:00",
+          "closes_at": "23:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z"
+    },
+    {
+      "id": "superlagoa-7",
+      "market_id": "superlagoa",
+      "name": "Super Lagoa North Shopping",
+      "address": "Av. Bezerra de Menezes 2450",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "60325-002",
+      "latitude": -3.73514,
+      "longitude": -38.566032,
+      "phone": "8532171299",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "07:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "07:00",
+          "closes_at": "23:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "07:00",
+          "closes_at": "23:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "07:00",
+          "closes_at": "23:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "07:00",
+          "closes_at": "23:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "07:00",
+          "closes_at": "23:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "07:00",
+          "closes_at": "23:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z"
+    },
+    {
+      "id": "superlagoa-9",
+      "market_id": "superlagoa",
+      "name": "Super Lagoa Luciano Cavalcante",
+      "address": "R. Virgílio Bastos dos Santos, 66",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "60810-420",
+      "latitude": -3.768896,
+      "longitude": -38.493838,
+      "phone": "8530372145",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "06:00",
+          "closes_at": "21:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z"
+    },
+    {
+      "id": "superlagoa-10",
+      "market_id": "superlagoa",
+      "name": "Super Lagoa Cidade 2000",
+      "address": "Avenida Central, 190",
+      "neighborhood": "",
+      "city": "Fortaleza",
+      "state": "CE",
+      "postal_code": "60190-611",
+      "latitude": -3.7506547164572424,
+      "longitude": -38.471431,
+      "phone": "8532490054",
+      "opening_hours": [
+        {
+          "day": 0,
+          "opens_at": "07:00",
+          "closes_at": "21:00",
+          "closed": false
+        },
+        {
+          "day": 1,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 2,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 3,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 4,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 5,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        },
+        {
+          "day": 6,
+          "opens_at": "06:00",
+          "closes_at": "22:00",
+          "closed": false
+        }
+      ],
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z"
     }
   ],
   "flyers": [
@@ -3933,23 +4479,6 @@
       "status": "active",
       "created_at": "2026-09-28T19:38:41.229Z",
       "updated_at": "2026-09-29T03:00:00.109Z"
-    },
-    {
-      "id": "cometa-encarte-510",
-      "market_id": "cometa",
-      "branch_id": null,
-      "title": "Feirão Cometa",
-      "description": "Ofertas válidas de 27 a 29/09 em todas as lojas, exceto Osório de Paiva e Gomes de Matos",
-      "file_url": "https://adminx.cometasupermercados.com.br/uploads/Encarte_Feirao_27_a_29_de_setembro_de_2026_1_8e803cef18.pdf",
-      "file_type": "pdf",
-      "cover_url": "https://adminx.cometasupermercados.com.br/uploads/large_Encarte_Feirao_27_a_29_de_setembro_de_2026_1_ebc55ca0c9.jpg",
-      "source_url": "https://cometasupermercados.com.br/encartes",
-      "valid_from": "2026-09-27T03:00:00.000Z",
-      "valid_until": "2026-09-30T02:59:59.000Z",
-      "is_active": true,
-      "status": "active",
-      "created_at": "2026-02-09T20:23:05.708Z",
-      "updated_at": "2026-09-27T03:00:00.157Z"
     },
     {
       "id": "cometa-encarte-508",
@@ -4037,6 +4566,23 @@
       "updated_at": "2026-09-16T03:00:00.094Z"
     },
     {
+      "id": "frangolandia-encarte-carnes-%f0%9f%a5%a9",
+      "market_id": "frangolandia",
+      "branch_id": null,
+      "title": "Carnes 🥩",
+      "description": null,
+      "file_url": "https://frangolandia.com/wp-content/uploads/2026/09/5o-Encarte-Carnes-30.09-e-01.10.pdf",
+      "file_type": "pdf",
+      "cover_url": "https://frangolandia.com/wp-content/uploads/2026/09/PHOTO-2026-09-25-13-42-52-768x1097.jpg",
+      "source_url": "https://frangolandia.com/encarte/carnes-%f0%9f%a5%a9/",
+      "valid_from": "2026-09-30T03:00:00.000Z",
+      "valid_until": "2026-10-02T02:59:59.000Z",
+      "is_active": true,
+      "status": "active",
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z"
+    },
+    {
       "id": "frangolandia-encarte-festival-do-bebe-frangolandia-em-fortaleza-ceara",
       "market_id": "frangolandia",
       "branch_id": null,
@@ -4050,8 +4596,8 @@
       "valid_until": "2026-10-08T02:59:59.000Z",
       "is_active": true,
       "status": "active",
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z"
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z"
     },
     {
       "id": "frangolandia-encarte-mega-ofertaco-das-marcas-2",
@@ -4067,25 +4613,8 @@
       "valid_until": "2026-10-05T02:59:59.000Z",
       "is_active": true,
       "status": "active",
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z"
-    },
-    {
-      "id": "frangolandia-encarte-ofertas-de-frutas-e-verduras",
-      "market_id": "frangolandia",
-      "branch_id": null,
-      "title": "Ofertas Horti 🍓🍇 | Aqui É + Barato Todo Dia",
-      "description": null,
-      "file_url": "https://frangolandia.com/wp-content/uploads/2026/09/4o-Encarte-Horti-27-A-29.09.pdf",
-      "file_type": "pdf",
-      "cover_url": "https://frangolandia.com/wp-content/uploads/2026/09/PHOTO-2026-09-25-09-43-38-768x1097.jpg",
-      "source_url": "https://frangolandia.com/encarte/ofertas-de-frutas-e-verduras/",
-      "valid_from": "2026-09-26T03:00:00.000Z",
-      "valid_until": "2026-09-30T02:59:59.000Z",
-      "is_active": true,
-      "status": "active",
-      "created_at": "2026-09-29T17:28:12.360Z",
-      "updated_at": "2026-09-29T17:28:12.360Z"
+      "created_at": "2026-09-30T04:40:44.123Z",
+      "updated_at": "2026-09-30T04:40:44.123Z"
     }
   ],
   "offers": []

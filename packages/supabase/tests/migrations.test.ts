@@ -245,6 +245,31 @@ describe("markets", () => {
   });
 });
 
+describe("metadados de importação (0004)", () => {
+  it("markets/branches/flyers aceitam os campos opcionais dos adaptadores de packages/sources", async () => {
+    const seed = buildSeedRows();
+    const marketId = seed.markets[0]!.id;
+    await db.query("update markets set website_url = $1, coordinates_approximate = true where id = $2", [
+      "https://exemplo.com.br",
+      marketId,
+    ]);
+    await db.query(
+      "insert into branches (market_id, name, address, neighborhood, city, state, postal_code, latitude, longitude, coordinates_approximate) values ($1, 'Filial teste', 'Rua B, 2', 'Centro', 'Fortaleza', 'CE', '60000-000', -3.73, -38.52, true)",
+      [marketId],
+    );
+    await db.query(
+      "insert into flyers (market_id, title, file_url, file_type, valid_from, valid_until, description, cover_url, source_url) values ($1, 'Encarte teste', 'https://exemplo.com.br/encarte.pdf', 'pdf', now(), now() + interval '1 day', 'obs', 'https://exemplo.com.br/capa.jpg', 'https://exemplo.com.br/encartes/1')",
+      [marketId],
+    );
+
+    const { rows } = await db.query<{ website_url: string; coordinates_approximate: boolean }>(
+      "select website_url, coordinates_approximate from markets where id = $1",
+      [marketId],
+    );
+    expect(rows[0]).toEqual({ website_url: "https://exemplo.com.br", coordinates_approximate: true });
+  });
+});
+
 describe("offers", () => {
   it("anônimo NÃO cria oferta", async () => {
     const seed = buildSeedRows();
