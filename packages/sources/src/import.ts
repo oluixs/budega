@@ -1,6 +1,7 @@
 import type { Offer, RegionalData } from "@budega/shared";
 import { cometaAdapter } from "./adapters/cometa";
 import { frangolandiaAdapter } from "./adapters/frangolandia";
+import { superlagoaAdapter } from "./adapters/superlagoa";
 import geocodeCache from "./data/geocode-cache.json";
 import defaultOffersCache from "./data/offers-cache.json";
 import { cachedOffers, type OffersCache } from "./offers/cache";
@@ -9,7 +10,7 @@ import type { HttpClient } from "./http";
 import type { SourceAdapter } from "./types";
 
 /** Fontes ativas. Para adicionar uma rede: criar o adaptador em ./adapters e incluir aqui. */
-export const ADAPTERS: SourceAdapter[] = [cometaAdapter, frangolandiaAdapter];
+export const ADAPTERS: SourceAdapter[] = [cometaAdapter, frangolandiaAdapter, superlagoaAdapter];
 
 export const REGION = {
   name: "Fortaleza e Região Metropolitana",

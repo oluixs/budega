@@ -121,7 +121,13 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
       links para as páginas legais e texto do pedido de localização em português.
       Verificado pela versão web do app (Chromium, tamanho de celular).
 - [x] Segunda rede: Frangolândia (21 lojas geocodificadas via Nominatim com cache).
-- [ ] Mais redes da região (um adaptador por site).
+- [x] Terceira rede: Super Lagoa (8 lojas, coordenadas exatas do próprio site — sem
+      encartes, pois a Revista de Ofertas do site está parada desde 08/2023).
+- [ ] Mais redes da região (candidatas já avaliadas e descartadas: São Luiz —
+      robots.txt bloqueia bots fora de Googlebot/Bingbot; Centerbox e Pinheiro —
+      certificado TLS inválido; Diniz — só tem app, sem site com encartes; Moranguinho —
+      não atua em Fortaleza, só no interior. Buscar outras redes como Carrefour/Assaí se
+      tiverem site público com robots.txt permissivo e TLS válido).
 - [x] Leitura de ofertas dos encartes com a API do Claude (`pnpm importar --ofertas`,
       cache por encarte, validação de preços) — pronta e testada com cliente simulado.
 - [ ] Rodar a leitura de ofertas pela primeira vez (precisa de credencial da Anthropic).
