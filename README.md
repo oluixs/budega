@@ -277,9 +277,13 @@ conhecidos. Depois de qualquer mudança, registre-a com `pnpm audit:change`.
 ## Limitações conhecidas e próximos passos
 
 - **Web**: verificada num navegador real (Chromium via Playwright, desktop e celular,
-  em modo mock) — 44 testes e2e e screenshots revisadas. **App mobile**: ainda sem
-  verificação visual em aparelho/emulador (ambiente sem Android SDK); validado por
-  `tsc`, lint e `expo export` (bundle completo). Abra no Expo Go antes de publicar.
+  em modo mock) — 52 testes e2e. **App mobile**: ainda sem verificação visual em
+  aparelho/emulador (ambiente sem Android SDK, e sem permissão de administrador do
+  Windows para ativar o Hyper-V/hipervisor necessário ao emulador — `whoami /groups`
+  confirma que o grupo Administradores está em modo "só negar" nesta máquina); validado
+  por `tsc`, lint, `expo-doctor` (21/21) e `expo export` (bundle completo). Rode
+  `pnpm dev:mobile` e abra no **Expo Go num celular físico** (não precisa de
+  emulador/hipervisor) antes de publicar.
 - **Ofertas individuais dos encartes**: os encartes são imagens (PDF sem texto) e o OCR
   gratuito (Tesseract) não lê os preços. A leitura com a API do Claude está pronta
   (`pnpm importar --ofertas`), mas **nunca foi executada** — falta credencial da Anthropic.
@@ -294,8 +298,11 @@ conhecidos. Depois de qualquer mudança, registre-a com `pnpm audit:change`.
   os demais usuários são gerenciados em `/admin/usuarios`.
 - **Upload de arquivos**: encartes e imagens de oferta são informados por URL; não há
   upload para o Supabase Storage ainda.
-- **Métricas do dashboard** (visualizações, cliques em rota/telefone/WhatsApp): a tabela
-  `analytics_events` existe, mas os apps ainda não registram eventos.
+- **Métricas do dashboard** (visualizações, cliques em rota/telefone/WhatsApp,
+  compartilhamentos): implementado em 2026-09-29 (`lib/track-event.ts` na web) — só
+  aparece para administradores e só com Supabase real configurado (nunca testado contra
+  um projeto de verdade, mas segue o mesmo padrão já validado de `getAllReportsAdmin`).
+  O app mobile ainda não registra esses eventos.
 - Testes automatizados: `packages/shared`, `packages/supabase` (migrations + RLS),
   `apps/web` (unitários + e2e) — ainda não há testes automatizados no `apps/mobile`.
 - Web e mobile usam versões de Tailwind diferentes (v4 vs. v3/NativeWind) — os tokens de

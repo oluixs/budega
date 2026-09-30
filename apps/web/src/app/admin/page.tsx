@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { AlertCircle, Flag, Store, Tag } from "lucide-react";
-import { getDashboardStats } from "@/lib/admin-data";
+import { AlertCircle, Eye, Flag, MousePointerClick, Phone, Share2, Store, Tag } from "lucide-react";
+import { getAnalyticsSummary, getDashboardStats } from "@/lib/admin-data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = { title: "Dashboard administrativo" };
 export const dynamic = "force-dynamic";
 
 export default async function AdminDashboardPage() {
-  const stats = await getDashboardStats();
+  const [stats, analytics] = await Promise.all([getDashboardStats(), getAnalyticsSummary()]);
 
   const cards = [
     { label: "Mercados ativos", value: stats.activeMarkets, icon: Store },
@@ -53,16 +53,40 @@ export default async function AdminDashboardPage() {
         </Card>
       )}
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-neutral-900">Métricas de engajamento</CardTitle>
-        </CardHeader>
-        <CardContent className="text-body text-neutral-500">
-          Visualizações, cliques em rota e cliques em telefone/WhatsApp dependem da
-          tabela <code className="rounded bg-neutral-100 px-1">analytics_events</code> em
-          um Supabase real — configure as credenciais para ver os números aqui.
-        </CardContent>
-      </Card>
+      <div>
+        <h2 className="mb-3 font-display text-h2 font-semibold text-neutral-900">Métricas de engajamento</h2>
+        {!analytics.available ? (
+          <Card>
+            <CardContent className="pt-6 text-body text-neutral-500">
+              Visualizações, cliques em rota e cliques em telefone/WhatsApp dependem da
+              tabela <code className="rounded bg-neutral-100 px-1">analytics_events</code> em
+              um Supabase real (e só aparecem para administradores) — configure as
+              credenciais para ver os números aqui.
+            </CardContent>
+          </Card>
+        ) : (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { label: "Visualizações", value: analytics.views, icon: Eye },
+              { label: "Cliques em rota", value: analytics.routeClicks, icon: MousePointerClick },
+              { label: "Cliques em telefone/WhatsApp", value: analytics.contactClicks, icon: Phone },
+              { label: "Compartilhamentos", value: analytics.shares, icon: Share2 },
+            ].map((metric) => (
+              <Card key={metric.label}>
+                <CardHeader>
+                  <CardTitle className="flex items-center justify-between text-body text-neutral-500">
+                    {metric.label}
+                    <metric.icon className="h-4 w-4" aria-hidden="true" />
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="font-display text-h1 font-bold text-neutral-900">{metric.value}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

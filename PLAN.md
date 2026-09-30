@@ -81,7 +81,9 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 - [x] Tela de usuários (`/admin/usuarios`): permissões e atribuição de mercados
       (migration 0003). Só o primeiro admin é promovido via SQL.
 - [ ] Upload de encarte/imagem para o Supabase Storage (hoje por URL).
-- [ ] Registrar `analytics_events` (visualizações, cliques) e mostrar no dashboard.
+- [x] Registrar `analytics_events` (visualizações, cliques, compartilhamento, favoritar)
+      e mostrar no dashboard (2026-09-29, retomada em máquina nova) — ver
+      `.audit/changes/2026-09-29/..._analytics-events...md`.
 - [x] Integração React Hook Form + Zod nos formulários administrativos (TanStack Query
       não foi necessário nesta fase — Server Actions + `revalidatePath` cobriram as
       mutações do admin; pode ser adotado depois para listagens com paginação real).
@@ -124,6 +126,32 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
       cache por encarte, validação de preços) — pronta e testada com cliente simulado.
 - [ ] Rodar a leitura de ofertas pela primeira vez (precisa de credencial da Anthropic).
 - [ ] Emulador Android: SDK instalado; falta ativar o hipervisor (precisa de admin).
+
+## Retomada em 2026-09-29 (verificação completa + analytics)
+
+Sessão à parte, depois que o trabalho da seção anterior já estava publicado no GitHub
+(`git log` mostrava 9 commits novos desde o push inicial). Antes de continuar, rodada
+a suíte inteira de novo para confirmar que nada regrediu:
+
+- [x] `pnpm typecheck`/`pnpm lint`/`pnpm test` (5 pacotes) — todos limpos, 158
+      testes unitários/integração passando (55 shared + 37 sources + 19 supabase/PGlite
+      + 47 web).
+- [x] `pnpm --filter @budega/web test:e2e` — 52/52 passando (instalado o Chromium do
+      Playwright, que não estava presente nesta máquina).
+- [x] `pnpm build` (web) e `npx expo-doctor`/`expo export --platform android` (mobile) —
+      sem erros.
+- [x] Nenhum registro de erro em aberto em `.audit/errors/` (35 registros, todos
+      corrigidos/documentados).
+- [x] Implementado o item pendente "registrar `analytics_events` e mostrar no
+      dashboard": `lib/track-event.ts` (grava evento, no-op em modo mock),
+      `ViewTracker`/`TrackedActionButton` nas páginas de mercado/oferta/encarte,
+      `favorite_add`/`favorite_remove` no `FavoriteButton`, `share` no `ShareButton`, e
+      `getAnalyticsSummary()` no dashboard (só para admin — RLS não deixa
+      responsável de mercado ler `analytics_events`). 2 testes novos; suíte completa
+      (unitários + e2e) revalidada depois, sem regressão.
+- Verificado: sem privilégio de administrador do Windows nesta sessão (grupo
+  Administradores em modo "só negar") — não é possível ativar o Hyper-V/hipervisor para
+  o emulador Android. Fica como pendência que só o usuário pode resolver (ver README).
 
 ## Fase 5 — Qualidade
 
