@@ -3,15 +3,18 @@
 import { Share2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { trackEvent, type TrackEventTarget } from "@/lib/track-event";
 
-interface ShareButtonProps {
+interface ShareButtonProps extends TrackEventTarget {
   url: string;
   title: string;
   text?: string;
 }
 
-export function ShareButton({ url, title, text }: ShareButtonProps) {
+export function ShareButton({ url, title, text, market_id, offer_id, flyer_id }: ShareButtonProps) {
   async function handleShare() {
+    trackEvent("share", { market_id, offer_id, flyer_id });
+
     if (typeof navigator !== "undefined" && navigator.share) {
       try {
         await navigator.share({ title, text, url });

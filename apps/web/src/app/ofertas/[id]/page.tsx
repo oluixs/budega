@@ -5,11 +5,12 @@ import { Navigation, Store, Tag } from "lucide-react";
 import { buildPlaceRouteUrl, buildOfferShareUrl, formatDateBR } from "@budega/shared";
 import { getMarketById, getOfferById } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { PriceTag } from "@/components/shared/price-tag";
 import { FavoriteButton } from "@/components/shared/favorite-button";
 import { ShareButton } from "@/components/shared/share-button";
 import { ReportDialog } from "@/components/shared/report-dialog";
+import { TrackedActionButton } from "@/components/shared/tracked-action-button";
+import { ViewTracker } from "@/components/shared/view-tracker";
 
 interface OfferPageProps {
   params: Promise<{ id: string }>;
@@ -30,6 +31,7 @@ export default async function OfferPage({ params }: OfferPageProps) {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+      <ViewTracker eventName="offer_view" target={{ offer_id: offer.id, market_id: offer.market_id }} />
       <div className="overflow-hidden rounded-xl border border-neutral-300 bg-neutral-0">
         <div className="flex h-48 items-center justify-center bg-neutral-100 text-neutral-500">
           <Tag className="h-14 w-14" aria-hidden="true" />
@@ -75,14 +77,24 @@ export default async function OfferPage({ params }: OfferPageProps) {
 
           <div className="flex flex-wrap gap-2 pt-2">
             <FavoriteButton offerId={offer.id} label />
-            <ShareButton url={buildOfferShareUrl(offer.id)} title={offer.name} text={`Confira essa oferta no Budega: ${offer.name}`} />
+            <ShareButton
+              url={buildOfferShareUrl(offer.id)}
+              title={offer.name}
+              text={`Confira essa oferta no Budega: ${offer.name}`}
+              offer_id={offer.id}
+              market_id={offer.market_id}
+            />
             {market && (
-              <Button
-                variant="outline"
-                render={<a href={buildPlaceRouteUrl(market)} target="_blank" rel="noreferrer" />}
+              <TrackedActionButton
+                eventName="route_click"
+                market_id={market.id}
+                offer_id={offer.id}
+                href={buildPlaceRouteUrl(market)}
+                target="_blank"
+                rel="noreferrer"
               >
                 <Navigation className="h-4 w-4" /> Rota até o mercado
-              </Button>
+              </TrackedActionButton>
             )}
             <ReportDialog offerId={offer.id} marketId={offer.market_id} defaultReason="preco_incorreto" />
           </div>

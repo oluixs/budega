@@ -97,6 +97,44 @@ export interface DashboardStats {
   pendingReports: number;
 }
 
+export interface AnalyticsSummary {
+  /** true quando os números abaixo vêm de dados reais (analytics_events); false em modo mock. */
+  available: boolean;
+  views: number;
+  routeClicks: number;
+  contactClicks: number;
+  shares: number;
+}
+
+const EMPTY_ANALYTICS: AnalyticsSummary = { available: false, views: 0, routeClicks: 0, contactClicks: 0, shares: 0 };
+
+/**
+ * `analytics_events` só pode ser lida por admin (RLS `analytics_select_admin_only`) —
+ * responsável por mercado não vê essas contagens, mesmo dentro do próprio mercado dele.
+ * Em modo mock não existe a tabela: os números ficam em 0 com `available: false`, nunca
+ * inventados (regra do projeto: não fabricar métricas).
+ */
+export async function getAnalyticsSummary(): Promise<AnalyticsSummary> {
+  const access = await requireAdminAccess();
+  if (access.status === "mock" || !access.isAdmin) return EMPTY_ANALYTICS;
+
+  const { data, error } = await access.supabase.from("analytics_events").select("event_name");
+  if (error) throw new Error(error.message);
+
+  const counts = new Map<string, number>();
+  for (const row of data as { event_name: string }[]) {
+    counts.set(row.event_name, (counts.get(row.event_name) ?? 0) + 1);
+  }
+
+  return {
+    available: true,
+    views: (counts.get("market_view") ?? 0) + (counts.get("offer_view") ?? 0) + (counts.get("flyer_view") ?? 0),
+    routeClicks: counts.get("route_click") ?? 0,
+    contactClicks: (counts.get("phone_click") ?? 0) + (counts.get("whatsapp_click") ?? 0),
+    shares: counts.get("share") ?? 0,
+  };
+}
+
 export async function getDashboardStats(): Promise<DashboardStats> {
   const [markets, offers, flyers, reports] = await Promise.all([
     getAllMarketsAdmin(),

@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { useFavorites } from "@/hooks/use-favorites";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/track-event";
 
 interface FavoriteButtonProps {
   marketId?: string;
@@ -22,6 +23,7 @@ export function FavoriteButton({ marketId, offerId, className, label = false }: 
     event.preventDefault();
     event.stopPropagation();
     toggle(target);
+    trackEvent(active ? "favorite_remove" : "favorite_add", target);
     toast.success(active ? "Removido dos favoritos" : "Adicionado aos favoritos", {
       description: "Você pode ver seus salvos em Favoritos, sem precisar de cadastro.",
     });

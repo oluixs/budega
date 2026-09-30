@@ -31,7 +31,8 @@ export default function PrivacyPage() {
         <ul className={list}>
           <li>
             <strong>{legalValue(LEGAL.controllerName)}</strong>, inscrito(a) sob o nº{" "}
-            {legalValue(LEGAL.controllerDocument)}, com endereço em {legalValue(LEGAL.controllerAddress)}.
+            {legalValue(LEGAL.controllerDocument)}, com endereço em {legalValue(LEGAL.controllerAddress)},
+            telefone {legalValue(LEGAL.contactPhone)}.
           </li>
           <li>
             Encarregado pelo tratamento de dados pessoais (art. 41 da LGPD):{" "}

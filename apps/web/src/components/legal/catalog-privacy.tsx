@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { LegalPage, LegalSection } from "@/components/legal/legal-page";
-import { HOSTING, LEGAL } from "@/lib/legal";
+import { hasIdentity, HOSTING, LEGAL, legalValue } from "@/lib/legal";
 
 const list = "list-disc space-y-2 pl-6";
 const link = "font-medium text-brand-600 hover:underline";
@@ -25,9 +25,15 @@ export function CatalogPrivacy() {
       </p>
 
       <LegalSection id="quem" title="1. Quem mantém o Budega">
+        {hasIdentity && (
+          <p>
+            O Budega é mantido por <strong>{legalValue(LEGAL.controllerName)}</strong>, contato{" "}
+            {legalValue(LEGAL.privacyEmail)}.
+          </p>
+        )}
         <p>
-          O Budega é um projeto independente, gratuito e sem fins comerciais, com código aberto
-          e público no{" "}
+          {hasIdentity ? "É u" : "O Budega é u"}m projeto independente, gratuito e sem fins
+          comerciais, com código aberto e público no{" "}
           <a href={LEGAL.repoUrl} target="_blank" rel="noreferrer" className={link}>
             GitHub
           </a>

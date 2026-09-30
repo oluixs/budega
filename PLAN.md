@@ -80,8 +80,19 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
 - [x] Mercados: cadastrar e editar (2026-09-29), com horário por dia da semana.
 - [x] Tela de usuários (`/admin/usuarios`): permissões e atribuição de mercados
       (migration 0003). Só o primeiro admin é promovido via SQL.
+- [x] Primeiro projeto Supabase real conectado e populado (2026-09-30): `.env.local`/
+      `.env` configurados, migrations 0001–0004 aplicadas (nova 0004: colunas que os
+      adaptadores de `packages/sources` já usavam mas o schema não tinha —
+      `website_url`/`coordinates_approximate`/`cover_url`/`source_url`).
+      `pnpm --filter @budega/supabase sync:regional` rodado com sucesso: 6 categorias, 3
+      mercados (Cometa, Frangolândia, Super Lagoa), 72 lojas, 9 encartes no banco real.
+      Confirmado servindo de verdade via `pnpm --filter @budega/web build && ... start`
+      (`/explorar` e `/mercados/super-lagoa` com as 3 redes, `Invoke-WebRequest`). Ofertas
+      ainda vazias (falta `ANTHROPIC_API_KEY` para `pnpm importar --ofertas`).
 - [ ] Upload de encarte/imagem para o Supabase Storage (hoje por URL).
-- [ ] Registrar `analytics_events` (visualizações, cliques) e mostrar no dashboard.
+- [x] Registrar `analytics_events` (visualizações, cliques, compartilhamento, favoritar)
+      e mostrar no dashboard (2026-09-29, retomada em máquina nova) — ver
+      `.audit/changes/2026-09-29/..._analytics-events...md`.
 - [x] Integração React Hook Form + Zod nos formulários administrativos (TanStack Query
       não foi necessário nesta fase — Server Actions + `revalidatePath` cobriram as
       mutações do admin; pode ser adotado depois para listagens com paginação real).
@@ -119,7 +130,13 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
       links para as páginas legais e texto do pedido de localização em português.
       Verificado pela versão web do app (Chromium, tamanho de celular).
 - [x] Segunda rede: Frangolândia (21 lojas geocodificadas via Nominatim com cache).
-- [ ] Mais redes da região (um adaptador por site).
+- [x] Terceira rede: Super Lagoa (8 lojas, coordenadas exatas do próprio site — sem
+      encartes, pois a Revista de Ofertas do site está parada desde 08/2023).
+- [ ] Mais redes da região (candidatas já avaliadas e descartadas: São Luiz —
+      robots.txt bloqueia bots fora de Googlebot/Bingbot; Centerbox e Pinheiro —
+      certificado TLS inválido; Diniz — só tem app, sem site com encartes; Moranguinho —
+      não atua em Fortaleza, só no interior. Buscar outras redes como Carrefour/Assaí se
+      tiverem site público com robots.txt permissivo e TLS válido).
 - [x] Leitura de ofertas dos encartes com a API do Claude (`pnpm importar --ofertas`,
       cache por encarte, validação de preços) — pronta e testada com cliente simulado.
 - [x] Leitura **manual** das ofertas (sem API, sem custo): Claude Code transcreveu os
@@ -150,12 +167,44 @@ histórico detalhado de cada mudança e `.audit/errors/` para erros encontrados.
          Vercel a acessar o GitHub, se pedido).
       2. Em "Root Directory", escolher `apps/web`. Framework Next.js é detectado
          automaticamente.
-      3. Não configurar nenhuma variável de ambiente do Supabase — sem elas o site sobe
-         no modo catálogo (dados reais dos mercados, sem contas/painel), como já testado.
+      3. **Escolha entre publicar com o Supabase real (já conectado numa sessão
+         anterior — 3 mercados, 72 lojas, 9 encartes sincronizados) ou em modo
+         catálogo**: com Supabase, adicione `NEXT_PUBLIC_SUPABASE_URL` e
+         `NEXT_PUBLIC_SUPABASE_ANON_KEY` como variáveis de ambiente do projeto Vercel
+         (valores em supabase.com/dashboard → o projeto → Project Settings → API) para
+         o site sair com contas, painel `/admin` e denúncias persistidas; sem elas, o
+         site sobe em modo catálogo (dados reais dos mercados, sem contas/painel), já
+         testado nesta sessão. Nenhuma credencial do Supabase está neste repositório.
       4. Depois do primeiro deploy, atualizar `WEB_BASE_URL` em
          `packages/shared/src/business/links.ts` e `EXPO_PUBLIC_API_URL` do app mobile
          para a URL `*.vercel.app` definitiva.
 - [ ] Emulador Android: SDK instalado; falta ativar o hipervisor (precisa de admin).
+
+## Retomada em 2026-09-29 (verificação completa + analytics)
+
+Sessão à parte, depois que o trabalho da seção anterior já estava publicado no GitHub
+(`git log` mostrava 9 commits novos desde o push inicial). Antes de continuar, rodada
+a suíte inteira de novo para confirmar que nada regrediu:
+
+- [x] `pnpm typecheck`/`pnpm lint`/`pnpm test` (5 pacotes) — todos limpos, 158
+      testes unitários/integração passando (55 shared + 37 sources + 19 supabase/PGlite
+      + 47 web).
+- [x] `pnpm --filter @budega/web test:e2e` — 52/52 passando (instalado o Chromium do
+      Playwright, que não estava presente nesta máquina).
+- [x] `pnpm build` (web) e `npx expo-doctor`/`expo export --platform android` (mobile) —
+      sem erros.
+- [x] Nenhum registro de erro em aberto em `.audit/errors/` (35 registros, todos
+      corrigidos/documentados).
+- [x] Implementado o item pendente "registrar `analytics_events` e mostrar no
+      dashboard": `lib/track-event.ts` (grava evento, no-op em modo mock),
+      `ViewTracker`/`TrackedActionButton` nas páginas de mercado/oferta/encarte,
+      `favorite_add`/`favorite_remove` no `FavoriteButton`, `share` no `ShareButton`, e
+      `getAnalyticsSummary()` no dashboard (só para admin — RLS não deixa
+      responsável de mercado ler `analytics_events`). 2 testes novos; suíte completa
+      (unitários + e2e) revalidada depois, sem regressão.
+- Verificado: sem privilégio de administrador do Windows nesta sessão (grupo
+  Administradores em modo "só negar") — não é possível ativar o Hyper-V/hipervisor para
+  o emulador Android. Fica como pendência que só o usuário pode resolver (ver README).
 
 ## Fase 5 — Qualidade
 

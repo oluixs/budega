@@ -11,11 +11,12 @@ import {
   getMarketBySlug,
 } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { FavoriteButton } from "@/components/shared/favorite-button";
 import { ReportDialog } from "@/components/shared/report-dialog";
 import { CategoryPills } from "@/components/shared/category-pills";
 import { EmptyState } from "@/components/shared/empty-state";
+import { TrackedActionButton } from "@/components/shared/tracked-action-button";
+import { ViewTracker } from "@/components/shared/view-tracker";
 import { MarketHours } from "@/components/market/market-hours";
 import { OfferCard } from "@/components/offer/offer-card";
 import { BranchesSection } from "@/components/market/branches-section";
@@ -54,6 +55,7 @@ export default async function MarketPage({ params, searchParams }: MarketPagePro
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
+      <ViewTracker eventName="market_view" target={{ market_id: market.id }} />
       <div className="mb-6 flex flex-col gap-4 rounded-xl border border-neutral-300 bg-neutral-0 p-6 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex gap-4">
           <div className="relative flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-brand-50 text-brand-600">
@@ -96,23 +98,31 @@ export default async function MarketPage({ params, searchParams }: MarketPagePro
 
         <div className="flex shrink-0 flex-wrap gap-2">
           <FavoriteButton marketId={market.id} label />
-          <Button
-            variant="outline"
-            render={
-              <a href={buildPlaceRouteUrl(market)} target="_blank" rel="noreferrer" />
-            }
+          <TrackedActionButton
+            eventName="route_click"
+            market_id={market.id}
+            href={buildPlaceRouteUrl(market)}
+            target="_blank"
+            rel="noreferrer"
           >
             <Navigation className="h-4 w-4" /> Rota
-          </Button>
+          </TrackedActionButton>
           {market.phone && (
-            <Button variant="outline" render={<a href={`tel:${market.phone}`} />}>
+            <TrackedActionButton eventName="phone_click" market_id={market.id} href={`tel:${market.phone}`}>
               <Phone className="h-4 w-4" /> Ligar
-            </Button>
+            </TrackedActionButton>
           )}
           {market.whatsapp && (
-            <Button render={<a href={buildWhatsAppUrl(market.whatsapp)} target="_blank" rel="noreferrer" />}>
+            <TrackedActionButton
+              eventName="whatsapp_click"
+              market_id={market.id}
+              href={buildWhatsAppUrl(market.whatsapp)}
+              target="_blank"
+              rel="noreferrer"
+              variant="default"
+            >
               WhatsApp
-            </Button>
+            </TrackedActionButton>
           )}
           <ReportDialog marketId={market.id} defaultReason="mercado_incorreto" />
         </div>

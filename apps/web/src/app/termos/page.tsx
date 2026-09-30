@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalPage, LegalSection } from "@/components/legal/legal-page";
-import { hasAccounts, LEGAL, legalValue } from "@/lib/legal";
+import { hasAccounts, hasIdentity, LEGAL, legalValue } from "@/lib/legal";
 
 export const metadata: Metadata = { title: "Termos de Uso" };
 
@@ -17,11 +17,11 @@ export default function TermsPage() {
       </p>
 
       <LegalSection id="quem" title="1. Quem somos e o que o Budega faz">
-        {hasAccounts ? (
+        {hasIdentity ? (
           <p>
             O Budega é oferecido por <strong>{legalValue(LEGAL.controllerName)}</strong> (
             {legalValue(LEGAL.controllerDocument)}), com endereço em{" "}
-            {legalValue(LEGAL.controllerAddress)}.
+            {legalValue(LEGAL.controllerAddress)}, telefone {legalValue(LEGAL.contactPhone)}.
           </p>
         ) : (
           <p>
@@ -84,13 +84,13 @@ export default function TermsPage() {
           consumidor, sempre com indicação da fonte e link para o original, sem alterá-los e
           sem cobrar por isso.
         </p>
-        {hasAccounts ? (
+        {hasIdentity ? (
           <p>
             <strong>É responsável por um mercado?</strong> Você pode pedir a correção ou a
-            remoção de qualquer conteúdo do seu mercado, ou se tornar parceiro e gerenciar as
-            informações diretamente pelo painel, escrevendo para{" "}
-            {legalValue(LEGAL.contentEmail)}. Pedidos de remoção são atendidos em até 5 dias
-            úteis.
+            remoção de qualquer conteúdo do seu mercado
+            {hasAccounts && ", ou se tornar parceiro e gerenciar as informações diretamente pelo painel,"}{" "}
+            escrevendo para {legalValue(LEGAL.contentEmail)}. Pedidos de remoção são atendidos
+            em até 5 dias úteis.
           </p>
         ) : (
           <p>

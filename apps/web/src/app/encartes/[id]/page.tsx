@@ -7,6 +7,7 @@ import { getActiveFlyers, getFlyerById, getMarketById } from "@/lib/data";
 import { FlyerViewer } from "@/components/flyer/flyer-viewer";
 import { ShareButton } from "@/components/shared/share-button";
 import { ReportDialog } from "@/components/shared/report-dialog";
+import { ViewTracker } from "@/components/shared/view-tracker";
 import { Button } from "@/components/ui/button";
 
 interface FlyerPageProps {
@@ -32,6 +33,7 @@ export default async function FlyerPage({ params }: FlyerPageProps) {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+      <ViewTracker eventName="flyer_view" target={{ flyer_id: flyer.id, market_id: flyer.market_id }} />
       <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
         <div>
           <h1 className="font-display text-h1 font-bold text-neutral-900">{flyer.title}</h1>
@@ -46,7 +48,12 @@ export default async function FlyerPage({ params }: FlyerPageProps) {
           {flyer.description && <p className="mt-1 text-body text-neutral-500">{flyer.description}</p>}
         </div>
         <div className="flex flex-wrap gap-2">
-          <ShareButton url={buildFlyerShareUrl(flyer.id)} title={flyer.title} />
+          <ShareButton
+            url={buildFlyerShareUrl(flyer.id)}
+            title={flyer.title}
+            flyer_id={flyer.id}
+            market_id={flyer.market_id}
+          />
           <ReportDialog flyerId={flyer.id} defaultReason="encarte_ilegivel" />
         </div>
       </div>
