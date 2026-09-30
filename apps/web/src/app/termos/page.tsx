@@ -20,7 +20,7 @@ export default function TermsPage() {
         <p>
           O Budega é oferecido por <strong>{legalValue(LEGAL.controllerName)}</strong> (
           {legalValue(LEGAL.controllerDocument)}), com endereço em{" "}
-          {legalValue(LEGAL.controllerAddress)}.
+          {legalValue(LEGAL.controllerAddress)}, telefone {legalValue(LEGAL.contactPhone)}.
         </p>
         <p>
           O Budega é um serviço gratuito de <strong>informação</strong>: reúne, num só lugar,
